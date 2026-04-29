@@ -1,40 +1,41 @@
 ---
 import Base from "../layouts/Base.astro";
-import { jobs, companies, meta, formatDate } from "../lib/data";
+import { jobs, companies, meta, formatDate, displayCountry } from "../lib/data";
 
-// --- Aggregations over the current snapshot ---
-const byCountry: Record<string, number> = {};
-const byCategory: Record<string, number> = {};
-const bySource: Record<string, number> = {};
-const ossCompanies = new Set<string>();
-const companiesBySize: Record<string, number> = {};
-
-for (const c of Object.values(companies)) {
-  if (c.country) byCountry[c.country] = (byCountry[c.country] || 0) + 1;
-  for (const cat of c.categories || []) {
-    byCategory[cat] = (byCategory[cat] || 0) + 1;
-  }
-  if ((c as any).oss_signal) ossCompanies.add(c.slug);
-  if (c.size_bucket) {
-    companiesBySize[c.size_bucket] = (companiesBySize[c.size_bucket] || 0) + 1;
-  }
-}
-
+// Aggregations
 const jobsByCompany: Record<string, number> = {};
 for (const j of jobs) {
-  bySource[j.source] = (bySource[j.source] || 0) + 1;
   jobsByCompany[j.company_slug] = (jobsByCompany[j.company_slug] || 0) + 1;
 }
 
-const countryRows = Object.entries(byCountry)
-  .sort((a, b) => b[1] - a[1])
-  .slice(0, 30);
+const totalJobs = jobs.length;
+const totalCompanies = Object.keys(companies).length;
 
-const sourceRows = Object.entries(bySource).sort((a, b) => b[1] - a[1]);
-
-const topHiring = Object.entries(jobsByCompany)
+// Most hiring (any source)
+const topHiringAll = Object.entries(jobsByCompany)
   .sort((a, b) => b[1] - a[1])
-  .slice(0, 25)
+  .slice(0, 30)
+  .map(([slug, count]) => ({
+    slug,
+    count,
+    name: companies[slug]?.name || slug,
+    country: companies[slug]?.country || "",
+    isAggregator: slug.startsWith("via-"),
+  }));
+
+// Most hiring among curated (drop aggregator-discovered noise)
+const topHiringCurated = topHiringAll.filter((c) => !c.isAggregator).slice(0, 25);
+
+// New jobs in the last 7 days
+const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+const recentJobs = jobs.filter((j) => j.posted_at && j.posted_at > sevenDaysAgo);
+const recentByCompany: Record<string, number> = {};
+for (const j of recentJobs) {
+  recentByCompany[j.company_slug] = (recentByCompany[j.company_slug] || 0) + 1;
+}
+const recentlyActive = Object.entries(recentByCompany)
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 15)
   .map(([slug, count]) => ({
     slug,
     count,
@@ -42,61 +43,56 @@ const topHiring = Object.entries(jobsByCompany)
     country: companies[slug]?.country || "",
   }));
 
-const categoryRows = Object.entries(byCategory).sort((a, b) => b[1] - a[1]);
+// Country distribution (curated only)
+const byCountry: Record<string, number> = {};
+for (const c of Object.values(companies)) {
+  if (c.slug?.startsWith("via-")) continue;
+  if (c.country) byCountry[c.country] = (byCountry[c.country] || 0) + 1;
+}
+const countryRows = Object.entries(byCountry)
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 15);
+
+// Source distribution (ATS vs aggregator split)
+const bySource: Record<string, number> = {};
+for (const j of jobs) bySource[j.source] = (bySource[j.source] || 0) + 1;
+const ATS_SOURCES = new Set(["greenhouse", "lever", "ashby", "workable", "recruitee", "personio", "smartrecruiters"]);
+const atsJobs = Object.entries(bySource).filter(([s]) => ATS_SOURCES.has(s));
+const aggregatorJobs = Object.entries(bySource).filter(([s]) => !ATS_SOURCES.has(s));
 
 const base = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : import.meta.env.BASE_URL + "/";
-const totalCompanies = Object.keys(companies).length;
 
 function bar(value: number, max: number, width = 200): number {
   return Math.max(2, Math.round((value / Math.max(max, 1)) * width));
 }
 const maxCountry = countryRows[0]?.[1] ?? 1;
-const maxSource = sourceRows[0]?.[1] ?? 1;
-const maxHiring = topHiring[0]?.count ?? 1;
+const maxHiring = topHiringCurated[0]?.count ?? 1;
+const maxRecent = recentlyActive[0]?.count ?? 1;
 ---
 <Base title="Trends — eu-tech-jobs">
   <header>
-    <h1>Trends</h1>
+    <h1>What's hiring</h1>
     <p class="lede">
-      <a href={base}>← Back</a> · Snapshot of {jobs.length.toLocaleString()} jobs across
-      {totalCompanies} sources on {formatDate(meta.run_at)}.
-    </p>
-    <p class="meta">
-      Time-series (jobs/day, hiring velocity per company) populates automatically as
-      daily snapshots accumulate — view the
-      <a href="https://huggingface.co/datasets/Aramente/eu-tech-jobs/tree/main/snapshots">
-        snapshot history on Hugging Face
-      </a>
-      for raw parquet over time.
+      <a href={base}>← Back</a> · {totalJobs.toLocaleString()} jobs across {totalCompanies} sources
+      on {formatDate(meta.run_at)}.
     </p>
   </header>
   <main>
-    <h2>Companies by country (top {countryRows.length})</h2>
-    <table>
-      <thead><tr><th>Country</th><th>Companies</th><th></th></tr></thead>
-      <tbody>
-        {countryRows.map(([cc, n]) => (
-          <tr>
-            <td><span class="badge">{cc}</span></td>
-            <td>{n}</td>
-            <td>
-              <span style={`display:inline-block;height:6px;background:var(--accent);width:${bar(n, maxCountry)}px;border-radius:3px`}></span>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-
-    <h2 style="margin-top:32px">Top 25 hiring companies</h2>
+    <h2>Most-hiring companies (curated, top 25)</h2>
+    <p class="meta">
+      Highest open-job counts among the {Object.values(companies).filter((c) => !c.slug?.startsWith("via-")).length}
+      hand-curated EU/remote-EU companies. Aggregator-discovered companies (RemoteOK / WeWorkRemotely / JustJoin.it)
+      are excluded here — they're often single-job listings.
+    </p>
     <table>
       <thead><tr><th>Company</th><th>Country</th><th>Open jobs</th><th></th></tr></thead>
       <tbody>
-        {topHiring.map((row) => (
+        {topHiringCurated.map((row) => (
           <tr>
             <td><a href={`${base}companies/${row.slug}/`}>{row.name}</a></td>
-            <td><span class="badge">{row.country}</span></td>
+            <td><span class="badge">{displayCountry(row.country)}</span></td>
             <td>{row.count}</td>
             <td>
               <span style={`display:inline-block;height:6px;background:var(--accent);width:${bar(row.count, maxHiring)}px;border-radius:3px`}></span>
@@ -106,42 +102,73 @@ const maxHiring = topHiring[0]?.count ?? 1;
       </tbody>
     </table>
 
-    <h2 style="margin-top:32px">Source distribution</h2>
+    <h2 style="margin-top:32px">Hiring this week</h2>
+    {recentlyActive.length === 0 ? (
+      <p class="meta">
+        No "posted in the last 7 days" data yet — most ATSes don't expose a real
+        posted-at timestamp, so this fills in as snapshots accumulate.
+      </p>
+    ) : (
+      <table>
+        <thead><tr><th>Company</th><th>Country</th><th>New jobs (7d)</th><th></th></tr></thead>
+        <tbody>
+          {recentlyActive.map((row) => (
+            <tr>
+              <td><a href={`${base}companies/${row.slug}/`}>{row.name}</a></td>
+              <td><span class="badge">{displayCountry(row.country)}</span></td>
+              <td>{row.count}</td>
+              <td>
+                <span style={`display:inline-block;height:6px;background:var(--accent);width:${bar(row.count, maxRecent)}px;border-radius:3px`}></span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )}
+
+    <h2 style="margin-top:32px">Where the curated companies are</h2>
+    <p class="meta">Top 15 countries by curated-company count.</p>
     <table>
-      <thead><tr><th>Source</th><th>Jobs</th><th></th></tr></thead>
+      <thead><tr><th>Country</th><th>Companies</th><th></th></tr></thead>
       <tbody>
-        {sourceRows.map(([src, n]) => (
+        {countryRows.map(([cc, n]) => (
           <tr>
-            <td><code>{src}</code></td>
-            <td>{n.toLocaleString()}</td>
+            <td><span class="badge">{displayCountry(cc)}</span></td>
+            <td>{n}</td>
             <td>
-              <span style={`display:inline-block;height:6px;background:var(--accent);width:${bar(n, maxSource)}px;border-radius:3px`}></span>
+              <span style={`display:inline-block;height:6px;background:var(--accent);width:${bar(n, maxCountry)}px;border-radius:3px`}></span>
             </td>
           </tr>
         ))}
       </tbody>
     </table>
 
-    <h2 style="margin-top:32px">Categories (curated companies)</h2>
+    <h2 style="margin-top:32px">Where the jobs come from</h2>
+    <p class="meta">
+      We pull from 6 ATS APIs (the bulk) and 3 EU job aggregators (long tail).
+    </p>
     <table>
-      <thead><tr><th>Category</th><th>Companies</th></tr></thead>
+      <thead><tr><th>Source</th><th>Type</th><th>Jobs</th></tr></thead>
       <tbody>
-        {categoryRows.map(([cat, n]) => (
-          <tr><td><code>{cat}</code></td><td>{n}</td></tr>
-        ))}
+        {atsJobs
+          .concat(aggregatorJobs)
+          .sort((a, b) => b[1] - a[1])
+          .map(([src, n]) => (
+            <tr>
+              <td><code>{src}</code></td>
+              <td class="meta">{ATS_SOURCES.has(src) ? "ATS API" : "aggregator"}</td>
+              <td>{n.toLocaleString()}</td>
+            </tr>
+          ))}
       </tbody>
     </table>
-
-    <h2 style="margin-top:32px">Open-source signal</h2>
-    <p class="meta">
-      {ossCompanies.size} companies flagged as having a 100+ ⭐ public OSS repo
-      (heuristic — runs weekly via the GitHub enricher).
-    </p>
   </main>
   <footer>
     <p>
-      Aggregations derived from <code>data/latest/jobs.parquet</code>. Reproduce with
-      DuckDB on the published Hugging Face dataset.
+      Time-series (week-over-week hiring velocity, fastest-growing teams) populates as
+      daily snapshots accumulate. Raw parquet is on
+      <a href="https://huggingface.co/datasets/Aramente/eu-tech-jobs">Hugging Face</a>
+      if you want to roll your own analytics.
     </p>
   </footer>
 </Base>

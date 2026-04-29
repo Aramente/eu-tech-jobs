@@ -1,6 +1,13 @@
 ---
 import Base from "../layouts/Base.astro";
-import { jobsSorted, companies, meta, PAGE_SIZE, formatDate } from "../lib/data";
+import {
+  jobsSorted,
+  companies,
+  meta,
+  PAGE_SIZE,
+  formatDate,
+  displayCountry,
+} from "../lib/data";
 
 const allJobs = jobsSorted();
 const totalPages = Math.max(1, Math.ceil(allJobs.length / PAGE_SIZE));
@@ -24,32 +31,30 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
 ---
 <Base title="eu-tech-jobs — EU AI/Tech Jobboard">
   <header>
-    <h1>eu-tech-jobs · EU AI/Tech Jobs</h1>
+    <h1>eu-tech-jobs</h1>
     <p class="lede">
-      Daily-updated open-data feed. {allJobs.length.toLocaleString()} active jobs from
-      {companyCount} companies.
+      <strong>{allJobs.length.toLocaleString()} EU AI/tech jobs</strong> from
+      {companyCount} companies. Daily-updated open data. No LinkedIn or Indeed.
     </p>
     <div class="stats">
-      <span>Snapshot: <strong>{runAt}</strong></span>
-      <span>Pipeline success: <strong>{successRate}%</strong></span>
-      <span><a href={`${base}feed.xml`}>RSS</a></span>
+      <span>Updated <strong>{runAt}</strong></span>
       <span><a href={`${base}companies/`}>Companies</a></span>
       <span><a href={`${base}trends/`}>Trends</a></span>
       <span><a href={`${base}search/`}>Search</a></span>
-      <span><a href="https://github.com/Aramente/eu-tech-jobs">GitHub</a></span>
-      <span><a href="https://huggingface.co/datasets/Aramente/eu-tech-jobs">Dataset</a></span>
+      <span><a href="https://aramente.github.io/bored-cv/">Tailor a CV with Bored CV →</a></span>
     </div>
   </header>
   <main>
-    <p class="meta">
-      <a href={`${base}search/`}>Full-text search →</a>
-      (Pagefind index across all job descriptions, regenerated nightly)
+    <p class="meta" style="margin-bottom: 24px;">
+      Tip: <a href={`${base}search/`}>full-text search</a> beats this paginated
+      table for most queries. The country filter narrows the visible page;
+      <em>Remote</em> = aggregator-discovered jobs (RemoteOK / WeWorkRemotely / JustJoin.it).
     </p>
     <div class="filters">
       <input id="search" type="search" placeholder="Quick filter (this page)…" />
       <select id="country">
         <option value="">All countries</option>
-        {countries.map((c) => <option value={c}>{c}</option>)}
+        {countries.map((c) => <option value={c}>{displayCountry(c)}</option>)}
       </select>
       <select id="role">
         <option value="">All roles</option>
@@ -90,7 +95,7 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
                   <td><a href={`${base}jobs/${j.id}/`}>{j.title}</a></td>
                   <td class="company">
                     <a href={`${base}companies/${j.company_slug}/`}>{name}</a>{" "}
-                    {country && <span class="badge">{country}</span>}
+                    {country && <span class="badge">{displayCountry(country)}</span>}
                   </td>
                   <td class="meta">{j.location || "—"}</td>
                   <td class="meta">{formatDate(j.posted_at)}</td>
@@ -114,10 +119,15 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
   </main>
   <footer>
     <p>
-      Code <a href="https://github.com/Aramente/eu-tech-jobs/blob/main/LICENSE">MIT</a>;
-      data <a href="https://github.com/Aramente/eu-tech-jobs/blob/main/DATA_LICENSE">CC BY 4.0</a>.
-      No LinkedIn / Indeed scraping. Removal:
-      <a href="mailto:kevin.duchier@gmail.com">email</a>.
+      <strong>For developers / researchers:</strong>{" "}
+      <a href={`${base}feed.xml`}>RSS feed</a> ·{" "}
+      <a href="https://github.com/Aramente/eu-tech-jobs">source on GitHub</a> (MIT) ·{" "}
+      <a href="https://huggingface.co/datasets/Aramente/eu-tech-jobs">parquet dataset on Hugging Face</a> (CC BY 4.0) ·{" "}
+      pipeline success {successRate}%.
+    </p>
+    <p>
+      Removal requests: <a href="mailto:kevin.duchier@gmail.com">email</a>.
+      We don't scrape LinkedIn or Indeed.
     </p>
   </footer>
   <script>

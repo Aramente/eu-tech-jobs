@@ -69,3 +69,25 @@ export function formatDate(iso: string | null | undefined): string {
   if (!y || !m || !d) return "—";
   return `${d}/${m}/${y}`;
 }
+
+/**
+ * Display the company's country.
+ * "XX" is the placeholder we assign to aggregator-discovered companies whose
+ * country couldn't be inferred — show that as "Remote" since they all came
+ * from remote-friendly aggregators (RemoteOK, WeWorkRemotely, JustJoin.it).
+ */
+export function displayCountry(code: string | null | undefined): string {
+  if (!code) return "—";
+  if (code === "XX") return "Remote";
+  return code;
+}
+
+/** True for aggregator-discovered companies (synthetic stubs). */
+export function isAggregatorCompany(slug: string): boolean {
+  return slug.startsWith("via-");
+}
+
+/** Build a Bored CV deep-link that pre-fills the offer URL. */
+export function boredCvLink(jobUrl: string): string {
+  return `https://aramente.github.io/bored-cv/upload?offer_url=${encodeURIComponent(jobUrl)}`;
+}

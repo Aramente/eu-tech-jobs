@@ -1,6 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
-import { companies, jobsByCompany } from "../../lib/data";
+import { companies, jobsByCompany, displayCountry } from "../../lib/data";
 
 const byCompany = jobsByCompany();
 const list = Object.values(companies).sort((a, b) => a.name.localeCompare(b.name));
@@ -18,7 +18,7 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
     <div class="company-grid">
       {list.map((c) => (
         <a class="company-card" href={`${base}companies/${c.slug}/`}>
-          <h3>{c.name} <span class="badge">{c.country}</span></h3>
+          <h3>{c.name} <span class="badge">{displayCountry(c.country)}</span></h3>
           <p class="meta">
             {byCompany[c.slug]?.length ?? 0} open · {c.categories?.join(", ") || "—"}
           </p>
