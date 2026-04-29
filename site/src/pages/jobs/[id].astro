@@ -1,6 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
-import { jobs, companies } from "../../lib/data";
+import { jobs, companies, formatDate } from "../../lib/data";
 
 export async function getStaticPaths() {
   return jobs.map((j) => ({ params: { id: j.id } }));
@@ -57,7 +57,7 @@ function md(s: string): string {
         <a href={`${base}companies/${job.company_slug}/`}>{companyName}</a>
         {company?.country && <> · {company.country}</>}
         {job.location && <> · {job.location}</>}
-        {job.posted_at && <> · posted {job.posted_at.slice(0, 10)}</>}
+        {job.posted_at && <> · posted {formatDate(job.posted_at)}</>}
         {" · "}<span class="badge">{job.source}</span>
       </p>
       <p>

@@ -1,13 +1,13 @@
 ---
 import Base from "../layouts/Base.astro";
-import { jobsSorted, companies, meta, PAGE_SIZE } from "../lib/data";
+import { jobsSorted, companies, meta, PAGE_SIZE, formatDate } from "../lib/data";
 
 const allJobs = jobsSorted();
 const totalPages = Math.max(1, Math.ceil(allJobs.length / PAGE_SIZE));
 const pageJobs = allJobs.slice(0, PAGE_SIZE);
 
 const companyCount = Object.keys(companies).length;
-const runAt = meta.run_at ? new Date(meta.run_at).toISOString().slice(0, 10) : "—";
+const runAt = formatDate(meta.run_at);
 const successRate = meta.extractor_results
   ? Math.round(
       (meta.extractor_results.filter((r) => r.success).length /
@@ -61,6 +61,11 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
         <option value="sales">Sales</option>
         <option value="marketing">Marketing</option>
         <option value="ops">Ops</option>
+        <option value="hr">HR / Recruiting</option>
+        <option value="finance">Finance</option>
+        <option value="legal">Legal</option>
+        <option value="research">Research</option>
+        <option value="support">Support</option>
       </select>
     </div>
     {pageJobs.length === 0 ? (
@@ -88,7 +93,7 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
                     {country && <span class="badge">{country}</span>}
                   </td>
                   <td class="meta">{j.location || "—"}</td>
-                  <td class="meta">{j.posted_at ? j.posted_at.slice(0, 10) : "—"}</td>
+                  <td class="meta">{formatDate(j.posted_at)}</td>
                 </tr>
               );
             })}

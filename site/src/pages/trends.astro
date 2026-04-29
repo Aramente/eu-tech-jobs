@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import { jobs, companies, meta } from "../lib/data";
+import { jobs, companies, meta, formatDate } from "../lib/data";
 
 // --- Aggregations over the current snapshot ---
 const byCountry: Record<string, number> = {};
@@ -61,7 +61,7 @@ const maxHiring = topHiring[0]?.count ?? 1;
     <h1>Trends</h1>
     <p class="lede">
       <a href={base}>← Back</a> · Snapshot of {jobs.length.toLocaleString()} jobs across
-      {totalCompanies} sources on {meta.run_at?.slice(0, 10) || "—"}.
+      {totalCompanies} sources on {formatDate(meta.run_at)}.
     </p>
     <p class="meta">
       Time-series (jobs/day, hiring velocity per company) populates automatically as

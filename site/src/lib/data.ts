@@ -60,3 +60,12 @@ export function jobsByCompany(): Record<string, Job[]> {
 }
 
 export const PAGE_SIZE = 100;
+
+/** Format an ISO date string (YYYY-MM-DD or full ISO) as DD/MM/YYYY (European). */
+export function formatDate(iso: string | null | undefined): string {
+  if (!iso) return "—";
+  const ymd = iso.slice(0, 10);
+  const [y, m, d] = ymd.split("-");
+  if (!y || !m || !d) return "—";
+  return `${d}/${m}/${y}`;
+}

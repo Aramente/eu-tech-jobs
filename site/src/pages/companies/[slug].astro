@@ -1,6 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
-import { companies, jobsByCompany } from "../../lib/data";
+import { companies, jobsByCompany, formatDate } from "../../lib/data";
 
 export async function getStaticPaths() {
   return Object.keys(companies).map((slug) => ({ params: { slug } }));
@@ -37,7 +37,7 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
             <tr>
               <td><a href={`${base}jobs/${j.id}/`}>{j.title}</a></td>
               <td class="meta">{j.location || "—"}</td>
-              <td class="meta">{j.posted_at ? j.posted_at.slice(0, 10) : "—"}</td>
+              <td class="meta">{formatDate(j.posted_at)}</td>
             </tr>
           ))}
         </tbody>
