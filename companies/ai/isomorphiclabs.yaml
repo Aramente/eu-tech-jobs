@@ -1,0 +1,10 @@
+name: Isomorphic Labs
+country: GB
+categories:
+- ai
+ats:
+  provider: greenhouse
+  handle: isomorphiclabs
+funding_stage: series-a
+size_bucket: 51-200
+notes: AI for drug discovery (Alphabet)

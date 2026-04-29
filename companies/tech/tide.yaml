@@ -1,0 +1,10 @@
+name: Tide
+country: GB
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: tide
+funding_stage: series-d
+size_bucket: 1001-5000
+notes: SMB banking

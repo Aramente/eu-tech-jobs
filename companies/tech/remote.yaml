@@ -1,0 +1,12 @@
+name: Remote
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: remote
+github_org: remoteoss
+funding_stage: series-c
+size_bucket: 501-1000
+notes: Global employment, fully remote

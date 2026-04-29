@@ -1,0 +1,12 @@
+name: Airtable
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: airtable
+github_org: Airtable
+funding_stage: series-e+
+size_bucket: 501-1000
+notes: Database/spreadsheet hybrid

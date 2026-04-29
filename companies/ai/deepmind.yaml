@@ -1,0 +1,12 @@
+name: Google DeepMind
+country: GB
+categories:
+- ai
+- oss
+ats:
+  provider: greenhouse
+  handle: deepmind
+github_org: deepmind
+funding_stage: acquired
+size_bucket: 1001-5000
+notes: Frontier AI research lab

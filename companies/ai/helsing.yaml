@@ -1,0 +1,10 @@
+name: Helsing
+country: DE
+categories:
+- ai
+ats:
+  provider: greenhouse
+  handle: helsing
+funding_stage: series-c
+size_bucket: 201-500
+notes: AI for defense

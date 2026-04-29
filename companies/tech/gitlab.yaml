@@ -1,0 +1,13 @@
+name: GitLab
+country: US
+categories:
+- tech
+- oss
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: gitlab
+github_org: gitlab-org
+funding_stage: public
+size_bucket: 1001-5000
+notes: All-remote DevOps platform

@@ -1,0 +1,13 @@
+name: MongoDB
+country: US
+categories:
+- tech
+- oss
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: mongodb
+github_org: mongodb
+funding_stage: public
+size_bucket: 5001+
+notes: Document database

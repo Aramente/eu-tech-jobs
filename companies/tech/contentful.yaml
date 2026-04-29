@@ -1,0 +1,11 @@
+name: Contentful
+country: DE
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: contentful
+github_org: contentful
+funding_stage: series-e+
+size_bucket: 501-1000
+notes: Headless CMS

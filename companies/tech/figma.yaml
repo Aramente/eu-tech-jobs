@@ -1,0 +1,12 @@
+name: Figma
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: figma
+github_org: figma
+funding_stage: series-e+
+size_bucket: 501-1000
+notes: Collaborative design

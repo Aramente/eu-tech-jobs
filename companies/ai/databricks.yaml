@@ -1,0 +1,13 @@
+name: Databricks
+country: US
+categories:
+- ai
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: databricks
+github_org: databricks
+funding_stage: series-e+
+size_bucket: 5001+
+notes: Data + AI platform

@@ -1,0 +1,10 @@
+name: Mirakl
+country: FR
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: mirakl
+funding_stage: series-e+
+size_bucket: 501-1000
+notes: Marketplace platform

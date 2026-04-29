@@ -1,0 +1,12 @@
+name: Fastly
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: fastly
+github_org: fastly
+funding_stage: public
+size_bucket: 1001-5000
+notes: Edge cloud platform

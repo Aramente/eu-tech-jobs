@@ -1,0 +1,11 @@
+name: Shift Technology
+country: FR
+categories:
+- ai
+- tech
+ats:
+  provider: greenhouse
+  handle: shifttechnology
+funding_stage: series-e+
+size_bucket: 501-1000
+notes: AI for insurance fraud / claims

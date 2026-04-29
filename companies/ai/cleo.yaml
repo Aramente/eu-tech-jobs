@@ -1,0 +1,11 @@
+name: Cleo AI
+country: GB
+categories:
+- ai
+- tech
+ats:
+  provider: greenhouse
+  handle: cleo
+funding_stage: series-c
+size_bucket: 201-500
+notes: AI personal-finance assistant

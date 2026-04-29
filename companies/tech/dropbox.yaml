@@ -1,0 +1,12 @@
+name: Dropbox
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: dropbox
+github_org: dropbox
+funding_stage: public
+size_bucket: 1001-5000
+notes: File sync, all-remote-friendly

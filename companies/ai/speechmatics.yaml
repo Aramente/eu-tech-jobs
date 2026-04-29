@@ -1,0 +1,10 @@
+name: Speechmatics
+country: GB
+categories:
+- ai
+ats:
+  provider: greenhouse
+  handle: speechmatics
+funding_stage: series-b
+size_bucket: 201-500
+notes: Speech-to-text AI

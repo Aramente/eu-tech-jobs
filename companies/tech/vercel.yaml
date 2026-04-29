@@ -1,0 +1,13 @@
+name: Vercel
+country: US
+categories:
+- tech
+- remote-eu
+- oss
+ats:
+  provider: greenhouse
+  handle: vercel
+github_org: vercel
+funding_stage: series-d
+size_bucket: 201-500
+notes: Frontend cloud (Next.js)

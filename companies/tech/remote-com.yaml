@@ -1,0 +1,12 @@
+name: Remote.com (Engineering)
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: remotecom
+github_org: remoteoss
+funding_stage: series-c
+size_bucket: 1001-5000
+notes: Engineering board

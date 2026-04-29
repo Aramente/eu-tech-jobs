@@ -1,0 +1,11 @@
+name: Algolia
+country: FR
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: algolia
+github_org: algolia
+funding_stage: series-d
+size_bucket: 501-1000
+notes: Search-as-a-service (Paris/SF)

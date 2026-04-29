@@ -1,0 +1,12 @@
+name: Airbnb
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: airbnb
+github_org: airbnb
+funding_stage: public
+size_bucket: 5001+
+notes: Hires across EU

@@ -1,0 +1,12 @@
+name: Elastic
+country: NL
+categories:
+- tech
+- oss
+ats:
+  provider: greenhouse
+  handle: elastic
+github_org: elastic
+funding_stage: public
+size_bucket: 1001-5000
+notes: Search + observability

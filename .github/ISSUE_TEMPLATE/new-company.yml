@@ -1,0 +1,47 @@
+name: Add a company
+description: Suggest a company to add to the seed list
+title: "[company] Add <Company Name>"
+labels: ["new-company"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Company name
+      placeholder: Hugging Face
+    validations: { required: true }
+  - type: input
+    id: country
+    attributes:
+      label: HQ country (ISO alpha-2)
+      placeholder: FR
+    validations: { required: true }
+  - type: dropdown
+    id: provider
+    attributes:
+      label: ATS provider
+      options:
+        - greenhouse
+        - lever
+        - ashby
+        - workable
+        - recruitee
+        - personio
+        - smartrecruiters
+        - other / unknown
+    validations: { required: true }
+  - type: input
+    id: handle
+    attributes:
+      label: ATS handle
+      placeholder: huggingface
+  - type: input
+    id: careers_url
+    attributes:
+      label: Careers URL
+      placeholder: https://huggingface.co/jobs
+    validations: { required: true }
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      placeholder: "Optional context — sector, size, OSS focus, etc."

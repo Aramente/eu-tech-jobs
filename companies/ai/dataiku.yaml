@@ -1,0 +1,12 @@
+name: Dataiku
+country: FR
+categories:
+- ai
+- tech
+ats:
+  provider: greenhouse
+  handle: dataiku
+github_org: dataiku
+funding_stage: series-e+
+size_bucket: 501-1000
+notes: Enterprise ML platform

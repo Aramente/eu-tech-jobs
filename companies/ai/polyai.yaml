@@ -1,0 +1,11 @@
+name: PolyAI
+country: GB
+categories:
+- ai
+ats:
+  provider: greenhouse
+  handle: polyai
+github_org: polyai
+funding_stage: series-c
+size_bucket: 51-200
+notes: Voice AI for customer service

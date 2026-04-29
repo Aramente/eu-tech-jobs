@@ -1,0 +1,10 @@
+name: Adyen
+country: NL
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: adyen
+funding_stage: public
+size_bucket: 5001+
+notes: Global payments platform

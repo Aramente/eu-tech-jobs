@@ -1,0 +1,12 @@
+name: Anthropic
+country: US
+categories:
+- ai
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: anthropic
+github_org: anthropics
+funding_stage: series-c
+size_bucket: 501-1000
+notes: AI safety; hires remote-EU

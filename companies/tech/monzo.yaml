@@ -1,0 +1,10 @@
+name: Monzo
+country: GB
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: monzo
+funding_stage: series-e+
+size_bucket: 1001-5000
+notes: Digital bank

@@ -1,0 +1,12 @@
+name: Stripe
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: stripe
+github_org: stripe
+funding_stage: series-e+
+size_bucket: 5001+
+notes: Payments infrastructure

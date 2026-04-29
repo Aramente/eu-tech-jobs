@@ -1,0 +1,10 @@
+name: Ledgy
+country: CH
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: ledgy
+funding_stage: series-b
+size_bucket: 51-200
+notes: Equity management platform

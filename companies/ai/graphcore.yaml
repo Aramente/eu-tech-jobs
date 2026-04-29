@@ -1,0 +1,12 @@
+name: Graphcore
+country: GB
+categories:
+- ai
+- tech
+ats:
+  provider: greenhouse
+  handle: graphcore
+github_org: graphcore
+funding_stage: series-e+
+size_bucket: 201-500
+notes: AI accelerator hardware

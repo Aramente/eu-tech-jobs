@@ -1,0 +1,10 @@
+name: GoCardless
+country: GB
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: gocardless
+funding_stage: series-e+
+size_bucket: 501-1000
+notes: Direct-debit infrastructure

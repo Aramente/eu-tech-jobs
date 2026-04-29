@@ -1,0 +1,12 @@
+name: Prismatic
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: prismatic
+github_org: prismatic-io
+funding_stage: series-b
+size_bucket: 51-200
+notes: Embedded iPaaS

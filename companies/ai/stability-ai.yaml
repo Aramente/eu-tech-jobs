@@ -1,0 +1,12 @@
+name: Stability AI
+country: GB
+categories:
+- ai
+- oss
+ats:
+  provider: greenhouse
+  handle: stabilityai
+github_org: stability-ai
+funding_stage: series-a
+size_bucket: 201-500
+notes: Open generative AI (Stable Diffusion)

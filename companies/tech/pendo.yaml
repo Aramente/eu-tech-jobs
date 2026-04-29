@@ -1,0 +1,12 @@
+name: Pendo
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: pendo
+github_org: pendo-io
+funding_stage: series-e+
+size_bucket: 1001-5000
+notes: Product analytics

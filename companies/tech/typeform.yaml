@@ -1,0 +1,11 @@
+name: Typeform
+country: ES
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: typeform
+github_org: Typeform
+funding_stage: series-c
+size_bucket: 501-1000
+notes: Conversational forms

@@ -1,0 +1,39 @@
+name: Daily pipeline
+
+on:
+  schedule:
+    - cron: "0 6 * * *"  # 07:00 CET
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-pipeline
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+      - name: Set up Python
+        run: uv python install 3.12
+      - name: Install
+        run: uv sync --all-extras
+      - name: Run pipeline
+        run: uv run pipeline run -v
+      - name: Commit data
+        run: |
+          if [[ -n "$(git status --porcelain data/)" ]]; then
+            git config user.name "ai-startups-bot"
+            git config user.email "actions@github.com"
+            git add data/
+            git commit -m "chore(data): daily snapshot $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "No data changes to commit."
+          fi

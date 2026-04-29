@@ -1,0 +1,10 @@
+name: HelloFresh
+country: DE
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: hellofresh
+funding_stage: public
+size_bucket: 5001+
+notes: Meal-kit tech org

@@ -1,0 +1,12 @@
+name: Asana
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: asana
+github_org: asana
+funding_stage: public
+size_bucket: 1001-5000
+notes: Work management

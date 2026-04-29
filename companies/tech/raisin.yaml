@@ -1,0 +1,10 @@
+name: Raisin
+country: DE
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: raisin
+funding_stage: series-e+
+size_bucket: 501-1000
+notes: Savings + investment marketplace

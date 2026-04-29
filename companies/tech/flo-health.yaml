@@ -1,0 +1,10 @@
+name: Flo Health
+country: GB
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: flohealth
+funding_stage: series-c
+size_bucket: 201-500
+notes: Femtech / women's health AI
