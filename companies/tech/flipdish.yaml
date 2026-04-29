@@ -1,0 +1,7 @@
+name: Flipdish
+country: IE
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: flipdish

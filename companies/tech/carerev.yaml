@@ -1,0 +1,8 @@
+name: CareRev
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: carerev

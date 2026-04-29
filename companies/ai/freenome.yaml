@@ -1,0 +1,8 @@
+name: Freenome
+country: US
+categories:
+- ai
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: freenome

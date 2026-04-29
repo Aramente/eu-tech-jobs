@@ -1,0 +1,8 @@
+name: HackerRank
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: hackerrank

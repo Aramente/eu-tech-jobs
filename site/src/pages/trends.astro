@@ -1,0 +1,147 @@
+---
+import Base from "../layouts/Base.astro";
+import { jobs, companies, meta } from "../lib/data";
+
+// --- Aggregations over the current snapshot ---
+const byCountry: Record<string, number> = {};
+const byCategory: Record<string, number> = {};
+const bySource: Record<string, number> = {};
+const ossCompanies = new Set<string>();
+const companiesBySize: Record<string, number> = {};
+
+for (const c of Object.values(companies)) {
+  if (c.country) byCountry[c.country] = (byCountry[c.country] || 0) + 1;
+  for (const cat of c.categories || []) {
+    byCategory[cat] = (byCategory[cat] || 0) + 1;
+  }
+  if ((c as any).oss_signal) ossCompanies.add(c.slug);
+  if (c.size_bucket) {
+    companiesBySize[c.size_bucket] = (companiesBySize[c.size_bucket] || 0) + 1;
+  }
+}
+
+const jobsByCompany: Record<string, number> = {};
+for (const j of jobs) {
+  bySource[j.source] = (bySource[j.source] || 0) + 1;
+  jobsByCompany[j.company_slug] = (jobsByCompany[j.company_slug] || 0) + 1;
+}
+
+const countryRows = Object.entries(byCountry)
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 30);
+
+const sourceRows = Object.entries(bySource).sort((a, b) => b[1] - a[1]);
+
+const topHiring = Object.entries(jobsByCompany)
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 25)
+  .map(([slug, count]) => ({
+    slug,
+    count,
+    name: companies[slug]?.name || slug,
+    country: companies[slug]?.country || "",
+  }));
+
+const categoryRows = Object.entries(byCategory).sort((a, b) => b[1] - a[1]);
+
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : import.meta.env.BASE_URL + "/";
+const totalCompanies = Object.keys(companies).length;
+
+function bar(value: number, max: number, width = 200): number {
+  return Math.max(2, Math.round((value / Math.max(max, 1)) * width));
+}
+const maxCountry = countryRows[0]?.[1] ?? 1;
+const maxSource = sourceRows[0]?.[1] ?? 1;
+const maxHiring = topHiring[0]?.count ?? 1;
+---
+<Base title="Trends — eu-tech-jobs">
+  <header>
+    <h1>Trends</h1>
+    <p class="lede">
+      <a href={base}>← Back</a> · Snapshot of {jobs.length.toLocaleString()} jobs across
+      {totalCompanies} sources on {meta.run_at?.slice(0, 10) || "—"}.
+    </p>
+    <p class="meta">
+      Time-series (jobs/day, hiring velocity per company) populates automatically as
+      daily snapshots accumulate — view the
+      <a href="https://huggingface.co/datasets/Aramente/eu-tech-jobs/tree/main/snapshots">
+        snapshot history on Hugging Face
+      </a>
+      for raw parquet over time.
+    </p>
+  </header>
+  <main>
+    <h2>Companies by country (top {countryRows.length})</h2>
+    <table>
+      <thead><tr><th>Country</th><th>Companies</th><th></th></tr></thead>
+      <tbody>
+        {countryRows.map(([cc, n]) => (
+          <tr>
+            <td><span class="badge">{cc}</span></td>
+            <td>{n}</td>
+            <td>
+              <span style={`display:inline-block;height:6px;background:var(--accent);width:${bar(n, maxCountry)}px;border-radius:3px`}></span>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    <h2 style="margin-top:32px">Top 25 hiring companies</h2>
+    <table>
+      <thead><tr><th>Company</th><th>Country</th><th>Open jobs</th><th></th></tr></thead>
+      <tbody>
+        {topHiring.map((row) => (
+          <tr>
+            <td><a href={`${base}companies/${row.slug}/`}>{row.name}</a></td>
+            <td><span class="badge">{row.country}</span></td>
+            <td>{row.count}</td>
+            <td>
+              <span style={`display:inline-block;height:6px;background:var(--accent);width:${bar(row.count, maxHiring)}px;border-radius:3px`}></span>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    <h2 style="margin-top:32px">Source distribution</h2>
+    <table>
+      <thead><tr><th>Source</th><th>Jobs</th><th></th></tr></thead>
+      <tbody>
+        {sourceRows.map(([src, n]) => (
+          <tr>
+            <td><code>{src}</code></td>
+            <td>{n.toLocaleString()}</td>
+            <td>
+              <span style={`display:inline-block;height:6px;background:var(--accent);width:${bar(n, maxSource)}px;border-radius:3px`}></span>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    <h2 style="margin-top:32px">Categories (curated companies)</h2>
+    <table>
+      <thead><tr><th>Category</th><th>Companies</th></tr></thead>
+      <tbody>
+        {categoryRows.map(([cat, n]) => (
+          <tr><td><code>{cat}</code></td><td>{n}</td></tr>
+        ))}
+      </tbody>
+    </table>
+
+    <h2 style="margin-top:32px">Open-source signal</h2>
+    <p class="meta">
+      {ossCompanies.size} companies flagged as having a 100+ ⭐ public OSS repo
+      (heuristic — runs weekly via the GitHub enricher).
+    </p>
+  </main>
+  <footer>
+    <p>
+      Aggregations derived from <code>data/latest/jobs.parquet</code>. Reproduce with
+      DuckDB on the published Hugging Face dataset.
+    </p>
+  </footer>
+</Base>

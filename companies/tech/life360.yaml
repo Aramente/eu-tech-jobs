@@ -1,0 +1,8 @@
+name: Life360
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: life360

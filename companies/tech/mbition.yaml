@@ -1,0 +1,7 @@
+name: MBition (Mercedes-Benz)
+country: DE
+categories:
+- tech
+ats:
+  provider: personio
+  handle: mbition

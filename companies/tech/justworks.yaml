@@ -1,0 +1,8 @@
+name: Justworks
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: justworks

@@ -1,0 +1,7 @@
+name: Channable
+country: NL
+categories:
+- tech
+ats:
+  provider: personio
+  handle: channable

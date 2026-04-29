@@ -1,0 +1,7 @@
+name: QAware
+country: DE
+categories:
+- tech
+ats:
+  provider: personio
+  handle: qaware

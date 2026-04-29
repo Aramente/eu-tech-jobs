@@ -1,0 +1,7 @@
+name: BitMEX
+country: SC
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: bitmex

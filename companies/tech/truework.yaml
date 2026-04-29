@@ -1,0 +1,8 @@
+name: Truework
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: truework

@@ -1,0 +1,9 @@
+name: Canonical
+country: GB
+categories:
+- tech
+- oss
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: canonical

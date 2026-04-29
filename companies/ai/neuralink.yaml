@@ -1,0 +1,8 @@
+name: Neuralink
+country: US
+categories:
+- ai
+- tech
+ats:
+  provider: greenhouse
+  handle: neuralink

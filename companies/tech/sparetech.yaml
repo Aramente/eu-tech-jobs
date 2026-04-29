@@ -1,0 +1,7 @@
+name: Sparetech
+country: DE
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: sparetech

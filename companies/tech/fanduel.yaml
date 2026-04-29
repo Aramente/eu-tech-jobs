@@ -1,0 +1,7 @@
+name: FanDuel
+country: US
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: fanduel
