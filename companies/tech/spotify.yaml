@@ -1,0 +1,7 @@
+name: Spotify
+country: SE
+categories:
+- tech
+ats:
+  provider: lever
+  handle: spotify

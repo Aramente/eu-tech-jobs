@@ -1,0 +1,79 @@
+---
+import Base from "../../layouts/Base.astro";
+import { jobs, companies } from "../../lib/data";
+
+export async function getStaticPaths() {
+  return jobs.map((j) => ({ params: { id: j.id } }));
+}
+
+const { id } = Astro.params;
+const job = jobs.find((j) => j.id === id);
+if (!job) throw new Error(`Job ${id} not found`);
+const company = companies[job.company_slug];
+const companyName = company?.name || job.company_slug;
+const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + "/";
+
+// Convert markdown → HTML inline (simple: paragraphs, headings, lists, bold)
+function md(s: string): string {
+  if (!s) return "";
+  // Headings
+  let out = s.replace(/^### (.+)$/gm, "<h3>$1</h3>");
+  out = out.replace(/^## (.+)$/gm, "<h2>$1</h2>");
+  out = out.replace(/^# (.+)$/gm, "<h1>$1</h1>");
+  // Bold
+  out = out.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+  // Lists
+  out = out.replace(/(^|\n)(?:[-*] (.+)(?:\n[-*] (.+))*)/g, (block) => {
+    const items = block
+      .trim()
+      .split("\n")
+      .map((line) => line.replace(/^[-*] /, "").trim())
+      .filter(Boolean)
+      .map((t) => `<li>${t}</li>`)
+      .join("");
+    return `\n<ul>${items}</ul>\n`;
+  });
+  // Paragraph wrap on double newlines
+  out = out
+    .split(/\n\n+/)
+    .map((block) => {
+      const t = block.trim();
+      if (!t) return "";
+      if (t.startsWith("<h") || t.startsWith("<ul") || t.startsWith("<ol")) return t;
+      return `<p>${t.replace(/\n/g, " ")}</p>`;
+    })
+    .join("\n");
+  return out;
+}
+---
+<Base title={`${job.title} — ${companyName}`} description={`${job.title} at ${companyName} (${job.location || "remote"})`}>
+  <header>
+    <p class="lede"><a href={base}>← Back</a></p>
+  </header>
+  <main>
+    <article class="job">
+      <h1>{job.title}</h1>
+      <p class="meta">
+        <a href={`${base}companies/${job.company_slug}/`}>{companyName}</a>
+        {company?.country && <> · {company.country}</>}
+        {job.location && <> · {job.location}</>}
+        {job.posted_at && <> · posted {job.posted_at.slice(0, 10)}</>}
+        {" · "}<span class="badge">{job.source}</span>
+      </p>
+      <p>
+        <a href={job.url} target="_blank" rel="noopener noreferrer">
+          <strong>Apply on {job.source} →</strong>
+        </a>
+      </p>
+      {job.description_md && (
+        <div class="desc" set:html={md(job.description_md)} />
+      )}
+    </article>
+  </main>
+  <footer>
+    <p>
+      Source data licensed CC BY 4.0. Apply through the link above —
+      eu-tech-jobs is not the employer.
+    </p>
+  </footer>
+</Base>

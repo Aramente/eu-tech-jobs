@@ -1,0 +1,8 @@
+name: Prisma
+country: CH
+categories:
+- tech
+- oss
+ats:
+  provider: recruitee
+  handle: prisma

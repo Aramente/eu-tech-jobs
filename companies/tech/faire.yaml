@@ -1,0 +1,8 @@
+name: Faire
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: faire

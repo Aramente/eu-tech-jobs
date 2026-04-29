@@ -1,0 +1,7 @@
+name: 360Learning
+country: FR
+categories:
+- tech
+ats:
+  provider: lever
+  handle: 360learning

@@ -1,0 +1,7 @@
+name: ElevenLabs
+country: GB
+categories:
+- ai
+ats:
+  provider: ashby
+  handle: elevenlabs

@@ -1,0 +1,55 @@
+---
+import Base from "../../layouts/Base.astro";
+import { jobsSorted, companies, PAGE_SIZE } from "../../lib/data";
+
+export async function getStaticPaths() {
+  const all = jobsSorted();
+  const totalPages = Math.max(1, Math.ceil(all.length / PAGE_SIZE));
+  const paths = [];
+  for (let p = 2; p <= totalPages; p++) {
+    paths.push({ params: { page: String(p) } });
+  }
+  return paths;
+}
+
+const { page } = Astro.params;
+const pageNum = parseInt(page, 10);
+const all = jobsSorted();
+const totalPages = Math.max(1, Math.ceil(all.length / PAGE_SIZE));
+const pageJobs = all.slice((pageNum - 1) * PAGE_SIZE, pageNum * PAGE_SIZE);
+const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + "/";
+---
+<Base title={`Jobs page ${pageNum} — eu-tech-jobs`}>
+  <header>
+    <h1>Jobs · page {pageNum} / {totalPages}</h1>
+    <p class="lede">
+      <a href={base}>← Back to start</a> · Showing {pageJobs.length} of {all.length.toLocaleString()}
+    </p>
+  </header>
+  <main>
+    <table>
+      <thead>
+        <tr><th>Title</th><th>Company</th><th>Location</th><th>Posted</th></tr>
+      </thead>
+      <tbody>
+        {pageJobs.map((j) => {
+          const c = companies[j.company_slug];
+          const name = c?.name || j.company_slug;
+          return (
+            <tr>
+              <td><a href={`${base}jobs/${j.id}/`}>{j.title}</a></td>
+              <td class="company"><a href={`${base}companies/${j.company_slug}/`}>{name}</a> {c?.country && <span class="badge">{c.country}</span>}</td>
+              <td class="meta">{j.location || "—"}</td>
+              <td class="meta">{j.posted_at ? j.posted_at.slice(0, 10) : "—"}</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+    <nav class="pagination">
+      {pageNum > 1 && <a href={pageNum === 2 ? base : `${base}page/${pageNum - 1}/`}>← Prev</a>}
+      <span class="current">{pageNum}</span>
+      {pageNum < totalPages && <a href={`${base}page/${pageNum + 1}/`}>Next →</a>}
+    </nav>
+  </main>
+</Base>

@@ -1,0 +1,7 @@
+name: bunq
+country: NL
+categories:
+- tech
+ats:
+  provider: personio
+  handle: bunq

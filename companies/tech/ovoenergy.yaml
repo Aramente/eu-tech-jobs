@@ -1,0 +1,7 @@
+name: OVO Energy
+country: GB
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: ovoenergy

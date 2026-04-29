@@ -1,0 +1,7 @@
+name: Qonto
+country: FR
+categories:
+- tech
+ats:
+  provider: lever
+  handle: qonto

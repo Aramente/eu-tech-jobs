@@ -1,0 +1,8 @@
+name: Thinkific
+country: CA
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: thinkific

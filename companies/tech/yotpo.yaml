@@ -1,0 +1,8 @@
+name: Yotpo
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: yotpo

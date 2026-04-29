@@ -26,6 +26,20 @@ jobs:
         run: uv sync --all-extras
       - name: Run pipeline
         run: uv run pipeline run -v
+      - name: Compute diff + RSS + alerts
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: uv run pipeline diff -v
+        continue-on-error: true
+      - name: Push to Hugging Face Dataset
+        if: ${{ env.HF_TOKEN != '' }}
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          uv pip install huggingface_hub
+          uv run pipeline publish
+        continue-on-error: true
       - name: Commit data
         run: |
           if [[ -n "$(git status --porcelain data/)" ]]; then

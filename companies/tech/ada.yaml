@@ -1,0 +1,8 @@
+name: Ada
+country: CA
+categories:
+- tech
+- remote-eu
+ats:
+  provider: personio
+  handle: ada

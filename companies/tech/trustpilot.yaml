@@ -1,0 +1,7 @@
+name: Trustpilot
+country: DK
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: trustpilot

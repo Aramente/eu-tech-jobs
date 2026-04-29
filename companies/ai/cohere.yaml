@@ -1,0 +1,8 @@
+name: Cohere
+country: CA
+categories:
+- ai
+- remote-eu
+ats:
+  provider: ashby
+  handle: cohere

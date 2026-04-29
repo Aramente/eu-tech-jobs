@@ -1,0 +1,7 @@
+name: Amazon Personio
+country: US
+categories:
+- tech
+ats:
+  provider: personio
+  handle: amazon

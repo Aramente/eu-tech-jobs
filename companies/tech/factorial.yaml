@@ -1,0 +1,7 @@
+name: Factorial
+country: ES
+categories:
+- tech
+ats:
+  provider: personio
+  handle: factorial

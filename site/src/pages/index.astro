@@ -1,243 +1,85 @@
 ---
-import jobsRaw from "../data/jobs.json";
-import companies from "../data/companies.json";
-import meta from "../data/metadata.json";
+import Base from "../layouts/Base.astro";
+import { jobsSorted, companies, meta, PAGE_SIZE } from "../lib/data";
 
-type Job = {
-  id: string;
-  company_slug: string;
-  title: string;
-  url: string;
-  location: string;
-  source: string;
-  posted_at: string | null;
-};
-
-const jobs = jobsRaw as Job[];
-
-// Sort: most recently posted first (then alphabetical fallback)
-jobs.sort((a, b) => {
-  if (a.posted_at && b.posted_at) return b.posted_at.localeCompare(a.posted_at);
-  if (a.posted_at) return -1;
-  if (b.posted_at) return 1;
-  return a.company_slug.localeCompare(b.company_slug);
-});
+const allJobs = jobsSorted();
+const totalPages = Math.max(1, Math.ceil(allJobs.length / PAGE_SIZE));
+const pageJobs = allJobs.slice(0, PAGE_SIZE);
 
 const companyCount = Object.keys(companies).length;
 const runAt = meta.run_at ? new Date(meta.run_at).toISOString().slice(0, 10) : "—";
 const successRate = meta.extractor_results
   ? Math.round(
-      (meta.extractor_results.filter((r: any) => r.success).length /
-        meta.extractor_results.length) *
+      (meta.extractor_results.filter((r) => r.success).length /
+        Math.max(meta.extractor_results.length, 1)) *
         100
     )
   : 100;
 
 const countries = Array.from(
-  new Set(Object.values(companies).map((c: any) => c.country).filter(Boolean))
+  new Set(Object.values(companies).map((c) => c.country).filter(Boolean))
 ).sort();
----
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>eu-tech-jobs — EU AI/Tech Jobboard</title>
-    <meta
-      name="description"
-      content="Daily-updated open-data feed of jobs from EU AI/tech and remote-EU companies."
-    />
-    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
-    <style>
-      :root {
-        color-scheme: light dark;
-        --bg: #fafafa;
-        --fg: #141413;
-        --muted: #6b6b6b;
-        --accent: #1a73e8;
-        --border: #e5e5e5;
-        --row-hover: #f5f5f5;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #141413;
-          --fg: #fafafa;
-          --muted: #9a9a9a;
-          --accent: #6ea8ff;
-          --border: #2a2a2a;
-          --row-hover: #1d1d1d;
-        }
-      }
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-        font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
-          sans-serif;
-        background: var(--bg);
-        color: var(--fg);
-      }
-      header {
-        padding: 32px 24px 16px;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      h1 {
-        margin: 0 0 8px;
-        font-size: 28px;
-        font-weight: 700;
-      }
-      .lede {
-        margin: 0 0 16px;
-        color: var(--muted);
-      }
-      .stats {
-        display: flex;
-        gap: 24px;
-        flex-wrap: wrap;
-        font-size: 13px;
-        color: var(--muted);
-        margin-bottom: 24px;
-      }
-      .stat strong {
-        color: var(--fg);
-        font-weight: 600;
-      }
-      main {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 24px 64px;
-      }
-      .filters {
-        display: flex;
-        gap: 12px;
-        margin-bottom: 16px;
-        flex-wrap: wrap;
-      }
-      .filters input,
-      .filters select {
-        padding: 8px 12px;
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        background: var(--bg);
-        color: var(--fg);
-        font: inherit;
-      }
-      #search {
-        flex: 1;
-        min-width: 240px;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-      th,
-      td {
-        text-align: left;
-        padding: 8px 12px;
-        border-bottom: 1px solid var(--border);
-        vertical-align: top;
-      }
-      th {
-        font-weight: 600;
-        font-size: 12px;
-        text-transform: uppercase;
-        color: var(--muted);
-        letter-spacing: 0.04em;
-      }
-      tbody tr:hover {
-        background: var(--row-hover);
-      }
-      a {
-        color: var(--accent);
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      .company {
-        font-weight: 500;
-      }
-      .meta {
-        color: var(--muted);
-        font-size: 13px;
-      }
-      .badge {
-        display: inline-block;
-        padding: 1px 6px;
-        font-size: 11px;
-        border: 1px solid var(--border);
-        border-radius: 4px;
-        color: var(--muted);
-      }
-      footer {
-        max-width: 1200px;
-        margin: 48px auto 0;
-        padding: 24px;
-        font-size: 13px;
-        color: var(--muted);
-        border-top: 1px solid var(--border);
-      }
-      footer a {
-        color: var(--muted);
-        text-decoration: underline;
-      }
-      .empty {
-        padding: 48px 0;
-        text-align: center;
-        color: var(--muted);
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>eu-tech-jobs · EU AI/Tech Jobs</h1>
-      <p class="lede">
-        Daily-updated open-data feed. {jobs.length.toLocaleString()} active jobs from
-        {companyCount} companies.
-      </p>
-      <div class="stats">
-        <span class="stat">Snapshot: <strong>{runAt}</strong></span>
-        <span class="stat">Pipeline success: <strong>{successRate}%</strong></span>
-        <span class="stat"
-          >Source: <a href="https://github.com/Aramente/eu-tech-jobs">github.com/Aramente/eu-tech-jobs</a></span
-        >
-      </div>
-    </header>
-    <main>
-      <div class="filters">
-        <input id="search" type="search" placeholder="Search title, company, or location…" />
-        <select id="country">
-          <option value="">All countries</option>
-          {countries.map((c) => <option value={c}>{c}</option>)}
-        </select>
-      </div>
-      {jobs.length === 0 ? (
-        <p class="empty">No jobs in this snapshot. Run <code>uv run pipeline run</code> to populate.</p>
-      ) : (
+const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + "/";
+---
+<Base title="eu-tech-jobs — EU AI/Tech Jobboard">
+  <header>
+    <h1>eu-tech-jobs · EU AI/Tech Jobs</h1>
+    <p class="lede">
+      Daily-updated open-data feed. {allJobs.length.toLocaleString()} active jobs from
+      {companyCount} companies.
+    </p>
+    <div class="stats">
+      <span>Snapshot: <strong>{runAt}</strong></span>
+      <span>Pipeline success: <strong>{successRate}%</strong></span>
+      <span><a href={`${base}feed.xml`}>RSS</a></span>
+      <span><a href={`${base}companies/`}>Companies</a></span>
+      <span><a href="https://github.com/Aramente/eu-tech-jobs">GitHub</a></span>
+      <span><a href="https://huggingface.co/datasets/Aramente/eu-tech-jobs">Dataset</a></span>
+    </div>
+  </header>
+  <main>
+    <div class="filters">
+      <input id="search" type="search" placeholder="Search title, company, or location…" />
+      <select id="country">
+        <option value="">All countries</option>
+        {countries.map((c) => <option value={c}>{c}</option>)}
+      </select>
+      <select id="role">
+        <option value="">All roles</option>
+        <option value="ml-ai">ML / AI</option>
+        <option value="engineering">Engineering</option>
+        <option value="data">Data</option>
+        <option value="product">Product</option>
+        <option value="design">Design</option>
+        <option value="sales">Sales</option>
+        <option value="marketing">Marketing</option>
+        <option value="ops">Ops</option>
+      </select>
+    </div>
+    {pageJobs.length === 0 ? (
+      <p class="empty">No jobs in this snapshot.</p>
+    ) : (
+      <>
+        <p class="meta">
+          Showing first {pageJobs.length.toLocaleString()} of {allJobs.length.toLocaleString()}.
+          {totalPages > 1 && <> <a href={`${base}page/2/`}>Next →</a></>}
+        </p>
         <table id="jobs-table">
           <thead>
-            <tr>
-              <th>Title</th>
-              <th>Company</th>
-              <th>Location</th>
-              <th>Posted</th>
-            </tr>
+            <tr><th>Title</th><th>Company</th><th>Location</th><th>Posted</th></tr>
           </thead>
           <tbody>
-            {jobs.map((j) => {
-              const c = (companies as any)[j.company_slug];
+            {pageJobs.map((j) => {
+              const c = companies[j.company_slug];
               const country = c?.country || "";
               const name = c?.name || j.company_slug;
               return (
-                <tr data-country={country} data-haystack={`${j.title} ${name} ${j.location}`.toLowerCase()}>
-                  <td>
-                    <a href={j.url} target="_blank" rel="noopener noreferrer">{j.title}</a>
-                  </td>
+                <tr data-country={country} data-role={j.role_family || ""} data-haystack={`${j.title} ${name} ${j.location}`.toLowerCase()}>
+                  <td><a href={`${base}jobs/${j.id}/`}>{j.title}</a></td>
                   <td class="company">
-                    {name} {country && <span class="badge">{country}</span>}
+                    <a href={`${base}companies/${j.company_slug}/`}>{name}</a>{" "}
+                    {country && <span class="badge">{country}</span>}
                   </td>
                   <td class="meta">{j.location || "—"}</td>
                   <td class="meta">{j.posted_at ? j.posted_at.slice(0, 10) : "—"}</td>
@@ -246,35 +88,49 @@ const countries = Array.from(
             })}
           </tbody>
         </table>
-      )}
-    </main>
-    <footer>
-      <p>
-        Code <a href="https://github.com/Aramente/eu-tech-jobs/blob/main/LICENSE">MIT</a>;
-        data <a href="https://github.com/Aramente/eu-tech-jobs/blob/main/DATA_LICENSE">CC&nbsp;BY&nbsp;4.0</a>.
-        We do not scrape LinkedIn or Indeed. Removal requests:
-        <a href="mailto:kevin.duchier@gmail.com">email</a>.
-      </p>
-    </footer>
-    <script>
-      const search = document.getElementById("search");
-      const country = document.getElementById("country");
-      const rows = Array.from(document.querySelectorAll("#jobs-table tbody tr"));
-
-      function apply() {
-        const q = (search?.value || "").toLowerCase().trim();
-        const cc = (country as HTMLSelectElement | null)?.value || "";
-        for (const row of rows) {
-          const r = row as HTMLElement;
-          const haystack = r.dataset.haystack || "";
-          const c = r.dataset.country || "";
-          const matchQ = !q || haystack.includes(q);
-          const matchC = !cc || c === cc;
-          r.style.display = matchQ && matchC ? "" : "none";
-        }
+        {totalPages > 1 && (
+          <nav class="pagination">
+            <span class="current">1</span>
+            {Array.from({ length: Math.min(totalPages - 1, 9) }, (_, i) => i + 2).map((p) => (
+              <a href={`${base}page/${p}/`}>{p}</a>
+            ))}
+            {totalPages > 10 && <span>…</span>}
+            {totalPages > 10 && <a href={`${base}page/${totalPages}/`}>{totalPages}</a>}
+          </nav>
+        )}
+      </>
+    )}
+  </main>
+  <footer>
+    <p>
+      Code <a href="https://github.com/Aramente/eu-tech-jobs/blob/main/LICENSE">MIT</a>;
+      data <a href="https://github.com/Aramente/eu-tech-jobs/blob/main/DATA_LICENSE">CC BY 4.0</a>.
+      No LinkedIn / Indeed scraping. Removal:
+      <a href="mailto:kevin.duchier@gmail.com">email</a>.
+    </p>
+  </footer>
+  <script>
+    const search = document.getElementById("search");
+    const country = document.getElementById("country");
+    const role = document.getElementById("role");
+    const rows = Array.from(document.querySelectorAll("#jobs-table tbody tr"));
+    function apply() {
+      const q = (search?.value || "").toLowerCase().trim();
+      const cc = (country)?.value || "";
+      const rr = (role)?.value || "";
+      for (const row of rows) {
+        const r = row;
+        const haystack = r.dataset.haystack || "";
+        const c = r.dataset.country || "";
+        const ro = r.dataset.role || "";
+        const okQ = !q || haystack.includes(q);
+        const okC = !cc || c === cc;
+        const okR = !rr || ro === rr;
+        r.style.display = okQ && okC && okR ? "" : "none";
       }
-      search?.addEventListener("input", apply);
-      country?.addEventListener("change", apply);
-    </script>
-  </body>
-</html>
+    }
+    search?.addEventListener("input", apply);
+    country?.addEventListener("change", apply);
+    role?.addEventListener("change", apply);
+  </script>
+</Base>

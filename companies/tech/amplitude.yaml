@@ -1,0 +1,8 @@
+name: Amplitude
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: amplitude

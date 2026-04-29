@@ -1,0 +1,47 @@
+---
+import Base from "../../layouts/Base.astro";
+import { companies, jobsByCompany } from "../../lib/data";
+
+export async function getStaticPaths() {
+  return Object.keys(companies).map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const company = companies[slug];
+if (!company) throw new Error(`Company ${slug} not found`);
+const byCompany = jobsByCompany();
+const jobs = (byCompany[slug] || []).slice().sort((a, b) => a.title.localeCompare(b.title));
+const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + "/";
+---
+<Base title={`${company.name} — eu-tech-jobs`}>
+  <header>
+    <p class="lede"><a href={`${base}companies/`}>← All companies</a></p>
+    <h1>{company.name} <span class="badge">{company.country}</span></h1>
+    <p class="lede">
+      {company.categories?.join(" · ")}
+      {company.funding_stage && <> · {company.funding_stage}</>}
+      {company.size_bucket && <> · {company.size_bucket}</>}
+      {company.ats_provider && <> · ATS: {company.ats_provider}</>}
+    </p>
+    {company.notes && <p class="meta">{company.notes}</p>}
+  </header>
+  <main>
+    <h2>{jobs.length} open positions</h2>
+    {jobs.length === 0 ? (
+      <p class="empty">No open positions in this snapshot.</p>
+    ) : (
+      <table>
+        <thead><tr><th>Title</th><th>Location</th><th>Posted</th></tr></thead>
+        <tbody>
+          {jobs.map((j) => (
+            <tr>
+              <td><a href={`${base}jobs/${j.id}/`}>{j.title}</a></td>
+              <td class="meta">{j.location || "—"}</td>
+              <td class="meta">{j.posted_at ? j.posted_at.slice(0, 10) : "—"}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )}
+  </main>
+</Base>

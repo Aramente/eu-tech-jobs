@@ -1,0 +1,7 @@
+name: DeepL
+country: DE
+categories:
+- ai
+ats:
+  provider: ashby
+  handle: deepl

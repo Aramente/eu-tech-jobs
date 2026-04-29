@@ -1,0 +1,8 @@
+name: Buf
+country: DE
+categories:
+- tech
+- oss
+ats:
+  provider: personio
+  handle: buf
