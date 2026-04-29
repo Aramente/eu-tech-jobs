@@ -1,0 +1,8 @@
+name: Wealthfront
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: lever
+  handle: wealthfront

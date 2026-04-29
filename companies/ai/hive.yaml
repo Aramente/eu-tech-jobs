@@ -1,0 +1,7 @@
+name: Hive
+country: DE
+categories:
+- ai
+ats:
+  provider: lever
+  handle: hive

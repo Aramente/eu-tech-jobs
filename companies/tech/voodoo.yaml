@@ -1,0 +1,7 @@
+name: Voodoo
+country: FR
+categories:
+- tech
+ats:
+  provider: lever
+  handle: voodoo

@@ -1,0 +1,7 @@
+name: Langdock
+country: DE
+categories:
+- ai
+ats:
+  provider: personio
+  handle: langdock

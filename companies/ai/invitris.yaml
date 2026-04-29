@@ -1,0 +1,8 @@
+name: Invitris
+country: DE
+categories:
+- ai
+- research
+ats:
+  provider: personio
+  handle: invitris

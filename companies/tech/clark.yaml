@@ -1,0 +1,7 @@
+name: Clark
+country: DE
+categories:
+- tech
+ats:
+  provider: personio
+  handle: clark

@@ -1,0 +1,7 @@
+name: Ledger
+country: FR
+categories:
+- tech
+ats:
+  provider: lever
+  handle: ledger

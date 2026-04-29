@@ -1,0 +1,7 @@
+name: Machine26
+country: DE
+categories:
+- ai
+ats:
+  provider: personio
+  handle: machine26

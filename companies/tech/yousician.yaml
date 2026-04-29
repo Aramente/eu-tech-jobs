@@ -1,0 +1,7 @@
+name: Yousician
+country: FI
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: yousician

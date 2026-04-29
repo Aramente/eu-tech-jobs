@@ -1,0 +1,7 @@
+name: CarbonChain
+country: GB
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: carbonchain

@@ -1,0 +1,8 @@
+name: Bird
+country: NL
+categories:
+- tech
+- oss
+ats:
+  provider: greenhouse
+  handle: bird

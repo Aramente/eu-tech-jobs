@@ -1,0 +1,7 @@
+name: Station
+country: FR
+categories:
+- tech
+ats:
+  provider: personio
+  handle: station

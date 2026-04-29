@@ -65,9 +65,10 @@ function md(s: string): string {
           <strong>Apply on {job.source} →</strong>
         </a>
       </p>
-      {job.description_md && (
-        <div class="desc" set:html={md(job.description_md)} />
-      )}
+      <p class="meta">
+        Full job description on {job.source}'s site (we don't mirror descriptions —
+        the source ATS is always authoritative). Use the link above.
+      </p>
     </article>
   </main>
   <footer>

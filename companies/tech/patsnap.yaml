@@ -1,0 +1,7 @@
+name: PatSnap
+country: GB
+categories:
+- tech
+ats:
+  provider: lever
+  handle: patsnap

@@ -1,0 +1,7 @@
+name: Superside
+country: 'NO'
+categories:
+- tech
+ats:
+  provider: lever
+  handle: superside

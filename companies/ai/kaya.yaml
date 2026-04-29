@@ -1,0 +1,7 @@
+name: Kaya
+country: DE
+categories:
+- ai
+ats:
+  provider: personio
+  handle: kaya

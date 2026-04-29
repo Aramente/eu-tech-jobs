@@ -4,11 +4,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "node scripts/parquet-to-json.mjs",
-    "predev": "node scripts/parquet-to-json.mjs",
+    "prebuild": "node --max-old-space-size=8192 scripts/parquet-to-json.mjs",
+    "predev": "node --max-old-space-size=8192 scripts/parquet-to-json.mjs",
     "postbuild": "pagefind --site dist",
-    "build": "astro build",
-    "dev": "astro dev",
+    "build": "NODE_OPTIONS='--max-old-space-size=8192' astro build",
+    "dev": "NODE_OPTIONS='--max-old-space-size=8192' astro dev",
     "preview": "astro preview"
   },
   "dependencies": {

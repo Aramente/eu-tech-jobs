@@ -1,0 +1,7 @@
+name: Parallel
+country: GB
+categories:
+- ai
+ats:
+  provider: greenhouse
+  handle: parallel

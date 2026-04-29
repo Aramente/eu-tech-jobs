@@ -33,6 +33,9 @@ function isoDate(v) {
   return new Date(n * 1000).toISOString();
 }
 
+// description_md is intentionally omitted from the lite payload — at scale
+// (~20k jobs × multi-KB descriptions) the JSON.stringify call OOMs Node.
+// Per-job pages link out to the source ATS for the full description.
 const jobsLite = jobs.map((j) => ({
   id: j.id,
   company_slug: j.company_slug,
@@ -44,7 +47,6 @@ const jobsLite = jobs.map((j) => ({
   remote_policy: j.remote_policy,
   seniority: j.seniority,
   role_family: j.role_family,
-  description_md: j.description_md || "",
 }));
 
 const companiesByslug = Object.fromEntries(companies.map((c) => [c.slug, c]));

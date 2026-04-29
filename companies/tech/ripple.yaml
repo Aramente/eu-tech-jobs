@@ -1,0 +1,7 @@
+name: Ripple
+country: GB
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: ripple

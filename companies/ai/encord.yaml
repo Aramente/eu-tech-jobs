@@ -1,0 +1,7 @@
+name: Encord
+country: GB
+categories:
+- ai
+ats:
+  provider: ashby
+  handle: encord

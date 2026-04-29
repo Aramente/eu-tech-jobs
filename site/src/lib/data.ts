@@ -13,7 +13,6 @@ export type Job = {
   remote_policy: string | null;
   seniority: string | null;
   role_family: string | null;
-  description_md: string;
 };
 
 export type Company = {

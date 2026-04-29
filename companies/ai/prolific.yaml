@@ -1,0 +1,8 @@
+name: Prolific
+country: GB
+categories:
+- ai
+- research
+ats:
+  provider: greenhouse
+  handle: prolific
