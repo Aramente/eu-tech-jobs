@@ -1,17 +1,19 @@
 {
-  "name": "ai-startups-site",
+  "name": "eu-tech-jobs-site",
   "type": "module",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "prebuild": "node scripts/parquet-to-json.mjs",
     "predev": "node scripts/parquet-to-json.mjs",
+    "postbuild": "pagefind --site dist",
     "build": "astro build",
     "dev": "astro dev",
     "preview": "astro preview"
   },
   "dependencies": {
     "astro": "^5.0.0",
-    "hyparquet": "^1.10.0"
+    "hyparquet": "^1.10.0",
+    "pagefind": "^1.1.0"
   }
 }

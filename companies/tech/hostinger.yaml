@@ -1,0 +1,7 @@
+name: Hostinger
+country: LT
+categories:
+- tech
+ats:
+  provider: lever
+  handle: hostinger

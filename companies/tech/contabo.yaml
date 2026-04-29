@@ -1,0 +1,7 @@
+name: Contabo
+country: DE
+categories:
+- tech
+ats:
+  provider: personio
+  handle: contabo

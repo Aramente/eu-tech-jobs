@@ -111,6 +111,41 @@ def diff_cmd(output_dir: Path, diff_date: str | None, verbose: bool) -> None:
         click.echo("✓ slack posted")
 
 
+@cli.command("enrich")
+@click.option("--seed-dir", default="companies", type=click.Path(path_type=Path))
+@click.option("-v", "--verbose", is_flag=True)
+def enrich_cmd(seed_dir: Path, verbose: bool) -> None:
+    """Enrich curated companies with GitHub-org signals (oss, stars, language)."""
+    import asyncio as _asyncio
+
+    import yaml
+
+    from pipeline.enrich.company import enrich_all
+
+    _setup_logging(verbose)
+    companies = load_companies(seed_dir)
+    enriched = _asyncio.run(enrich_all(companies))
+    # Write back to YAMLs (preserving filename = slug structure)
+    updated = 0
+    for c in enriched:
+        if not c.github_org:
+            continue
+        # Find original path
+        for path in seed_dir.rglob(f"{c.slug}.yaml"):
+            data = yaml.safe_load(path.read_text())
+            changed = False
+            for field in ("oss_signal", "top_repo_stars", "primary_language"):
+                v = getattr(c, field)
+                if v is not None and data.get(field) != v:
+                    data[field] = v
+                    changed = True
+            if changed:
+                path.write_text(yaml.safe_dump(data, sort_keys=False, allow_unicode=True))
+                updated += 1
+            break
+    click.echo(f"✓ enriched {updated} company YAMLs")
+
+
 @cli.command("publish")
 @click.option("--output-dir", default="data", type=click.Path(path_type=Path))
 @click.option(

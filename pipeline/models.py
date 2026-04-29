@@ -72,7 +72,9 @@ class Company(BaseModel):
     slug: str = Field(min_length=1, max_length=64, pattern=r"^[a-z0-9][a-z0-9\-]*$")
     name: str
     country: str = Field(min_length=2, max_length=2, description="ISO 3166-1 alpha-2")
-    categories: list[Literal["ai", "tech", "oss", "remote-eu"]] = Field(default_factory=list)
+    categories: list[Literal["ai", "tech", "oss", "remote-eu", "research"]] = Field(
+        default_factory=list
+    )
     ats: ATSReference | None = None
     career_url: str | None = None
     github_org: str | None = None

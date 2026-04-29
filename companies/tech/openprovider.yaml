@@ -1,0 +1,7 @@
+name: Openprovider
+country: NL
+categories:
+- tech
+ats:
+  provider: personio
+  handle: openprovider

@@ -1,0 +1,8 @@
+name: NXAI
+country: AT
+categories:
+- ai
+- research
+ats:
+  provider: personio
+  handle: nxai

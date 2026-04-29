@@ -1,0 +1,7 @@
+name: IONOS
+country: DE
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: ionos

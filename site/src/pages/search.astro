@@ -1,0 +1,30 @@
+---
+import Base from "../layouts/Base.astro";
+const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + "/";
+---
+<Base title="Search jobs — eu-tech-jobs">
+  <header>
+    <h1>Search</h1>
+    <p class="lede">
+      <a href={base}>← Back</a> · Full-text search across job titles + descriptions.
+    </p>
+  </header>
+  <main>
+    <link rel="stylesheet" href={`${base}pagefind/pagefind-ui.css`} />
+    <div id="search"></div>
+    <script type="module">
+      import { PagefindUI } from {`"${import.meta.env.BASE_URL.replace(/\/$/, "")}/pagefind/pagefind-ui.js"`};
+    </script>
+    <script is:inline define:vars={{ base }}>
+      window.addEventListener("load", () => {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.textContent = `
+          import { PagefindUI } from "${base}pagefind/pagefind-ui.js";
+          new PagefindUI({ element: "#search", showSubResults: false });
+        `;
+        document.body.appendChild(script);
+      });
+    </script>
+  </main>
+</Base>

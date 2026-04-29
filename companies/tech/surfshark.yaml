@@ -1,0 +1,7 @@
+name: Surfshark
+country: NL
+categories:
+- tech
+ats:
+  provider: lever
+  handle: surfshark

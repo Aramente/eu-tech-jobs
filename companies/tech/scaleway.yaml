@@ -1,0 +1,7 @@
+name: Scaleway
+country: FR
+categories:
+- tech
+ats:
+  provider: lever
+  handle: scaleway

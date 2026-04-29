@@ -1,0 +1,7 @@
+name: JetBrains
+country: CZ
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: jetbrains

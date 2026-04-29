@@ -15,6 +15,7 @@ from pathlib import Path
 import httpx
 
 from pipeline import __version__
+from pipeline.aggregators import AGGREGATORS
 from pipeline.extractors import EXTRACTORS, ExtractorError
 from pipeline.models import (
     Company,
@@ -117,27 +118,67 @@ async def run_pipeline(
     logger.info("Pipeline run: %d companies", len(companies))
 
     sem = asyncio.Semaphore(concurrency)
+    extractor_results: list[ExtractorResult] = []
+    all_jobs: list[Job] = []
+    aggregator_companies: list[Company] = []
     async with httpx.AsyncClient(timeout=30.0) as client:
+        # 1) ATS extractors (per curated company)
         results = await asyncio.gather(
             *(_run_one(c, client, sem) for c in companies)
         )
+        for jobs, result in results:
+            all_jobs.extend(jobs)
+            extractor_results.append(result)
 
-    all_jobs: list[Job] = []
-    extractor_results: list[ExtractorResult] = []
-    for jobs, result in results:
-        all_jobs.extend(jobs)
-        extractor_results.append(result)
+        # 2) Aggregators (multi-company sources). Skipped when company_glob restricts run.
+        if not company_glob:
+            seen_urls = {j.url for j in all_jobs}
+            for agg in AGGREGATORS:
+                started = time.perf_counter()
+                try:
+                    agg_companies, agg_jobs = await agg.fetch_all(client=client)
+                except Exception as exc:  # noqa: BLE001
+                    logger.warning("aggregator=%s error=%s", agg.NAME, exc)
+                    extractor_results.append(
+                        ExtractorResult(
+                            extractor=agg.NAME,
+                            company_slug="(aggregator)",
+                            success=False,
+                            duration_ms=int((time.perf_counter() - started) * 1000),
+                            error=f"{type(exc).__name__}: {exc}",
+                        )
+                    )
+                    continue
+                # Dedupe: drop aggregator jobs whose URL we already have from ATS
+                deduped = [j for j in agg_jobs if j.url not in seen_urls]
+                seen_urls.update(j.url for j in deduped)
+                all_jobs.extend(deduped)
+                aggregator_companies.extend(agg_companies)
+                extractor_results.append(
+                    ExtractorResult(
+                        extractor=agg.NAME,
+                        company_slug="(aggregator)",
+                        success=True,
+                        job_count=len(deduped),
+                        duration_ms=int((time.perf_counter() - started) * 1000),
+                    )
+                )
+
+    # Merge curated + aggregator companies (curated wins on slug clash)
+    merged_companies = {c.slug: c for c in aggregator_companies}
+    merged_companies.update({c.slug: c for c in companies})
+    final_companies = list(merged_companies.values())
 
     metadata = PipelineMetadata(
         run_at=utcnow(),
         pipeline_version=__version__,
-        company_count=len(companies),
+        company_count=len(final_companies),
         job_count=len(all_jobs),
         extractor_results=extractor_results,
     )
     snapshot = Snapshot(
         snapshot_date=snapshot_date or date.today(),
-        companies=companies,
+        companies=final_companies,
         jobs=all_jobs,
         metadata=metadata,
     )

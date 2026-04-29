@@ -1,0 +1,7 @@
+name: Omnisend
+country: LT
+categories:
+- tech
+ats:
+  provider: lever
+  handle: omnisend

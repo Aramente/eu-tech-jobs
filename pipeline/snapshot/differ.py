@@ -110,14 +110,25 @@ def diff_from_paths(today_parquet: Path, yesterday_parquet: Path | None, diff_da
     return diff_snapshots(today_jobs, yesterday_jobs, diff_date)
 
 
+_DIFF_JOB_KEYS = ("id", "company_slug", "title", "url", "location", "source", "posted_at")
+
+
 def write_diff(diff: Diff, output_dir: Path) -> dict[str, Path]:
-    """Persist diff as JSONL (RSS-friendly)."""
+    """Persist diff as JSONL (RSS-friendly).
+
+    For new jobs we keep only summary fields (no `description_md`) — the full
+    job is already in the snapshot parquet, so storing it twice is wasteful
+    and can blow past GitHub's 100MB file limit on day-one runs with no prior
+    snapshot to diff against.
+    """
     diffs_dir = output_dir / "diffs"
     diffs_dir.mkdir(parents=True, exist_ok=True)
     jsonl_path = diffs_dir / f"{diff.diff_date.isoformat()}-diff.jsonl"
     lines: list[str] = []
     for j in diff.new_jobs:
-        lines.append(json.dumps({"event": "new", **j.model_dump(mode="json")}, default=str))
+        full = j.model_dump(mode="json")
+        summary = {k: full.get(k) for k in _DIFF_JOB_KEYS}
+        lines.append(json.dumps({"event": "new", **summary}, default=str))
     for jid in diff.removed_job_ids:
         lines.append(json.dumps({"event": "removed", "id": jid}))
     for ch in diff.changed:

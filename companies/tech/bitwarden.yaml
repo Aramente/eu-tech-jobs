@@ -1,0 +1,9 @@
+name: Bitwarden
+country: US
+categories:
+- tech
+- oss
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: bitwarden

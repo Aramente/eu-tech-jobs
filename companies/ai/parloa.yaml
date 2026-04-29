@@ -1,0 +1,7 @@
+name: Parloa
+country: DE
+categories:
+- ai
+ats:
+  provider: greenhouse
+  handle: parloa

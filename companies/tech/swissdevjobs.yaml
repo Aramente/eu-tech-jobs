@@ -1,0 +1,7 @@
+name: SwissDevJobs
+country: CH
+categories:
+- tech
+ats:
+  provider: smartrecruiters
+  handle: swissdevjobs

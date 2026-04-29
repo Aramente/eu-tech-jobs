@@ -1,0 +1,7 @@
+name: trivago
+country: DE
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: trivago

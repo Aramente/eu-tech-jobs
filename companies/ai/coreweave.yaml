@@ -1,0 +1,9 @@
+name: CoreWeave
+country: US
+categories:
+- ai
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: coreweave

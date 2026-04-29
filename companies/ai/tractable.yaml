@@ -1,0 +1,7 @@
+name: Tractable
+country: GB
+categories:
+- ai
+ats:
+  provider: personio
+  handle: tractable

@@ -39,8 +39,12 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
     </div>
   </header>
   <main>
+    <p class="meta">
+      <a href={`${base}search/`}>Full-text search →</a>
+      (Pagefind index across all job descriptions, regenerated nightly)
+    </p>
     <div class="filters">
-      <input id="search" type="search" placeholder="Search title, company, or location…" />
+      <input id="search" type="search" placeholder="Quick filter (this page)…" />
       <select id="country">
         <option value="">All countries</option>
         {countries.map((c) => <option value={c}>{c}</option>)}

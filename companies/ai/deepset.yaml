@@ -1,0 +1,8 @@
+name: deepset
+country: DE
+categories:
+- ai
+- oss
+ats:
+  provider: personio
+  handle: deepset

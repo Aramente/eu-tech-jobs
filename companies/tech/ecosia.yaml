@@ -1,0 +1,7 @@
+name: Ecosia
+country: DE
+categories:
+- tech
+ats:
+  provider: personio
+  handle: ecosia
