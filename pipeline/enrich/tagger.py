@@ -19,6 +19,7 @@ import os
 import re
 from typing import Any
 
+from pipeline.enrich.prompts import DEFAULT_VARIANT, VARIANTS, build_messages
 from pipeline.models import Job, RoleFamily, Seniority
 
 logger = logging.getLogger(__name__)
@@ -69,16 +70,74 @@ _VALID_ROLE: set[RoleFamily] = {  # type: ignore[arg-type]
 }
 
 
+# Defensive synonym mapping — DeepSeek occasionally returns close-but-not-
+# canonical values ("engineer" vs "engineering"). Mapping these to the
+# canonical form *before* the strict allowlist check recovers data that
+# would otherwise be nulled.
+_ROLE_SYNONYMS = {
+    "engineer": "engineering",
+    "developer": "engineering",
+    "dev": "engineering",
+    "swe": "engineering",
+    "software engineering": "engineering",
+    "software": "engineering",
+    "devops": "engineering",
+    "ml": "ml-ai",
+    "ai": "ml-ai",
+    "ml/ai": "ml-ai",
+    "ai/ml": "ml-ai",
+    "machine learning": "ml-ai",
+    "machine-learning": "ml-ai",
+    "ai engineering": "ml-ai",
+    "data engineering": "data",
+    "data science": "data",
+    "data engineer": "data",
+    "data scientist": "data",
+    "analytics": "data",
+    "product management": "product",
+    "pm": "product",
+    "designer": "design",
+    "ux": "design",
+    "ui": "design",
+    "ux/ui": "design",
+    "graphic design": "design",
+    "ae": "sales",
+    "sdr": "sales",
+    "bdr": "sales",
+    "account executive": "sales",
+    "business development": "sales",
+    "growth": "marketing",
+    "operations": "ops",
+    "customer success": "support",
+    "cs": "support",
+    "accounting": "finance",
+    "compliance": "legal",
+    "people": "hr",
+    "talent": "hr",
+    "recruiting": "hr",
+    "recruiter": "hr",
+    "people operations": "hr",
+    "researcher": "research",
+}
+
+
+def _canon_role(value: str | None) -> str | None:
+    if not value or not isinstance(value, str):
+        return None
+    v = value.strip().lower()
+    if v in _VALID_ROLE:
+        return v
+    if v in _ROLE_SYNONYMS:
+        return _ROLE_SYNONYMS[v]
+    return None
+
+
 def build_prompt(job: Job, stripped: str) -> str:
-    """Construct the user prompt. Title + cleaned description only."""
-    return (
-        "Extract structured fields from this job posting. "
-        "Return JSON with keys: seniority, role_family, remote_policy, "
-        "visa_sponsorship, stack (list), languages (list — human languages, ISO 639-1 codes). "
-        "If a field is not stated, return null. Do NOT infer values.\n\n"
-        f"Title: {job.title}\n\n"
-        f"Description:\n{stripped[:6000]}"
-    )
+    """Backwards-compat shim — emits the V0 user prompt for old call sites."""
+    from pipeline.enrich.prompts import VARIANTS as _V
+
+    _, builder = _V["v0_current"]
+    return builder(job.title, stripped)
 
 
 def _ground(values: list[str], source: str) -> list[str]:
@@ -90,16 +149,26 @@ def _ground(values: list[str], source: str) -> list[str]:
 
 
 def normalize_response(raw: dict[str, Any], source_text: str) -> dict[str, Any]:
-    """Validate + ground the LLM's structured output."""
+    """Validate + ground the LLM's structured output.
+
+    For classifications (seniority, role_family, remote_policy): map case
+    variants and common synonyms to the canonical allowlist. Unknown values
+    fall back to null. For extractions (stack, languages): keep the
+    case-insensitive substring grounding check unchanged.
+    """
     out: dict[str, Any] = {}
     sen = raw.get("seniority")
-    out["seniority"] = sen if sen in _VALID_SENIORITY else None
-    role = raw.get("role_family")
-    out["role_family"] = role if role in _VALID_ROLE else None
+    if isinstance(sen, str) and sen.strip().lower() in _VALID_SENIORITY:
+        out["seniority"] = sen.strip().lower()
+    else:
+        out["seniority"] = None
+    out["role_family"] = _canon_role(raw.get("role_family"))
     rp = raw.get("remote_policy")
-    out["remote_policy"] = rp if rp in {
-        "onsite", "hybrid", "remote", "remote-eu", "remote-global"
-    } else None
+    valid_rp = {"onsite", "hybrid", "remote", "remote-eu", "remote-global"}
+    if isinstance(rp, str) and rp.strip().lower() in valid_rp:
+        out["remote_policy"] = rp.strip().lower()
+    else:
+        out["remote_policy"] = None
     visa = raw.get("visa_sponsorship")
     out["visa_sponsorship"] = visa if isinstance(visa, bool) else None
     stack_raw = raw.get("stack") or []
@@ -156,8 +225,18 @@ def is_configured() -> bool:
     return selected_provider() is not None
 
 
-def call_llm(prompt: str, *, model: str | None = None) -> dict[str, Any]:
-    """Call the configured LLM provider (DeepSeek or Mistral). Lazy SDK import."""
+def call_llm(
+    title: str,
+    description: str,
+    *,
+    variant: str = DEFAULT_VARIANT,
+    model: str | None = None,
+) -> tuple[dict[str, Any], dict[str, int]]:
+    """Call the configured LLM provider (DeepSeek or Mistral) with one of the
+    prompt variants. Returns (parsed_json, token_usage_dict).
+
+    Lazy SDK import keeps tests fast.
+    """
     provider = selected_provider()
     if not provider:
         raise TaggerConfigError(
@@ -175,35 +254,63 @@ def call_llm(prompt: str, *, model: str | None = None) -> dict[str, Any]:
         api_key=os.environ[cfg["env_key"]],
         base_url=cfg["base_url"],
     )
+    messages = build_messages(variant, title, description)
     resp = client.chat.completions.create(
         model=model or cfg["model"],
-        messages=[
-            {"role": "system", "content": _SYSTEM},
-            {"role": "user", "content": prompt},
-        ],
+        messages=messages,
         response_format={"type": "json_object"},
         temperature=0.0,
     )
     content = resp.choices[0].message.content
-    return json.loads(content if isinstance(content, str) else "{}")
+    parsed = json.loads(content if isinstance(content, str) else "{}")
+    usage = {
+        "prompt_tokens": getattr(resp.usage, "prompt_tokens", 0) or 0,
+        "completion_tokens": getattr(resp.usage, "completion_tokens", 0) or 0,
+        "total_tokens": getattr(resp.usage, "total_tokens", 0) or 0,
+    }
+    return parsed, usage
 
 
-# Backwards-compat alias (was Mistral-only).
-call_mistral = call_llm
+# Backwards-compat shim — old call signature `call_mistral(prompt_str)`.
+def call_mistral(prompt: str, *, model: str | None = None) -> dict[str, Any]:
+    """Legacy entrypoint. Splits the prompt into title+description heuristically.
+
+    Prefer call_llm(title, description, variant=...) in new code.
+    """
+    title = ""
+    description = prompt
+    if "Title: " in prompt:
+        head, _, tail = prompt.partition("Title: ")
+        if "\n\n" in tail:
+            title_line, _, after = tail.partition("\n\n")
+            title = title_line.strip()
+            if after.startswith("Description:"):
+                description = after[len("Description:"):].strip()
+            else:
+                description = after
+    parsed, _ = call_llm(title, description, variant="v0_current", model=model)
+    return parsed
 
 
-def tag_job(job: Job) -> Job:
-    """Tag a single job in place. No-op when no LLM provider is configured."""
-    if not is_configured():
+def tag_job(job: Job, *, variant: str = DEFAULT_VARIANT) -> Job:
+    """Tag a single job in place. No-op when no LLM provider is configured.
+
+    Unlike the previous version, we DO call the LLM even when the description
+    is empty — many sources (Ashby, JustJoin.it, aggregators) ship title-only,
+    and a title alone like "Senior ML Engineer" is enough to classify
+    role_family + seniority. The V1/V2 prompts handle the empty-description
+    case explicitly.
+    """
+    if not is_configured() or variant not in VARIANTS:
         return job
     stripped = strip_boilerplate(job.description_md)
-    if not stripped:
-        return job
-    prompt = build_prompt(job, stripped)
+    if not job.title.strip():
+        return job  # nothing to work with at all
     try:
-        raw = call_llm(prompt)
+        raw, _usage = call_llm(job.title, stripped, variant=variant)
     except Exception as exc:  # noqa: BLE001 — never break the run on tagger errors
         logger.warning("tagger error for %s: %s", job.id, exc)
         return job
+    # Grounding source: original description (LLM might cite words from it).
     fields = normalize_response(raw, stripped)
     return job.model_copy(update=fields)

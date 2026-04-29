@@ -150,8 +150,25 @@ def enrich_cmd(seed_dir: Path, verbose: bool) -> None:
 @click.option("--seed-dir", default="companies", type=click.Path(path_type=Path))
 @click.option("--output-dir", default="data", type=click.Path(path_type=Path))
 @click.option("--limit", default=None, type=int, help="Cap the number of jobs to tag.")
+@click.option(
+    "--variant",
+    default=None,
+    help="Prompt variant (default: pipeline.enrich.prompts.DEFAULT_VARIANT).",
+)
+@click.option(
+    "--retag-all",
+    is_flag=True,
+    help="Re-tag every job, not just untagged ones (use after a prompt change).",
+)
 @click.option("-v", "--verbose", is_flag=True)
-def tag_cmd(seed_dir: Path, output_dir: Path, limit: int | None, verbose: bool) -> None:
+def tag_cmd(
+    seed_dir: Path,
+    output_dir: Path,
+    limit: int | None,
+    variant: str | None,
+    retag_all: bool,
+    verbose: bool,
+) -> None:
     """Tag the latest snapshot's jobs with seniority/role/stack via DeepSeek (or Mistral).
 
     No-op when no LLM provider is configured (DEEPSEEK_API_KEY or
@@ -163,6 +180,7 @@ def tag_cmd(seed_dir: Path, output_dir: Path, limit: int | None, verbose: bool) 
 
     import pyarrow.parquet as _pq
 
+    from pipeline.enrich.prompts import DEFAULT_VARIANT
     from pipeline.enrich.tagger import is_configured, selected_provider, tag_job
     from pipeline.models import PipelineMetadata, Snapshot, utcnow
     from pipeline.snapshot.differ import _row_to_job
@@ -175,7 +193,10 @@ def tag_cmd(seed_dir: Path, output_dir: Path, limit: int | None, verbose: bool) 
             err=True,
         )
         return
-    click.echo(f"Tagger active: provider = {selected_provider()}")
+    chosen_variant = variant or DEFAULT_VARIANT
+    click.echo(
+        f"Tagger active: provider = {selected_provider()}, variant = {chosen_variant}"
+    )
 
     parquet = output_dir / "latest" / "jobs.parquet"
     if not parquet.exists():
@@ -183,15 +204,23 @@ def tag_cmd(seed_dir: Path, output_dir: Path, limit: int | None, verbose: bool) 
         raise SystemExit(1)
     rows = _pq.read_table(parquet).to_pylist()
     jobs = [_row_to_job(r) for r in rows]
-    untagged = [j for j in jobs if j.role_family is None and j.seniority is None]
-    click.echo(f"{len(jobs)} jobs in snapshot; {len(untagged)} untagged.")
-    targets = untagged if limit is None else untagged[:limit]
+    if retag_all:
+        targets_pool = jobs
+    else:
+        targets_pool = [
+            j for j in jobs if j.role_family is None and j.seniority is None
+        ]
+    click.echo(
+        f"{len(jobs)} jobs in snapshot; {len(targets_pool)} target(s) "
+        f"({'retag-all' if retag_all else 'untagged-only'})."
+    )
+    targets = targets_pool if limit is None else targets_pool[:limit]
     click.echo(f"Tagging {len(targets)} jobs…")
 
     tagged_by_id: dict[str, object] = {}
     started = _time.time()
     for i, j in enumerate(targets, 1):
-        tagged_by_id[j.id] = tag_job(j)
+        tagged_by_id[j.id] = tag_job(j, variant=chosen_variant)
         if i % 50 == 0:
             elapsed = _time.time() - started
             click.echo(f"  {i}/{len(targets)} ({elapsed:.0f}s elapsed)")
