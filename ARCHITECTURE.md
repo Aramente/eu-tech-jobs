@@ -1,6 +1,6 @@
 # Architecture
 
-> The full plan lives at [Aramente vault → docs/superpowers/plans/2026-04-29-ai-startups-jobboard-plan.md]; this file is the public-facing summary.
+> The full plan lives at [Aramente vault → docs/superpowers/plans/2026-04-29-eu-tech-jobs-plan.md]; this file is the public-facing summary.
 
 ## Pipeline shape (v0)
 

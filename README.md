@@ -1,13 +1,13 @@
-# ai-startups
+# eu-tech-jobs
 
 > Daily-updated open-data jobboard covering the EU AI / tech / OSS ecosystem.
 
-[![Daily pipeline](https://github.com/Aramente/ai-startups/actions/workflows/daily.yml/badge.svg)](https://github.com/Aramente/ai-startups/actions/workflows/daily.yml)
-[![Tests](https://github.com/Aramente/ai-startups/actions/workflows/tests.yml/badge.svg)](https://github.com/Aramente/ai-startups/actions/workflows/tests.yml)
+[![Daily pipeline](https://github.com/Aramente/eu-tech-jobs/actions/workflows/daily.yml/badge.svg)](https://github.com/Aramente/eu-tech-jobs/actions/workflows/daily.yml)
+[![Tests](https://github.com/Aramente/eu-tech-jobs/actions/workflows/tests.yml/badge.svg)](https://github.com/Aramente/eu-tech-jobs/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
 [![Data License: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](DATA_LICENSE)
 
-- **Live site:** https://aramente.github.io/ai-startups/
+- **Live site:** https://aramente.github.io/eu-tech-jobs/
 - **Dataset:** https://huggingface.co/datasets/Aramente/eu-tech-jobs *(published from v1)*
 
 ## What this is

@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 
 export default defineConfig({
   site: "https://aramente.github.io",
-  base: "/ai-startups",
+  base: "/eu-tech-jobs",
   trailingSlash: "ignore",
   build: {
     assets: "_assets",

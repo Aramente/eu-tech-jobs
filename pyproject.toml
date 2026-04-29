@@ -1,5 +1,5 @@
 [project]
-name = "ai-startups"
+name = "eu-tech-jobs"
 version = "0.1.0"
 description = "Daily-updated open-data jobboard covering the EU AI/tech ecosystem."
 readme = "README.md"
