@@ -28,8 +28,10 @@ jobs:
         run: uv run pipeline run -v
       - name: Tag jobs (DeepSeek / Mistral)
         env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          # Repo secrets are stored as DEEPSEEK / MISTRAL — map to the
+          # env-var names the pipeline code reads (*_API_KEY).
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL }}
         run: uv run pipeline tag --limit 1000 -v
         continue-on-error: true
       - name: Compute diff + RSS + alerts
@@ -40,7 +42,7 @@ jobs:
         continue-on-error: true
       - name: Push to Hugging Face Dataset
         env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF }}
         run: uv run pipeline publish
         continue-on-error: true
       - name: Commit data
