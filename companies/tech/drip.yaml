@@ -1,0 +1,8 @@
+name: Drip
+country: BR
+categories:
+- tech
+- remote-eu
+ats:
+  provider: personio
+  handle: drip

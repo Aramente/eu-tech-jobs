@@ -1,0 +1,8 @@
+name: Tractian
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: lever
+  handle: tractian

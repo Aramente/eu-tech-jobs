@@ -1,0 +1,9 @@
+name: Phoenix
+country: CA
+categories:
+- tech
+- research
+- remote-eu
+ats:
+  provider: personio
+  handle: phoenix

@@ -1,0 +1,8 @@
+name: Pantheon
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: pantheon

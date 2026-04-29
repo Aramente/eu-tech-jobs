@@ -1,0 +1,8 @@
+name: Clickup
+country: XX
+categories:
+- tech
+- remote-eu
+ats:
+  provider: ashby
+  handle: clickup

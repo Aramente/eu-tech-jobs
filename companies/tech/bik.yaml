@@ -1,0 +1,8 @@
+name: BIK
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: personio
+  handle: bik

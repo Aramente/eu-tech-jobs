@@ -1,0 +1,8 @@
+name: June
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: personio
+  handle: june

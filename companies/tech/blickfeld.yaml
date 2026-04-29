@@ -1,0 +1,8 @@
+name: Blickfeld
+country: XX
+categories:
+- tech
+- remote-eu
+ats:
+  provider: personio
+  handle: blickfeld

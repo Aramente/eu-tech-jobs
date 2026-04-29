@@ -1,0 +1,8 @@
+name: Exb
+country: XX
+categories:
+- tech
+- remote-eu
+ats:
+  provider: personio
+  handle: exb

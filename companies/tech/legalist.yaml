@@ -1,0 +1,8 @@
+name: Legalist
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: legalist

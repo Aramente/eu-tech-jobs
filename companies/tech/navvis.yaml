@@ -1,0 +1,8 @@
+name: Navvis
+country: XX
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: navvis

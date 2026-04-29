@@ -1,0 +1,8 @@
+name: Pingcap
+country: XX
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: pingcap

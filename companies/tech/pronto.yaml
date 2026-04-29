@@ -1,0 +1,8 @@
+name: Pronto
+country: MX
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: pronto

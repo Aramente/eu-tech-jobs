@@ -1,0 +1,9 @@
+name: Sonia
+country: US
+categories:
+- tech
+- research
+- remote-eu
+ats:
+  provider: personio
+  handle: sonia

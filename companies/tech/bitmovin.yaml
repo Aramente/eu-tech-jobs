@@ -1,0 +1,8 @@
+name: Bitmovin
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: bitmovin

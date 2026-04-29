@@ -1,0 +1,8 @@
+name: Syncro
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: syncro

@@ -1,0 +1,9 @@
+name: Nucleo
+country: XX
+categories:
+- tech
+- research
+- remote-eu
+ats:
+  provider: personio
+  handle: nucleo

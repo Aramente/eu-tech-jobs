@@ -1,0 +1,8 @@
+name: Link
+country: XX
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: link

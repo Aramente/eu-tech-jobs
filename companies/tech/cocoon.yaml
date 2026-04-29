@@ -1,0 +1,8 @@
+name: Cocoon
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: cocoon

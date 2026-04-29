@@ -1,0 +1,9 @@
+name: Ophelia
+country: US
+categories:
+- tech
+- research
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: ophelia

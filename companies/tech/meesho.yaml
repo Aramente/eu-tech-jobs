@@ -1,0 +1,8 @@
+name: Meesho
+country: IN
+categories:
+- tech
+- remote-eu
+ats:
+  provider: lever
+  handle: meesho

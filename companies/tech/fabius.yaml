@@ -1,0 +1,8 @@
+name: Fabius
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: personio
+  handle: fabius

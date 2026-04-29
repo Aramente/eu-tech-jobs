@@ -1,0 +1,9 @@
+name: Pulse
+country: IN
+categories:
+- tech
+- research
+- remote-eu
+ats:
+  provider: ashby
+  handle: pulse

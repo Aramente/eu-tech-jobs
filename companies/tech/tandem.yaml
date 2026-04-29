@@ -1,0 +1,8 @@
+name: Tandem
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: personio
+  handle: tandem

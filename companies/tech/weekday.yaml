@@ -1,0 +1,8 @@
+name: Weekday
+country: IN
+categories:
+- tech
+- remote-eu
+ats:
+  provider: recruitee
+  handle: weekday

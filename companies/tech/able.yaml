@@ -1,0 +1,8 @@
+name: Able
+country: IN
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: able

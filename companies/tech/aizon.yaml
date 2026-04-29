@@ -1,0 +1,8 @@
+name: Aizon
+country: XX
+categories:
+- tech
+- remote-eu
+ats:
+  provider: lever
+  handle: aizon

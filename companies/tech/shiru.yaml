@@ -1,0 +1,9 @@
+name: Shiru
+country: US
+categories:
+- tech
+- research
+- remote-eu
+ats:
+  provider: lever
+  handle: shiru

@@ -1,0 +1,8 @@
+name: SEND
+country: NG
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: send

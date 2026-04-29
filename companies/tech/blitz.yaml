@@ -1,0 +1,8 @@
+name: Blitz
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: personio
+  handle: blitz

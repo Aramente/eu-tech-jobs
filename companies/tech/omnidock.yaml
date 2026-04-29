@@ -1,0 +1,8 @@
+name: omnidock
+country: XX
+categories:
+- tech
+- remote-eu
+ats:
+  provider: personio
+  handle: omnidock

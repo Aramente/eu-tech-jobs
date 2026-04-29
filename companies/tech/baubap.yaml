@@ -1,0 +1,8 @@
+name: Baubap
+country: MX
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: baubap

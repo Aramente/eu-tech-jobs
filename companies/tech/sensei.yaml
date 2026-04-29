@@ -1,0 +1,8 @@
+name: Sensei
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: sensei

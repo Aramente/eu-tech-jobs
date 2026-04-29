@@ -1,0 +1,8 @@
+name: Sila
+country: XX
+categories:
+- tech
+- remote-eu
+ats:
+  provider: lever
+  handle: sila

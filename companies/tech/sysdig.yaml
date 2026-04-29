@@ -1,0 +1,8 @@
+name: Sysdig
+country: XX
+categories:
+- tech
+- remote-eu
+ats:
+  provider: lever
+  handle: sysdig

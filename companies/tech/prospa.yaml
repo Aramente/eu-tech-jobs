@@ -1,0 +1,8 @@
+name: Prospa
+country: NG
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: prospa

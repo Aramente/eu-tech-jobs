@@ -1,0 +1,9 @@
+name: Pelago
+country: US
+categories:
+- tech
+- research
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: pelago

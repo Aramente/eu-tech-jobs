@@ -1,0 +1,8 @@
+name: Roofr
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: roofr

@@ -1,0 +1,8 @@
+name: Mesh
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: mesh

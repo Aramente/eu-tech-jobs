@@ -1,0 +1,8 @@
+name: Firsthand
+country: XX
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: firsthand

@@ -1,0 +1,8 @@
+name: Zippi
+country: BR
+categories:
+- tech
+- remote-eu
+ats:
+  provider: lever
+  handle: zippi

@@ -1,0 +1,8 @@
+name: Atlas
+country: SG
+categories:
+- tech
+- remote-eu
+ats:
+  provider: personio
+  handle: atlas

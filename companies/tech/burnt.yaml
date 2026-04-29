@@ -1,0 +1,8 @@
+name: burnt
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: burnt

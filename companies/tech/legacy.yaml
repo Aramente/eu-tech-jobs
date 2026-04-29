@@ -1,0 +1,9 @@
+name: Legacy
+country: US
+categories:
+- tech
+- research
+- remote-eu
+ats:
+  provider: personio
+  handle: legacy

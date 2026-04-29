@@ -1,0 +1,8 @@
+name: Gridware
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: lever
+  handle: gridware

@@ -1,0 +1,8 @@
+name: Fintual
+country: CL
+categories:
+- tech
+- remote-eu
+ats:
+  provider: lever
+  handle: fintual

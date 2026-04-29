@@ -1,0 +1,8 @@
+name: HireSweet
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: smartrecruiters
+  handle: hiresweet

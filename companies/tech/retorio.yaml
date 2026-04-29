@@ -1,0 +1,8 @@
+name: Retorio
+country: XX
+categories:
+- tech
+- remote-eu
+ats:
+  provider: personio
+  handle: retorio

@@ -1,0 +1,8 @@
+name: Osmosis
+country: XX
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: osmosis

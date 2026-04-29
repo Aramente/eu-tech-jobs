@@ -1,0 +1,8 @@
+name: Haven
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: haven

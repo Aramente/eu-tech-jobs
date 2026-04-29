@@ -1,0 +1,8 @@
+name: LAIKA
+country: CO
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: laika

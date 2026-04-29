@@ -1,0 +1,8 @@
+name: TAG
+country: XX
+categories:
+- tech
+- remote-eu
+ats:
+  provider: lever
+  handle: tag
