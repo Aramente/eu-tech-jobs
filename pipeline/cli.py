@@ -146,6 +146,73 @@ def enrich_cmd(seed_dir: Path, verbose: bool) -> None:
     click.echo(f"✓ enriched {updated} company YAMLs")
 
 
+@cli.command("tag")
+@click.option("--seed-dir", default="companies", type=click.Path(path_type=Path))
+@click.option("--output-dir", default="data", type=click.Path(path_type=Path))
+@click.option("--limit", default=None, type=int, help="Cap the number of jobs to tag.")
+@click.option("-v", "--verbose", is_flag=True)
+def tag_cmd(seed_dir: Path, output_dir: Path, limit: int | None, verbose: bool) -> None:
+    """Tag the latest snapshot's jobs with seniority/role/stack via DeepSeek (or Mistral).
+
+    No-op when no LLM provider is configured (DEEPSEEK_API_KEY or
+    MISTRAL_API_KEY). Reads the latest jobs.parquet, tags in place, writes
+    back. Idempotent — already-tagged jobs are skipped.
+    """
+    import time as _time
+    from datetime import date as _date
+
+    import pyarrow.parquet as _pq
+
+    from pipeline.enrich.tagger import is_configured, selected_provider, tag_job
+    from pipeline.models import PipelineMetadata, Snapshot, utcnow
+    from pipeline.snapshot.differ import _row_to_job
+    from pipeline.snapshot.writer import write_snapshot
+
+    _setup_logging(verbose)
+    if not is_configured():
+        click.echo(
+            "⚠ tagger not configured (DEEPSEEK_API_KEY or MISTRAL_API_KEY unset). No-op.",
+            err=True,
+        )
+        return
+    click.echo(f"Tagger active: provider = {selected_provider()}")
+
+    parquet = output_dir / "latest" / "jobs.parquet"
+    if not parquet.exists():
+        click.echo("No latest snapshot to tag; run 'pipeline run' first.", err=True)
+        raise SystemExit(1)
+    rows = _pq.read_table(parquet).to_pylist()
+    jobs = [_row_to_job(r) for r in rows]
+    untagged = [j for j in jobs if j.role_family is None and j.seniority is None]
+    click.echo(f"{len(jobs)} jobs in snapshot; {len(untagged)} untagged.")
+    targets = untagged if limit is None else untagged[:limit]
+    click.echo(f"Tagging {len(targets)} jobs…")
+
+    tagged_by_id: dict[str, object] = {}
+    started = _time.time()
+    for i, j in enumerate(targets, 1):
+        tagged_by_id[j.id] = tag_job(j)
+        if i % 50 == 0:
+            elapsed = _time.time() - started
+            click.echo(f"  {i}/{len(targets)} ({elapsed:.0f}s elapsed)")
+    final_jobs = [tagged_by_id.get(j.id, j) for j in jobs]
+
+    companies = load_companies(seed_dir)
+    snapshot = Snapshot(
+        snapshot_date=_date.today(),
+        companies=companies,
+        jobs=final_jobs,
+        metadata=PipelineMetadata(
+            run_at=utcnow(),
+            pipeline_version="0.1.0",
+            company_count=len(companies),
+            job_count=len(final_jobs),
+        ),
+    )
+    write_snapshot(snapshot, output_dir)
+    click.echo(f"✓ wrote {len(final_jobs)} jobs ({len(targets)} freshly tagged)")
+
+
 @cli.command("publish")
 @click.option("--output-dir", default="data", type=click.Path(path_type=Path))
 @click.option(

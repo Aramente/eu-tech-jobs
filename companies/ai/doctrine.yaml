@@ -1,0 +1,8 @@
+name: Doctrine
+country: FR
+categories:
+- tech
+- ai
+ats:
+  provider: lever
+  handle: doctrine

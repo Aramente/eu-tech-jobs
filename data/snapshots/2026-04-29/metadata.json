@@ -1,15 +1,15 @@
 {
-  "run_at": "2026-04-29T19:12:10Z",
+  "run_at": "2026-04-29T19:56:35Z",
   "pipeline_version": "0.1.0",
-  "company_count": 885,
-  "job_count": 26117,
+  "company_count": 917,
+  "job_count": 26874,
   "extractor_results": [
     {
       "extractor": "ashby",
       "company_slug": "adaptyv",
       "success": true,
       "job_count": 9,
-      "duration_ms": 439,
+      "duration_ms": 252,
       "error": null
     },
     {
@@ -17,7 +17,7 @@
       "company_slug": "anima",
       "success": true,
       "job_count": 9,
-      "duration_ms": 421,
+      "duration_ms": 267,
       "error": null
     },
     {
@@ -25,7 +25,23 @@
       "company_slug": "anthropic",
       "success": true,
       "job_count": 444,
-      "duration_ms": 1666,
+      "duration_ms": 2000,
+      "error": null
+    },
+    {
+      "extractor": "greenhouse",
+      "company_slug": "argmax",
+      "success": true,
+      "job_count": 3,
+      "duration_ms": 211,
+      "error": null
+    },
+    {
+      "extractor": "personio",
+      "company_slug": "audeering",
+      "success": true,
+      "job_count": 1,
+      "duration_ms": 517,
       "error": null
     },
     {
@@ -33,7 +49,7 @@
       "company_slug": "axelera",
       "success": true,
       "job_count": 26,
-      "duration_ms": 357,
+      "duration_ms": 476,
       "error": null
     },
     {
@@ -41,7 +57,7 @@
       "company_slug": "celonis",
       "success": true,
       "job_count": 191,
-      "duration_ms": 633,
+      "duration_ms": 1634,
       "error": null
     },
     {
@@ -49,7 +65,7 @@
       "company_slug": "cleo",
       "success": true,
       "job_count": 4,
-      "duration_ms": 640,
+      "duration_ms": 217,
       "error": null
     },
     {
@@ -57,7 +73,15 @@
       "company_slug": "cohere",
       "success": true,
       "job_count": 119,
-      "duration_ms": 638,
+      "duration_ms": 433,
+      "error": null
+    },
+    {
+      "extractor": "ashby",
+      "company_slug": "comfy-org",
+      "success": true,
+      "job_count": 20,
+      "duration_ms": 362,
       "error": null
     },
     {
@@ -65,15 +89,23 @@
       "company_slug": "conveo",
       "success": true,
       "job_count": 20,
-      "duration_ms": 447,
+      "duration_ms": 438,
+      "error": null
+    },
+    {
+      "extractor": "lever",
+      "company_slug": "copilotkit",
+      "success": true,
+      "job_count": 4,
+      "duration_ms": 1644,
       "error": null
     },
     {
       "extractor": "greenhouse",
       "company_slug": "coreweave",
       "success": true,
-      "job_count": 243,
-      "duration_ms": 812,
+      "job_count": 241,
+      "duration_ms": 1045,
       "error": null
     },
     {
@@ -81,15 +113,15 @@
       "company_slug": "cosine",
       "success": true,
       "job_count": 5,
-      "duration_ms": 816,
+      "duration_ms": 764,
       "error": null
     },
     {
       "extractor": "greenhouse",
       "company_slug": "databricks",
       "success": true,
-      "job_count": 824,
-      "duration_ms": 1317,
+      "job_count": 823,
+      "duration_ms": 1499,
       "error": null
     },
     {
@@ -97,7 +129,7 @@
       "company_slug": "dataiku",
       "success": true,
       "job_count": 61,
-      "duration_ms": 898,
+      "duration_ms": 762,
       "error": null
     },
     {
@@ -105,7 +137,7 @@
       "company_slug": "deepl",
       "success": true,
       "job_count": 55,
-      "duration_ms": 900,
+      "duration_ms": 1062,
       "error": null
     },
     {
@@ -113,7 +145,7 @@
       "company_slug": "deepmind",
       "success": true,
       "job_count": 78,
-      "duration_ms": 1369,
+      "duration_ms": 724,
       "error": null
     },
     {
@@ -121,7 +153,23 @@
       "company_slug": "deepset",
       "success": true,
       "job_count": 5,
-      "duration_ms": 1670,
+      "duration_ms": 1062,
+      "error": null
+    },
+    {
+      "extractor": "greenhouse",
+      "company_slug": "descript",
+      "success": true,
+      "job_count": 24,
+      "duration_ms": 1061,
+      "error": null
+    },
+    {
+      "extractor": "lever",
+      "company_slug": "doctrine",
+      "success": true,
+      "job_count": 23,
+      "duration_ms": 3441,
       "error": null
     },
     {
@@ -129,7 +177,7 @@
       "company_slug": "dust",
       "success": true,
       "job_count": 25,
-      "duration_ms": 1339,
+      "duration_ms": 1637,
       "error": null
     },
     {
@@ -137,7 +185,7 @@
       "company_slug": "elevenlabs",
       "success": true,
       "job_count": 131,
-      "duration_ms": 1671,
+      "duration_ms": 1637,
       "error": null
     },
     {
@@ -145,7 +193,23 @@
       "company_slug": "encord",
       "success": true,
       "job_count": 66,
-      "duration_ms": 1341,
+      "duration_ms": 1636,
+      "error": null
+    },
+    {
+      "extractor": "greenhouse",
+      "company_slug": "essential",
+      "success": true,
+      "job_count": 97,
+      "duration_ms": 1679,
+      "error": null
+    },
+    {
+      "extractor": "ashby",
+      "company_slug": "firecrawl",
+      "success": true,
+      "job_count": 16,
+      "duration_ms": 1637,
       "error": null
     },
     {
@@ -153,7 +217,7 @@
       "company_slug": "freenome",
       "success": true,
       "job_count": 30,
-      "duration_ms": 1338,
+      "duration_ms": 2021,
       "error": null
     },
     {
@@ -161,7 +225,7 @@
       "company_slug": "glean",
       "success": true,
       "job_count": 1,
-      "duration_ms": 1924,
+      "duration_ms": 3608,
       "error": null
     },
     {
@@ -169,7 +233,7 @@
       "company_slug": "gradientai",
       "success": true,
       "job_count": 2,
-      "duration_ms": 1340,
+      "duration_ms": 2169,
       "error": null
     },
     {
@@ -177,7 +241,7 @@
       "company_slug": "graphcore",
       "success": true,
       "job_count": 134,
-      "duration_ms": 1920,
+      "duration_ms": 2166,
       "error": null
     },
     {
@@ -185,7 +249,7 @@
       "company_slug": "helsing",
       "success": true,
       "job_count": 106,
-      "duration_ms": 1784,
+      "duration_ms": 3349,
       "error": null
     },
     {
@@ -193,7 +257,15 @@
       "company_slug": "hive",
       "success": true,
       "job_count": 74,
-      "duration_ms": 3853,
+      "duration_ms": 3248,
+      "error": null
+    },
+    {
+      "extractor": "greenhouse",
+      "company_slug": "humansignal",
+      "success": true,
+      "job_count": 89,
+      "duration_ms": 2249,
       "error": null
     },
     {
@@ -201,7 +273,7 @@
       "company_slug": "inflectionai",
       "success": true,
       "job_count": 4,
-      "duration_ms": 1923,
+      "duration_ms": 2022,
       "error": null
     },
     {
@@ -209,7 +281,7 @@
       "company_slug": "invitris",
       "success": true,
       "job_count": 3,
-      "duration_ms": 2430,
+      "duration_ms": 2741,
       "error": null
     },
     {
@@ -217,7 +289,15 @@
       "company_slug": "isomorphiclabs",
       "success": true,
       "job_count": 28,
-      "duration_ms": 1687,
+      "duration_ms": 2642,
+      "error": null
+    },
+    {
+      "extractor": "lever",
+      "company_slug": "iterative",
+      "success": true,
+      "job_count": 5,
+      "duration_ms": 3450,
       "error": null
     },
     {
@@ -225,7 +305,7 @@
       "company_slug": "kaya",
       "success": true,
       "job_count": 6,
-      "duration_ms": 2428,
+      "duration_ms": 2707,
       "error": null
     },
     {
@@ -233,7 +313,23 @@
       "company_slug": "langdock",
       "success": true,
       "job_count": 3,
-      "duration_ms": 2430,
+      "duration_ms": 2732,
+      "error": null
+    },
+    {
+      "extractor": "greenhouse",
+      "company_slug": "lightricks",
+      "success": true,
+      "job_count": 22,
+      "duration_ms": 2416,
+      "error": null
+    },
+    {
+      "extractor": "ashby",
+      "company_slug": "liquid",
+      "success": true,
+      "job_count": 8,
+      "duration_ms": 2704,
       "error": null
     },
     {
@@ -241,7 +337,7 @@
       "company_slug": "lovable",
       "success": true,
       "job_count": 51,
-      "duration_ms": 1939,
+      "duration_ms": 2817,
       "error": null
     },
     {
@@ -249,7 +345,7 @@
       "company_slug": "machine26",
       "success": true,
       "job_count": 3,
-      "duration_ms": 2463,
+      "duration_ms": 3248,
       "error": null
     },
     {
@@ -257,7 +353,7 @@
       "company_slug": "mistral",
       "success": true,
       "job_count": 170,
-      "duration_ms": 2207,
+      "duration_ms": 3654,
       "error": null
     },
     {
@@ -265,15 +361,15 @@
       "company_slug": "moveworks",
       "success": true,
       "job_count": 54,
-      "duration_ms": 2560,
+      "duration_ms": 2940,
       "error": null
     },
     {
       "extractor": "greenhouse",
       "company_slug": "nebius",
       "success": true,
-      "job_count": 353,
-      "duration_ms": 3266,
+      "job_count": 354,
+      "duration_ms": 4255,
       "error": null
     },
     {
@@ -281,7 +377,7 @@
       "company_slug": "neuralink",
       "success": true,
       "job_count": 63,
-      "duration_ms": 2126,
+      "duration_ms": 3479,
       "error": null
     },
     {
@@ -289,7 +385,7 @@
       "company_slug": "noota",
       "success": true,
       "job_count": 1,
-      "duration_ms": 2159,
+      "duration_ms": 4501,
       "error": null
     },
     {
@@ -297,7 +393,7 @@
       "company_slug": "nuro",
       "success": true,
       "job_count": 92,
-      "duration_ms": 2426,
+      "duration_ms": 3978,
       "error": null
     },
     {
@@ -305,7 +401,7 @@
       "company_slug": "nxai",
       "success": true,
       "job_count": 3,
-      "duration_ms": 2663,
+      "duration_ms": 3815,
       "error": null
     },
     {
@@ -313,7 +409,7 @@
       "company_slug": "parallel",
       "success": true,
       "job_count": 6,
-      "duration_ms": 2687,
+      "duration_ms": 3506,
       "error": null
     },
     {
@@ -321,7 +417,7 @@
       "company_slug": "parloa",
       "success": true,
       "job_count": 60,
-      "duration_ms": 3397,
+      "duration_ms": 3799,
       "error": null
     },
     {
@@ -329,7 +425,7 @@
       "company_slug": "photoroom",
       "success": true,
       "job_count": 13,
-      "duration_ms": 2688,
+      "duration_ms": 3665,
       "error": null
     },
     {
@@ -337,7 +433,7 @@
       "company_slug": "polyai",
       "success": true,
       "job_count": 22,
-      "duration_ms": 2621,
+      "duration_ms": 4297,
       "error": null
     },
     {
@@ -345,7 +441,7 @@
       "company_slug": "poolside",
       "success": true,
       "job_count": 16,
-      "duration_ms": 3275,
+      "duration_ms": 4260,
       "error": null
     },
     {
@@ -353,7 +449,15 @@
       "company_slug": "prolific",
       "success": true,
       "job_count": 173,
-      "duration_ms": 3658,
+      "duration_ms": 4409,
+      "error": null
+    },
+    {
+      "extractor": "ashby",
+      "company_slug": "roboflow",
+      "success": true,
+      "job_count": 20,
+      "duration_ms": 3982,
       "error": null
     },
     {
@@ -361,7 +465,7 @@
       "company_slug": "shift-technology",
       "success": true,
       "job_count": 33,
-      "duration_ms": 3302,
+      "duration_ms": 4022,
       "error": null
     },
     {
@@ -369,7 +473,15 @@
       "company_slug": "speechmatics",
       "success": true,
       "job_count": 24,
-      "duration_ms": 3361,
+      "duration_ms": 3999,
+      "error": null
+    },
+    {
+      "extractor": "lever",
+      "company_slug": "spiceai",
+      "success": true,
+      "job_count": 4,
+      "duration_ms": 4268,
       "error": null
     },
     {
@@ -377,7 +489,7 @@
       "company_slug": "stability-ai",
       "success": true,
       "job_count": 13,
-      "duration_ms": 2819,
+      "duration_ms": 4505,
       "error": null
     },
     {
@@ -385,7 +497,15 @@
       "company_slug": "synthesia",
       "success": true,
       "job_count": 80,
-      "duration_ms": 3276,
+      "duration_ms": 5328,
+      "error": null
+    },
+    {
+      "extractor": "greenhouse",
+      "company_slug": "tenstorrent",
+      "success": true,
+      "job_count": 115,
+      "duration_ms": 4989,
       "error": null
     },
     {
@@ -393,7 +513,7 @@
       "company_slug": "tractable",
       "success": true,
       "job_count": 3,
-      "duration_ms": 3362,
+      "duration_ms": 4822,
       "error": null
     },
     {
@@ -401,7 +521,15 @@
       "company_slug": "typeface",
       "success": true,
       "job_count": 28,
-      "duration_ms": 3344,
+      "duration_ms": 4500,
+      "error": null
+    },
+    {
+      "extractor": "personio",
+      "company_slug": "ultralytics",
+      "success": true,
+      "job_count": 11,
+      "duration_ms": 4992,
       "error": null
     },
     {
@@ -409,7 +537,15 @@
       "company_slug": "unify",
       "success": true,
       "job_count": 9,
-      "duration_ms": 4952,
+      "duration_ms": 4633,
+      "error": null
+    },
+    {
+      "extractor": "greenhouse",
+      "company_slug": "vectara",
+      "success": true,
+      "job_count": 7,
+      "duration_ms": 4562,
       "error": null
     },
     {
@@ -417,7 +553,15 @@
       "company_slug": "voize",
       "success": true,
       "job_count": 1,
-      "duration_ms": 3958,
+      "duration_ms": 4992,
+      "error": null
+    },
+    {
+      "extractor": "greenhouse",
+      "company_slug": "voxel51",
+      "success": true,
+      "job_count": 5,
+      "duration_ms": 4651,
       "error": null
     },
     {
@@ -425,7 +569,7 @@
       "company_slug": "wayve",
       "success": true,
       "job_count": 75,
-      "duration_ms": 3784,
+      "duration_ms": 4816,
       "error": null
     },
     {
@@ -433,7 +577,7 @@
       "company_slug": "1komma5grad",
       "success": true,
       "job_count": 337,
-      "duration_ms": 4972,
+      "duration_ms": 5852,
       "error": null
     },
     {
@@ -441,7 +585,7 @@
       "company_slug": "360learning",
       "success": true,
       "job_count": 38,
-      "duration_ms": 5368,
+      "duration_ms": 5729,
       "error": null
     },
     {
@@ -449,7 +593,7 @@
       "company_slug": "abacum",
       "success": true,
       "job_count": 25,
-      "duration_ms": 3663,
+      "duration_ms": 4992,
       "error": null
     },
     {
@@ -457,7 +601,7 @@
       "company_slug": "able",
       "success": true,
       "job_count": 2,
-      "duration_ms": 3662,
+      "duration_ms": 5057,
       "error": null
     },
     {
@@ -465,7 +609,7 @@
       "company_slug": "accord",
       "success": true,
       "job_count": 3,
-      "duration_ms": 3663,
+      "duration_ms": 5066,
       "error": null
     },
     {
@@ -473,7 +617,7 @@
       "company_slug": "aclu",
       "success": true,
       "job_count": 35,
-      "duration_ms": 4311,
+      "duration_ms": 5054,
       "error": null
     },
     {
@@ -481,7 +625,7 @@
       "company_slug": "actiondesk",
       "success": true,
       "job_count": 1,
-      "duration_ms": 3854,
+      "duration_ms": 7133,
       "error": null
     },
     {
@@ -489,7 +633,7 @@
       "company_slug": "ada",
       "success": true,
       "job_count": 1,
-      "duration_ms": 4315,
+      "duration_ms": 5516,
       "error": null
     },
     {
@@ -497,7 +641,7 @@
       "company_slug": "adyen",
       "success": true,
       "job_count": 276,
-      "duration_ms": 4705,
+      "duration_ms": 5636,
       "error": null
     },
     {
@@ -505,7 +649,7 @@
       "company_slug": "affinity",
       "success": true,
       "job_count": 26,
-      "duration_ms": 3956,
+      "duration_ms": 5358,
       "error": null
     },
     {
@@ -513,7 +657,7 @@
       "company_slug": "afterquery",
       "success": true,
       "job_count": 21,
-      "duration_ms": 4103,
+      "duration_ms": 5313,
       "error": null
     },
     {
@@ -521,7 +665,7 @@
       "company_slug": "agave",
       "success": true,
       "job_count": 1,
-      "duration_ms": 4083,
+      "duration_ms": 5637,
       "error": null
     },
     {
@@ -529,7 +673,7 @@
       "company_slug": "agency",
       "success": true,
       "job_count": 829,
-      "duration_ms": 4580,
+      "duration_ms": 5513,
       "error": null
     },
     {
@@ -537,7 +681,7 @@
       "company_slug": "agicap",
       "success": true,
       "job_count": 44,
-      "duration_ms": 4915,
+      "duration_ms": 7108,
       "error": null
     },
     {
@@ -545,7 +689,7 @@
       "company_slug": "airbnb",
       "success": true,
       "job_count": 228,
-      "duration_ms": 4853,
+      "duration_ms": 6001,
       "error": null
     },
     {
@@ -553,7 +697,7 @@
       "company_slug": "airtable",
       "success": true,
       "job_count": 40,
-      "duration_ms": 4945,
+      "duration_ms": 5668,
       "error": null
     },
     {
@@ -561,7 +705,7 @@
       "company_slug": "aizon",
       "success": true,
       "job_count": 4,
-      "duration_ms": 5899,
+      "duration_ms": 6894,
       "error": null
     },
     {
@@ -569,7 +713,7 @@
       "company_slug": "akuity",
       "success": true,
       "job_count": 6,
-      "duration_ms": 4955,
+      "duration_ms": 5797,
       "error": null
     },
     {
@@ -577,7 +721,7 @@
       "company_slug": "albedo",
       "success": true,
       "job_count": 9,
-      "duration_ms": 5133,
+      "duration_ms": 6006,
       "error": null
     },
     {
@@ -585,7 +729,7 @@
       "company_slug": "alemhealth",
       "success": true,
       "job_count": 1,
-      "duration_ms": 4955,
+      "duration_ms": 7714,
       "error": null
     },
     {
@@ -593,7 +737,7 @@
       "company_slug": "aleph",
       "success": true,
       "job_count": 97,
-      "duration_ms": 6587,
+      "duration_ms": 8669,
       "error": null
     },
     {
@@ -601,7 +745,7 @@
       "company_slug": "algolia",
       "success": true,
       "job_count": 31,
-      "duration_ms": 5260,
+      "duration_ms": 6341,
       "error": null
     },
     {
@@ -609,7 +753,7 @@
       "company_slug": "alloy",
       "success": true,
       "job_count": 19,
-      "duration_ms": 5148,
+      "duration_ms": 6072,
       "error": null
     },
     {
@@ -617,7 +761,7 @@
       "company_slug": "alluxio",
       "success": true,
       "job_count": 7,
-      "duration_ms": 5412,
+      "duration_ms": 7116,
       "error": null
     },
     {
@@ -625,7 +769,7 @@
       "company_slug": "alma",
       "success": true,
       "job_count": 10,
-      "duration_ms": 5156,
+      "duration_ms": 6175,
       "error": null
     },
     {
@@ -633,7 +777,7 @@
       "company_slug": "alpaca",
       "success": true,
       "job_count": 51,
-      "duration_ms": 5309,
+      "duration_ms": 6216,
       "error": null
     },
     {
@@ -641,7 +785,7 @@
       "company_slug": "alphasights",
       "success": true,
       "job_count": 83,
-      "duration_ms": 5732,
+      "duration_ms": 6264,
       "error": null
     },
     {
@@ -649,7 +793,7 @@
       "company_slug": "amazon",
       "success": true,
       "job_count": 3,
-      "duration_ms": 5610,
+      "duration_ms": 6736,
       "error": null
     },
     {
@@ -657,7 +801,7 @@
       "company_slug": "amplitude",
       "success": true,
       "job_count": 50,
-      "duration_ms": 5404,
+      "duration_ms": 6532,
       "error": null
     },
     {
@@ -665,7 +809,7 @@
       "company_slug": "ankorstore",
       "success": true,
       "job_count": 8,
-      "duration_ms": 5503,
+      "duration_ms": 6537,
       "error": null
     },
     {
@@ -673,7 +817,7 @@
       "company_slug": "aon3d",
       "success": true,
       "job_count": 3,
-      "duration_ms": 5628,
+      "duration_ms": 6537,
       "error": null
     },
     {
@@ -681,7 +825,7 @@
       "company_slug": "archer",
       "success": true,
       "job_count": 3,
-      "duration_ms": 5735,
+      "duration_ms": 6690,
       "error": null
     },
     {
@@ -689,7 +833,7 @@
       "company_slug": "arena",
       "success": true,
       "job_count": 20,
-      "duration_ms": 6077,
+      "duration_ms": 6733,
       "error": null
     },
     {
@@ -697,7 +841,7 @@
       "company_slug": "argo",
       "success": true,
       "job_count": 22,
-      "duration_ms": 6030,
+      "duration_ms": 7117,
       "error": null
     },
     {
@@ -705,7 +849,7 @@
       "company_slug": "arq",
       "success": true,
       "job_count": 2,
-      "duration_ms": 5673,
+      "duration_ms": 6873,
       "error": null
     },
     {
@@ -713,7 +857,7 @@
       "company_slug": "artsy",
       "success": true,
       "job_count": 7,
-      "duration_ms": 6027,
+      "duration_ms": 6990,
       "error": null
     },
     {
@@ -721,7 +865,7 @@
       "company_slug": "asana",
       "success": true,
       "job_count": 127,
-      "duration_ms": 6430,
+      "duration_ms": 7527,
       "error": null
     },
     {
@@ -729,7 +873,7 @@
       "company_slug": "aspora",
       "success": true,
       "job_count": 20,
-      "duration_ms": 6034,
+      "duration_ms": 7116,
       "error": null
     },
     {
@@ -737,7 +881,7 @@
       "company_slug": "assemblyai",
       "success": true,
       "job_count": 6,
-      "duration_ms": 5836,
+      "duration_ms": 7121,
       "error": null
     },
     {
@@ -745,7 +889,7 @@
       "company_slug": "astranis",
       "success": true,
       "job_count": 127,
-      "duration_ms": 6026,
+      "duration_ms": 7220,
       "error": null
     },
     {
@@ -753,7 +897,7 @@
       "company_slug": "atlas",
       "success": true,
       "job_count": 9,
-      "duration_ms": 6241,
+      "duration_ms": 7581,
       "error": null
     },
     {
@@ -761,7 +905,7 @@
       "company_slug": "atmos",
       "success": true,
       "job_count": 3,
-      "duration_ms": 6432,
+      "duration_ms": 7588,
       "error": null
     },
     {
@@ -769,15 +913,15 @@
       "company_slug": "attain",
       "success": true,
       "job_count": 16,
-      "duration_ms": 6103,
+      "duration_ms": 7321,
       "error": null
     },
     {
       "extractor": "greenhouse",
       "company_slug": "attentive",
       "success": true,
-      "job_count": 60,
-      "duration_ms": 6468,
+      "job_count": 59,
+      "duration_ms": 7425,
       "error": null
     },
     {
@@ -785,7 +929,15 @@
       "company_slug": "attune",
       "success": true,
       "job_count": 2,
-      "duration_ms": 6186,
+      "duration_ms": 7305,
+      "error": null
+    },
+    {
+      "extractor": "ashby",
+      "company_slug": "authzed",
+      "success": true,
+      "job_count": 4,
+      "duration_ms": 7322,
       "error": null
     },
     {
@@ -793,23 +945,23 @@
       "company_slug": "axiom",
       "success": true,
       "job_count": 18,
-      "duration_ms": 6202,
+      "duration_ms": 7389,
       "error": null
     },
     {
       "extractor": "greenhouse",
       "company_slug": "axle",
       "success": true,
-      "job_count": 37,
-      "duration_ms": 6700,
+      "job_count": 36,
+      "duration_ms": 7579,
       "error": null
     },
     {
       "extractor": "greenhouse",
       "company_slug": "axon",
       "success": true,
-      "job_count": 523,
-      "duration_ms": 9590,
+      "job_count": 524,
+      "duration_ms": 10184,
       "error": null
     },
     {
@@ -817,7 +969,7 @@
       "company_slug": "basecamp",
       "success": true,
       "job_count": 4,
-      "duration_ms": 6621,
+      "duration_ms": 7904,
       "error": null
     },
     {
@@ -825,7 +977,7 @@
       "company_slug": "baubap",
       "success": true,
       "job_count": 9,
-      "duration_ms": 6436,
+      "duration_ms": 7585,
       "error": null
     },
     {
@@ -833,7 +985,7 @@
       "company_slug": "beam",
       "success": true,
       "job_count": 14,
-      "duration_ms": 6991,
+      "duration_ms": 7629,
       "error": null
     },
     {
@@ -841,7 +993,7 @@
       "company_slug": "bik",
       "success": true,
       "job_count": 16,
-      "duration_ms": 6769,
+      "duration_ms": 8079,
       "error": null
     },
     {
@@ -849,7 +1001,7 @@
       "company_slug": "billiontoone",
       "success": true,
       "job_count": 149,
-      "duration_ms": 7792,
+      "duration_ms": 7993,
       "error": null
     },
     {
@@ -857,7 +1009,7 @@
       "company_slug": "bird",
       "success": true,
       "job_count": 40,
-      "duration_ms": 6880,
+      "duration_ms": 7901,
       "error": null
     },
     {
@@ -865,7 +1017,7 @@
       "company_slug": "bitmex",
       "success": true,
       "job_count": 23,
-      "duration_ms": 6759,
+      "duration_ms": 7766,
       "error": null
     },
     {
@@ -873,7 +1025,7 @@
       "company_slug": "bitmovin",
       "success": true,
       "job_count": 12,
-      "duration_ms": 6766,
+      "duration_ms": 7824,
       "error": null
     },
     {
@@ -881,7 +1033,7 @@
       "company_slug": "bitstack",
       "success": true,
       "job_count": 9,
-      "duration_ms": 6833,
+      "duration_ms": 7861,
       "error": null
     },
     {
@@ -889,7 +1041,7 @@
       "company_slug": "bitwarden",
       "success": true,
       "job_count": 11,
-      "duration_ms": 6863,
+      "duration_ms": 7871,
       "error": null
     },
     {
@@ -897,7 +1049,7 @@
       "company_slug": "blickfeld",
       "success": true,
       "job_count": 2,
-      "duration_ms": 7414,
+      "duration_ms": 8408,
       "error": null
     },
     {
@@ -905,7 +1057,7 @@
       "company_slug": "blink",
       "success": true,
       "job_count": 7,
-      "duration_ms": 6992,
+      "duration_ms": 8060,
       "error": null
     },
     {
@@ -913,7 +1065,7 @@
       "company_slug": "blitz",
       "success": true,
       "job_count": 3,
-      "duration_ms": 7414,
+      "duration_ms": 8417,
       "error": null
     },
     {
@@ -921,7 +1073,7 @@
       "company_slug": "blue",
       "success": true,
       "job_count": 3,
-      "duration_ms": 7821,
+      "duration_ms": 8073,
       "error": null
     },
     {
@@ -929,7 +1081,7 @@
       "company_slug": "bolster",
       "success": true,
       "job_count": 3,
-      "duration_ms": 7889,
+      "duration_ms": 8417,
       "error": null
     },
     {
@@ -937,23 +1089,23 @@
       "company_slug": "bonial",
       "success": true,
       "job_count": 11,
-      "duration_ms": 7094,
+      "duration_ms": 8230,
       "error": null
     },
     {
       "extractor": "smartrecruiters",
       "company_slug": "brainlab",
       "success": true,
-      "job_count": 100,
-      "duration_ms": 7177,
+      "job_count": 101,
+      "duration_ms": 8673,
       "error": null
     },
     {
       "extractor": "greenhouse",
       "company_slug": "braze",
       "success": true,
-      "job_count": 195,
-      "duration_ms": 7412,
+      "job_count": 194,
+      "duration_ms": 8407,
       "error": null
     },
     {
@@ -961,7 +1113,7 @@
       "company_slug": "brex",
       "success": true,
       "job_count": 236,
-      "duration_ms": 7302,
+      "duration_ms": 8544,
       "error": null
     },
     {
@@ -969,7 +1121,7 @@
       "company_slug": "buf",
       "success": true,
       "job_count": 13,
-      "duration_ms": 7611,
+      "duration_ms": 8670,
       "error": null
     },
     {
@@ -977,7 +1129,7 @@
       "company_slug": "buffer",
       "success": true,
       "job_count": 1,
-      "duration_ms": 7608,
+      "duration_ms": 8673,
       "error": null
     },
     {
@@ -985,7 +1137,7 @@
       "company_slug": "building-radar",
       "success": true,
       "job_count": 10,
-      "duration_ms": 7895,
+      "duration_ms": 9154,
       "error": null
     },
     {
@@ -993,7 +1145,7 @@
       "company_slug": "bukuwarung",
       "success": true,
       "job_count": 3,
-      "duration_ms": 7608,
+      "duration_ms": 10189,
       "error": null
     },
     {
@@ -1001,7 +1153,7 @@
       "company_slug": "bunq",
       "success": true,
       "job_count": 3,
-      "duration_ms": 7975,
+      "duration_ms": 9194,
       "error": null
     },
     {
@@ -1009,7 +1161,7 @@
       "company_slug": "burnt",
       "success": true,
       "job_count": 8,
-      "duration_ms": 7604,
+      "duration_ms": 8676,
       "error": null
     },
     {
@@ -1017,7 +1169,7 @@
       "company_slug": "cactus",
       "success": true,
       "job_count": 14,
-      "duration_ms": 8186,
+      "duration_ms": 9193,
       "error": null
     },
     {
@@ -1025,7 +1177,7 @@
       "company_slug": "camp",
       "success": true,
       "job_count": 35,
-      "duration_ms": 7813,
+      "duration_ms": 8974,
       "error": null
     },
     {
@@ -1033,7 +1185,7 @@
       "company_slug": "canonical",
       "success": true,
       "job_count": 285,
-      "duration_ms": 8182,
+      "duration_ms": 9138,
       "error": null
     },
     {
@@ -1041,7 +1193,7 @@
       "company_slug": "captivateiq",
       "success": true,
       "job_count": 35,
-      "duration_ms": 9795,
+      "duration_ms": 10772,
       "error": null
     },
     {
@@ -1049,7 +1201,7 @@
       "company_slug": "capy",
       "success": true,
       "job_count": 2,
-      "duration_ms": 8184,
+      "duration_ms": 8976,
       "error": null
     },
     {
@@ -1057,7 +1209,7 @@
       "company_slug": "carbonchain",
       "success": true,
       "job_count": 9,
-      "duration_ms": 7985,
+      "duration_ms": 8837,
       "error": null
     },
     {
@@ -1065,7 +1217,7 @@
       "company_slug": "carerev",
       "success": true,
       "job_count": 1,
-      "duration_ms": 7987,
+      "duration_ms": 8991,
       "error": null
     },
     {
@@ -1073,7 +1225,7 @@
       "company_slug": "caribou",
       "success": true,
       "job_count": 5,
-      "duration_ms": 8231,
+      "duration_ms": 9369,
       "error": null
     },
     {
@@ -1081,7 +1233,7 @@
       "company_slug": "casca",
       "success": true,
       "job_count": 9,
-      "duration_ms": 8187,
+      "duration_ms": 9194,
       "error": null
     },
     {
@@ -1089,7 +1241,7 @@
       "company_slug": "chainguard",
       "success": true,
       "job_count": 58,
-      "duration_ms": 8230,
+      "duration_ms": 9191,
       "error": null
     },
     {
@@ -1097,7 +1249,7 @@
       "company_slug": "channable",
       "success": true,
       "job_count": 1,
-      "duration_ms": 8652,
+      "duration_ms": 9773,
       "error": null
     },
     {
@@ -1105,7 +1257,7 @@
       "company_slug": "chargelab",
       "success": true,
       "job_count": 4,
-      "duration_ms": 8184,
+      "duration_ms": 9341,
       "error": null
     },
     {
@@ -1113,7 +1265,7 @@
       "company_slug": "cherry",
       "success": true,
       "job_count": 1,
-      "duration_ms": 8331,
+      "duration_ms": 9567,
       "error": null
     },
     {
@@ -1121,7 +1273,7 @@
       "company_slug": "chime",
       "success": true,
       "job_count": 74,
-      "duration_ms": 9194,
+      "duration_ms": 9456,
       "error": null
     },
     {
@@ -1129,7 +1281,7 @@
       "company_slug": "choco",
       "success": true,
       "job_count": 2,
-      "duration_ms": 8497,
+      "duration_ms": 9378,
       "error": null
     },
     {
@@ -1137,7 +1289,7 @@
       "company_slug": "circleci",
       "success": true,
       "job_count": 15,
-      "duration_ms": 8409,
+      "duration_ms": 9359,
       "error": null
     },
     {
@@ -1145,7 +1297,7 @@
       "company_slug": "clark",
       "success": true,
       "job_count": 5,
-      "duration_ms": 8684,
+      "duration_ms": 10188,
       "error": null
     },
     {
@@ -1153,7 +1305,7 @@
       "company_slug": "clear",
       "success": true,
       "job_count": 51,
-      "duration_ms": 8440,
+      "duration_ms": 9542,
       "error": null
     },
     {
@@ -1161,7 +1313,7 @@
       "company_slug": "clickhouse",
       "success": true,
       "job_count": 165,
-      "duration_ms": 8639,
+      "duration_ms": 9771,
       "error": null
     },
     {
@@ -1169,7 +1321,7 @@
       "company_slug": "clicks",
       "success": true,
       "job_count": 16,
-      "duration_ms": 9197,
+      "duration_ms": 10342,
       "error": null
     },
     {
@@ -1177,7 +1329,7 @@
       "company_slug": "clickup",
       "success": true,
       "job_count": 73,
-      "duration_ms": 9797,
+      "duration_ms": 10234,
       "error": null
     },
     {
@@ -1185,7 +1337,7 @@
       "company_slug": "cloudflare",
       "success": true,
       "job_count": 451,
-      "duration_ms": 9121,
+      "duration_ms": 10717,
       "error": null
     },
     {
@@ -1193,7 +1345,7 @@
       "company_slug": "coast",
       "success": true,
       "job_count": 20,
-      "duration_ms": 8762,
+      "duration_ms": 9783,
       "error": null
     },
     {
@@ -1201,7 +1353,7 @@
       "company_slug": "coba",
       "success": true,
       "job_count": 1,
-      "duration_ms": 9126,
+      "duration_ms": 10336,
       "error": null
     },
     {
@@ -1209,7 +1361,7 @@
       "company_slug": "cobrainer",
       "success": true,
       "job_count": 2,
-      "duration_ms": 9593,
+      "duration_ms": 10788,
       "error": null
     },
     {
@@ -1217,7 +1369,7 @@
       "company_slug": "cocoon",
       "success": true,
       "job_count": 2,
-      "duration_ms": 9128,
+      "duration_ms": 10724,
       "error": null
     },
     {
@@ -1225,7 +1377,7 @@
       "company_slug": "cocusocial",
       "success": true,
       "job_count": 10,
-      "duration_ms": 9194,
+      "duration_ms": 10720,
       "error": null
     },
     {
@@ -1233,7 +1385,7 @@
       "company_slug": "codes-health",
       "success": true,
       "job_count": 8,
-      "duration_ms": 9596,
+      "duration_ms": 10723,
       "error": null
     },
     {
@@ -1241,7 +1393,7 @@
       "company_slug": "codesphere",
       "success": true,
       "job_count": 6,
-      "duration_ms": 9596,
+      "duration_ms": 10723,
       "error": null
     },
     {
@@ -1249,7 +1401,7 @@
       "company_slug": "coefficient",
       "success": true,
       "job_count": 6,
-      "duration_ms": 9595,
+      "duration_ms": 10722,
       "error": null
     },
     {
@@ -1257,7 +1409,7 @@
       "company_slug": "contabo",
       "success": true,
       "job_count": 10,
-      "duration_ms": 10678,
+      "duration_ms": 11206,
       "error": null
     },
     {
@@ -1265,7 +1417,7 @@
       "company_slug": "contentful",
       "success": true,
       "job_count": 110,
-      "duration_ms": 9669,
+      "duration_ms": 11133,
       "error": null
     },
     {
@@ -1273,7 +1425,7 @@
       "company_slug": "contentsquare",
       "success": true,
       "job_count": 45,
-      "duration_ms": 11890,
+      "duration_ms": 25507,
       "error": null
     },
     {
@@ -1281,7 +1433,7 @@
       "company_slug": "contentstack",
       "success": true,
       "job_count": 6,
-      "duration_ms": 9858,
+      "duration_ms": 10925,
       "error": null
     },
     {
@@ -1289,7 +1441,7 @@
       "company_slug": "contour",
       "success": true,
       "job_count": 2,
-      "duration_ms": 10319,
+      "duration_ms": 11219,
       "error": null
     },
     {
@@ -1297,7 +1449,7 @@
       "company_slug": "copia",
       "success": true,
       "job_count": 5,
-      "duration_ms": 11008,
+      "duration_ms": 12022,
       "error": null
     },
     {
@@ -1305,15 +1457,15 @@
       "company_slug": "corelight",
       "success": true,
       "job_count": 23,
-      "duration_ms": 9879,
+      "duration_ms": 10938,
       "error": null
     },
     {
       "extractor": "greenhouse",
       "company_slug": "cortex",
       "success": true,
-      "job_count": 6,
-      "duration_ms": 9883,
+      "job_count": 7,
+      "duration_ms": 10954,
       "error": null
     },
     {
@@ -1321,7 +1473,7 @@
       "company_slug": "cotera",
       "success": true,
       "job_count": 2,
-      "duration_ms": 10270,
+      "duration_ms": 11229,
       "error": null
     },
     {
@@ -1329,7 +1481,7 @@
       "company_slug": "craftwork",
       "success": true,
       "job_count": 3,
-      "duration_ms": 10381,
+      "duration_ms": 11302,
       "error": null
     },
     {
@@ -1337,7 +1489,7 @@
       "company_slug": "crate-io",
       "success": true,
       "job_count": 5,
-      "duration_ms": 10677,
+      "duration_ms": 11419,
       "error": null
     },
     {
@@ -1345,7 +1497,7 @@
       "company_slug": "ctgt",
       "success": true,
       "job_count": 4,
-      "duration_ms": 10075,
+      "duration_ms": 11193,
       "error": null
     },
     {
@@ -1353,7 +1505,15 @@
       "company_slug": "culdesac",
       "success": true,
       "job_count": 1,
-      "duration_ms": 10106,
+      "duration_ms": 11188,
+      "error": null
+    },
+    {
+      "extractor": "personio",
+      "company_slug": "cybertec-postgresql",
+      "success": true,
+      "job_count": 3,
+      "duration_ms": 11784,
       "error": null
     },
     {
@@ -1361,7 +1521,7 @@
       "company_slug": "dailymotion",
       "success": true,
       "job_count": 30,
-      "duration_ms": 10126,
+      "duration_ms": 11784,
       "error": null
     },
     {
@@ -1369,7 +1529,7 @@
       "company_slug": "datadog",
       "success": true,
       "job_count": 433,
-      "duration_ms": 10669,
+      "duration_ms": 11781,
       "error": null
     },
     {
@@ -1377,7 +1537,7 @@
       "company_slug": "datagrail",
       "success": true,
       "job_count": 1,
-      "duration_ms": 10677,
+      "duration_ms": 11354,
       "error": null
     },
     {
@@ -1385,7 +1545,15 @@
       "company_slug": "david",
       "success": true,
       "job_count": 6,
-      "duration_ms": 10301,
+      "duration_ms": 11377,
+      "error": null
+    },
+    {
+      "extractor": "greenhouse",
+      "company_slug": "dbeaver",
+      "success": true,
+      "job_count": 13,
+      "duration_ms": 11416,
       "error": null
     },
     {
@@ -1393,7 +1561,7 @@
       "company_slug": "deel",
       "success": true,
       "job_count": 239,
-      "duration_ms": 11675,
+      "duration_ms": 12381,
       "error": null
     },
     {
@@ -1401,15 +1569,15 @@
       "company_slug": "deliveroo",
       "success": true,
       "job_count": 211,
-      "duration_ms": 11012,
+      "duration_ms": 11821,
       "error": null
     },
     {
       "extractor": "smartrecruiters",
       "company_slug": "deliveryhero",
       "success": true,
-      "job_count": 1050,
-      "duration_ms": 12855,
+      "job_count": 1049,
+      "duration_ms": 17452,
       "error": null
     },
     {
@@ -1417,7 +1585,7 @@
       "company_slug": "dex",
       "success": true,
       "job_count": 4,
-      "duration_ms": 11013,
+      "duration_ms": 12023,
       "error": null
     },
     {
@@ -1425,7 +1593,7 @@
       "company_slug": "diamontech-ag",
       "success": true,
       "job_count": 3,
-      "duration_ms": 11253,
+      "duration_ms": 11955,
       "error": null
     },
     {
@@ -1433,7 +1601,7 @@
       "company_slug": "diana",
       "success": true,
       "job_count": 4,
-      "duration_ms": 11305,
+      "duration_ms": 12379,
       "error": null
     },
     {
@@ -1441,7 +1609,7 @@
       "company_slug": "diligent",
       "success": true,
       "job_count": 8,
-      "duration_ms": 10913,
+      "duration_ms": 11932,
       "error": null
     },
     {
@@ -1449,15 +1617,15 @@
       "company_slug": "dispatch",
       "success": true,
       "job_count": 1,
-      "duration_ms": 10918,
+      "duration_ms": 11939,
       "error": null
     },
     {
       "extractor": "lever",
       "company_slug": "distro",
       "success": true,
-      "job_count": 132,
-      "duration_ms": 14252,
+      "job_count": 134,
+      "duration_ms": 15701,
       "error": null
     },
     {
@@ -1465,7 +1633,7 @@
       "company_slug": "doctolib",
       "success": true,
       "job_count": 223,
-      "duration_ms": 11521,
+      "duration_ms": 12360,
       "error": null
     },
     {
@@ -1473,7 +1641,7 @@
       "company_slug": "docusign",
       "success": true,
       "job_count": 4,
-      "duration_ms": 11291,
+      "duration_ms": 12127,
       "error": null
     },
     {
@@ -1481,7 +1649,7 @@
       "company_slug": "doola",
       "success": true,
       "job_count": 11,
-      "duration_ms": 11544,
+      "duration_ms": 13936,
       "error": null
     },
     {
@@ -1489,7 +1657,7 @@
       "company_slug": "dot",
       "success": true,
       "job_count": 3,
-      "duration_ms": 11533,
+      "duration_ms": 12529,
       "error": null
     },
     {
@@ -1497,7 +1665,7 @@
       "company_slug": "doximity",
       "success": true,
       "job_count": 13,
-      "duration_ms": 11532,
+      "duration_ms": 12372,
       "error": null
     },
     {
@@ -1505,7 +1673,7 @@
       "company_slug": "dremio",
       "success": true,
       "job_count": 12,
-      "duration_ms": 11551,
+      "duration_ms": 12378,
       "error": null
     },
     {
@@ -1513,7 +1681,7 @@
       "company_slug": "drip",
       "success": true,
       "job_count": 1,
-      "duration_ms": 12071,
+      "duration_ms": 12825,
       "error": null
     },
     {
@@ -1521,7 +1689,7 @@
       "company_slug": "dronedeploy",
       "success": true,
       "job_count": 9,
-      "duration_ms": 13349,
+      "duration_ms": 13005,
       "error": null
     },
     {
@@ -1529,7 +1697,7 @@
       "company_slug": "dropbox",
       "success": true,
       "job_count": 103,
-      "duration_ms": 12004,
+      "duration_ms": 12735,
       "error": null
     },
     {
@@ -1537,15 +1705,15 @@
       "company_slug": "duffel",
       "success": true,
       "job_count": 9,
-      "duration_ms": 12012,
+      "duration_ms": 13618,
       "error": null
     },
     {
       "extractor": "greenhouse",
       "company_slug": "duolingo",
       "success": true,
-      "job_count": 85,
-      "duration_ms": 11937,
+      "job_count": 86,
+      "duration_ms": 12622,
       "error": null
     },
     {
@@ -1553,7 +1721,7 @@
       "company_slug": "echo",
       "success": true,
       "job_count": 26,
-      "duration_ms": 11804,
+      "duration_ms": 12828,
       "error": null
     },
     {
@@ -1561,7 +1729,7 @@
       "company_slug": "ecosia",
       "success": true,
       "job_count": 2,
-      "duration_ms": 12451,
+      "duration_ms": 13181,
       "error": null
     },
     {
@@ -1569,7 +1737,7 @@
       "company_slug": "edge",
       "success": true,
       "job_count": 2,
-      "duration_ms": 12251,
+      "duration_ms": 12878,
       "error": null
     },
     {
@@ -1577,7 +1745,7 @@
       "company_slug": "edited",
       "success": true,
       "job_count": 3,
-      "duration_ms": 12297,
+      "duration_ms": 13175,
       "error": null
     },
     {
@@ -1585,7 +1753,7 @@
       "company_slug": "elastic",
       "success": true,
       "job_count": 198,
-      "duration_ms": 13319,
+      "duration_ms": 13173,
       "error": null
     },
     {
@@ -1593,7 +1761,7 @@
       "company_slug": "electroneek",
       "success": true,
       "job_count": 2,
-      "duration_ms": 12179,
+      "duration_ms": 13174,
       "error": null
     },
     {
@@ -1601,7 +1769,7 @@
       "company_slug": "embrace",
       "success": true,
       "job_count": 8,
-      "duration_ms": 12175,
+      "duration_ms": 13177,
       "error": null
     },
     {
@@ -1609,7 +1777,7 @@
       "company_slug": "emnify",
       "success": true,
       "job_count": 15,
-      "duration_ms": 12280,
+      "duration_ms": 13343,
       "error": null
     },
     {
@@ -1617,7 +1785,7 @@
       "company_slug": "enode",
       "success": true,
       "job_count": 5,
-      "duration_ms": 12859,
+      "duration_ms": 13406,
       "error": null
     },
     {
@@ -1625,7 +1793,7 @@
       "company_slug": "enveritas",
       "success": true,
       "job_count": 3,
-      "duration_ms": 12441,
+      "duration_ms": 13324,
       "error": null
     },
     {
@@ -1633,7 +1801,7 @@
       "company_slug": "everest",
       "success": true,
       "job_count": 3,
-      "duration_ms": 12449,
+      "duration_ms": 13328,
       "error": null
     },
     {
@@ -1641,7 +1809,7 @@
       "company_slug": "evry-health",
       "success": true,
       "job_count": 5,
-      "duration_ms": 12538,
+      "duration_ms": 17319,
       "error": null
     },
     {
@@ -1649,7 +1817,7 @@
       "company_slug": "exa",
       "success": true,
       "job_count": 3,
-      "duration_ms": 12523,
+      "duration_ms": 13472,
       "error": null
     },
     {
@@ -1657,7 +1825,7 @@
       "company_slug": "exb",
       "success": true,
       "job_count": 3,
-      "duration_ms": 13002,
+      "duration_ms": 13805,
       "error": null
     },
     {
@@ -1665,7 +1833,7 @@
       "company_slug": "excepgen",
       "success": true,
       "job_count": 1,
-      "duration_ms": 12656,
+      "duration_ms": 14344,
       "error": null
     },
     {
@@ -1673,7 +1841,7 @@
       "company_slug": "expo",
       "success": true,
       "job_count": 1,
-      "duration_ms": 12650,
+      "duration_ms": 13561,
       "error": null
     },
     {
@@ -1681,7 +1849,7 @@
       "company_slug": "extend",
       "success": true,
       "job_count": 14,
-      "duration_ms": 12728,
+      "duration_ms": 13637,
       "error": null
     },
     {
@@ -1689,7 +1857,7 @@
       "company_slug": "fabius",
       "success": true,
       "job_count": 3,
-      "duration_ms": 13002,
+      "duration_ms": 14131,
       "error": null
     },
     {
@@ -1697,7 +1865,7 @@
       "company_slug": "fable",
       "success": true,
       "job_count": 9,
-      "duration_ms": 12917,
+      "duration_ms": 13859,
       "error": null
     },
     {
@@ -1705,7 +1873,7 @@
       "company_slug": "factorial",
       "success": true,
       "job_count": 3,
-      "duration_ms": 13448,
+      "duration_ms": 14150,
       "error": null
     },
     {
@@ -1713,7 +1881,7 @@
       "company_slug": "faire",
       "success": true,
       "job_count": 74,
-      "duration_ms": 12998,
+      "duration_ms": 14396,
       "error": null
     },
     {
@@ -1721,7 +1889,7 @@
       "company_slug": "fampay",
       "success": true,
       "job_count": 19,
-      "duration_ms": 14811,
+      "duration_ms": 14678,
       "error": null
     },
     {
@@ -1729,7 +1897,7 @@
       "company_slug": "fanduel",
       "success": true,
       "job_count": 140,
-      "duration_ms": 13167,
+      "duration_ms": 14342,
       "error": null
     },
     {
@@ -1737,7 +1905,7 @@
       "company_slug": "fastly",
       "success": true,
       "job_count": 67,
-      "duration_ms": 13404,
+      "duration_ms": 14733,
       "error": null
     },
     {
@@ -1745,7 +1913,7 @@
       "company_slug": "feather",
       "success": true,
       "job_count": 1,
-      "duration_ms": 13684,
+      "duration_ms": 14735,
       "error": null
     },
     {
@@ -1753,7 +1921,7 @@
       "company_slug": "fernride",
       "success": true,
       "job_count": 11,
-      "duration_ms": 13326,
+      "duration_ms": 14493,
       "error": null
     },
     {
@@ -1761,7 +1929,7 @@
       "company_slug": "fetch",
       "success": true,
       "job_count": 51,
-      "duration_ms": 13447,
+      "duration_ms": 14643,
       "error": null
     },
     {
@@ -1769,7 +1937,7 @@
       "company_slug": "figma",
       "success": true,
       "job_count": 157,
-      "duration_ms": 13600,
+      "duration_ms": 15108,
       "error": null
     },
     {
@@ -1777,7 +1945,7 @@
       "company_slug": "finch",
       "success": true,
       "job_count": 8,
-      "duration_ms": 15198,
+      "duration_ms": 17498,
       "error": null
     },
     {
@@ -1785,7 +1953,7 @@
       "company_slug": "finku",
       "success": true,
       "job_count": 1,
-      "duration_ms": 13777,
+      "duration_ms": 15843,
       "error": null
     },
     {
@@ -1793,7 +1961,7 @@
       "company_slug": "fintual",
       "success": true,
       "job_count": 3,
-      "duration_ms": 13723,
+      "duration_ms": 14980,
       "error": null
     },
     {
@@ -1801,7 +1969,7 @@
       "company_slug": "firsthand",
       "success": true,
       "job_count": 30,
-      "duration_ms": 13648,
+      "duration_ms": 15026,
       "error": null
     },
     {
@@ -1809,7 +1977,7 @@
       "company_slug": "fivetran",
       "success": true,
       "job_count": 177,
-      "duration_ms": 14402,
+      "duration_ms": 15623,
       "error": null
     },
     {
@@ -1817,7 +1985,7 @@
       "company_slug": "flai",
       "success": true,
       "job_count": 2,
-      "duration_ms": 13681,
+      "duration_ms": 15172,
       "error": null
     },
     {
@@ -1825,7 +1993,7 @@
       "company_slug": "fleetzero",
       "success": true,
       "job_count": 6,
-      "duration_ms": 14972,
+      "duration_ms": 15357,
       "error": null
     },
     {
@@ -1833,7 +2001,7 @@
       "company_slug": "flex",
       "success": true,
       "job_count": 78,
-      "duration_ms": 13980,
+      "duration_ms": 15334,
       "error": null
     },
     {
@@ -1841,7 +2009,7 @@
       "company_slug": "flextock",
       "success": true,
       "job_count": 4,
-      "duration_ms": 13910,
+      "duration_ms": 15625,
       "error": null
     },
     {
@@ -1849,7 +2017,7 @@
       "company_slug": "flipdish",
       "success": true,
       "job_count": 6,
-      "duration_ms": 13895,
+      "duration_ms": 17013,
       "error": null
     },
     {
@@ -1857,7 +2025,7 @@
       "company_slug": "flo-health",
       "success": true,
       "job_count": 44,
-      "duration_ms": 13939,
+      "duration_ms": 15985,
       "error": null
     },
     {
@@ -1865,7 +2033,7 @@
       "company_slug": "flohealth",
       "success": true,
       "job_count": 44,
-      "duration_ms": 14425,
+      "duration_ms": 15802,
       "error": null
     },
     {
@@ -1873,7 +2041,7 @@
       "company_slug": "flow",
       "success": true,
       "job_count": 2,
-      "duration_ms": 14631,
+      "duration_ms": 16202,
       "error": null
     },
     {
@@ -1881,7 +2049,7 @@
       "company_slug": "flowdesk",
       "success": true,
       "job_count": 2,
-      "duration_ms": 14074,
+      "duration_ms": 15853,
       "error": null
     },
     {
@@ -1889,7 +2057,7 @@
       "company_slug": "formance",
       "success": true,
       "job_count": 3,
-      "duration_ms": 14150,
+      "duration_ms": 15995,
       "error": null
     },
     {
@@ -1897,7 +2065,7 @@
       "company_slug": "framer",
       "success": true,
       "job_count": 2,
-      "duration_ms": 14560,
+      "duration_ms": 16313,
       "error": null
     },
     {
@@ -1905,7 +2073,7 @@
       "company_slug": "freshworks",
       "success": true,
       "job_count": 30,
-      "duration_ms": 14254,
+      "duration_ms": 16033,
       "error": null
     },
     {
@@ -1913,7 +2081,7 @@
       "company_slug": "friday",
       "success": true,
       "job_count": 3,
-      "duration_ms": 14559,
+      "duration_ms": 16129,
       "error": null
     },
     {
@@ -1921,7 +2089,7 @@
       "company_slug": "fulcrum",
       "success": true,
       "job_count": 6,
-      "duration_ms": 14546,
+      "duration_ms": 16160,
       "error": null
     },
     {
@@ -1929,7 +2097,7 @@
       "company_slug": "fullstory",
       "success": true,
       "job_count": 16,
-      "duration_ms": 14654,
+      "duration_ms": 16508,
       "error": null
     },
     {
@@ -1937,7 +2105,7 @@
       "company_slug": "galaxy",
       "success": true,
       "job_count": 3,
-      "duration_ms": 14576,
+      "duration_ms": 16282,
       "error": null
     },
     {
@@ -1945,7 +2113,7 @@
       "company_slug": "gauss",
       "success": true,
       "job_count": 1,
-      "duration_ms": 14993,
+      "duration_ms": 16859,
       "error": null
     },
     {
@@ -1953,7 +2121,7 @@
       "company_slug": "gcore",
       "success": true,
       "job_count": 26,
-      "duration_ms": 14739,
+      "duration_ms": 16419,
       "error": null
     },
     {
@@ -1961,15 +2129,15 @@
       "company_slug": "gigs",
       "success": true,
       "job_count": 28,
-      "duration_ms": 14993,
+      "duration_ms": 16471,
       "error": null
     },
     {
       "extractor": "greenhouse",
       "company_slug": "gitlab",
       "success": true,
-      "job_count": 201,
-      "duration_ms": 15171,
+      "job_count": 202,
+      "duration_ms": 16823,
       "error": null
     },
     {
@@ -1977,7 +2145,7 @@
       "company_slug": "glide",
       "success": true,
       "job_count": 17,
-      "duration_ms": 16461,
+      "duration_ms": 18325,
       "error": null
     },
     {
@@ -1985,7 +2153,7 @@
       "company_slug": "gocardless",
       "success": true,
       "job_count": 43,
-      "duration_ms": 15023,
+      "duration_ms": 16859,
       "error": null
     },
     {
@@ -1993,7 +2161,7 @@
       "company_slug": "govdash",
       "success": true,
       "job_count": 9,
-      "duration_ms": 14979,
+      "duration_ms": 16827,
       "error": null
     },
     {
@@ -2001,7 +2169,7 @@
       "company_slug": "goveagle",
       "success": true,
       "job_count": 4,
-      "duration_ms": 15253,
+      "duration_ms": 17172,
       "error": null
     },
     {
@@ -2009,7 +2177,7 @@
       "company_slug": "gridware",
       "success": true,
       "job_count": 29,
-      "duration_ms": 15653,
+      "duration_ms": 18593,
       "error": null
     },
     {
@@ -2017,7 +2185,7 @@
       "company_slug": "grin",
       "success": true,
       "job_count": 3,
-      "duration_ms": 15587,
+      "duration_ms": 17018,
       "error": null
     },
     {
@@ -2025,7 +2193,7 @@
       "company_slug": "groww",
       "success": true,
       "job_count": 16,
-      "duration_ms": 15204,
+      "duration_ms": 17026,
       "error": null
     },
     {
@@ -2033,7 +2201,7 @@
       "company_slug": "gusto",
       "success": true,
       "job_count": 76,
-      "duration_ms": 15701,
+      "duration_ms": 17291,
       "error": null
     },
     {
@@ -2041,7 +2209,7 @@
       "company_slug": "hackerrank",
       "success": true,
       "job_count": 43,
-      "duration_ms": 15469,
+      "duration_ms": 17313,
       "error": null
     },
     {
@@ -2049,15 +2217,15 @@
       "company_slug": "haddock",
       "success": true,
       "job_count": 2,
-      "duration_ms": 15912,
+      "duration_ms": 17547,
       "error": null
     },
     {
       "extractor": "lever",
       "company_slug": "handoff",
       "success": true,
-      "job_count": 11,
-      "duration_ms": 15885,
+      "job_count": 12,
+      "duration_ms": 20612,
       "error": null
     },
     {
@@ -2065,7 +2233,7 @@
       "company_slug": "haven",
       "success": true,
       "job_count": 6,
-      "duration_ms": 15429,
+      "duration_ms": 17474,
       "error": null
     },
     {
@@ -2073,15 +2241,15 @@
       "company_slug": "headway",
       "success": true,
       "job_count": 83,
-      "duration_ms": 16039,
+      "duration_ms": 17545,
       "error": null
     },
     {
       "extractor": "greenhouse",
       "company_slug": "hellofresh",
       "success": true,
-      "job_count": 367,
-      "duration_ms": 15869,
+      "job_count": 368,
+      "duration_ms": 17944,
       "error": null
     },
     {
@@ -2089,7 +2257,7 @@
       "company_slug": "hightouch",
       "success": true,
       "job_count": 62,
-      "duration_ms": 15912,
+      "duration_ms": 17764,
       "error": null
     },
     {
@@ -2097,7 +2265,7 @@
       "company_slug": "hiresweet",
       "success": true,
       "job_count": 2,
-      "duration_ms": 15885,
+      "duration_ms": 17647,
       "error": null
     },
     {
@@ -2105,7 +2273,7 @@
       "company_slug": "homeroom",
       "success": true,
       "job_count": 1,
-      "duration_ms": 15916,
+      "duration_ms": 19516,
       "error": null
     },
     {
@@ -2113,7 +2281,7 @@
       "company_slug": "hostinger",
       "success": true,
       "job_count": 103,
-      "duration_ms": 18276,
+      "duration_ms": 19794,
       "error": null
     },
     {
@@ -2121,7 +2289,7 @@
       "company_slug": "humaans",
       "success": true,
       "job_count": 16,
-      "duration_ms": 16559,
+      "duration_ms": 17946,
       "error": null
     },
     {
@@ -2129,7 +2297,7 @@
       "company_slug": "hush",
       "success": true,
       "job_count": 11,
-      "duration_ms": 16731,
+      "duration_ms": 19350,
       "error": null
     },
     {
@@ -2137,7 +2305,7 @@
       "company_slug": "ibexa",
       "success": true,
       "job_count": 12,
-      "duration_ms": 16225,
+      "duration_ms": 18114,
       "error": null
     },
     {
@@ -2145,7 +2313,7 @@
       "company_slug": "icarus",
       "success": true,
       "job_count": 9,
-      "duration_ms": 16133,
+      "duration_ms": 18096,
       "error": null
     },
     {
@@ -2153,7 +2321,15 @@
       "company_slug": "imfusion",
       "success": true,
       "job_count": 4,
-      "duration_ms": 16558,
+      "duration_ms": 18503,
+      "error": null
+    },
+    {
+      "extractor": "ashby",
+      "company_slug": "influxdata",
+      "success": true,
+      "job_count": 2,
+      "duration_ms": 18496,
       "error": null
     },
     {
@@ -2161,7 +2337,7 @@
       "company_slug": "inkeep",
       "success": true,
       "job_count": 7,
-      "duration_ms": 16368,
+      "duration_ms": 18326,
       "error": null
     },
     {
@@ -2169,7 +2345,7 @@
       "company_slug": "innov8",
       "success": true,
       "job_count": 1,
-      "duration_ms": 16121,
+      "duration_ms": 20436,
       "error": null
     },
     {
@@ -2177,7 +2353,7 @@
       "company_slug": "insights",
       "success": true,
       "job_count": 3,
-      "duration_ms": 16559,
+      "duration_ms": 18890,
       "error": null
     },
     {
@@ -2185,7 +2361,7 @@
       "company_slug": "instacart",
       "success": true,
       "job_count": 129,
-      "duration_ms": 16439,
+      "duration_ms": 18856,
       "error": null
     },
     {
@@ -2193,7 +2369,7 @@
       "company_slug": "instawork",
       "success": true,
       "job_count": 46,
-      "duration_ms": 16365,
+      "duration_ms": 18703,
       "error": null
     },
     {
@@ -2201,7 +2377,7 @@
       "company_slug": "intercom",
       "success": true,
       "job_count": 177,
-      "duration_ms": 16555,
+      "duration_ms": 19331,
       "error": null
     },
     {
@@ -2209,7 +2385,7 @@
       "company_slug": "ionos",
       "success": true,
       "job_count": 58,
-      "duration_ms": 16580,
+      "duration_ms": 18889,
       "error": null
     },
     {
@@ -2217,7 +2393,7 @@
       "company_slug": "isarsoft",
       "success": true,
       "job_count": 1,
-      "duration_ms": 17160,
+      "duration_ms": 19425,
       "error": null
     },
     {
@@ -2225,7 +2401,7 @@
       "company_slug": "iterable",
       "success": true,
       "job_count": 41,
-      "duration_ms": 16768,
+      "duration_ms": 19108,
       "error": null
     },
     {
@@ -2233,7 +2409,7 @@
       "company_slug": "jellysmack",
       "success": true,
       "job_count": 2,
-      "duration_ms": 17771,
+      "duration_ms": 19117,
       "error": null
     },
     {
@@ -2241,7 +2417,7 @@
       "company_slug": "jetbrains",
       "success": true,
       "job_count": 117,
-      "duration_ms": 16828,
+      "duration_ms": 19424,
       "error": null
     },
     {
@@ -2249,7 +2425,7 @@
       "company_slug": "journey",
       "success": true,
       "job_count": 9,
-      "duration_ms": 16780,
+      "duration_ms": 19342,
       "error": null
     },
     {
@@ -2257,7 +2433,7 @@
       "company_slug": "joy",
       "success": true,
       "job_count": 5,
-      "duration_ms": 17162,
+      "duration_ms": 19905,
       "error": null
     },
     {
@@ -2265,7 +2441,7 @@
       "company_slug": "juicebox",
       "success": true,
       "job_count": 2,
-      "duration_ms": 16829,
+      "duration_ms": 19608,
       "error": null
     },
     {
@@ -2273,7 +2449,7 @@
       "company_slug": "julius",
       "success": true,
       "job_count": 5,
-      "duration_ms": 17164,
+      "duration_ms": 19969,
       "error": null
     },
     {
@@ -2281,7 +2457,7 @@
       "company_slug": "june",
       "success": true,
       "job_count": 1,
-      "duration_ms": 17482,
+      "duration_ms": 19925,
       "error": null
     },
     {
@@ -2289,7 +2465,7 @@
       "company_slug": "jupe",
       "success": true,
       "job_count": 2,
-      "duration_ms": 17944,
+      "duration_ms": 19813,
       "error": null
     },
     {
@@ -2297,7 +2473,7 @@
       "company_slug": "justworks",
       "success": true,
       "job_count": 81,
-      "duration_ms": 17159,
+      "duration_ms": 19878,
       "error": null
     },
     {
@@ -2305,7 +2481,7 @@
       "company_slug": "kalshi",
       "success": true,
       "job_count": 26,
-      "duration_ms": 17075,
+      "duration_ms": 19810,
       "error": null
     },
     {
@@ -2313,7 +2489,7 @@
       "company_slug": "keye",
       "success": true,
       "job_count": 3,
-      "duration_ms": 17280,
+      "duration_ms": 20438,
       "error": null
     },
     {
@@ -2321,7 +2497,7 @@
       "company_slug": "kinexon",
       "success": true,
       "job_count": 23,
-      "duration_ms": 17477,
+      "duration_ms": 20056,
       "error": null
     },
     {
@@ -2329,15 +2505,15 @@
       "company_slug": "kinter",
       "success": true,
       "job_count": 1,
-      "duration_ms": 18280,
+      "duration_ms": 20107,
       "error": null
     },
     {
       "extractor": "greenhouse",
       "company_slug": "klaviyo",
       "success": true,
-      "job_count": 244,
-      "duration_ms": 17761,
+      "job_count": 245,
+      "duration_ms": 20435,
       "error": null
     },
     {
@@ -2345,7 +2521,7 @@
       "company_slug": "kodo",
       "success": true,
       "job_count": 1,
-      "duration_ms": 17339,
+      "duration_ms": 20161,
       "error": null
     },
     {
@@ -2353,7 +2529,7 @@
       "company_slug": "kombo",
       "success": true,
       "job_count": 132,
-      "duration_ms": 17770,
+      "duration_ms": 20464,
       "error": null
     },
     {
@@ -2361,7 +2537,7 @@
       "company_slug": "konux",
       "success": true,
       "job_count": 1,
-      "duration_ms": 17453,
+      "duration_ms": 20112,
       "error": null
     },
     {
@@ -2369,7 +2545,7 @@
       "company_slug": "laika",
       "success": true,
       "job_count": 6,
-      "duration_ms": 17504,
+      "duration_ms": 20447,
       "error": null
     },
     {
@@ -2377,7 +2553,7 @@
       "company_slug": "lattice",
       "success": true,
       "job_count": 10,
-      "duration_ms": 17777,
+      "duration_ms": 20620,
       "error": null
     },
     {
@@ -2385,7 +2561,7 @@
       "company_slug": "layup",
       "success": true,
       "job_count": 20,
-      "duration_ms": 19405,
+      "duration_ms": 22607,
       "error": null
     },
     {
@@ -2393,7 +2569,7 @@
       "company_slug": "ledger",
       "success": true,
       "job_count": 1,
-      "duration_ms": 18526,
+      "duration_ms": 20439,
       "error": null
     },
     {
@@ -2401,7 +2577,7 @@
       "company_slug": "ledgy",
       "success": true,
       "job_count": 10,
-      "duration_ms": 17769,
+      "duration_ms": 20590,
       "error": null
     },
     {
@@ -2409,7 +2585,7 @@
       "company_slug": "legacy",
       "success": true,
       "job_count": 3,
-      "duration_ms": 18281,
+      "duration_ms": 20913,
       "error": null
     },
     {
@@ -2417,7 +2593,7 @@
       "company_slug": "legalist",
       "success": true,
       "job_count": 4,
-      "duration_ms": 18280,
+      "duration_ms": 20622,
       "error": null
     },
     {
@@ -2425,7 +2601,7 @@
       "company_slug": "level",
       "success": true,
       "job_count": 27,
-      "duration_ms": 18114,
+      "duration_ms": 20831,
       "error": null
     },
     {
@@ -2433,7 +2609,7 @@
       "company_slug": "life360",
       "success": true,
       "job_count": 23,
-      "duration_ms": 17973,
+      "duration_ms": 20724,
       "error": null
     },
     {
@@ -2441,7 +2617,7 @@
       "company_slug": "linc",
       "success": true,
       "job_count": 3,
-      "duration_ms": 18281,
+      "duration_ms": 20955,
       "error": null
     },
     {
@@ -2449,7 +2625,7 @@
       "company_slug": "link",
       "success": true,
       "job_count": 16,
-      "duration_ms": 18288,
+      "duration_ms": 21076,
       "error": null
     },
     {
@@ -2457,7 +2633,23 @@
       "company_slug": "linkedin",
       "success": true,
       "job_count": 53,
-      "duration_ms": 18480,
+      "duration_ms": 20809,
+      "error": null
+    },
+    {
+      "extractor": "greenhouse",
+      "company_slug": "liquibase",
+      "success": true,
+      "job_count": 5,
+      "duration_ms": 21352,
+      "error": null
+    },
+    {
+      "extractor": "ashby",
+      "company_slug": "livekit",
+      "success": true,
+      "job_count": 14,
+      "duration_ms": 20864,
       "error": null
     },
     {
@@ -2465,7 +2657,7 @@
       "company_slug": "lob",
       "success": true,
       "job_count": 6,
-      "duration_ms": 18589,
+      "duration_ms": 20900,
       "error": null
     },
     {
@@ -2473,7 +2665,7 @@
       "company_slug": "logicgate",
       "success": true,
       "job_count": 20,
-      "duration_ms": 18522,
+      "duration_ms": 20989,
       "error": null
     },
     {
@@ -2481,7 +2673,7 @@
       "company_slug": "lokal",
       "success": true,
       "job_count": 6,
-      "duration_ms": 18447,
+      "duration_ms": 20968,
       "error": null
     },
     {
@@ -2489,7 +2681,7 @@
       "company_slug": "lumen5",
       "success": true,
       "job_count": 1,
-      "duration_ms": 18525,
+      "duration_ms": 21046,
       "error": null
     },
     {
@@ -2497,7 +2689,15 @@
       "company_slug": "lyra",
       "success": true,
       "job_count": 1,
-      "duration_ms": 18444,
+      "duration_ms": 21077,
+      "error": null
+    },
+    {
+      "extractor": "smartrecruiters",
+      "company_slug": "lyst",
+      "success": true,
+      "job_count": 10,
+      "duration_ms": 21937,
       "error": null
     },
     {
@@ -2505,7 +2705,15 @@
       "company_slug": "mable",
       "success": true,
       "job_count": 17,
-      "duration_ms": 19043,
+      "duration_ms": 22969,
+      "error": null
+    },
+    {
+      "extractor": "recruitee",
+      "company_slug": "macpaw",
+      "success": true,
+      "job_count": 19,
+      "duration_ms": 21212,
       "error": null
     },
     {
@@ -2513,7 +2721,7 @@
       "company_slug": "magazino",
       "success": true,
       "job_count": 5,
-      "duration_ms": 18760,
+      "duration_ms": 21576,
       "error": null
     },
     {
@@ -2521,7 +2729,7 @@
       "company_slug": "manara",
       "success": true,
       "job_count": 8,
-      "duration_ms": 18616,
+      "duration_ms": 21287,
       "error": null
     },
     {
@@ -2529,7 +2737,7 @@
       "company_slug": "mantis",
       "success": true,
       "job_count": 6,
-      "duration_ms": 20851,
+      "duration_ms": 21248,
       "error": null
     },
     {
@@ -2537,7 +2745,7 @@
       "company_slug": "marcopolo",
       "success": true,
       "job_count": 2,
-      "duration_ms": 18763,
+      "duration_ms": 22416,
       "error": null
     },
     {
@@ -2545,7 +2753,7 @@
       "company_slug": "marqvision",
       "success": true,
       "job_count": 42,
-      "duration_ms": 18756,
+      "duration_ms": 21510,
       "error": null
     },
     {
@@ -2553,7 +2761,7 @@
       "company_slug": "mattermost",
       "success": true,
       "job_count": 22,
-      "duration_ms": 19159,
+      "duration_ms": 21525,
       "error": null
     },
     {
@@ -2561,7 +2769,7 @@
       "company_slug": "maven",
       "success": true,
       "job_count": 5,
-      "duration_ms": 18689,
+      "duration_ms": 21445,
       "error": null
     },
     {
@@ -2569,7 +2777,7 @@
       "company_slug": "maverickx",
       "success": true,
       "job_count": 6,
-      "duration_ms": 19143,
+      "duration_ms": 22702,
       "error": null
     },
     {
@@ -2577,7 +2785,7 @@
       "company_slug": "mayflower",
       "success": true,
       "job_count": 40,
-      "duration_ms": 19179,
+      "duration_ms": 21773,
       "error": null
     },
     {
@@ -2585,7 +2793,7 @@
       "company_slug": "mbition",
       "success": true,
       "job_count": 45,
-      "duration_ms": 19273,
+      "duration_ms": 22061,
       "error": null
     },
     {
@@ -2593,7 +2801,7 @@
       "company_slug": "meesho",
       "success": true,
       "job_count": 43,
-      "duration_ms": 21406,
+      "duration_ms": 23534,
       "error": null
     },
     {
@@ -2601,7 +2809,7 @@
       "company_slug": "mercury",
       "success": true,
       "job_count": 63,
-      "duration_ms": 19005,
+      "duration_ms": 21800,
       "error": null
     },
     {
@@ -2609,7 +2817,7 @@
       "company_slug": "mesh",
       "success": true,
       "job_count": 25,
-      "duration_ms": 18955,
+      "duration_ms": 21962,
       "error": null
     },
     {
@@ -2617,15 +2825,23 @@
       "company_slug": "metabase",
       "success": true,
       "job_count": 15,
-      "duration_ms": 20036,
+      "duration_ms": 23436,
       "error": null
     },
     {
       "extractor": "greenhouse",
       "company_slug": "minio",
       "success": true,
-      "job_count": 21,
-      "duration_ms": 19415,
+      "job_count": 19,
+      "duration_ms": 22135,
+      "error": null
+    },
+    {
+      "extractor": "ashby",
+      "company_slug": "mintlify",
+      "success": true,
+      "job_count": 16,
+      "duration_ms": 22360,
       "error": null
     },
     {
@@ -2633,7 +2849,7 @@
       "company_slug": "mirakl",
       "success": true,
       "job_count": 22,
-      "duration_ms": 19342,
+      "duration_ms": 22263,
       "error": null
     },
     {
@@ -2641,7 +2857,7 @@
       "company_slug": "mixpanel",
       "success": true,
       "job_count": 52,
-      "duration_ms": 19382,
+      "duration_ms": 22349,
       "error": null
     },
     {
@@ -2649,7 +2865,7 @@
       "company_slug": "modernloop",
       "success": true,
       "job_count": 13,
-      "duration_ms": 19344,
+      "duration_ms": 22403,
       "error": null
     },
     {
@@ -2657,7 +2873,7 @@
       "company_slug": "mollie",
       "success": true,
       "job_count": 39,
-      "duration_ms": 20037,
+      "duration_ms": 22630,
       "error": null
     },
     {
@@ -2665,7 +2881,7 @@
       "company_slug": "momence",
       "success": true,
       "job_count": 4,
-      "duration_ms": 19641,
+      "duration_ms": 22516,
       "error": null
     },
     {
@@ -2673,7 +2889,7 @@
       "company_slug": "momentic",
       "success": true,
       "job_count": 24,
-      "duration_ms": 19692,
+      "duration_ms": 22996,
       "error": null
     },
     {
@@ -2681,7 +2897,7 @@
       "company_slug": "momentus",
       "success": true,
       "job_count": 11,
-      "duration_ms": 19585,
+      "duration_ms": 22628,
       "error": null
     },
     {
@@ -2689,7 +2905,7 @@
       "company_slug": "mongodb",
       "success": true,
       "job_count": 432,
-      "duration_ms": 20018,
+      "duration_ms": 23236,
       "error": null
     },
     {
@@ -2697,7 +2913,7 @@
       "company_slug": "monzo",
       "success": true,
       "job_count": 67,
-      "duration_ms": 20229,
+      "duration_ms": 23286,
       "error": null
     },
     {
@@ -2705,7 +2921,7 @@
       "company_slug": "motion",
       "success": true,
       "job_count": 3,
-      "duration_ms": 20038,
+      "duration_ms": 23287,
       "error": null
     },
     {
@@ -2713,7 +2929,15 @@
       "company_slug": "movley",
       "success": true,
       "job_count": 1,
-      "duration_ms": 19731,
+      "duration_ms": 23751,
+      "error": null
+    },
+    {
+      "extractor": "greenhouse",
+      "company_slug": "mozilla",
+      "success": true,
+      "job_count": 50,
+      "duration_ms": 22930,
       "error": null
     },
     {
@@ -2721,7 +2945,7 @@
       "company_slug": "mutiny",
       "success": true,
       "job_count": 11,
-      "duration_ms": 20037,
+      "duration_ms": 23314,
       "error": null
     },
     {
@@ -2729,7 +2953,7 @@
       "company_slug": "mux",
       "success": true,
       "job_count": 2,
-      "duration_ms": 20037,
+      "duration_ms": 23287,
       "error": null
     },
     {
@@ -2737,7 +2961,7 @@
       "company_slug": "n26",
       "success": true,
       "job_count": 51,
-      "duration_ms": 20063,
+      "duration_ms": 23312,
       "error": null
     },
     {
@@ -2745,7 +2969,7 @@
       "company_slug": "nabis",
       "success": true,
       "job_count": 34,
-      "duration_ms": 20255,
+      "duration_ms": 23564,
       "error": null
     },
     {
@@ -2753,15 +2977,15 @@
       "company_slug": "nanonets",
       "success": true,
       "job_count": 18,
-      "duration_ms": 20269,
+      "duration_ms": 23544,
       "error": null
     },
     {
       "extractor": "greenhouse",
       "company_slug": "natera",
       "success": true,
-      "job_count": 164,
-      "duration_ms": 20847,
+      "job_count": 162,
+      "duration_ms": 23906,
       "error": null
     },
     {
@@ -2769,7 +2993,7 @@
       "company_slug": "navattic",
       "success": true,
       "job_count": 1,
-      "duration_ms": 20260,
+      "duration_ms": 24314,
       "error": null
     },
     {
@@ -2777,7 +3001,7 @@
       "company_slug": "navvis",
       "success": true,
       "job_count": 33,
-      "duration_ms": 20570,
+      "duration_ms": 23662,
       "error": null
     },
     {
@@ -2785,7 +3009,7 @@
       "company_slug": "nayya",
       "success": true,
       "job_count": 6,
-      "duration_ms": 20419,
+      "duration_ms": 23547,
       "error": null
     },
     {
@@ -2793,7 +3017,15 @@
       "company_slug": "neo4j",
       "success": true,
       "job_count": 40,
-      "duration_ms": 20505,
+      "duration_ms": 23747,
+      "error": null
+    },
+    {
+      "extractor": "ashby",
+      "company_slug": "netboxlabs",
+      "success": true,
+      "job_count": 12,
+      "duration_ms": 23751,
       "error": null
     },
     {
@@ -2801,7 +3033,15 @@
       "company_slug": "netomi",
       "success": true,
       "job_count": 33,
-      "duration_ms": 21788,
+      "duration_ms": 24276,
+      "error": null
+    },
+    {
+      "extractor": "greenhouse",
+      "company_slug": "newrelic",
+      "success": true,
+      "job_count": 72,
+      "duration_ms": 23789,
       "error": null
     },
     {
@@ -2809,7 +3049,7 @@
       "company_slug": "newton",
       "success": true,
       "job_count": 3,
-      "duration_ms": 21344,
+      "duration_ms": 24194,
       "error": null
     },
     {
@@ -2817,7 +3057,7 @@
       "company_slug": "nexus",
       "success": true,
       "job_count": 3,
-      "duration_ms": 20422,
+      "duration_ms": 23909,
       "error": null
     },
     {
@@ -2825,7 +3065,7 @@
       "company_slug": "nimbus",
       "success": true,
       "job_count": 2,
-      "duration_ms": 22104,
+      "duration_ms": 24209,
       "error": null
     },
     {
@@ -2833,7 +3073,7 @@
       "company_slug": "noble",
       "success": true,
       "job_count": 2,
-      "duration_ms": 20572,
+      "duration_ms": 24050,
       "error": null
     },
     {
@@ -2841,7 +3081,7 @@
       "company_slug": "nordsec",
       "success": true,
       "job_count": 160,
-      "duration_ms": 24157,
+      "duration_ms": 26987,
       "error": null
     },
     {
@@ -2849,7 +3089,7 @@
       "company_slug": "notion",
       "success": true,
       "job_count": 142,
-      "duration_ms": 20851,
+      "duration_ms": 24278,
       "error": null
     },
     {
@@ -2857,7 +3097,7 @@
       "company_slug": "nox-metals",
       "success": true,
       "job_count": 33,
-      "duration_ms": 20852,
+      "duration_ms": 24333,
       "error": null
     },
     {
@@ -2865,7 +3105,7 @@
       "company_slug": "nucleo",
       "success": true,
       "job_count": 3,
-      "duration_ms": 21103,
+      "duration_ms": 24397,
       "error": null
     },
     {
@@ -2873,7 +3113,7 @@
       "company_slug": "odeko",
       "success": true,
       "job_count": 16,
-      "duration_ms": 21015,
+      "duration_ms": 24227,
       "error": null
     },
     {
@@ -2881,7 +3121,7 @@
       "company_slug": "odin",
       "success": true,
       "job_count": 2,
-      "duration_ms": 21026,
+      "duration_ms": 24575,
       "error": null
     },
     {
@@ -2889,7 +3129,7 @@
       "company_slug": "okta",
       "success": true,
       "job_count": 368,
-      "duration_ms": 21339,
+      "duration_ms": 24921,
       "error": null
     },
     {
@@ -2897,7 +3137,7 @@
       "company_slug": "omnidock",
       "success": true,
       "job_count": 3,
-      "duration_ms": 21344,
+      "duration_ms": 24964,
       "error": null
     },
     {
@@ -2905,7 +3145,7 @@
       "company_slug": "omnisend",
       "success": true,
       "job_count": 19,
-      "duration_ms": 24385,
+      "duration_ms": 24964,
       "error": null
     },
     {
@@ -2913,7 +3153,7 @@
       "company_slug": "onebrief",
       "success": true,
       "job_count": 26,
-      "duration_ms": 21341,
+      "duration_ms": 24462,
       "error": null
     },
     {
@@ -2921,7 +3161,7 @@
       "company_slug": "onechronos",
       "success": true,
       "job_count": 1,
-      "duration_ms": 21570,
+      "duration_ms": 24457,
       "error": null
     },
     {
@@ -2929,7 +3169,7 @@
       "company_slug": "onshore",
       "success": true,
       "job_count": 12,
-      "duration_ms": 21517,
+      "duration_ms": 24523,
       "error": null
     },
     {
@@ -2937,7 +3177,7 @@
       "company_slug": "open",
       "success": true,
       "job_count": 4,
-      "duration_ms": 21865,
+      "duration_ms": 24966,
       "error": null
     },
     {
@@ -2945,7 +3185,7 @@
       "company_slug": "openprovider",
       "success": true,
       "job_count": 4,
-      "duration_ms": 21928,
+      "duration_ms": 25141,
       "error": null
     },
     {
@@ -2953,7 +3193,7 @@
       "company_slug": "opensea",
       "success": true,
       "job_count": 5,
-      "duration_ms": 21570,
+      "duration_ms": 24938,
       "error": null
     },
     {
@@ -2961,15 +3201,15 @@
       "company_slug": "openwork",
       "success": true,
       "job_count": 7,
-      "duration_ms": 21563,
+      "duration_ms": 24926,
       "error": null
     },
     {
       "extractor": "greenhouse",
       "company_slug": "ophelia",
       "success": true,
-      "job_count": 19,
-      "duration_ms": 21800,
+      "job_count": 18,
+      "duration_ms": 24938,
       "error": null
     },
     {
@@ -2977,7 +3217,7 @@
       "company_slug": "orbisk",
       "success": true,
       "job_count": 5,
-      "duration_ms": 21715,
+      "duration_ms": 25118,
       "error": null
     },
     {
@@ -2985,7 +3225,7 @@
       "company_slug": "ororatech",
       "success": true,
       "job_count": 2,
-      "duration_ms": 22113,
+      "duration_ms": 25509,
       "error": null
     },
     {
@@ -2993,7 +3233,7 @@
       "company_slug": "osmosis",
       "success": true,
       "job_count": 10,
-      "duration_ms": 21836,
+      "duration_ms": 25184,
       "error": null
     },
     {
@@ -3001,7 +3241,7 @@
       "company_slug": "outschool",
       "success": true,
       "job_count": 3,
-      "duration_ms": 21872,
+      "duration_ms": 25139,
       "error": null
     },
     {
@@ -3009,7 +3249,15 @@
       "company_slug": "ovoenergy",
       "success": true,
       "job_count": 16,
-      "duration_ms": 21970,
+      "duration_ms": 25171,
+      "error": null
+    },
+    {
+      "extractor": "lever",
+      "company_slug": "oxylabs",
+      "success": true,
+      "job_count": 41,
+      "duration_ms": 25664,
       "error": null
     },
     {
@@ -3017,7 +3265,7 @@
       "company_slug": "oyster",
       "success": true,
       "job_count": 17,
-      "duration_ms": 22018,
+      "duration_ms": 25348,
       "error": null
     },
     {
@@ -3025,7 +3273,7 @@
       "company_slug": "pahamify",
       "success": true,
       "job_count": 1,
-      "duration_ms": 21973,
+      "duration_ms": 25510,
       "error": null
     },
     {
@@ -3033,7 +3281,7 @@
       "company_slug": "palmetto",
       "success": true,
       "job_count": 1,
-      "duration_ms": 22068,
+      "duration_ms": 25291,
       "error": null
     },
     {
@@ -3041,7 +3289,7 @@
       "company_slug": "pantheon",
       "success": true,
       "job_count": 27,
-      "duration_ms": 22047,
+      "duration_ms": 25345,
       "error": null
     },
     {
@@ -3049,7 +3297,7 @@
       "company_slug": "papa",
       "success": true,
       "job_count": 1,
-      "duration_ms": 22075,
+      "duration_ms": 25941,
       "error": null
     },
     {
@@ -3057,7 +3305,7 @@
       "company_slug": "paradigm",
       "success": true,
       "job_count": 4,
-      "duration_ms": 22126,
+      "duration_ms": 25352,
       "error": null
     },
     {
@@ -3065,7 +3313,7 @@
       "company_slug": "partoo",
       "success": true,
       "job_count": 5,
-      "duration_ms": 22448,
+      "duration_ms": 26237,
       "error": null
     },
     {
@@ -3073,7 +3321,7 @@
       "company_slug": "patsnap",
       "success": true,
       "job_count": 19,
-      "duration_ms": 22750,
+      "duration_ms": 29538,
       "error": null
     },
     {
@@ -3081,7 +3329,7 @@
       "company_slug": "pax-historia",
       "success": true,
       "job_count": 4,
-      "duration_ms": 22248,
+      "duration_ms": 25594,
       "error": null
     },
     {
@@ -3089,7 +3337,7 @@
       "company_slug": "paystack",
       "success": true,
       "job_count": 5,
-      "duration_ms": 22227,
+      "duration_ms": 25512,
       "error": null
     },
     {
@@ -3097,7 +3345,7 @@
       "company_slug": "paystand",
       "success": true,
       "job_count": 10,
-      "duration_ms": 22245,
+      "duration_ms": 26015,
       "error": null
     },
     {
@@ -3105,7 +3353,7 @@
       "company_slug": "pelago",
       "success": true,
       "job_count": 16,
-      "duration_ms": 22268,
+      "duration_ms": 25682,
       "error": null
     },
     {
@@ -3113,7 +3361,7 @@
       "company_slug": "pendo",
       "success": true,
       "job_count": 17,
-      "duration_ms": 22279,
+      "duration_ms": 25672,
       "error": null
     },
     {
@@ -3121,7 +3369,15 @@
       "company_slug": "people-ai",
       "success": true,
       "job_count": 7,
-      "duration_ms": 22990,
+      "duration_ms": 26355,
+      "error": null
+    },
+    {
+      "extractor": "ashby",
+      "company_slug": "percona",
+      "success": true,
+      "job_count": 16,
+      "duration_ms": 26016,
       "error": null
     },
     {
@@ -3129,7 +3385,7 @@
       "company_slug": "phoenix",
       "success": true,
       "job_count": 13,
-      "duration_ms": 22799,
+      "duration_ms": 26344,
       "error": null
     },
     {
@@ -3137,7 +3393,7 @@
       "company_slug": "pina",
       "success": true,
       "job_count": 2,
-      "duration_ms": 22829,
+      "duration_ms": 26343,
       "error": null
     },
     {
@@ -3145,7 +3401,7 @@
       "company_slug": "pinch",
       "success": true,
       "job_count": 3,
-      "duration_ms": 22795,
+      "duration_ms": 26165,
       "error": null
     },
     {
@@ -3153,7 +3409,7 @@
       "company_slug": "pingcap",
       "success": true,
       "job_count": 28,
-      "duration_ms": 22473,
+      "duration_ms": 26373,
       "error": null
     },
     {
@@ -3161,7 +3417,7 @@
       "company_slug": "pinterest",
       "success": true,
       "job_count": 170,
-      "duration_ms": 22584,
+      "duration_ms": 26342,
       "error": null
     },
     {
@@ -3169,7 +3425,7 @@
       "company_slug": "pioneer",
       "success": true,
       "job_count": 1,
-      "duration_ms": 22616,
+      "duration_ms": 26177,
       "error": null
     },
     {
@@ -3177,7 +3433,7 @@
       "company_slug": "plaid",
       "success": true,
       "job_count": 100,
-      "duration_ms": 22759,
+      "duration_ms": 26526,
       "error": null
     },
     {
@@ -3185,7 +3441,7 @@
       "company_slug": "planetscale",
       "success": true,
       "job_count": 6,
-      "duration_ms": 22754,
+      "duration_ms": 26347,
       "error": null
     },
     {
@@ -3193,7 +3449,7 @@
       "company_slug": "platformsh",
       "success": true,
       "job_count": 5,
-      "duration_ms": 22772,
+      "duration_ms": 26511,
       "error": null
     },
     {
@@ -3201,7 +3457,7 @@
       "company_slug": "pleo",
       "success": true,
       "job_count": 41,
-      "duration_ms": 22966,
+      "duration_ms": 26644,
       "error": null
     },
     {
@@ -3209,7 +3465,7 @@
       "company_slug": "plexus",
       "success": true,
       "job_count": 7,
-      "duration_ms": 23213,
+      "duration_ms": 27034,
       "error": null
     },
     {
@@ -3217,7 +3473,7 @@
       "company_slug": "plume",
       "success": true,
       "job_count": 15,
-      "duration_ms": 22948,
+      "duration_ms": 26525,
       "error": null
     },
     {
@@ -3225,7 +3481,7 @@
       "company_slug": "polar",
       "success": true,
       "job_count": 2,
-      "duration_ms": 22993,
+      "duration_ms": 26572,
       "error": null
     },
     {
@@ -3233,7 +3489,7 @@
       "company_slug": "porter",
       "success": true,
       "job_count": 30,
-      "duration_ms": 23655,
+      "duration_ms": 28318,
       "error": null
     },
     {
@@ -3241,7 +3497,7 @@
       "company_slug": "postera",
       "success": true,
       "job_count": 2,
-      "duration_ms": 23216,
+      "duration_ms": 27642,
       "error": null
     },
     {
@@ -3249,7 +3505,7 @@
       "company_slug": "postman",
       "success": true,
       "job_count": 107,
-      "duration_ms": 23269,
+      "duration_ms": 27238,
       "error": null
     },
     {
@@ -3257,7 +3513,7 @@
       "company_slug": "postscript",
       "success": true,
       "job_count": 8,
-      "duration_ms": 23115,
+      "duration_ms": 27027,
       "error": null
     },
     {
@@ -3265,7 +3521,7 @@
       "company_slug": "powerus",
       "success": true,
       "job_count": 5,
-      "duration_ms": 23464,
+      "duration_ms": 27024,
       "error": null
     },
     {
@@ -3273,7 +3529,7 @@
       "company_slug": "powerx",
       "success": true,
       "job_count": 59,
-      "duration_ms": 23203,
+      "duration_ms": 27023,
       "error": null
     },
     {
@@ -3281,7 +3537,7 @@
       "company_slug": "prisma",
       "success": true,
       "job_count": 61,
-      "duration_ms": 24237,
+      "duration_ms": 27629,
       "error": null
     },
     {
@@ -3289,7 +3545,7 @@
       "company_slug": "prismatic",
       "success": true,
       "job_count": 1,
-      "duration_ms": 23272,
+      "duration_ms": 27241,
       "error": null
     },
     {
@@ -3297,7 +3553,7 @@
       "company_slug": "prismic",
       "success": true,
       "job_count": 7,
-      "duration_ms": 24173,
+      "duration_ms": 27554,
       "error": null
     },
     {
@@ -3305,7 +3561,7 @@
       "company_slug": "prodigal",
       "success": true,
       "job_count": 12,
-      "duration_ms": 23477,
+      "duration_ms": 27456,
       "error": null
     },
     {
@@ -3313,7 +3569,7 @@
       "company_slug": "pronto",
       "success": true,
       "job_count": 2,
-      "duration_ms": 23732,
+      "duration_ms": 27240,
       "error": null
     },
     {
@@ -3321,7 +3577,7 @@
       "company_slug": "proper",
       "success": true,
       "job_count": 16,
-      "duration_ms": 24254,
+      "duration_ms": 28508,
       "error": null
     },
     {
@@ -3329,7 +3585,7 @@
       "company_slug": "prospa",
       "success": true,
       "job_count": 8,
-      "duration_ms": 23461,
+      "duration_ms": 27421,
       "error": null
     },
     {
@@ -3337,7 +3593,7 @@
       "company_slug": "prosper",
       "success": true,
       "job_count": 13,
-      "duration_ms": 25535,
+      "duration_ms": 29506,
       "error": null
     },
     {
@@ -3345,7 +3601,7 @@
       "company_slug": "pulley",
       "success": true,
       "job_count": 5,
-      "duration_ms": 23666,
+      "duration_ms": 27399,
       "error": null
     },
     {
@@ -3353,7 +3609,7 @@
       "company_slug": "pulse",
       "success": true,
       "job_count": 10,
-      "duration_ms": 24161,
+      "duration_ms": 27710,
       "error": null
     },
     {
@@ -3361,7 +3617,7 @@
       "company_slug": "pure",
       "success": true,
       "job_count": 3,
-      "duration_ms": 24161,
+      "duration_ms": 27722,
       "error": null
     },
     {
@@ -3369,7 +3625,7 @@
       "company_slug": "pursuit",
       "success": true,
       "job_count": 3,
-      "duration_ms": 24164,
+      "duration_ms": 27632,
       "error": null
     },
     {
@@ -3377,7 +3633,7 @@
       "company_slug": "pyka",
       "success": true,
       "job_count": 15,
-      "duration_ms": 25861,
+      "duration_ms": 28181,
       "error": null
     },
     {
@@ -3385,7 +3641,7 @@
       "company_slug": "qaware",
       "success": true,
       "job_count": 8,
-      "duration_ms": 24716,
+      "duration_ms": 28121,
       "error": null
     },
     {
@@ -3393,7 +3649,7 @@
       "company_slug": "qblox",
       "success": true,
       "job_count": 18,
-      "duration_ms": 24529,
+      "duration_ms": 27861,
       "error": null
     },
     {
@@ -3401,7 +3657,7 @@
       "company_slug": "qonto",
       "success": true,
       "job_count": 41,
-      "duration_ms": 27429,
+      "duration_ms": 30615,
       "error": null
     },
     {
@@ -3409,7 +3665,7 @@
       "company_slug": "qphox",
       "success": true,
       "job_count": 5,
-      "duration_ms": 24448,
+      "duration_ms": 27864,
       "error": null
     },
     {
@@ -3417,7 +3673,7 @@
       "company_slug": "qualia",
       "success": true,
       "job_count": 21,
-      "duration_ms": 24475,
+      "duration_ms": 28351,
       "error": null
     },
     {
@@ -3425,7 +3681,7 @@
       "company_slug": "queenly",
       "success": true,
       "job_count": 2,
-      "duration_ms": 24400,
+      "duration_ms": 28227,
       "error": null
     },
     {
@@ -3433,7 +3689,7 @@
       "company_slug": "quetzal",
       "success": true,
       "job_count": 3,
-      "duration_ms": 24450,
+      "duration_ms": 28250,
       "error": null
     },
     {
@@ -3441,7 +3697,7 @@
       "company_slug": "raisin",
       "success": true,
       "job_count": 46,
-      "duration_ms": 24922,
+      "duration_ms": 28343,
       "error": null
     },
     {
@@ -3449,7 +3705,7 @@
       "company_slug": "ramp",
       "success": true,
       "job_count": 118,
-      "duration_ms": 24783,
+      "duration_ms": 29032,
       "error": null
     },
     {
@@ -3457,7 +3713,7 @@
       "company_slug": "rampnetwork",
       "success": true,
       "job_count": 2,
-      "duration_ms": 24602,
+      "duration_ms": 28385,
       "error": null
     },
     {
@@ -3465,7 +3721,7 @@
       "company_slug": "raven",
       "success": true,
       "job_count": 2,
-      "duration_ms": 24608,
+      "duration_ms": 28419,
       "error": null
     },
     {
@@ -3473,7 +3729,7 @@
       "company_slug": "recidiviz",
       "success": true,
       "job_count": 12,
-      "duration_ms": 24650,
+      "duration_ms": 28537,
       "error": null
     },
     {
@@ -3481,7 +3737,7 @@
       "company_slug": "reflex",
       "success": true,
       "job_count": 1,
-      "duration_ms": 24711,
+      "duration_ms": 28516,
       "error": null
     },
     {
@@ -3489,7 +3745,7 @@
       "company_slug": "regent",
       "success": true,
       "job_count": 13,
-      "duration_ms": 24777,
+      "duration_ms": 28516,
       "error": null
     },
     {
@@ -3497,7 +3753,7 @@
       "company_slug": "remote-com",
       "success": true,
       "job_count": 282,
-      "duration_ms": 25215,
+      "duration_ms": 29027,
       "error": null
     },
     {
@@ -3505,7 +3761,7 @@
       "company_slug": "remote",
       "success": true,
       "job_count": 2,
-      "duration_ms": 25224,
+      "duration_ms": 28569,
       "error": null
     },
     {
@@ -3513,7 +3769,7 @@
       "company_slug": "remotecom",
       "success": true,
       "job_count": 282,
-      "duration_ms": 25834,
+      "duration_ms": 29468,
       "error": null
     },
     {
@@ -3521,7 +3777,7 @@
       "company_slug": "remotecorp",
       "success": true,
       "job_count": 16,
-      "duration_ms": 25222,
+      "duration_ms": 28684,
       "error": null
     },
     {
@@ -3529,7 +3785,7 @@
       "company_slug": "retorio",
       "success": true,
       "job_count": 3,
-      "duration_ms": 25236,
+      "duration_ms": 29033,
       "error": null
     },
     {
@@ -3537,7 +3793,7 @@
       "company_slug": "retrofit",
       "success": true,
       "job_count": 1,
-      "duration_ms": 25226,
+      "duration_ms": 28689,
       "error": null
     },
     {
@@ -3545,7 +3801,7 @@
       "company_slug": "revel",
       "success": true,
       "job_count": 18,
-      "duration_ms": 26966,
+      "duration_ms": 29053,
       "error": null
     },
     {
@@ -3553,7 +3809,7 @@
       "company_slug": "revi",
       "success": true,
       "job_count": 8,
-      "duration_ms": 27096,
+      "duration_ms": 29516,
       "error": null
     },
     {
@@ -3561,7 +3817,7 @@
       "company_slug": "rezi",
       "success": true,
       "job_count": 1,
-      "duration_ms": 25507,
+      "duration_ms": 29032,
       "error": null
     },
     {
@@ -3569,7 +3825,7 @@
       "company_slug": "ripple",
       "success": true,
       "job_count": 129,
-      "duration_ms": 25503,
+      "duration_ms": 29627,
       "error": null
     },
     {
@@ -3577,7 +3833,7 @@
       "company_slug": "roblox",
       "success": true,
       "job_count": 295,
-      "duration_ms": 25992,
+      "duration_ms": 29760,
       "error": null
     },
     {
@@ -3585,7 +3841,7 @@
       "company_slug": "roofr",
       "success": true,
       "job_count": 7,
-      "duration_ms": 25391,
+      "duration_ms": 29477,
       "error": null
     },
     {
@@ -3593,7 +3849,7 @@
       "company_slug": "runway-ml",
       "success": true,
       "job_count": 39,
-      "duration_ms": 25838,
+      "duration_ms": 29472,
       "error": null
     },
     {
@@ -3601,7 +3857,7 @@
       "company_slug": "scaleway",
       "success": true,
       "job_count": 45,
-      "duration_ms": 31407,
+      "duration_ms": 32219,
       "error": null
     },
     {
@@ -3609,7 +3865,7 @@
       "company_slug": "secureframe",
       "success": true,
       "job_count": 16,
-      "duration_ms": 29413,
+      "duration_ms": 31205,
       "error": null
     },
     {
@@ -3617,7 +3873,7 @@
       "company_slug": "seer",
       "success": true,
       "job_count": 3,
-      "duration_ms": 25996,
+      "duration_ms": 29782,
       "error": null
     },
     {
@@ -3625,7 +3881,7 @@
       "company_slug": "send",
       "success": true,
       "job_count": 6,
-      "duration_ms": 26158,
+      "duration_ms": 29916,
       "error": null
     },
     {
@@ -3633,7 +3889,7 @@
       "company_slug": "sendbird",
       "success": true,
       "job_count": 19,
-      "duration_ms": 26276,
+      "duration_ms": 29804,
       "error": null
     },
     {
@@ -3641,7 +3897,7 @@
       "company_slug": "sensei",
       "success": true,
       "job_count": 14,
-      "duration_ms": 26307,
+      "duration_ms": 29977,
       "error": null
     },
     {
@@ -3649,15 +3905,15 @@
       "company_slug": "sentry",
       "success": true,
       "job_count": 38,
-      "duration_ms": 26228,
+      "duration_ms": 29858,
       "error": null
     },
     {
       "extractor": "smartrecruiters",
       "company_slug": "servicenow",
       "success": true,
-      "job_count": 535,
-      "duration_ms": 26995,
+      "job_count": 537,
+      "duration_ms": 32834,
       "error": null
     },
     {
@@ -3665,7 +3921,7 @@
       "company_slug": "shaped",
       "success": true,
       "job_count": 9,
-      "duration_ms": 26479,
+      "duration_ms": 30099,
       "error": null
     },
     {
@@ -3673,7 +3929,7 @@
       "company_slug": "shepherd",
       "success": true,
       "job_count": 14,
-      "duration_ms": 26725,
+      "duration_ms": 29980,
       "error": null
     },
     {
@@ -3681,7 +3937,7 @@
       "company_slug": "shiru",
       "success": true,
       "job_count": 1,
-      "duration_ms": 26547,
+      "duration_ms": 30043,
       "error": null
     },
     {
@@ -3689,7 +3945,7 @@
       "company_slug": "sila",
       "success": true,
       "job_count": 248,
-      "duration_ms": 35241,
+      "duration_ms": 49260,
       "error": null
     },
     {
@@ -3697,7 +3953,7 @@
       "company_slug": "siteline",
       "success": true,
       "job_count": 2,
-      "duration_ms": 26640,
+      "duration_ms": 30060,
       "error": null
     },
     {
@@ -3705,7 +3961,7 @@
       "company_slug": "skill-lync",
       "success": true,
       "job_count": 3,
-      "duration_ms": 26716,
+      "duration_ms": 31875,
       "error": null
     },
     {
@@ -3713,7 +3969,7 @@
       "company_slug": "skio",
       "success": true,
       "job_count": 6,
-      "duration_ms": 26883,
+      "duration_ms": 31062,
       "error": null
     },
     {
@@ -3721,7 +3977,7 @@
       "company_slug": "skyways",
       "success": true,
       "job_count": 22,
-      "duration_ms": 28432,
+      "duration_ms": 30856,
       "error": null
     },
     {
@@ -3729,7 +3985,7 @@
       "company_slug": "snackpass",
       "success": true,
       "job_count": 1,
-      "duration_ms": 26888,
+      "duration_ms": 30430,
       "error": null
     },
     {
@@ -3737,7 +3993,7 @@
       "company_slug": "snappr",
       "success": true,
       "job_count": 26,
-      "duration_ms": 27570,
+      "duration_ms": 31751,
       "error": null
     },
     {
@@ -3745,7 +4001,7 @@
       "company_slug": "sonarsource",
       "success": true,
       "job_count": 104,
-      "duration_ms": 32073,
+      "duration_ms": 35455,
       "error": null
     },
     {
@@ -3753,7 +4009,7 @@
       "company_slug": "sonia",
       "success": true,
       "job_count": 3,
-      "duration_ms": 27499,
+      "duration_ms": 31065,
       "error": null
     },
     {
@@ -3761,7 +4017,7 @@
       "company_slug": "soundboks",
       "success": true,
       "job_count": 3,
-      "duration_ms": 27188,
+      "duration_ms": 31001,
       "error": null
     },
     {
@@ -3769,7 +4025,7 @@
       "company_slug": "sourceability",
       "success": true,
       "job_count": 37,
-      "duration_ms": 27339,
+      "duration_ms": 31251,
       "error": null
     },
     {
@@ -3777,7 +4033,7 @@
       "company_slug": "spade",
       "success": true,
       "job_count": 5,
-      "duration_ms": 27434,
+      "duration_ms": 34608,
       "error": null
     },
     {
@@ -3785,7 +4041,7 @@
       "company_slug": "sparetech",
       "success": true,
       "job_count": 2,
-      "duration_ms": 27520,
+      "duration_ms": 31253,
       "error": null
     },
     {
@@ -3793,7 +4049,7 @@
       "company_slug": "spark",
       "success": true,
       "job_count": 4,
-      "duration_ms": 27601,
+      "duration_ms": 31368,
       "error": null
     },
     {
@@ -3801,7 +4057,7 @@
       "company_slug": "sparkles",
       "success": true,
       "job_count": 4,
-      "duration_ms": 27606,
+      "duration_ms": 31408,
       "error": null
     },
     {
@@ -3809,7 +4065,7 @@
       "company_slug": "spotify",
       "success": true,
       "job_count": 192,
-      "duration_ms": 28623,
+      "duration_ms": 32528,
       "error": null
     },
     {
@@ -3817,7 +4073,7 @@
       "company_slug": "sproof",
       "success": true,
       "job_count": 1,
-      "duration_ms": 28126,
+      "duration_ms": 31791,
       "error": null
     },
     {
@@ -3825,7 +4081,7 @@
       "company_slug": "squad",
       "success": true,
       "job_count": 18,
-      "duration_ms": 27890,
+      "duration_ms": 31578,
       "error": null
     },
     {
@@ -3833,7 +4089,7 @@
       "company_slug": "stabilityai",
       "success": true,
       "job_count": 13,
-      "duration_ms": 27764,
+      "duration_ms": 31756,
       "error": null
     },
     {
@@ -3841,7 +4097,7 @@
       "company_slug": "stacker",
       "success": true,
       "job_count": 3,
-      "duration_ms": 27806,
+      "duration_ms": 32221,
       "error": null
     },
     {
@@ -3849,7 +4105,7 @@
       "company_slug": "stage",
       "success": true,
       "job_count": 157,
-      "duration_ms": 28080,
+      "duration_ms": 32114,
       "error": null
     },
     {
@@ -3857,7 +4113,7 @@
       "company_slug": "starburst",
       "success": true,
       "job_count": 26,
-      "duration_ms": 27992,
+      "duration_ms": 32030,
       "error": null
     },
     {
@@ -3865,7 +4121,7 @@
       "company_slug": "starcloud",
       "success": true,
       "job_count": 7,
-      "duration_ms": 36471,
+      "duration_ms": 32226,
       "error": null
     },
     {
@@ -3873,7 +4129,7 @@
       "company_slug": "station",
       "success": true,
       "job_count": 3,
-      "duration_ms": 28627,
+      "duration_ms": 32719,
       "error": null
     },
     {
@@ -3881,7 +4137,7 @@
       "company_slug": "statiq",
       "success": true,
       "job_count": 1,
-      "duration_ms": 28225,
+      "duration_ms": 34178,
       "error": null
     },
     {
@@ -3889,15 +4145,15 @@
       "company_slug": "stream",
       "success": true,
       "job_count": 1,
-      "duration_ms": 28337,
+      "duration_ms": 32776,
       "error": null
     },
     {
       "extractor": "greenhouse",
       "company_slug": "stripe",
       "success": true,
-      "job_count": 483,
-      "duration_ms": 28788,
+      "job_count": 489,
+      "duration_ms": 33585,
       "error": null
     },
     {
@@ -3905,7 +4161,7 @@
       "company_slug": "suger",
       "success": true,
       "job_count": 8,
-      "duration_ms": 29809,
+      "duration_ms": 42460,
       "error": null
     },
     {
@@ -3913,7 +4169,7 @@
       "company_slug": "sumup",
       "success": true,
       "job_count": 514,
-      "duration_ms": 29395,
+      "duration_ms": 33108,
       "error": null
     },
     {
@@ -3921,7 +4177,7 @@
       "company_slug": "sunset",
       "success": true,
       "job_count": 2,
-      "duration_ms": 28967,
+      "duration_ms": 33111,
       "error": null
     },
     {
@@ -3929,7 +4185,7 @@
       "company_slug": "super",
       "success": true,
       "job_count": 14,
-      "duration_ms": 29614,
+      "duration_ms": 33127,
       "error": null
     },
     {
@@ -3937,7 +4193,7 @@
       "company_slug": "superset",
       "success": true,
       "job_count": 5,
-      "duration_ms": 28958,
+      "duration_ms": 33277,
       "error": null
     },
     {
@@ -3945,7 +4201,7 @@
       "company_slug": "superside",
       "success": true,
       "job_count": 23,
-      "duration_ms": 29851,
+      "duration_ms": 34137,
       "error": null
     },
     {
@@ -3953,7 +4209,7 @@
       "company_slug": "surfshark",
       "success": true,
       "job_count": 23,
-      "duration_ms": 33139,
+      "duration_ms": 34777,
       "error": null
     },
     {
@@ -3961,7 +4217,7 @@
       "company_slug": "surge",
       "success": true,
       "job_count": 1,
-      "duration_ms": 29615,
+      "duration_ms": 33259,
       "error": null
     },
     {
@@ -3969,7 +4225,7 @@
       "company_slug": "swayable",
       "success": true,
       "job_count": 11,
-      "duration_ms": 29585,
+      "duration_ms": 33593,
       "error": null
     },
     {
@@ -3977,7 +4233,7 @@
       "company_slug": "swile",
       "success": true,
       "job_count": 34,
-      "duration_ms": 31308,
+      "duration_ms": 35063,
       "error": null
     },
     {
@@ -3985,7 +4241,7 @@
       "company_slug": "swissdevjobs",
       "success": true,
       "job_count": 1,
-      "duration_ms": 29774,
+      "duration_ms": 33751,
       "error": null
     },
     {
@@ -3993,7 +4249,7 @@
       "company_slug": "sygaldry-technologies",
       "success": true,
       "job_count": 11,
-      "duration_ms": 29813,
+      "duration_ms": 33777,
       "error": null
     },
     {
@@ -4001,7 +4257,7 @@
       "company_slug": "symphony",
       "success": true,
       "job_count": 19,
-      "duration_ms": 29930,
+      "duration_ms": 33924,
       "error": null
     },
     {
@@ -4009,7 +4265,7 @@
       "company_slug": "synaptic",
       "success": true,
       "job_count": 1,
-      "duration_ms": 29956,
+      "duration_ms": 33931,
       "error": null
     },
     {
@@ -4017,7 +4273,7 @@
       "company_slug": "synapticure",
       "success": true,
       "job_count": 12,
-      "duration_ms": 30418,
+      "duration_ms": 35495,
       "error": null
     },
     {
@@ -4025,7 +4281,7 @@
       "company_slug": "syncro",
       "success": true,
       "job_count": 1,
-      "duration_ms": 30089,
+      "duration_ms": 34140,
       "error": null
     },
     {
@@ -4033,7 +4289,7 @@
       "company_slug": "sysdig",
       "success": true,
       "job_count": 24,
-      "duration_ms": 32513,
+      "duration_ms": 42746,
       "error": null
     },
     {
@@ -4041,7 +4297,7 @@
       "company_slug": "tag",
       "success": true,
       "job_count": 2,
-      "duration_ms": 30968,
+      "duration_ms": 35165,
       "error": null
     },
     {
@@ -4049,7 +4305,7 @@
       "company_slug": "tandem",
       "success": true,
       "job_count": 5,
-      "duration_ms": 30656,
+      "duration_ms": 34632,
       "error": null
     },
     {
@@ -4057,7 +4313,7 @@
       "company_slug": "teleo",
       "success": true,
       "job_count": 8,
-      "duration_ms": 31665,
+      "duration_ms": 35952,
       "error": null
     },
     {
@@ -4065,7 +4321,7 @@
       "company_slug": "tendo",
       "success": true,
       "job_count": 19,
-      "duration_ms": 32359,
+      "duration_ms": 36242,
       "error": null
     },
     {
@@ -4073,7 +4329,7 @@
       "company_slug": "tesseract",
       "success": true,
       "job_count": 1,
-      "duration_ms": 31156,
+      "duration_ms": 34928,
       "error": null
     },
     {
@@ -4081,7 +4337,7 @@
       "company_slug": "tetra",
       "success": true,
       "job_count": 3,
-      "duration_ms": 31410,
+      "duration_ms": 35095,
       "error": null
     },
     {
@@ -4089,7 +4345,7 @@
       "company_slug": "thinkific",
       "success": true,
       "job_count": 7,
-      "duration_ms": 31563,
+      "duration_ms": 35221,
       "error": null
     },
     {
@@ -4097,7 +4353,7 @@
       "company_slug": "thoughtworks",
       "success": true,
       "job_count": 49,
-      "duration_ms": 31644,
+      "duration_ms": 35482,
       "error": null
     },
     {
@@ -4105,7 +4361,7 @@
       "company_slug": "thrive",
       "success": true,
       "job_count": 3,
-      "duration_ms": 31557,
+      "duration_ms": 35458,
       "error": null
     },
     {
@@ -4113,7 +4369,7 @@
       "company_slug": "thunkable",
       "success": true,
       "job_count": 4,
-      "duration_ms": 32126,
+      "duration_ms": 36153,
       "error": null
     },
     {
@@ -4121,7 +4377,7 @@
       "company_slug": "tide",
       "success": true,
       "job_count": 158,
-      "duration_ms": 31918,
+      "duration_ms": 35944,
       "error": null
     },
     {
@@ -4129,7 +4385,7 @@
       "company_slug": "tilaa",
       "success": true,
       "job_count": 1,
-      "duration_ms": 32074,
+      "duration_ms": 35648,
       "error": null
     },
     {
@@ -4137,7 +4393,7 @@
       "company_slug": "togetherai",
       "success": true,
       "job_count": 49,
-      "duration_ms": 32092,
+      "duration_ms": 35691,
       "error": null
     },
     {
@@ -4145,15 +4401,15 @@
       "company_slug": "toku",
       "success": true,
       "job_count": 2,
-      "duration_ms": 32322,
+      "duration_ms": 42130,
       "error": null
     },
     {
       "extractor": "personio",
       "company_slug": "tonies",
       "success": true,
-      "job_count": 21,
-      "duration_ms": 32769,
+      "job_count": 20,
+      "duration_ms": 36331,
       "error": null
     },
     {
@@ -4161,7 +4417,7 @@
       "company_slug": "toptal",
       "success": true,
       "job_count": 29,
-      "duration_ms": 33613,
+      "duration_ms": 37782,
       "error": null
     },
     {
@@ -4169,7 +4425,7 @@
       "company_slug": "tovala",
       "success": true,
       "job_count": 12,
-      "duration_ms": 38673,
+      "duration_ms": 36851,
       "error": null
     },
     {
@@ -4177,7 +4433,7 @@
       "company_slug": "tractian",
       "success": true,
       "job_count": 127,
-      "duration_ms": 40427,
+      "duration_ms": 37628,
       "error": null
     },
     {
@@ -4185,7 +4441,7 @@
       "company_slug": "traderepublic",
       "success": true,
       "job_count": 1,
-      "duration_ms": 32515,
+      "duration_ms": 36301,
       "error": null
     },
     {
@@ -4193,7 +4449,7 @@
       "company_slug": "trigo",
       "success": true,
       "job_count": 126,
-      "duration_ms": 32838,
+      "duration_ms": 38521,
       "error": null
     },
     {
@@ -4201,7 +4457,7 @@
       "company_slug": "trivago",
       "success": true,
       "job_count": 8,
-      "duration_ms": 32697,
+      "duration_ms": 36486,
       "error": null
     },
     {
@@ -4209,7 +4465,7 @@
       "company_slug": "truebill",
       "success": true,
       "job_count": 19,
-      "duration_ms": 32687,
+      "duration_ms": 36510,
       "error": null
     },
     {
@@ -4217,7 +4473,7 @@
       "company_slug": "truework",
       "success": true,
       "job_count": 1,
-      "duration_ms": 32849,
+      "duration_ms": 36864,
       "error": null
     },
     {
@@ -4225,7 +4481,7 @@
       "company_slug": "trustpilot",
       "success": true,
       "job_count": 61,
-      "duration_ms": 32920,
+      "duration_ms": 36741,
       "error": null
     },
     {
@@ -4233,7 +4489,7 @@
       "company_slug": "twaice",
       "success": true,
       "job_count": 1,
-      "duration_ms": 33260,
+      "duration_ms": 37177,
       "error": null
     },
     {
@@ -4241,7 +4497,7 @@
       "company_slug": "twenty",
       "success": true,
       "job_count": 23,
-      "duration_ms": 33048,
+      "duration_ms": 37246,
       "error": null
     },
     {
@@ -4249,7 +4505,7 @@
       "company_slug": "twilio",
       "success": true,
       "job_count": 146,
-      "duration_ms": 33258,
+      "duration_ms": 37175,
       "error": null
     },
     {
@@ -4257,7 +4513,7 @@
       "company_slug": "typeform",
       "success": true,
       "job_count": 23,
-      "duration_ms": 33098,
+      "duration_ms": 37358,
       "error": null
     },
     {
@@ -4265,7 +4521,7 @@
       "company_slug": "uber",
       "success": true,
       "job_count": 1,
-      "duration_ms": 33526,
+      "duration_ms": 37642,
       "error": null
     },
     {
@@ -4273,7 +4529,7 @@
       "company_slug": "udemy",
       "success": true,
       "job_count": 19,
-      "duration_ms": 33275,
+      "duration_ms": 37447,
       "error": null
     },
     {
@@ -4281,7 +4537,7 @@
       "company_slug": "umami",
       "success": true,
       "job_count": 1,
-      "duration_ms": 33462,
+      "duration_ms": 38951,
       "error": null
     },
     {
@@ -4289,7 +4545,7 @@
       "company_slug": "unschool",
       "success": true,
       "job_count": 1,
-      "duration_ms": 33505,
+      "duration_ms": 37783,
       "error": null
     },
     {
@@ -4297,7 +4553,7 @@
       "company_slug": "unusual",
       "success": true,
       "job_count": 9,
-      "duration_ms": 33885,
+      "duration_ms": 39490,
       "error": null
     },
     {
@@ -4305,7 +4561,7 @@
       "company_slug": "updater",
       "success": true,
       "job_count": 2,
-      "duration_ms": 33429,
+      "duration_ms": 37790,
       "error": null
     },
     {
@@ -4313,7 +4569,7 @@
       "company_slug": "upflow",
       "success": true,
       "job_count": 6,
-      "duration_ms": 33686,
+      "duration_ms": 38245,
       "error": null
     },
     {
@@ -4321,15 +4577,15 @@
       "company_slug": "upkeep",
       "success": true,
       "job_count": 3,
-      "duration_ms": 33619,
+      "duration_ms": 37972,
       "error": null
     },
     {
       "extractor": "ashby",
       "company_slug": "vapi",
       "success": true,
-      "job_count": 22,
-      "duration_ms": 33859,
+      "job_count": 23,
+      "duration_ms": 38053,
       "error": null
     },
     {
@@ -4337,7 +4593,7 @@
       "company_slug": "veepee",
       "success": true,
       "job_count": 121,
-      "duration_ms": 35924,
+      "duration_ms": 39942,
       "error": null
     },
     {
@@ -4345,7 +4601,7 @@
       "company_slug": "vendease",
       "success": true,
       "job_count": 5,
-      "duration_ms": 33750,
+      "duration_ms": 38185,
       "error": null
     },
     {
@@ -4353,7 +4609,7 @@
       "company_slug": "vercel",
       "success": true,
       "job_count": 85,
-      "duration_ms": 34377,
+      "duration_ms": 38513,
       "error": null
     },
     {
@@ -4361,7 +4617,7 @@
       "company_slug": "vergesense",
       "success": true,
       "job_count": 2,
-      "duration_ms": 33922,
+      "duration_ms": 38709,
       "error": null
     },
     {
@@ -4369,7 +4625,7 @@
       "company_slug": "veriff",
       "success": true,
       "job_count": 21,
-      "duration_ms": 33916,
+      "duration_ms": 38699,
       "error": null
     },
     {
@@ -4377,7 +4633,7 @@
       "company_slug": "verifiable",
       "success": true,
       "job_count": 7,
-      "duration_ms": 34521,
+      "duration_ms": 38752,
       "error": null
     },
     {
@@ -4385,7 +4641,7 @@
       "company_slug": "vitalize",
       "success": true,
       "job_count": 10,
-      "duration_ms": 34106,
+      "duration_ms": 38920,
       "error": null
     },
     {
@@ -4393,7 +4649,7 @@
       "company_slug": "voiq",
       "success": true,
       "job_count": 1,
-      "duration_ms": 34056,
+      "duration_ms": 38982,
       "error": null
     },
     {
@@ -4401,7 +4657,7 @@
       "company_slug": "voodoo",
       "success": true,
       "job_count": 34,
-      "duration_ms": 35457,
+      "duration_ms": 39966,
       "error": null
     },
     {
@@ -4409,7 +4665,7 @@
       "company_slug": "vouch",
       "success": true,
       "job_count": 2,
-      "duration_ms": 34221,
+      "duration_ms": 41395,
       "error": null
     },
     {
@@ -4417,7 +4673,7 @@
       "company_slug": "vshn",
       "success": true,
       "job_count": 1,
-      "duration_ms": 34283,
+      "duration_ms": 39094,
       "error": null
     },
     {
@@ -4425,7 +4681,7 @@
       "company_slug": "warp",
       "success": true,
       "job_count": 4,
-      "duration_ms": 34382,
+      "duration_ms": 39463,
       "error": null
     },
     {
@@ -4433,7 +4689,7 @@
       "company_slug": "wealthfront",
       "success": true,
       "job_count": 15,
-      "duration_ms": 34564,
+      "duration_ms": 39532,
       "error": null
     },
     {
@@ -4441,7 +4697,7 @@
       "company_slug": "weekday",
       "success": true,
       "job_count": 1,
-      "duration_ms": 34567,
+      "duration_ms": 39643,
       "error": null
     },
     {
@@ -4449,7 +4705,7 @@
       "company_slug": "wellth",
       "success": true,
       "job_count": 2,
-      "duration_ms": 34687,
+      "duration_ms": 39684,
       "error": null
     },
     {
@@ -4457,15 +4713,15 @@
       "company_slug": "windmill",
       "success": true,
       "job_count": 3,
-      "duration_ms": 35244,
+      "duration_ms": 39721,
       "error": null
     },
     {
       "extractor": "smartrecruiters",
       "company_slug": "wise",
       "success": true,
-      "job_count": 382,
-      "duration_ms": 35459,
+      "job_count": 381,
+      "duration_ms": 43521,
       "error": null
     },
     {
@@ -4473,7 +4729,7 @@
       "company_slug": "wolt",
       "success": true,
       "job_count": 259,
-      "duration_ms": 34981,
+      "duration_ms": 40081,
       "error": null
     },
     {
@@ -4481,7 +4737,7 @@
       "company_slug": "wren",
       "success": true,
       "job_count": 1,
-      "duration_ms": 34830,
+      "duration_ms": 39967,
       "error": null
     },
     {
@@ -4489,7 +4745,7 @@
       "company_slug": "xendit",
       "success": true,
       "job_count": 22,
-      "duration_ms": 35255,
+      "duration_ms": 40276,
       "error": null
     },
     {
@@ -4497,7 +4753,7 @@
       "company_slug": "yassir",
       "success": true,
       "job_count": 6,
-      "duration_ms": 35244,
+      "duration_ms": 40118,
       "error": null
     },
     {
@@ -4505,7 +4761,7 @@
       "company_slug": "yotpo",
       "success": true,
       "job_count": 45,
-      "duration_ms": 35519,
+      "duration_ms": 40310,
       "error": null
     },
     {
@@ -4513,7 +4769,7 @@
       "company_slug": "yousician",
       "success": true,
       "job_count": 5,
-      "duration_ms": 37314,
+      "duration_ms": 40235,
       "error": null
     },
     {
@@ -4521,7 +4777,7 @@
       "company_slug": "yugabyte",
       "success": true,
       "job_count": 23,
-      "duration_ms": 35502,
+      "duration_ms": 40327,
       "error": null
     },
     {
@@ -4529,7 +4785,7 @@
       "company_slug": "zapier",
       "success": true,
       "job_count": 23,
-      "duration_ms": 35482,
+      "duration_ms": 40849,
       "error": null
     },
     {
@@ -4537,7 +4793,7 @@
       "company_slug": "zeitgeist",
       "success": true,
       "job_count": 4,
-      "duration_ms": 35655,
+      "duration_ms": 40451,
       "error": null
     },
     {
@@ -4545,7 +4801,7 @@
       "company_slug": "zenika",
       "success": true,
       "job_count": 2,
-      "duration_ms": 35605,
+      "duration_ms": 41860,
       "error": null
     },
     {
@@ -4553,7 +4809,7 @@
       "company_slug": "ziina",
       "success": true,
       "job_count": 16,
-      "duration_ms": 35710,
+      "duration_ms": 40499,
       "error": null
     },
     {
@@ -4561,7 +4817,7 @@
       "company_slug": "zippi",
       "success": true,
       "job_count": 7,
-      "duration_ms": 36467,
+      "duration_ms": 41524,
       "error": null
     },
     {
@@ -4569,7 +4825,7 @@
       "company_slug": "zoominfo",
       "success": true,
       "job_count": 87,
-      "duration_ms": 35754,
+      "duration_ms": 40838,
       "error": null
     },
     {
@@ -4577,7 +4833,7 @@
       "company_slug": "(aggregator)",
       "success": true,
       "job_count": 64,
-      "duration_ms": 454,
+      "duration_ms": 445,
       "error": null
     },
     {
@@ -4585,7 +4841,7 @@
       "company_slug": "(aggregator)",
       "success": true,
       "job_count": 228,
-      "duration_ms": 2800,
+      "duration_ms": 2333,
       "error": null
     },
     {
@@ -4593,7 +4849,7 @@
       "company_slug": "(aggregator)",
       "success": true,
       "job_count": 89,
-      "duration_ms": 1289,
+      "duration_ms": 1293,
       "error": null
     }
   ]

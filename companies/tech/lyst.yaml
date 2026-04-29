@@ -1,0 +1,8 @@
+name: Lyst
+country: GB
+categories:
+- tech
+- ai
+ats:
+  provider: smartrecruiters
+  handle: lyst

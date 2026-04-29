@@ -1,0 +1,8 @@
+name: Spice AI
+country: US
+categories:
+- ai
+- remote-eu
+ats:
+  provider: lever
+  handle: spiceai

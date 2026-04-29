@@ -1,0 +1,8 @@
+name: Ultralytics
+country: GB
+categories:
+- ai
+- oss
+ats:
+  provider: personio
+  handle: ultralytics

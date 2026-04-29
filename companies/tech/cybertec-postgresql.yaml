@@ -1,0 +1,8 @@
+name: CYBERTEC PostgreSQL
+country: AT
+categories:
+- tech
+- oss
+ats:
+  provider: personio
+  handle: cybertec-postgresql

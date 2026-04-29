@@ -125,24 +125,62 @@ class TaggerConfigError(Exception):
     pass
 
 
+# Provider selection: DeepSeek is preferred (~10x cheaper than Mistral on
+# structured extraction with comparable quality). Falls back to Mistral when
+# DEEPSEEK_API_KEY is unset and MISTRAL_API_KEY is set. Both APIs are
+# OpenAI-compatible so we use the official `openai` SDK pointed at the right
+# base URL — keeps the call site identical.
+_PROVIDERS = {
+    "deepseek": {
+        "env_key": "DEEPSEEK_API_KEY",
+        "base_url": "https://api.deepseek.com/v1",
+        "model": "deepseek-chat",
+    },
+    "mistral": {
+        "env_key": "MISTRAL_API_KEY",
+        "base_url": "https://api.mistral.ai/v1",
+        "model": "mistral-small-latest",
+    },
+}
+
+
+def selected_provider() -> str | None:
+    """Return the active provider name, or None if no key is set."""
+    for name, cfg in _PROVIDERS.items():
+        if os.environ.get(cfg["env_key"]):
+            return name
+    return None
+
+
 def is_configured() -> bool:
-    return bool(os.environ.get("MISTRAL_API_KEY"))
+    return selected_provider() is not None
 
 
-def call_mistral(prompt: str, *, model: str = "mistral-small-latest") -> dict[str, Any]:
-    """Call Mistral chat completions; lazy import."""
-    if not is_configured():
-        raise TaggerConfigError("MISTRAL_API_KEY not set; cannot call tagger.")
+def call_llm(prompt: str, *, model: str | None = None) -> dict[str, Any]:
+    """Call the configured LLM provider (DeepSeek or Mistral). Lazy SDK import."""
+    provider = selected_provider()
+    if not provider:
+        raise TaggerConfigError(
+            "No LLM provider configured. Set DEEPSEEK_API_KEY (preferred) or "
+            "MISTRAL_API_KEY."
+        )
+    cfg = _PROVIDERS[provider]
     try:
-        from mistralai import Mistral
+        from openai import OpenAI
     except ImportError as exc:
         raise TaggerConfigError(
-            "mistralai not installed; tagger is opt-in (add to deps to enable)."
+            "openai SDK not installed; add to deps to enable the tagger."
         ) from exc
-    client = Mistral(api_key=os.environ["MISTRAL_API_KEY"])
-    resp = client.chat.complete(
-        model=model,
-        messages=[{"role": "system", "content": _SYSTEM}, {"role": "user", "content": prompt}],
+    client = OpenAI(
+        api_key=os.environ[cfg["env_key"]],
+        base_url=cfg["base_url"],
+    )
+    resp = client.chat.completions.create(
+        model=model or cfg["model"],
+        messages=[
+            {"role": "system", "content": _SYSTEM},
+            {"role": "user", "content": prompt},
+        ],
         response_format={"type": "json_object"},
         temperature=0.0,
     )
@@ -150,8 +188,12 @@ def call_mistral(prompt: str, *, model: str = "mistral-small-latest") -> dict[st
     return json.loads(content if isinstance(content, str) else "{}")
 
 
+# Backwards-compat alias (was Mistral-only).
+call_mistral = call_llm
+
+
 def tag_job(job: Job) -> Job:
-    """Tag a single job in place. Falls back to no-op when MISTRAL_API_KEY is unset."""
+    """Tag a single job in place. No-op when no LLM provider is configured."""
     if not is_configured():
         return job
     stripped = strip_boilerplate(job.description_md)
@@ -159,7 +201,7 @@ def tag_job(job: Job) -> Job:
         return job
     prompt = build_prompt(job, stripped)
     try:
-        raw = call_mistral(prompt)
+        raw = call_llm(prompt)
     except Exception as exc:  # noqa: BLE001 — never break the run on tagger errors
         logger.warning("tagger error for %s: %s", job.id, exc)
         return job

@@ -1,0 +1,8 @@
+name: Voxel51
+country: US
+categories:
+- ai
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: voxel51

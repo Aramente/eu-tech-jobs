@@ -1,0 +1,9 @@
+name: Comfy Org
+country: US
+categories:
+- ai
+- oss
+- remote-eu
+ats:
+  provider: ashby
+  handle: comfy-org

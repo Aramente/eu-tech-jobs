@@ -1,0 +1,8 @@
+name: DBeaver
+country: CZ
+categories:
+- tech
+- oss
+ats:
+  provider: greenhouse
+  handle: dbeaver

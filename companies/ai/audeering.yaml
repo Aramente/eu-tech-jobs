@@ -1,0 +1,7 @@
+name: audEERING
+country: DE
+categories:
+- ai
+ats:
+  provider: personio
+  handle: audeering

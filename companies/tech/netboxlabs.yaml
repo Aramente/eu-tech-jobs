@@ -1,0 +1,9 @@
+name: NetBox Labs
+country: US
+categories:
+- tech
+- oss
+- remote-eu
+ats:
+  provider: ashby
+  handle: netboxlabs

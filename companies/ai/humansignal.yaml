@@ -1,0 +1,9 @@
+name: HumanSignal (Label Studio)
+country: US
+categories:
+- ai
+- oss
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: humansignal

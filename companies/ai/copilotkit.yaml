@@ -1,0 +1,9 @@
+name: CopilotKit
+country: US
+categories:
+- ai
+- oss
+- remote-eu
+ats:
+  provider: lever
+  handle: copilotkit

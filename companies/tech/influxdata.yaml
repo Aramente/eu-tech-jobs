@@ -1,0 +1,9 @@
+name: InfluxData
+country: US
+categories:
+- tech
+- oss
+- remote-eu
+ats:
+  provider: ashby
+  handle: influxdata

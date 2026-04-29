@@ -1,0 +1,8 @@
+name: New Relic
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: newrelic

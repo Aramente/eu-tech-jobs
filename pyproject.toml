@@ -24,6 +24,15 @@ dev = [
     "respx>=0.21",
     "ruff>=0.7",
 ]
+# LLM tagger — opt-in. DeepSeek + Mistral both expose OpenAI-compatible APIs
+# so the official `openai` SDK is the only runtime dep needed.
+tagger = [
+    "openai>=1.50",
+]
+# Hugging Face Dataset publisher — opt-in.
+hf = [
+    "huggingface-hub>=0.25",
+]
 
 [project.scripts]
 pipeline = "pipeline.cli:cli"
