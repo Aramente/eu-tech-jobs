@@ -1,0 +1,52 @@
+name: Retag all jobs (one-shot)
+
+# One-shot manual workflow to re-tag every job in the latest snapshot
+# with the current DEFAULT_VARIANT (v2_few_shot). Use after a prompt
+# change. Runs sequentially through ~26k jobs at ~5/sec → ~90 minutes.
+# Within GHA's 6h job limit.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  # Don't fight the daily run for the snapshot.
+  group: daily-pipeline
+  cancel-in-progress: false
+
+jobs:
+  retag:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+      - name: Set up Python
+        run: uv python install 3.12
+      - name: Install
+        run: uv sync --all-extras
+      - name: Retag every job (DEFAULT_VARIANT = v2_few_shot)
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL }}
+        run: uv run pipeline tag --retag-all -v
+      - name: Push to Hugging Face Dataset
+        env:
+          HF_TOKEN: ${{ secrets.HF }}
+        run: uv run pipeline publish
+        continue-on-error: true
+      - name: Commit data
+        run: |
+          if [[ -n "$(git status --porcelain data/)" ]]; then
+            git config user.name "eu-tech-jobs-bot"
+            git config user.email "actions@github.com"
+            git add data/
+            git commit -m "chore(data): full v2 retag of $(date -u +%Y-%m-%d) snapshot"
+            git push
+          else
+            echo "No data changes to commit."
+          fi
