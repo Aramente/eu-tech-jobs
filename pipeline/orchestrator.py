@@ -169,23 +169,37 @@ async def run_pipeline(
     merged_companies.update({c.slug: c for c in companies})
     final_companies = list(merged_companies.values())
 
+    # EU-only filter: drop jobs whose location explicitly names a US/NA
+    # place AND has no EU/global counter-signal. Conservative — keeps
+    # empty-location jobs and any LLM-tagged remote-global / remote-eu.
+    from pipeline.filters import split_jobs
+
+    kept_jobs, dropped_jobs = split_jobs(all_jobs)
+    if dropped_jobs:
+        logger.info(
+            "Filter: dropped %d US/NA-located jobs (kept %d EU-relevant)",
+            len(dropped_jobs),
+            len(kept_jobs),
+        )
+
     metadata = PipelineMetadata(
         run_at=utcnow(),
         pipeline_version=__version__,
         company_count=len(final_companies),
-        job_count=len(all_jobs),
+        job_count=len(kept_jobs),
         extractor_results=extractor_results,
     )
     snapshot = Snapshot(
         snapshot_date=snapshot_date or date.today(),
         companies=final_companies,
-        jobs=all_jobs,
+        jobs=kept_jobs,
         metadata=metadata,
     )
 
     logger.info(
-        "Done: %d jobs from %d/%d companies (%.0f%% success)",
-        len(all_jobs),
+        "Done: %d EU-relevant jobs (%d dropped) from %d/%d companies (%.0f%% success)",
+        len(kept_jobs),
+        len(dropped_jobs),
         sum(1 for r in extractor_results if r.success),
         len(extractor_results),
         metadata.success_rate * 100,
