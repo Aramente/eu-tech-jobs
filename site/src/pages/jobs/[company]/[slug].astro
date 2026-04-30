@@ -4,22 +4,28 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { marked } from "marked";
 
-import Base from "../../layouts/Base.astro";
+import Base from "../../../layouts/Base.astro";
 import {
   boredCvLink,
   companies,
   displayCountry,
   formatDate,
   jobs,
-} from "../../lib/data";
+  jobUrlPath,
+} from "../../../lib/data";
 
 export async function getStaticPaths() {
-  return jobs.map((j) => ({ params: { id: j.id } }));
+  return jobs.map((j) => {
+    const path = jobUrlPath(j); // "<company>/<title-slug>-<id8>"
+    const [company, ...rest] = path.split("/");
+    const slug = rest.join("/");
+    return { params: { company, slug }, props: { jobId: j.id } };
+  });
 }
 
-const { id } = Astro.params;
-const job = jobs.find((j) => j.id === id);
-if (!job) throw new Error(`Job ${id} not found`);
+const { jobId } = Astro.props as { jobId: string };
+const job = jobs.find((j) => j.id === jobId);
+if (!job) throw new Error(`Job ${jobId} not found`);
 const company = companies[job.company_slug];
 const companyName = company?.name || job.company_slug;
 const country = company ? displayCountry(company.country) : "";
@@ -37,18 +43,20 @@ const descPath = join(
   "..",
   "..",
   "..",
+  "..",
   "data-cache",
   "descriptions",
-  `${id}.md`,
+  `${jobId}.md`,
 );
 const descriptionMd = existsSync(descPath) ? readFileSync(descPath, "utf8") : "";
 
-// Configure marked: GitHub-flavored, no smartypants, no header IDs (cleaner).
-marked.setOptions({ gfm: true, breaks: false, headerIds: false } as any);
+// GitHub-flavored markdown, no autolink IDs (cleaner output).
+marked.setOptions({ gfm: true, breaks: false } as any);
 const descriptionHtml = descriptionMd ? (marked.parse(descriptionMd) as string) : "";
 
 // Schema.org JobPosting structured data — Google + LinkedIn pick this up.
-const schema = {
+const canonicalUrl = `https://aramente.github.io${base}jobs/${jobUrlPath(job)}/`;
+const schema: Record<string, unknown> = {
   "@context": "https://schema.org",
   "@type": "JobPosting",
   title: job.title,
@@ -73,7 +81,7 @@ const schema = {
     job.remote_policy && job.remote_policy.startsWith("remote")
       ? "TELECOMMUTE"
       : undefined,
-  url: `https://aramente.github.io${base}jobs/${id}/`,
+  url: canonicalUrl,
   directApply: false,
 };
 ---

@@ -92,3 +92,28 @@ export function isAggregatorCompany(slug: string): boolean {
 export function boredCvLink(jobUrl: string): string {
   return `https://aramente.github.io/bored-cv/upload?offer_url=${encodeURIComponent(jobUrl)}`;
 }
+
+/** Slugify a string: ASCII-fold, alnum + hyphens, capped length. */
+function slugify(s: string): string {
+  return (s || "")
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[̀-ͯ]/g, "") // strip diacritics
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 60)
+    .replace(/-+$/g, ""); // trim trailing dash if cut mid-word
+}
+
+/**
+ * Per-job page path *relative to the site base*, in the form
+ * `<company-slug>/<title-slug>-<id8>`. The 8-char hash suffix preserves
+ * stability across daily snapshots (same posting → same URL even if the
+ * title is reworded slightly), while the readable prefix gives SEO and
+ * shareability over the previous opaque-hash scheme.
+ */
+export function jobUrlPath(job: Job): string {
+  const title = slugify(job.title) || "job";
+  const idShort = job.id.slice(0, 8);
+  return `${job.company_slug}/${title}-${idShort}`;
+}
