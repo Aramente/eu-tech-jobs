@@ -84,6 +84,41 @@ const schema: Record<string, unknown> = {
   url: canonicalUrl,
   directApply: false,
 };
+
+// Pagefind facet values. Pagefind reads `data-pagefind-meta` attributes on
+// the indexed page and exposes them as filterable facets in the search UI.
+//
+// `where`: a unified location/remote facet so a multi-select like
+// {France, Remote-EU, Remote-Worldwide} gives an OR across locations and
+// remote tiers in one click — matches the "I can work in France OR
+// remote, NOT Germany" use case directly. Onsite/hybrid jobs surface as
+// the country code (e.g. "FR"); remote-eu / remote-global jobs surface
+// under the corresponding "Remote — …" label.
+const COUNTRY_NAMES: Record<string, string> = {
+  FR: "France", DE: "Germany", GB: "United Kingdom", ES: "Spain",
+  IT: "Italy", NL: "Netherlands", BE: "Belgium", SE: "Sweden",
+  DK: "Denmark", FI: "Finland", NO: "Norway", IE: "Ireland",
+  PT: "Portugal", PL: "Poland", CZ: "Czechia", AT: "Austria",
+  CH: "Switzerland", EE: "Estonia", LT: "Lithuania", LV: "Latvia",
+  GR: "Greece", RO: "Romania", BG: "Bulgaria", HU: "Hungary",
+  SK: "Slovakia", SI: "Slovenia", HR: "Croatia", LU: "Luxembourg",
+  IS: "Iceland", CY: "Cyprus", MT: "Malta",
+  US: "United States", CA: "Canada", IL: "Israel", UA: "Ukraine",
+  XX: "Remote / unknown",
+};
+
+let whereFacet: string;
+if (job.remote_policy === "remote-global") {
+  whereFacet = "Remote — Worldwide";
+} else if (job.remote_policy === "remote-eu") {
+  whereFacet = "Remote — Europe";
+} else if (company?.country && company.country !== "XX") {
+  whereFacet = COUNTRY_NAMES[company.country] || company.country;
+} else if (job.remote_policy === "remote") {
+  whereFacet = "Remote — unspecified";
+} else {
+  whereFacet = "Other";
+}
 ---
 <Base
   title={`${job.title} — ${companyName}`}
@@ -94,6 +129,20 @@ const schema: Record<string, unknown> = {
   </header>
   <main>
     <article class="job" data-pagefind-body>
+      <span data-pagefind-filter={`where:${whereFacet}`} hidden></span>
+      {job.role_family && (
+        <span data-pagefind-filter={`role:${job.role_family}`} hidden></span>
+      )}
+      {job.seniority && (
+        <span data-pagefind-filter={`seniority:${job.seniority}`} hidden></span>
+      )}
+      {company?.country && (
+        <span data-pagefind-filter={`country:${COUNTRY_NAMES[company.country] || company.country}`} hidden></span>
+      )}
+      {job.remote_policy && (
+        <span data-pagefind-filter={`remote:${job.remote_policy}`} hidden></span>
+      )}
+      <span data-pagefind-filter={`company:${companyName}`} hidden></span>
       <h1>{job.title}</h1>
       <p class="meta job-meta">
         <a href={`${base}companies/${job.company_slug}/`}>{companyName}</a>

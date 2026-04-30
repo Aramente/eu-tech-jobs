@@ -4,11 +4,17 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : import.meta.env.BASE_URL + "/";
 ---
-<Base title="Search jobs — eu-tech-jobs">
+<Base title="Search jobs — eu-tech-jobs" description="Filter 12,000+ EU AI/tech jobs by location, role, seniority, and remote policy.">
   <header>
-    <h1>Search</h1>
+    <h1>Search jobs</h1>
     <p class="lede">
-      <a href={base}>← Back</a> · Full-text search across {`{{`}}all job titles + companies{`}}`}.
+      <a href={base}>← Back</a> · Full-text search with filters: location,
+      role family, seniority, remote policy.
+    </p>
+    <p class="meta">
+      Tip — pick "France" + "Remote — Europe" + "Remote — Worldwide"
+      under <em>where</em> to see French jobs <strong>or</strong>
+      remote-friendly ones together.
     </p>
   </header>
   <main>
@@ -18,7 +24,6 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     <script is:inline define:vars={{ base }}>
       function mountSearch() {
         if (typeof PagefindUI === "undefined") {
-          // Script not yet loaded — retry shortly.
           setTimeout(mountSearch, 100);
           return;
         }
@@ -27,7 +32,16 @@ const base = import.meta.env.BASE_URL.endsWith("/")
           showSubResults: false,
           showImages: false,
           baseUrl: base,
+          showEmptyFilters: true,
+          translations: {
+            placeholder: "search 12,000+ EU AI/tech jobs",
+            filters_label: "Refine results",
+          },
         });
+        // Pagefind reads the URL ?q= param automatically and runs the
+        // initial query — but only if URL.search is set. If user came
+        // here from the home-page input, the param is set; otherwise
+        // empty search shows all.
       }
       if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", mountSearch);
@@ -37,3 +51,34 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     </script>
   </main>
 </Base>
+
+<style>
+  /* Pagefind UI customization to match site theme */
+  :global(.pagefind-ui) {
+    --pagefind-ui-primary: var(--accent);
+    --pagefind-ui-text: var(--fg);
+    --pagefind-ui-background: var(--bg);
+    --pagefind-ui-border: var(--border);
+    --pagefind-ui-tag: var(--row-hover);
+    --pagefind-ui-border-radius: 8px;
+    --pagefind-ui-font: inherit;
+    margin-top: 16px;
+  }
+  :global(.pagefind-ui__search-input) {
+    font-size: 16px !important;
+  }
+  :global(.pagefind-ui__filter-panel) {
+    margin-top: 12px;
+  }
+  :global(.pagefind-ui__filter-block details) {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+  }
+  :global(.pagefind-ui__filter-block summary) {
+    font-weight: 500;
+    cursor: pointer;
+    padding: 4px 0;
+  }
+</style>
