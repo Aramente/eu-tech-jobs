@@ -46,12 +46,19 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
   </header>
   <main>
     <p class="meta" style="margin-bottom: 24px;">
-      Tip: <a href={`${base}search/`}>full-text search</a> beats this paginated
-      table for most queries. The country filter narrows the visible page;
-      <em>Remote</em> = aggregator-discovered jobs (RemoteOK / WeWorkRemotely / JustJoin.it).
+      Tip: type a query and hit <kbd>Enter</kbd> to <a href={`${base}search/`}>full-text search</a> all 26,887 jobs.
+      Filter this page only with the dropdowns. <em>Remote</em> = aggregator-discovered jobs (RemoteOK / WeWorkRemotely / JustJoin.it).
     </p>
-    <div class="filters">
-      <input id="search" type="search" placeholder="Quick filter (this page)…" />
+    <form
+      class="filters"
+      role="search"
+      onsubmit={`event.preventDefault(); const q = document.getElementById('search').value.trim(); if (q) location.href = '${base}search/?q=' + encodeURIComponent(q);`}
+    >
+      <input
+        id="search"
+        type="search"
+        placeholder="Search 26,887 jobs (Enter) or filter this page…"
+      />
       <select id="country">
         <option value="">All countries</option>
         {countries.map((c) => <option value={c}>{displayCountry(c)}</option>)}
@@ -72,7 +79,7 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
         <option value="research">Research</option>
         <option value="support">Support</option>
       </select>
-    </div>
+    </form>
     {pageJobs.length === 0 ? (
       <p class="empty">No jobs in this snapshot.</p>
     ) : (
