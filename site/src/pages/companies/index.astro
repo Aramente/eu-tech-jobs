@@ -5,25 +5,120 @@ import { companies, jobsByCompany, countryName } from "../../lib/data";
 const byCompany = jobsByCompany();
 const list = Object.values(companies).sort((a, b) => a.name.localeCompare(b.name));
 const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + "/";
+
+// Sort by open-jobs count descending — companies with the most current
+// listings surface first; stable secondary sort by name.
+const ranked = [...list].sort((a, b) => {
+  const an = byCompany[a.slug]?.length ?? 0;
+  const bn = byCompany[b.slug]?.length ?? 0;
+  if (bn !== an) return bn - an;
+  return a.name.localeCompare(b.name);
+});
 ---
 <Base title="Companies — eu-tech-jobs">
-  <header>
-    <h1>Companies ({list.length})</h1>
-    <p class="lede">
-      <a href={base}>← Back</a> · All curated companies. PR a new one at
-      <a href="https://github.com/Aramente/eu-tech-jobs/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.
-    </p>
-  </header>
   <main>
-    <div class="company-grid">
-      {list.map((c) => (
-        <a class="company-card" href={`${base}companies/${c.slug}/`}>
-          <h3>{c.name} <span class="badge">{countryName(c.country)}</span></h3>
-          <p class="meta">
-            {byCompany[c.slug]?.length ?? 0} open · {c.categories?.join(", ") || "—"}
-          </p>
-        </a>
-      ))}
-    </div>
+    <p class="page-marker">{list.length.toLocaleString()} companies · ranked by open positions</p>
+    <ol class="company-list">
+      {ranked.map((c, i) => {
+        const n = byCompany[c.slug]?.length ?? 0;
+        return (
+          <li class="company-row">
+            <a href={`${base}companies/${c.slug}/`} class="company-link">
+              <span class="company-rank">{String(i + 1).padStart(3, "0")}</span>
+              <span class="company-name">{c.name}</span>
+              <span class="company-meta">
+                {countryName(c.country)}
+                {c.categories?.length ? ` · ${c.categories.join(" · ")}` : ""}
+              </span>
+              <span class="company-count"><strong>{n.toLocaleString()}</strong> open</span>
+            </a>
+          </li>
+        );
+      })}
+    </ol>
   </main>
 </Base>
+
+<style>
+  .page-marker {
+    font: 500 11px/1 var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin: 0 0 16px;
+  }
+  .company-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .company-row { margin: 0; padding: 0; }
+  .company-link {
+    display: grid;
+    grid-template-columns: 50px 1fr 40% 100px;
+    gap: 16px;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+    text-decoration: none;
+    color: var(--ink);
+    position: relative;
+    transition: padding-left 80ms ease;
+  }
+  .company-link::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: var(--ink);
+    opacity: 0;
+    transition: opacity 80ms ease;
+  }
+  .company-link:hover { padding-left: 14px; }
+  .company-link:hover::before { opacity: 1; }
+  .company-rank {
+    font: 500 11px/1.4 var(--mono);
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .company-name {
+    font: 500 15px/1.3 var(--body);
+    color: var(--ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+  .company-meta {
+    font: 400 13px/1.4 var(--body);
+    color: var(--muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+  .company-count {
+    font: 500 11px/1.4 var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  .company-count strong { color: var(--ink); font-weight: 600; }
+
+  @media (max-width: 720px) {
+    .company-link {
+      grid-template-columns: auto 1fr;
+      grid-template-areas:
+        "rank name"
+        ".    meta"
+        ".    count";
+      gap: 4px 12px;
+    }
+    .company-rank { grid-area: rank; }
+    .company-name { grid-area: name; white-space: normal; overflow: visible; }
+    .company-meta { grid-area: meta; white-space: normal; overflow: visible; }
+    .company-count { grid-area: count; text-align: left; }
+  }
+</style>

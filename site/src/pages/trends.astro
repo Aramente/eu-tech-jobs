@@ -71,104 +71,118 @@ const maxCountry = countryRows[0]?.[1] ?? 1;
 const maxHiring = topHiringCurated[0]?.count ?? 1;
 const maxRecent = recentlyActive[0]?.count ?? 1;
 ---
-<Base title="Trends — eu-tech-jobs">
-  <header>
-    <h1>What's hiring</h1>
-    <p class="lede">
-      <a href={base}>← Back</a> · {totalJobs.toLocaleString()} jobs across {totalCompanies} sources
-      on {formatDate(meta.run_at)}.
-    </p>
-  </header>
+<Base title="Methodology — eu-tech-jobs">
   <main>
-    <h2>Most-hiring companies (curated, top 25)</h2>
-    <p class="meta">
-      Highest open-job counts among the {Object.values(companies).filter((c) => !c.slug?.startsWith("via-")).length}
-      hand-curated EU/remote-EU companies. Aggregator-discovered companies (RemoteOK / WeWorkRemotely / JustJoin.it)
-      are excluded here — they're often single-job listings.
-    </p>
-    <table>
-      <thead><tr><th>Company</th><th>Country</th><th>Open jobs</th><th></th></tr></thead>
-      <tbody>
-        {topHiringCurated.map((row) => (
-          <tr>
-            <td><a href={`${base}companies/${row.slug}/`}>{row.name}</a></td>
-            <td><span class="badge">{countryName(row.country)}</span></td>
-            <td>{row.count}</td>
-            <td>
-              <span style={`display:inline-block;height:6px;background:var(--accent);width:${bar(row.count, maxHiring)}px;border-radius:3px`}></span>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <p class="page-marker">Methodology · refreshed {formatDate(meta.run_at)}</p>
 
-    <h2 style="margin-top:32px">Hiring this week</h2>
-    {recentlyActive.length === 0 ? (
-      <p class="meta">
-        No "posted in the last 7 days" data yet — most ATSes don't expose a real
-        posted-at timestamp, so this fills in as snapshots accumulate.
-      </p>
-    ) : (
+    <section class="trends-section">
+      <h2 class="trends-h">Top hiring companies</h2>
+      <p class="trends-sub">Highest open-job counts among the {Object.values(companies).filter((c) => !c.slug?.startsWith("via-")).length} hand-curated EU companies.</p>
       <table>
-        <thead><tr><th>Company</th><th>Country</th><th>New jobs (7d)</th><th></th></tr></thead>
+        <thead><tr><th>Rank</th><th>Company</th><th>Country</th><th class="num">Jobs</th><th></th></tr></thead>
         <tbody>
-          {recentlyActive.map((row) => (
+          {topHiringCurated.map((row, i) => (
             <tr>
+              <td class="rank">{String(i + 1).padStart(2, "0")}</td>
               <td><a href={`${base}companies/${row.slug}/`}>{row.name}</a></td>
-              <td><span class="badge">{countryName(row.country)}</span></td>
-              <td>{row.count}</td>
-              <td>
-                <span style={`display:inline-block;height:6px;background:var(--accent);width:${bar(row.count, maxRecent)}px;border-radius:3px`}></span>
+              <td class="meta">{countryName(row.country)}</td>
+              <td class="num"><strong>{row.count}</strong></td>
+              <td class="bar-cell">
+                <span class="bar" style={`width:${bar(row.count, maxHiring)}px`}></span>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+    </section>
+
+    {recentlyActive.length > 0 && (
+      <section class="trends-section">
+        <h2 class="trends-h">Hiring this week</h2>
+        <p class="trends-sub">New positions in the last 7 days.</p>
+        <table>
+          <thead><tr><th>Rank</th><th>Company</th><th>Country</th><th class="num">New (7d)</th><th></th></tr></thead>
+          <tbody>
+            {recentlyActive.map((row, i) => (
+              <tr>
+                <td class="rank">{String(i + 1).padStart(2, "0")}</td>
+                <td><a href={`${base}companies/${row.slug}/`}>{row.name}</a></td>
+                <td class="meta">{countryName(row.country)}</td>
+                <td class="num"><strong>{row.count}</strong></td>
+                <td class="bar-cell">
+                  <span class="bar" style={`width:${bar(row.count, maxRecent)}px`}></span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
     )}
 
-    <h2 style="margin-top:32px">Where the curated companies are</h2>
-    <p class="meta">Top 15 countries by curated-company count.</p>
-    <table>
-      <thead><tr><th>Country</th><th>Companies</th><th></th></tr></thead>
-      <tbody>
-        {countryRows.map(([cc, n]) => (
-          <tr>
-            <td><span class="badge">{countryName(cc)}</span></td>
-            <td>{n}</td>
-            <td>
-              <span style={`display:inline-block;height:6px;background:var(--accent);width:${bar(n, maxCountry)}px;border-radius:3px`}></span>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-
-    <h2 style="margin-top:32px">Where the jobs come from</h2>
-    <p class="meta">
-      We pull from 6 ATS APIs (the bulk) and 3 EU job aggregators (long tail).
-    </p>
-    <table>
-      <thead><tr><th>Source</th><th>Type</th><th>Jobs</th></tr></thead>
-      <tbody>
-        {atsJobs
-          .concat(aggregatorJobs)
-          .sort((a, b) => b[1] - a[1])
-          .map(([src, n]) => (
+    <section class="trends-section">
+      <h2 class="trends-h">Coverage by country</h2>
+      <p class="trends-sub">Top 15 countries by curated-company count.</p>
+      <table>
+        <thead><tr><th>Country</th><th class="num">Companies</th><th></th></tr></thead>
+        <tbody>
+          {countryRows.map(([cc, n]) => (
             <tr>
-              <td><code>{src}</code></td>
-              <td class="meta">{ATS_SOURCES.has(src) ? "ATS API" : "aggregator"}</td>
-              <td>{n.toLocaleString()}</td>
+              <td>{countryName(cc)}</td>
+              <td class="num"><strong>{n}</strong></td>
+              <td class="bar-cell">
+                <span class="bar" style={`width:${bar(n, maxCountry)}px`}></span>
+              </td>
             </tr>
           ))}
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="trends-section">
+      <h2 class="trends-h">How we collect this</h2>
+      <p class="trends-sub max-prose">
+        We pull jobs daily from <strong>{atsJobs.length} ATS APIs</strong> (Greenhouse, Lever, Ashby, Workable, Recruitee, Personio, SmartRecruiters)
+        and <strong>{aggregatorJobs.length} EU job aggregators</strong>. No LinkedIn or Indeed scraping. Companies are PR-curated. Raw parquet snapshots are mirrored to <a href="https://huggingface.co/datasets/Aramente/eu-tech-jobs">Hugging Face</a> under CC-BY-4.0; pipeline source is on <a href="https://github.com/Aramente/eu-tech-jobs">GitHub</a> under MIT.
+      </p>
+    </section>
   </main>
   <footer>
     <p>
-      Time-series (week-over-week hiring velocity, fastest-growing teams) populates as
-      daily snapshots accumulate. Raw parquet is on
-      <a href="https://huggingface.co/datasets/Aramente/eu-tech-jobs">Hugging Face</a>
-      if you want to roll your own analytics.
+      Time-series (week-over-week velocity, fastest-growing teams) lands as snapshots accumulate.
     </p>
   </footer>
 </Base>
+
+<style>
+  .page-marker {
+    font: 500 11px/1 var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin: 0 0 24px;
+  }
+  .trends-section { margin: 0 0 48px; }
+  .trends-h {
+    font: 500 22px/1.2 var(--body);
+    letter-spacing: -0.01em;
+    margin: 0 0 4px;
+    color: var(--ink);
+  }
+  .trends-sub {
+    font: 400 13px/1.55 var(--body);
+    color: var(--muted);
+    margin: 0 0 16px;
+    max-width: 70ch;
+  }
+  .max-prose { max-width: 70ch; font-size: 14px; line-height: 1.6; }
+  td.rank, td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+  td.rank { color: var(--muted); width: 36px; }
+  td.num { width: 80px; }
+  td.num strong { color: var(--ink); font-weight: 600; }
+  td.bar-cell { width: 220px; }
+  .bar {
+    display: inline-block;
+    height: 4px;
+    background: var(--ink);
+  }
+</style>

@@ -1,6 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
-import { companies, jobsByCompany, formatDate, countryName, jobUrlPath } from "../../lib/data";
+import { companies, jobsByCompany, countryName, jobUrlPath } from "../../lib/data";
 
 export async function getStaticPaths() {
   return Object.keys(companies).map((slug) => ({ params: { slug } }));
@@ -10,38 +10,107 @@ const { slug } = Astro.params;
 const company = companies[slug];
 if (!company) throw new Error(`Company ${slug} not found`);
 const byCompany = jobsByCompany();
-const jobs = (byCompany[slug] || []).slice().sort((a, b) => a.title.localeCompare(b.title));
+const jobs = (byCompany[slug] || []).slice().sort((a, b) => {
+  if (a.posted_at && b.posted_at) return b.posted_at.localeCompare(a.posted_at);
+  if (a.posted_at) return -1;
+  if (b.posted_at) return 1;
+  return a.title.localeCompare(b.title);
+});
 const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + "/";
+
+const now = Date.now();
+const yearNow = new Date(now).getUTCFullYear();
+
+function metaFor(j) {
+  let isNew = false;
+  let postedLabel = "";
+  if (j.posted_at) {
+    const t = new Date(j.posted_at).getTime();
+    const yr = new Date(j.posted_at).getUTCFullYear();
+    if (isFinite(t) && t <= now && yr <= yearNow) {
+      const days = Math.floor((now - t) / 86400000);
+      isNew = days <= 1;
+      postedLabel = days <= 0 ? "TODAY" : days === 1 ? "1D" : days <= 7 ? `${days}D` : days <= 31 ? `${Math.round(days / 7)}W` : `${Math.round(days / 30)}MO`;
+    }
+  }
+  const remoteLabel =
+    j.remote_policy === "remote-global" ? "REMOTE-WW"
+    : j.remote_policy === "remote-eu" ? "REMOTE-EU"
+    : j.remote_policy === "remote" ? "REMOTE"
+    : j.remote_policy === "hybrid" ? "HYBRID"
+    : "";
+  const metaBits = [
+    isNew ? `<span class="new">NEW</span>` : (postedLabel || ""),
+    remoteLabel,
+  ].filter(Boolean);
+  return { metaBits: metaBits.join(" · ") };
+}
 ---
-<Base title={`${company.name} — eu-tech-jobs`}>
-  <header>
-    <p class="lede"><a href={`${base}companies/`}>← All companies</a></p>
-    <h1>{company.name} <span class="badge">{countryName(company.country)}</span></h1>
-    <p class="lede">
-      {company.categories?.join(" · ")}
-      {company.funding_stage && <> · {company.funding_stage}</>}
-      {company.size_bucket && <> · {company.size_bucket}</>}
-      {company.ats_provider && <> · ATS: {company.ats_provider}</>}
-    </p>
-    {company.notes && <p class="meta">{company.notes}</p>}
-  </header>
+<Base title={`${company.name} — eu-tech-jobs`} description={`${jobs.length} open positions at ${company.name}.`}>
   <main>
-    <h2>{jobs.length} open positions</h2>
+    <header class="company-header">
+      <h1 class="company-h1">{company.name}</h1>
+      <p class="company-sub">
+        <span class="badge">{countryName(company.country)}</span>
+        {company.categories?.length > 0 && <span class="badge">{company.categories.join(" · ")}</span>}
+        {company.funding_stage && <span class="badge">{company.funding_stage}</span>}
+        {company.size_bucket && <span class="badge">{company.size_bucket}</span>}
+        {company.ats_provider && <span class="badge">ATS {company.ats_provider}</span>}
+      </p>
+      {company.notes && <p class="company-notes">{company.notes}</p>}
+    </header>
+    <p class="page-marker">{jobs.length} open · sorted newest first</p>
     {jobs.length === 0 ? (
       <p class="empty">No open positions in this snapshot.</p>
     ) : (
-      <table>
-        <thead><tr><th>Title</th><th>Location</th><th>Posted</th></tr></thead>
-        <tbody>
-          {jobs.map((j) => (
-            <tr>
-              <td><a href={`${base}jobs/${jobUrlPath(j)}/`}>{j.title}</a></td>
-              <td class="meta">{j.location || "—"}</td>
-              <td class="meta">{formatDate(j.posted_at)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <ol class="results-list">
+        {jobs.map((j) => {
+          const m = metaFor(j);
+          const loc = j.location || "";
+          return (
+            <li class="result-item">
+              <a href={`${base}jobs/${jobUrlPath(j)}/`} class="result-link">
+                <span class="result-title">{j.title}</span>
+                <span class="result-org">{loc || "—"}</span>
+                <span class="result-meta" set:html={m.metaBits}></span>
+              </a>
+            </li>
+          );
+        })}
+      </ol>
     )}
   </main>
 </Base>
+
+<style>
+  .company-header { margin: 0 0 24px; padding-bottom: 16px; border-bottom: 1px solid var(--ink); }
+  .company-h1 {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 40px;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    font-weight: 400;
+    margin: 0 0 12px;
+    color: var(--ink);
+  }
+  .company-sub { margin: 0 0 8px; line-height: 1.6; }
+  .company-notes {
+    margin: 12px 0 0;
+    font: 400 14px/1.55 var(--body);
+    color: var(--muted);
+    max-width: 70ch;
+  }
+  .page-marker {
+    font: 500 11px/1 var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin: 0 0 16px;
+  }
+  /* Override result-link grid for this page (no company column needed, location instead) */
+  .result-link { grid-template-columns: 1fr 32% 18%; }
+  @media (max-width: 600px) {
+    .company-h1 { font-size: 32px; }
+  }
+</style>

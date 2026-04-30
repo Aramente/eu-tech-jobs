@@ -117,12 +117,10 @@ const whereFacet: string = whereByJobId[jobId] || "Other";
   title={`${job.title} — ${companyName}`}
   description={`${job.title} at ${companyName} (${job.location || "remote"})`}
 >
-  <header>
-    <p class="lede">
-      <a href={base} id="back-link" data-base={base}>← All jobs</a>
-    </p>
-  </header>
   <main>
+    <p class="job-back">
+      <a href={base} id="back-link" data-base={base}>← all jobs</a>
+    </p>
     <article class="job" data-pagefind-body>
       <span data-pagefind-filter={`where:${whereFacet}`} hidden></span>
       {job.role_family && (
@@ -207,6 +205,22 @@ const whereFacet: string = whereByJobId[jobId] || "Other";
     </article>
   </main>
 
+  <style>
+    .job-back {
+      max-width: 640px;
+      margin: 0 auto 8px;
+      font: 500 11px/1 var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .job-back a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 2px;
+    }
+    .job-back a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+  </style>
   <script
     is:inline
     type="application/ld+json"

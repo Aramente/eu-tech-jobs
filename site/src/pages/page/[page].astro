@@ -18,38 +18,70 @@ const all = jobsSorted();
 const totalPages = Math.max(1, Math.ceil(all.length / PAGE_SIZE));
 const pageJobs = all.slice((pageNum - 1) * PAGE_SIZE, pageNum * PAGE_SIZE);
 const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + "/";
+
+const now = Date.now();
+const yearNow = new Date(now).getUTCFullYear();
+
+function metaFor(j) {
+  const c = companies[j.company_slug];
+  const country = c?.country ? countryName(c.country) : "";
+  const company = c?.name || j.company_slug;
+  const loc = j.location || country || "";
+  let isNew = false;
+  let postedLabel = "";
+  if (j.posted_at) {
+    const t = new Date(j.posted_at).getTime();
+    const yr = new Date(j.posted_at).getUTCFullYear();
+    if (isFinite(t) && t <= now && yr <= yearNow) {
+      const days = Math.floor((now - t) / 86400000);
+      isNew = days <= 1;
+      postedLabel = days <= 0 ? "TODAY" : days === 1 ? "1D" : days <= 7 ? `${days}D` : days <= 31 ? `${Math.round(days / 7)}W` : `${Math.round(days / 30)}MO`;
+    }
+  }
+  const remoteLabel =
+    j.remote_policy === "remote-global" ? "REMOTE-WW"
+    : j.remote_policy === "remote-eu" ? "REMOTE-EU"
+    : j.remote_policy === "remote" ? "REMOTE"
+    : j.remote_policy === "hybrid" ? "HYBRID"
+    : "";
+  const metaBits = [
+    isNew ? `<span class="new">NEW</span>` : (postedLabel || ""),
+    remoteLabel,
+  ].filter(Boolean);
+  return { company, loc, metaBits: metaBits.join(" · ") };
+}
 ---
-<Base title={`Jobs page ${pageNum} — eu-tech-jobs`}>
-  <header>
-    <h1>Jobs · page {pageNum} / {totalPages}</h1>
-    <p class="lede">
-      <a href={base}>← Back to start</a> · Showing {pageJobs.length} of {all.length.toLocaleString()}
-    </p>
-  </header>
+<Base title={`Page ${pageNum} — eu-tech-jobs`}>
   <main>
-    <table>
-      <thead>
-        <tr><th>Title</th><th>Company</th><th>Location</th><th>Posted</th></tr>
-      </thead>
-      <tbody>
-        {pageJobs.map((j) => {
-          const c = companies[j.company_slug];
-          const name = c?.name || j.company_slug;
-          return (
-            <tr>
-              <td><a href={`${base}jobs/${jobUrlPath(j)}/`}>{j.title}</a></td>
-              <td class="company"><a href={`${base}companies/${j.company_slug}/`}>{name}</a> {c?.country && <span class="badge">{countryName(c.country)}</span>}</td>
-              <td class="meta">{j.location || "—"}</td>
-              <td class="meta">{formatDate(j.posted_at)}</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
-    <nav class="pagination">
+    <p class="page-marker">Page {pageNum} of {totalPages} · {all.length.toLocaleString()} jobs total</p>
+    <ol class="results-list">
+      {pageJobs.map((j) => {
+        const m = metaFor(j);
+        return (
+          <li class="result-item">
+            <a href={`${base}jobs/${jobUrlPath(j)}/`} class="result-link">
+              <span class="result-title">{j.title}</span>
+              <span class="result-org">{m.company}{m.loc ? ` · ${m.loc}` : ""}</span>
+              <span class="result-meta" set:html={m.metaBits}></span>
+            </a>
+          </li>
+        );
+      })}
+    </ol>
+    <nav class="pagination" aria-label="Pagination">
       {pageNum > 1 && <a href={pageNum === 2 ? base : `${base}page/${pageNum - 1}/`}>← Prev</a>}
       <span class="current">{pageNum}</span>
       {pageNum < totalPages && <a href={`${base}page/${pageNum + 1}/`}>Next →</a>}
     </nav>
   </main>
 </Base>
+
+<style>
+  .page-marker {
+    font: 500 11px/1 var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin: 0 0 16px;
+  }
+</style>
