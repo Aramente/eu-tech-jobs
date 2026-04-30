@@ -117,6 +117,23 @@ export function displayCountry(code: string | null | undefined): string {
   return code;
 }
 
+/** Full country names — used in dropdowns and Pagefind filter values. */
+export const COUNTRY_NAMES: Record<string, string> = {
+  FR: "France", DE: "Germany", GB: "United Kingdom", ES: "Spain", IT: "Italy",
+  NL: "Netherlands", BE: "Belgium", SE: "Sweden", DK: "Denmark", FI: "Finland",
+  NO: "Norway", IE: "Ireland", PT: "Portugal", PL: "Poland", CZ: "Czechia",
+  AT: "Austria", CH: "Switzerland", EE: "Estonia", LT: "Lithuania", LV: "Latvia",
+  GR: "Greece", RO: "Romania", BG: "Bulgaria", HU: "Hungary", SK: "Slovakia",
+  SI: "Slovenia", HR: "Croatia", LU: "Luxembourg", IS: "Iceland", CY: "Cyprus",
+  MT: "Malta", US: "United States", CA: "Canada", IL: "Israel", UA: "Ukraine",
+  XX: "Remote / unknown",
+};
+
+export function countryName(code: string | null | undefined): string {
+  if (!code) return "—";
+  return COUNTRY_NAMES[code] || code;
+}
+
 /** True for aggregator-discovered companies (synthetic stubs). */
 export function isAggregatorCompany(slug: string): boolean {
   return slug.startsWith("via-");

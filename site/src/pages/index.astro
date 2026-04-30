@@ -8,6 +8,7 @@ import {
   PAGE_SIZE,
   formatDate,
   displayCountry,
+  countryName,
   jobUrlPath,
   facetCounts,
 } from "../lib/data";
@@ -66,31 +67,31 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
       />
       <select id="country" data-facet="country">
         <option value="">All countries</option>
-        {countries.map((c) => {
-          const n = facetCounts.country[c] || 0;
-          return (
-            <option value={c} data-count={n}>
-              {displayCountry(c)} ({n.toLocaleString()})
+        {countries
+          .map((c) => ({ c, n: facetCounts.country[c] || 0, name: countryName(c) }))
+          .sort((a, b) => b.n - a.n)
+          .map(({ c, n, name }) => (
+            <option value={c} data-name={name} data-count={n}>
+              {name} ({n.toLocaleString()})
             </option>
-          );
-        })}
+          ))}
       </select>
       <select id="role" data-facet="role">
         <option value="">All roles</option>
         {[
-          ["ml-ai", "ML / AI"],
           ["engineering", "Engineering"],
-          ["data", "Data"],
-          ["product", "Product"],
-          ["design", "Design"],
           ["sales", "Sales"],
-          ["marketing", "Marketing"],
           ["ops", "Ops"],
-          ["hr", "HR / Recruiting"],
+          ["ml-ai", "ML / AI"],
+          ["marketing", "Marketing"],
+          ["support", "Support"],
           ["finance", "Finance"],
+          ["product", "Product"],
+          ["data", "Data"],
+          ["design", "Design"],
+          ["hr", "HR / Recruiting"],
           ["legal", "Legal"],
           ["research", "Research"],
-          ["support", "Support"],
         ].map(([v, label]) => {
           const n = facetCounts.role[v] || 0;
           return n === 0 ? null : (
@@ -101,9 +102,10 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
         })}
       </select>
     </form>
-    <p id="filter-status" class="meta filter-status" data-base={base}>
-      Showing 1–{pageJobs.length} of {allJobs.length.toLocaleString()} most recent
-      · sorted by post date · paginated below.
+    <p class="meta filter-status" data-base={base}>
+      Below: <strong>{pageJobs.length}</strong> freshest jobs across {allJobs.length.toLocaleString()} total
+      · pick a country or role above to <strong>see all matching jobs</strong> (jumps to faceted search)
+      · or hit Enter in the search box for free-text.
     </p>
     {pageJobs.length === 0 ? (
       <p class="empty">No jobs in this snapshot.</p>
@@ -162,59 +164,41 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
     const search = document.getElementById("search");
     const country = document.getElementById("country");
     const role = document.getElementById("role");
-    const status = document.getElementById("filter-status");
+    const status = document.querySelector(".filter-status");
     const base = status?.dataset.base || "/";
     const rows = Array.from(document.querySelectorAll("#jobs-table tbody tr"));
-    const totalAll = rows.length ? null : 0; // populated via meta later
-    function selectedCount(sel) {
-      if (!sel || !sel.value) return null;
-      const opt = sel.selectedOptions[0];
-      const n = opt?.dataset.count;
-      return n == null ? null : Number(n);
-    }
-    function apply() {
+
+    // Free-text input still filters the visible 100 (instant feedback).
+    // Enter forwards to /search/ for the global query (handled by form submit).
+    function applyText() {
       const q = (search?.value || "").toLowerCase().trim();
-      const cc = (country)?.value || "";
-      const rr = (role)?.value || "";
-      let visible = 0;
       for (const row of rows) {
         const haystack = row.dataset.haystack || "";
-        const c = row.dataset.country || "";
-        const ro = row.dataset.role || "";
-        const okQ = !q || haystack.includes(q);
-        const okC = !cc || c === cc;
-        const okR = !rr || ro === rr;
-        const show = okQ && okC && okR;
-        row.style.display = show ? "" : "none";
-        if (show) visible++;
+        row.style.display = !q || haystack.includes(q) ? "" : "none";
       }
-      // Update the count line + escalation link.
-      if (!status) return;
-      const anyFilter = q || cc || rr;
-      if (!anyFilter) {
-        status.innerHTML = `Showing 1–${rows.length} of ${rows.length} most recent · sorted by post date · paginated below.`;
-        return;
-      }
-      const countryN = selectedCount(country);
-      const roleN = selectedCount(role);
-      const parts = [];
-      if (cc) parts.push(`<strong>${countryN?.toLocaleString() ?? "?"}</strong> in ${country.selectedOptions[0].textContent.replace(/\s*\(.*$/, "")}`);
-      if (rr) parts.push(`<strong>${roleN?.toLocaleString() ?? "?"}</strong> in ${role.selectedOptions[0].textContent.replace(/\s*\(.*$/, "")}`);
-      const params = new URLSearchParams();
-      if (q) params.set("q", q);
-      // Pagefind filter param shape: filter[where]=value (we don't have country->where mapping client-side; use role + free text)
-      if (rr) params.set("filter[role]", rr);
-      const searchUrl = `${base}search/${params.toString() ? "?" + params.toString() : ""}`;
-      const globalLine = parts.length
-        ? ` · across all ${rows.length.toLocaleString()}+ jobs: ${parts.join(" · ")}`
-        : "";
-      status.innerHTML =
-        `Visible on this page: <strong>${visible}</strong> of ${rows.length}` +
-        globalLine +
-        ` · <a href="${searchUrl}">See all matching at /search/ →</a>`;
     }
-    search?.addEventListener("input", apply);
-    country?.addEventListener("change", apply);
-    role?.addEventListener("change", apply);
+    search?.addEventListener("input", applyText);
+
+    // Country / role dropdown changes redirect to /search/ with the
+    // matching Pagefind facet pre-selected — Kevin's expected behavior:
+    // pick "France" → see all 952 French jobs, not 12 of 100 visible.
+    function gotoSearchByCountry() {
+      const sel = country;
+      if (!sel || !sel.value) return;
+      const name = sel.selectedOptions[0].dataset.name || sel.value;
+      // Pagefind uses the `where` facet (country name + remote tiers).
+      const params = new URLSearchParams();
+      params.set("filter[where]", name);
+      location.href = `${base}search/?${params.toString()}`;
+    }
+    function gotoSearchByRole() {
+      const sel = role;
+      if (!sel || !sel.value) return;
+      const params = new URLSearchParams();
+      params.set("filter[role]", sel.value);
+      location.href = `${base}search/?${params.toString()}`;
+    }
+    country?.addEventListener("change", gotoSearchByCountry);
+    role?.addEventListener("change", gotoSearchByRole);
   </script>
 </Base>
