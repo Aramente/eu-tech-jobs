@@ -2,6 +2,7 @@ import jobsRaw from "../data/jobs.json";
 import companiesRaw from "../data/companies.json";
 import metaRaw from "../data/metadata.json";
 import facetCountsRaw from "../data/facet-counts.json";
+import whereByIdRaw from "../data/where-by-id.json";
 
 export type Job = {
   id: string;
@@ -45,6 +46,8 @@ export const facetCounts = facetCountsRaw as {
   source: Record<string, number>;
   where: Record<string, number>;
 };
+/** Per-job derived "where" bucket — same classification as facetCounts.where. */
+export const whereByJobId = whereByIdRaw as Record<string, string>;
 
 export function jobSlug(j: Job) {
   return j.id;

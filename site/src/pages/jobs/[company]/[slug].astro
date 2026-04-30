@@ -12,6 +12,7 @@ import {
   formatDate,
   jobs,
   jobUrlPath,
+  whereByJobId,
 } from "../../../lib/data";
 
 export async function getStaticPaths() {
@@ -107,18 +108,10 @@ const COUNTRY_NAMES: Record<string, string> = {
   XX: "Remote / unknown",
 };
 
-let whereFacet: string;
-if (job.remote_policy === "remote-global") {
-  whereFacet = "Remote — Worldwide";
-} else if (job.remote_policy === "remote-eu") {
-  whereFacet = "Remote — Europe";
-} else if (company?.country && company.country !== "XX") {
-  whereFacet = COUNTRY_NAMES[company.country] || company.country;
-} else if (job.remote_policy === "remote") {
-  whereFacet = "Remote — unspecified";
-} else {
-  whereFacet = "Other";
-}
+// `where` is derived at build time in parquet-to-json.mjs — using the
+// same enriched logic (city/country lookup in job.location, then company
+// HQ, then remote_policy) so home-page facet counts match per-job filter.
+const whereFacet: string = whereByJobId[jobId] || "Other";
 ---
 <Base
   title={`${job.title} — ${companyName}`}
