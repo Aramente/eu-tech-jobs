@@ -4,31 +4,22 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : import.meta.env.BASE_URL + "/";
 ---
-<Base title="Search jobs — eu-tech-jobs" description="Filter EU AI/tech jobs by location, role, seniority, and remote policy.">
-  <header>
-    <h1>Search jobs</h1>
-    <p class="lede">
-      <a href={base}>← Back</a> · Pick filters in any combination.
-      Multi-select within a category is OR; multiple categories AND.
-    </p>
+<Base title="Search — eu-tech-jobs" description="Filter EU AI/tech jobs by location, role, seniority, and remote policy.">
+  <header class="search-header">
+    <p class="crumb"><a href={base}>← All jobs</a></p>
   </header>
-  <main>
+  <main class="search-page">
     <div class="search-shell">
       <aside class="filter-rail">
         <div class="filter-search">
-          <input
-            id="q"
-            type="search"
-            placeholder="Free-text (optional)"
-            autocomplete="off"
-          />
+          <input id="q" type="search" placeholder="Search…" autocomplete="off" />
         </div>
         <div id="filter-panels"></div>
-        <button id="reset" type="button" class="btn-secondary" style="margin-top:12px;width:100%">Reset all</button>
+        <button id="reset" type="button" class="rail-clear">Clear all</button>
       </aside>
       <section class="results">
         <div id="active-pills" class="active-pills" hidden></div>
-        <p id="result-summary" class="meta">Loading…</p>
+        <p id="result-summary" class="result-summary">Loading…</p>
         <ol id="result-list" class="results-list"></ol>
         <nav id="pager" class="pagination"></nav>
       </section>
@@ -49,11 +40,10 @@ const base = import.meta.env.BASE_URL.endsWith("/")
         where: "Where",
         role: "Role",
         seniority: "Seniority",
-        remote: "Remote policy",
+        remote: "Remote",
         company: "Company",
       };
 
-      // Multi-select state: {facet -> Set<value>}
       const selected = {};
       let currentPage = 1;
 
@@ -81,7 +71,6 @@ const base = import.meta.env.BASE_URL.endsWith("/")
         history.replaceState(null, "", url);
       }
 
-      // Init Pagefind JS API
       let pagefind = null;
       let allFilters = null;
 
@@ -92,7 +81,6 @@ const base = import.meta.env.BASE_URL.endsWith("/")
           allFilters = await pagefind.filters();
           renderFilterPanels();
           syncFromUrl();
-          // Reflect URL state in the panels
           for (const [facet, values] of Object.entries(selected)) {
             for (const v of values) {
               const cb = document.querySelector(
@@ -115,7 +103,6 @@ const base = import.meta.env.BASE_URL.endsWith("/")
           const values = allFilters[facet];
           if (!values || Object.keys(values).length === 0) continue;
           const sortedValues = Object.entries(values).sort((a, b) => b[1] - a[1]);
-          // Cap "company" to top 30 with a "more" toggle to avoid 600 boxes
           const cap = facet === "company" ? 30 : sortedValues.length;
           const visible = sortedValues.slice(0, cap);
           const hidden = sortedValues.slice(cap);
@@ -123,7 +110,7 @@ const base = import.meta.env.BASE_URL.endsWith("/")
           block.className = "filter-block";
           block.open = facet === "where" || facet === "role";
           const summary = document.createElement("summary");
-          summary.textContent = FACET_LABELS[facet] || facet;
+          summary.innerHTML = `<span class="filter-block-label">${FACET_LABELS[facet] || facet}</span><span class="filter-block-toggle" aria-hidden="true">+</span>`;
           block.appendChild(summary);
           const wrap = document.createElement("div");
           wrap.className = "filter-options";
@@ -146,7 +133,8 @@ const base = import.meta.env.BASE_URL.endsWith("/")
               runSearch();
             });
             const text = document.createElement("span");
-            text.innerHTML = `<span class="opt-name">${val}</span> <span class="opt-count">${count.toLocaleString()}</span>`;
+            text.className = "filter-option-text";
+            text.innerHTML = `<span class="opt-name">${val}</span><span class="opt-count">${count.toLocaleString()}</span>`;
             label.appendChild(input);
             label.appendChild(text);
             return label;
@@ -200,23 +188,12 @@ const base = import.meta.env.BASE_URL.endsWith("/")
           });
           elPills.appendChild(pill);
         }
-        if (entries.length > 1) {
-          const clear = document.createElement("button");
-          clear.type = "button";
-          clear.className = "active-pill clear-pill";
-          clear.textContent = "Clear all";
-          clear.addEventListener("click", () => elReset.click());
-          elPills.appendChild(clear);
-        }
       }
 
       async function runSearch() {
         if (!pagefind) return;
         const q = elQ.value.trim();
         renderActivePills();
-        // Pagefind expects single values as a string and multi-value OR sets
-        // wrapped in { any: [...] }. A plain array is NOT a valid filter shape
-        // and silently matches nothing.
         const filters = {};
         for (const [facet, set] of Object.entries(selected)) {
           if (set.size === 0) continue;
@@ -224,7 +201,6 @@ const base = import.meta.env.BASE_URL.endsWith("/")
           filters[facet] = arr.length === 1 ? arr[0] : { any: arr };
         }
         elSummary.textContent = "Searching…";
-        // Pagefind handles empty query natively — no need to send a wildcard.
         const result = q
           ? await pagefind.search(q, { filters })
           : await pagefind.search(null, { filters });
@@ -239,23 +215,19 @@ const base = import.meta.env.BASE_URL.endsWith("/")
         if (currentPage > totalPages) currentPage = 1;
         const start = (currentPage - 1) * PAGE_SIZE;
         const slice = result.results.slice(start, start + PAGE_SIZE);
-        // filters values are either a string (single) or { any: [...] } (multi).
-        const filterText = Object.entries(filters)
-          .map(([f, vs]) => {
-            const arr = typeof vs === "string" ? [vs] : (vs?.any || []);
-            return `${f}: ${arr.join(" / ")}`;
-          })
-          .join(" · ");
-        elSummary.innerHTML = total === 0
-          ? `<strong>No matches</strong>${filterText ? " for " + filterText : ""}. Try removing a filter.`
-          : `<strong>${total.toLocaleString()}</strong> matching ${q ? `"${q}"` : "jobs"}${filterText ? " · " + filterText : ""} · showing ${start + 1}–${Math.min(start + PAGE_SIZE, total)}.`;
+        if (total === 0) {
+          elSummary.innerHTML = `<span class="empty-line">No matches.</span> <button type="button" class="empty-clear" id="empty-clear">Clear filters</button>`;
+          const ec = document.getElementById("empty-clear");
+          ec?.addEventListener("click", () => elReset.click());
+        } else {
+          elSummary.innerHTML = `<strong>${total.toLocaleString()}</strong> <span class="muted">jobs · ${start + 1}–${Math.min(start + PAGE_SIZE, total)}</span>`;
+        }
         elList.innerHTML = "";
         const datas = await Promise.all(slice.map((r) => r.data()));
         for (const d of datas) {
           const li = document.createElement("li");
           li.className = "result-item";
           const m = d.meta || {};
-          // Friendly relative-date label for the posted meta.
           let posted = "";
           if (m.posted) {
             const days = Math.round((Date.now() - new Date(m.posted).getTime()) / 86400000);
@@ -270,7 +242,7 @@ const base = import.meta.env.BASE_URL.endsWith("/")
           a.innerHTML = `
             <div class="result-title">${m.title || d.url}</div>
             <div class="result-meta">${metaBits}</div>
-            ${d.excerpt ? `<div class="result-excerpt"><em>${d.excerpt}</em></div>` : ""}
+            ${d.excerpt ? `<div class="result-excerpt">${d.excerpt}</div>` : ""}
           `;
           li.appendChild(a);
           elList.appendChild(li);
@@ -335,131 +307,249 @@ const base = import.meta.env.BASE_URL.endsWith("/")
 </Base>
 
 <style>
+  /* Header — slim breadcrumb only */
+  .search-header { padding: 24px 24px 0; max-width: 1200px; margin: 0 auto; }
+  .crumb { margin: 0; font-size: 13px; color: var(--muted); }
+  .crumb a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 1px; }
+  .crumb a:hover { color: var(--fg); border-color: var(--accent); }
+
+  .search-page { padding-top: 32px; }
+
   .search-shell {
     display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 32px;
-    margin-top: 16px;
+    grid-template-columns: 220px 1fr;
+    gap: 56px;
+    margin-top: 8px;
   }
   @media (max-width: 800px) {
-    .search-shell { grid-template-columns: 1fr; }
+    .search-shell { grid-template-columns: 1fr; gap: 24px; }
   }
-  .filter-rail {
-    border-right: 1px solid var(--border);
-    padding-right: 24px;
-  }
+
+  /* Filter rail */
+  .filter-rail { padding-right: 0; }
   .filter-search input {
     width: 100%;
-    padding: 8px 12px;
+    padding: 8px 0;
     font-size: 14px;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    background: var(--bg);
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
     color: var(--fg);
-    margin-bottom: 16px;
+    margin-bottom: 24px;
+    outline: none;
   }
+  .filter-search input:focus { border-bottom-color: var(--ink); }
+  .filter-search input::placeholder { color: var(--muted); }
+
   details.filter-block {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 4px 12px;
-    margin-bottom: 8px;
+    border: 0;
+    padding: 0;
+    margin-bottom: 24px;
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
   }
+  details.filter-block:first-of-type { border-top: 0; padding-top: 0; }
   details.filter-block summary {
-    font-weight: 500;
     cursor: pointer;
-    padding: 6px 0;
-    font-size: 13px;
+    padding: 0 0 6px;
     list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  details.filter-block summary::after {
-    content: "▾";
-    float: right;
+  details.filter-block summary::-webkit-details-marker { display: none; }
+  .filter-block-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--muted);
-    font-size: 11px;
+    font-weight: 500;
   }
-  details[open].filter-block summary::after { content: "▴"; }
+  .filter-block-toggle {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--muted);
+    width: 12px;
+    text-align: right;
+  }
+  details[open] .filter-block-toggle::before { content: "−"; }
+  details:not([open]) .filter-block-toggle::before { content: "+"; }
+  .filter-block-toggle { /* glyph rendered via ::before */ }
+  details[open] > summary .filter-block-toggle,
+  details:not([open]) > summary .filter-block-toggle { /* hide raw text */ font-size: 0; }
+  details[open] > summary .filter-block-toggle::before,
+  details:not([open]) > summary .filter-block-toggle::before { font-size: 13px; }
+
   .filter-options {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    padding: 4px 0 8px;
-    max-height: 320px;
+    gap: 0;
+    padding: 6px 0 0;
+    max-height: 280px;
     overflow-y: auto;
   }
   .filter-option {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     font-size: 13px;
     cursor: pointer;
-    padding: 2px 0;
+    padding: 4px 0;
     line-height: 1.4;
+  }
+  .filter-option-text {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    gap: 8px;
+    min-width: 0;
   }
   .filter-option:hover .opt-name { color: var(--fg); }
   .filter-option input[type=checkbox] {
     margin: 0;
-    accent-color: var(--accent);
+    accent-color: var(--ink);
+    flex-shrink: 0;
   }
-  .filter-option .opt-name { color: var(--fg); }
-  .filter-option .opt-count { color: var(--muted); font-size: 12px; }
+  .filter-option .opt-name {
+    color: var(--fg);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .filter-option .opt-count {
+    color: var(--muted);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+  }
   .more-link {
     background: none;
     border: 0;
-    padding: 4px 0;
-    color: var(--accent);
+    padding: 6px 0 0;
+    color: var(--muted);
     font-size: 12px;
     cursor: pointer;
     text-align: left;
   }
-  .more-link:hover { text-decoration: underline; }
+  .more-link:hover { color: var(--fg); }
+
+  .rail-clear {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    padding: 12px 0 0;
+    color: var(--muted);
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 3px;
+  }
+  .rail-clear:hover { color: var(--fg); text-decoration-color: var(--accent); }
+
+  /* Results column */
+  .results { max-width: 680px; }
+  .result-summary {
+    color: var(--muted);
+    font-size: 12px;
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 16px;
+  }
+  .result-summary strong {
+    color: var(--fg);
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+    margin-right: 6px;
+  }
+  .result-summary .muted { color: var(--muted); }
+  .empty-line { color: var(--fg); font-family: var(--serif); font-size: 15px; text-transform: none; letter-spacing: 0; }
+  .empty-clear {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    margin-left: 8px;
+    color: var(--muted);
+    font: inherit;
+    font-family: var(--serif);
+    font-size: 14px;
+    text-transform: none;
+    letter-spacing: 0;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 3px;
+  }
+  .empty-clear:hover { color: var(--fg); }
 
   .results-list {
     list-style: none;
     padding: 0;
-    margin: 12px 0;
+    margin: 0;
   }
   .result-item {
-    border-bottom: 1px solid var(--border);
-    padding: 12px 0;
+    border-bottom: 1px solid color-mix(in oklab, var(--border) 60%, transparent);
+    padding: 0;
   }
   .result-item:last-child { border-bottom: 0; }
   .result-link {
     display: block;
     text-decoration: none;
     color: var(--fg);
+    padding: 20px 0 20px 0;
+    transition: padding 120ms ease, box-shadow 120ms ease;
   }
-  .result-link:hover .result-title {
-    color: var(--accent);
-    text-decoration: underline;
+  .result-link:hover {
+    box-shadow: inset 3px 0 0 var(--accent);
+    padding-left: 14px;
+    padding-right: 0;
   }
-  .result-title { font-weight: 600; font-size: 16px; line-height: 1.3; }
+  .result-link:hover .result-title { color: var(--fg); }
+  .result-title {
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
   .result-meta {
     color: var(--muted);
-    font-size: 12px;
-    margin-top: 4px;
+    font-size: 11px;
+    font-family: var(--mono);
+    margin-top: 6px;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
   }
   .result-excerpt {
     color: var(--muted);
-    font-size: 13px;
-    margin-top: 6px;
-    line-height: 1.5;
+    font-size: 14px;
+    margin-top: 8px;
+    line-height: 1.55;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
-  .result-excerpt em { font-style: normal; }
-  .result-excerpt em mark {
+  .result-excerpt mark {
     background: rgba(255, 204, 0, 0.35);
     color: inherit;
     padding: 1px 2px;
     border-radius: 2px;
   }
-  #pager { justify-content: center; }
+  #pager { justify-content: center; margin-top: 32px; }
 
+  /* Active pills */
   .active-pills {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin: 0 0 12px;
+    margin: 0 0 16px;
   }
   .active-pill {
     appearance: none;
@@ -487,20 +577,10 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   .active-pill:hover .pill-facet { color: var(--on-ink); opacity: 0.7; }
   .active-pill .pill-value { font-weight: 500; }
   .active-pill .pill-x { font-size: 14px; opacity: 0.7; margin-left: 2px; }
-  .active-pill.clear-pill {
-    background: transparent;
-    color: var(--muted);
-    border-color: transparent;
-    text-decoration: underline;
-    text-decoration-color: var(--border);
-  }
-  .active-pill.clear-pill:hover { color: var(--fg); background: transparent; border-color: transparent; }
-  kbd {
-    background: var(--row-hover);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 1px 6px;
-    font: inherit;
-    font-size: 0.9em;
+
+  @media (max-width: 600px) {
+    .result-title { font-size: 16px; }
+    .result-meta { font-size: 10px; }
+    .result-link { padding: 16px 0; }
   }
 </style>
