@@ -2,17 +2,19 @@
 import Base from "../layouts/Base.astro";
 import {
   jobsSorted,
+  jobsForFrontPage,
   companies,
   meta,
   PAGE_SIZE,
   formatDate,
   displayCountry,
   jobUrlPath,
+  facetCounts,
 } from "../lib/data";
 
 const allJobs = jobsSorted();
 const totalPages = Math.max(1, Math.ceil(allJobs.length / PAGE_SIZE));
-const pageJobs = allJobs.slice(0, PAGE_SIZE);
+const pageJobs = jobsForFrontPage();
 
 const companyCount = Object.keys(companies).length;
 const runAt = formatDate(meta.run_at);
@@ -46,9 +48,11 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
     </div>
   </header>
   <main>
-    <p class="meta" style="margin-bottom: 24px;">
-      Tip: type a query and hit <kbd>Enter</kbd> to <a href={`${base}search/`}>full-text search</a> all 26,887 jobs.
-      Filter this page only with the dropdowns. <em>Remote</em> = aggregator-discovered jobs (RemoteOK / WeWorkRemotely / JustJoin.it).
+    <p class="meta" style="margin-bottom: 16px;">
+      <strong>{pageJobs.length}</strong> freshest jobs below (max 5 per company on
+      page 1 — keeps mass hirers from eating the front page). Quick-filter the
+      visible 100 with the dropdowns; type to <a href={`${base}search/`}>full-text
+      search all {allJobs.length.toLocaleString()} jobs</a> instead.
     </p>
     <form
       class="filters"
@@ -58,37 +62,53 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
       <input
         id="search"
         type="search"
-        placeholder="Search 26,887 jobs (Enter) or filter this page…"
+        placeholder={`Search all ${allJobs.length.toLocaleString()} jobs (Enter) or filter this page…`}
       />
-      <select id="country">
+      <select id="country" data-facet="country">
         <option value="">All countries</option>
-        {countries.map((c) => <option value={c}>{displayCountry(c)}</option>)}
+        {countries.map((c) => {
+          const n = facetCounts.country[c] || 0;
+          return (
+            <option value={c} data-count={n}>
+              {displayCountry(c)} ({n.toLocaleString()})
+            </option>
+          );
+        })}
       </select>
-      <select id="role">
+      <select id="role" data-facet="role">
         <option value="">All roles</option>
-        <option value="ml-ai">ML / AI</option>
-        <option value="engineering">Engineering</option>
-        <option value="data">Data</option>
-        <option value="product">Product</option>
-        <option value="design">Design</option>
-        <option value="sales">Sales</option>
-        <option value="marketing">Marketing</option>
-        <option value="ops">Ops</option>
-        <option value="hr">HR / Recruiting</option>
-        <option value="finance">Finance</option>
-        <option value="legal">Legal</option>
-        <option value="research">Research</option>
-        <option value="support">Support</option>
+        {[
+          ["ml-ai", "ML / AI"],
+          ["engineering", "Engineering"],
+          ["data", "Data"],
+          ["product", "Product"],
+          ["design", "Design"],
+          ["sales", "Sales"],
+          ["marketing", "Marketing"],
+          ["ops", "Ops"],
+          ["hr", "HR / Recruiting"],
+          ["finance", "Finance"],
+          ["legal", "Legal"],
+          ["research", "Research"],
+          ["support", "Support"],
+        ].map(([v, label]) => {
+          const n = facetCounts.role[v] || 0;
+          return n === 0 ? null : (
+            <option value={v} data-count={n}>
+              {label} ({n.toLocaleString()})
+            </option>
+          );
+        })}
       </select>
     </form>
+    <p id="filter-status" class="meta filter-status" data-base={base}>
+      Showing 1–{pageJobs.length} of {allJobs.length.toLocaleString()} most recent
+      · sorted by post date · paginated below.
+    </p>
     {pageJobs.length === 0 ? (
       <p class="empty">No jobs in this snapshot.</p>
     ) : (
       <>
-        <p class="meta">
-          Showing first {pageJobs.length.toLocaleString()} of {allJobs.length.toLocaleString()}.
-          {totalPages > 1 && <> <a href={`${base}page/2/`}>Next →</a></>}
-        </p>
         <table id="jobs-table">
           <thead>
             <tr><th>Title</th><th>Company</th><th>Location</th><th>Posted</th></tr>
@@ -142,21 +162,56 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
     const search = document.getElementById("search");
     const country = document.getElementById("country");
     const role = document.getElementById("role");
+    const status = document.getElementById("filter-status");
+    const base = status?.dataset.base || "/";
     const rows = Array.from(document.querySelectorAll("#jobs-table tbody tr"));
+    const totalAll = rows.length ? null : 0; // populated via meta later
+    function selectedCount(sel) {
+      if (!sel || !sel.value) return null;
+      const opt = sel.selectedOptions[0];
+      const n = opt?.dataset.count;
+      return n == null ? null : Number(n);
+    }
     function apply() {
       const q = (search?.value || "").toLowerCase().trim();
       const cc = (country)?.value || "";
       const rr = (role)?.value || "";
+      let visible = 0;
       for (const row of rows) {
-        const r = row;
-        const haystack = r.dataset.haystack || "";
-        const c = r.dataset.country || "";
-        const ro = r.dataset.role || "";
+        const haystack = row.dataset.haystack || "";
+        const c = row.dataset.country || "";
+        const ro = row.dataset.role || "";
         const okQ = !q || haystack.includes(q);
         const okC = !cc || c === cc;
         const okR = !rr || ro === rr;
-        r.style.display = okQ && okC && okR ? "" : "none";
+        const show = okQ && okC && okR;
+        row.style.display = show ? "" : "none";
+        if (show) visible++;
       }
+      // Update the count line + escalation link.
+      if (!status) return;
+      const anyFilter = q || cc || rr;
+      if (!anyFilter) {
+        status.innerHTML = `Showing 1–${rows.length} of ${rows.length} most recent · sorted by post date · paginated below.`;
+        return;
+      }
+      const countryN = selectedCount(country);
+      const roleN = selectedCount(role);
+      const parts = [];
+      if (cc) parts.push(`<strong>${countryN?.toLocaleString() ?? "?"}</strong> in ${country.selectedOptions[0].textContent.replace(/\s*\(.*$/, "")}`);
+      if (rr) parts.push(`<strong>${roleN?.toLocaleString() ?? "?"}</strong> in ${role.selectedOptions[0].textContent.replace(/\s*\(.*$/, "")}`);
+      const params = new URLSearchParams();
+      if (q) params.set("q", q);
+      // Pagefind filter param shape: filter[where]=value (we don't have country->where mapping client-side; use role + free text)
+      if (rr) params.set("filter[role]", rr);
+      const searchUrl = `${base}search/${params.toString() ? "?" + params.toString() : ""}`;
+      const globalLine = parts.length
+        ? ` · across all ${rows.length.toLocaleString()}+ jobs: ${parts.join(" · ")}`
+        : "";
+      status.innerHTML =
+        `Visible on this page: <strong>${visible}</strong> of ${rows.length}` +
+        globalLine +
+        ` · <a href="${searchUrl}">See all matching at /search/ →</a>`;
     }
     search?.addEventListener("input", apply);
     country?.addEventListener("change", apply);

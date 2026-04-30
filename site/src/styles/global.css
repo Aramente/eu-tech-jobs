@@ -70,6 +70,28 @@ footer {
 footer a { color: var(--muted); text-decoration: underline; }
 .empty { padding: 48px 0; text-align: center; color: var(--muted); }
 
+.filter-status {
+  margin: 12px 0 16px;
+  padding: 10px 14px;
+  background: var(--row-hover);
+  border-radius: 6px;
+  font-size: 13px;
+}
+.filter-status strong { color: var(--fg); font-weight: 600; }
+.filter-status a {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: underline;
+}
+kbd {
+  background: var(--row-hover);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font: inherit;
+  font-size: 0.9em;
+}
+
 .pagination { display: flex; gap: 12px; justify-content: center; margin: 32px 0; }
 .pagination a, .pagination span {
   padding: 6px 12px; border: 1px solid var(--border); border-radius: 6px;

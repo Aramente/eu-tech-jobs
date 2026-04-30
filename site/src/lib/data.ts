@@ -1,6 +1,7 @@
 import jobsRaw from "../data/jobs.json";
 import companiesRaw from "../data/companies.json";
 import metaRaw from "../data/metadata.json";
+import facetCountsRaw from "../data/facet-counts.json";
 
 export type Job = {
   id: string;
@@ -38,6 +39,12 @@ export const meta = metaRaw as {
   company_count?: number;
   extractor_results?: Array<{ success: boolean }>;
 };
+export const facetCounts = facetCountsRaw as {
+  role: Record<string, number>;
+  country: Record<string, number>;
+  source: Record<string, number>;
+  where: Record<string, number>;
+};
 
 export function jobSlug(j: Job) {
   return j.id;
@@ -61,6 +68,33 @@ export function jobsByCompany(): Record<string, Job[]> {
 }
 
 export const PAGE_SIZE = 100;
+/** Cap any single company at this many jobs on page 1 only — keeps mass
+ *  hirers (Delivery Hero / Databricks etc) from eating the whole front
+ *  page. Spillover lives on later pages in pure recency order. */
+export const PAGE_1_PER_COMPANY_CAP = 5;
+
+/**
+ * The page-1 set: top jobs by posted_at desc, capped at
+ * PAGE_1_PER_COMPANY_CAP per company. Improves company diversity on the
+ * landing page from ~5–8 companies to ~30+.
+ */
+export function jobsForFrontPage(): Job[] {
+  const sorted = jobsSorted();
+  const perCompany: Record<string, number> = {};
+  const front: Job[] = [];
+  const overflow: Job[] = [];
+  for (const j of sorted) {
+    const n = perCompany[j.company_slug] || 0;
+    if (n < PAGE_1_PER_COMPANY_CAP && front.length < PAGE_SIZE) {
+      front.push(j);
+      perCompany[j.company_slug] = n + 1;
+    } else {
+      overflow.push(j);
+    }
+    if (front.length >= PAGE_SIZE) break;
+  }
+  return front;
+}
 
 /** Format an ISO date string (YYYY-MM-DD or full ISO) as DD/MM/YYYY (European). */
 export function formatDate(iso: string | null | undefined): string {

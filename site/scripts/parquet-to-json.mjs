@@ -73,6 +73,40 @@ writeFileSync(join(OUT_DIR, "jobs.json"), JSON.stringify(jobsLite));
 writeFileSync(join(OUT_DIR, "companies.json"), JSON.stringify(companiesByslug));
 writeFileSync(join(OUT_DIR, "metadata.json"), JSON.stringify(meta));
 
+// Build a small facet-counts table so the home-page dropdowns can show
+// per-option global counts ("Engineering (3,342)") and the count line
+// under the filter row knows the scope. Each facet is unconditional
+// (count of jobs with that value, ignoring other filters) — combined
+// counts would be a cartesian explosion and we don't need them; the
+// "See all matching" CTA hands the multi-filter case off to /search/.
+const facetCounts = { role: {}, country: {}, source: {}, where: {} };
+const countryNames = {
+  FR: "France", DE: "Germany", GB: "United Kingdom", ES: "Spain", IT: "Italy",
+  NL: "Netherlands", BE: "Belgium", SE: "Sweden", DK: "Denmark", FI: "Finland",
+  NO: "Norway", IE: "Ireland", PT: "Portugal", PL: "Poland", CZ: "Czechia",
+  AT: "Austria", CH: "Switzerland", EE: "Estonia", LT: "Lithuania", LV: "Latvia",
+  GR: "Greece", RO: "Romania", BG: "Bulgaria", HU: "Hungary", SK: "Slovakia",
+  SI: "Slovenia", HR: "Croatia", LU: "Luxembourg", IS: "Iceland", CY: "Cyprus",
+  MT: "Malta", US: "United States", CA: "Canada", IL: "Israel", UA: "Ukraine",
+  XX: "Remote / unknown",
+};
+for (const j of jobs) {
+  if (j.role_family) facetCounts.role[j.role_family] = (facetCounts.role[j.role_family] || 0) + 1;
+  if (j.source) facetCounts.source[j.source] = (facetCounts.source[j.source] || 0) + 1;
+  const c = companiesByslug[j.company_slug];
+  if (c?.country) {
+    facetCounts.country[c.country] = (facetCounts.country[c.country] || 0) + 1;
+  }
+  // `where` mirrors the per-job filter: country | "Remote — Europe" | "Remote — Worldwide"
+  let where = "Other";
+  if (j.remote_policy === "remote-global") where = "Remote — Worldwide";
+  else if (j.remote_policy === "remote-eu") where = "Remote — Europe";
+  else if (c?.country && c.country !== "XX") where = countryNames[c.country] || c.country;
+  else if (j.remote_policy === "remote") where = "Remote — unspecified";
+  facetCounts.where[where] = (facetCounts.where[where] || 0) + 1;
+}
+writeFileSync(join(OUT_DIR, "facet-counts.json"), JSON.stringify(facetCounts));
+
 const feedSrc = join(DATA, "feed.xml");
 if (existsSync(feedSrc)) {
   copyFileSync(feedSrc, join(PUBLIC_DIR, "feed.xml"));
