@@ -1,7 +1,47 @@
 ---
 import "../styles/global.css";
-const { title = "eu-tech-jobs", description = "Daily-updated open-data EU AI/tech jobboard." } = Astro.props;
+import { jobs, companies, meta, formatDate } from "../lib/data";
+
+const { title = "eu-tech-jobs", description = "Live wire for the EU tech labor market — daily-refreshed open-data jobboard, 12k+ EU AI/tech roles." } = Astro.props;
 const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + "/";
+
+// Status-strip stats — built once at SSG time, identical on every page.
+const jobCount = jobs.length;
+const companyCount = Object.keys(companies).length;
+
+// "NEW today" — jobs with a credible posted_at within the last 24h.
+// Filter out the Y58k parquet-parse bug by capping at the run-time year.
+const now = Date.now();
+const dayAgo = now - 24 * 60 * 60 * 1000;
+const yearNow = new Date(now).getUTCFullYear();
+const newToday = jobs.filter((j) => {
+  if (!j.posted_at) return false;
+  const t = new Date(j.posted_at).getTime();
+  if (!isFinite(t) || t > now) return false;
+  if (new Date(j.posted_at).getUTCFullYear() > yearNow) return false;
+  return t >= dayAgo;
+}).length;
+
+// Updated time — short UTC HH:MM from meta.run_at, fall back to "—".
+let updatedLabel = "—";
+if (meta.run_at) {
+  const d = new Date(meta.run_at);
+  if (isFinite(d.getTime())) {
+    const hh = String(d.getUTCHours()).padStart(2, "0");
+    const mm = String(d.getUTCMinutes()).padStart(2, "0");
+    const dd = String(d.getUTCDate()).padStart(2, "0");
+    const mo = String(d.getUTCMonth() + 1).padStart(2, "0");
+    updatedLabel = `${dd}/${mo} ${hh}:${mm} UTC`;
+  }
+}
+
+const navItems = [
+  { href: `${base}search/`, label: "Search" },
+  { href: `${base}companies/`, label: "Companies" },
+  { href: `${base}trends/`, label: "Methodology" },
+  { href: `${base}feed.xml`, label: "RSS" },
+];
+const path = Astro.url?.pathname || "/";
 ---
 <!doctype html>
 <html lang="en">
@@ -14,7 +54,7 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -25,6 +65,31 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
     />
   </head>
   <body>
+    <header class="masthead">
+      <div class="masthead-inner">
+        <a href={base} class="wordmark">eu<span class="wordmark-mark">.</span>tech.jobs</a>
+        <nav class="masthead-nav" aria-label="Primary">
+          {navItems.map((it) => (
+            <a href={it.href} class={path.startsWith(it.href.replace(base, "/")) && it.label !== "Search" ? "active" : ""}>{it.label}</a>
+          ))}
+        </nav>
+      </div>
+      <div class="status-strip" role="status">
+        <span class="status-name">EU-TECH-JOBS</span>
+        <span class="status-sep">//</span>
+        <span><strong>{jobCount.toLocaleString()}</strong> OPEN</span>
+        <span class="status-sep">//</span>
+        <span><strong>{companyCount.toLocaleString()}</strong> COMPANIES</span>
+        <span class="status-sep">//</span>
+        <span>UPDATED {updatedLabel}</span>
+        {newToday > 0 && (
+          <>
+            <span class="status-sep">//</span>
+            <span class="status-new"><strong>{newToday.toLocaleString()}</strong> NEW TODAY</span>
+          </>
+        )}
+      </div>
+    </header>
     <slot />
   </body>
 </html>

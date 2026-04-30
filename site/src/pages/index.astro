@@ -1,136 +1,89 @@
 ---
 import Base from "../layouts/Base.astro";
 import {
-  jobsSorted,
   jobsForFrontPage,
+  jobsSorted,
   companies,
-  meta,
   PAGE_SIZE,
   formatDate,
   countryName,
   jobUrlPath,
-  facetCounts,
 } from "../lib/data";
 
 const allJobs = jobsSorted();
 const totalPages = Math.max(1, Math.ceil(allJobs.length / PAGE_SIZE));
 const pageJobs = jobsForFrontPage();
-
-const companyCount = Object.keys(companies).length;
-const runAt = formatDate(meta.run_at);
-const successRate = meta.extractor_results
-  ? Math.round(
-      (meta.extractor_results.filter((r) => r.success).length /
-        Math.max(meta.extractor_results.length, 1)) *
-        100
-    )
-  : 100;
-
-// "where" is the unified location/remote facet — same shape as Pagefind's
-// `where` filter on /search/. Sorted by job count desc so the most
-// populated options are first in the dropdown.
-const whereOptions = Object.entries(facetCounts.where)
-  .filter(([k, n]) => n > 0 && k !== "Other" && k !== "Remote / unknown")
-  .sort((a, b) => b[1] - a[1]);
-
 const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + "/";
+
+// Compute per-row meta data — including a NEW flag for ≤24h jobs.
+const now = Date.now();
+const dayAgo = now - 24 * 60 * 60 * 1000;
+const yearNow = new Date(now).getUTCFullYear();
+
+function metaFor(j) {
+  const c = companies[j.company_slug];
+  const country = c?.country ? countryName(c.country) : "";
+  const company = c?.name || j.company_slug;
+  const loc = j.location || country || "";
+  let isNew = false;
+  let postedLabel = "";
+  if (j.posted_at) {
+    const t = new Date(j.posted_at).getTime();
+    const yr = new Date(j.posted_at).getUTCFullYear();
+    if (isFinite(t) && t <= now && yr <= yearNow) {
+      const days = Math.floor((now - t) / 86400000);
+      isNew = days <= 1;
+      postedLabel = days <= 0 ? "TODAY" : days === 1 ? "1D" : days <= 7 ? `${days}D` : days <= 31 ? `${Math.round(days / 7)}W` : `${Math.round(days / 30)}MO`;
+    }
+  }
+  const remoteLabel =
+    j.remote_policy === "remote-global" ? "REMOTE-WW"
+    : j.remote_policy === "remote-eu" ? "REMOTE-EU"
+    : j.remote_policy === "remote" ? "REMOTE"
+    : j.remote_policy === "hybrid" ? "HYBRID"
+    : "";
+  const metaBits = [
+    isNew ? `<span class="new">NEW</span>` : (postedLabel || ""),
+    remoteLabel,
+  ].filter(Boolean);
+  return { company, loc, metaBits: metaBits.join(" · ") };
+}
 ---
-<Base title="eu-tech-jobs — EU AI/Tech Jobboard">
-  <header>
-    <h1>eu<span class="wordmark-dot">·</span>tech<span class="wordmark-dot">·</span>jobs</h1>
-    <p class="lede">
-      Find your next role at <strong>{companyCount.toLocaleString()} EU tech companies</strong>.
-      {allJobs.length.toLocaleString()} jobs, refreshed daily, sourced direct from company ATSes — no recruiter spam, no LinkedIn middleman.
-    </p>
-    <div class="stats">
-      <span>Updated <strong>{runAt}</strong></span>
-      <span><a href={`${base}companies/`}>Companies</a></span>
-      <span><a href={`${base}trends/`}>Trends</a></span>
-      <span><a href={`${base}search/`}>Search</a></span>
-      <span><a href="https://aramente.github.io/bored-cv/">Tailor a CV with Bored CV →</a></span>
-    </div>
-  </header>
+<Base title="eu-tech-jobs — EU AI/Tech Jobs Wire">
   <main>
-    <p class="meta" style="margin-bottom: 16px;">
-      <strong>{pageJobs.length}</strong> freshest jobs below (max 5 per company on
-      page 1 — keeps mass hirers from eating the front page). Quick-filter the
-      visible 100 with the dropdowns; type to <a href={`${base}search/`}>full-text
-      search all {allJobs.length.toLocaleString()} jobs</a> instead.
-    </p>
-    <form id="filter-form" class="filters" role="search">
-      <input
-        id="search"
-        type="search"
-        placeholder={`Search all ${allJobs.length.toLocaleString()} jobs…`}
-      />
-      {/* Chip-popover filters. Native <select multiple> is the source of truth
-          for state + non-JS fallback; chip-filter.js progressively enhances it
-          with a popover UI. Hidden via .chip-source CSS. */}
-      <select id="country" multiple class="chip-source" data-chip-label="Country" data-chip-group-prefix="Remote — " aria-label="Country and remote">
-        {whereOptions.map(([name, n]) => (
-          <option value={name} data-count={n}>{name}</option>
-        ))}
-      </select>
-      <select id="role" multiple class="chip-source" data-chip-label="Role" aria-label="Role">
-        {[
-          ["engineering", "Engineering"],
-          ["sales", "Sales"],
-          ["ops", "Ops"],
-          ["ml-ai", "ML / AI"],
-          ["marketing", "Marketing"],
-          ["support", "Support"],
-          ["finance", "Finance"],
-          ["product", "Product"],
-          ["data", "Data"],
-          ["design", "Design"],
-          ["hr", "HR / Recruiting"],
-          ["legal", "Legal"],
-          ["research", "Research"],
-        ].map(([v, label]) => {
-          const n = facetCounts.role[v] || 0;
-          return n === 0 ? null : (
-            <option value={v} data-count={n}>{label}</option>
-          );
-        })}
-      </select>
-      <button id="search-btn" type="submit" class="btn-search">
-        Search →
-      </button>
-    </form>
-    <p class="meta filter-status" data-base={base}>
-      Below: <strong>{pageJobs.length}</strong> freshest jobs across {allJobs.length.toLocaleString()} total
-      · pick any combination of country, role, and free-text → click <strong>Search</strong>
-      (or hit Enter) for full-corpus faceted results. Add more filters once on /search/.
-    </p>
+    <div class="search-input-wrap" style="max-width:560px;margin-bottom:24px">
+      <form action={`${base}search/`} method="get" role="search" id="home-search">
+        <input
+          type="search"
+          name="q"
+          class="search-input"
+          placeholder={`search ${allJobs.length.toLocaleString()} jobs…`}
+          autocomplete="off"
+          aria-label="Search jobs"
+        />
+      </form>
+    </div>
+
     {pageJobs.length === 0 ? (
       <p class="empty">No jobs in this snapshot.</p>
     ) : (
       <>
-        <table id="jobs-table">
-          <thead>
-            <tr><th>Title</th><th>Company</th><th>Location</th><th>Posted</th></tr>
-          </thead>
-          <tbody>
-            {pageJobs.map((j) => {
-              const c = companies[j.company_slug];
-              const country = c?.country || "";
-              const name = c?.name || j.company_slug;
-              return (
-                <tr data-country={country} data-role={j.role_family || ""} data-haystack={`${j.title} ${name} ${j.location}`.toLowerCase()}>
-                  <td><a href={`${base}jobs/${jobUrlPath(j)}/`}>{j.title}</a></td>
-                  <td class="company">
-                    <a href={`${base}companies/${j.company_slug}/`}>{name}</a>{" "}
-                    {country && <span class="badge">{countryName(country)}</span>}
-                  </td>
-                  <td class="meta">{j.location || "—"}</td>
-                  <td class="meta">{formatDate(j.posted_at)}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <ol class="results-list">
+          {pageJobs.map((j) => {
+            const m = metaFor(j);
+            return (
+              <li class="result-item">
+                <a href={`${base}jobs/${jobUrlPath(j)}/`} class="result-link">
+                  <span class="result-title">{j.title}</span>
+                  <span class="result-org">{m.company}{m.loc ? ` · ${m.loc}` : ""}</span>
+                  <span class="result-meta" set:html={m.metaBits}></span>
+                </a>
+              </li>
+            );
+          })}
+        </ol>
         {totalPages > 1 && (
-          <nav class="pagination">
+          <nav class="pagination" aria-label="Pagination">
             <span class="current">1</span>
             {Array.from({ length: Math.min(totalPages - 1, 9) }, (_, i) => i + 2).map((p) => (
               <a href={`${base}page/${p}/`}>{p}</a>
@@ -144,56 +97,11 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
   </main>
   <footer>
     <p>
-      <strong>For developers / researchers:</strong>{" "}
-      <a href={`${base}feed.xml`}>RSS feed</a> ·{" "}
-      <a href="https://github.com/Aramente/eu-tech-jobs">source on GitHub</a> (MIT) ·{" "}
-      <a href="https://huggingface.co/datasets/Aramente/eu-tech-jobs">parquet dataset on Hugging Face</a> (CC BY 4.0) ·{" "}
-      pipeline success {successRate}%.
-    </p>
-    <p>
-      Removal requests: <a href="mailto:kevin.duchier@gmail.com">email</a>.
-      We don't scrape LinkedIn or Indeed.
+      Open data · daily refresh ·
+      {" "}<a href="https://github.com/Aramente/eu-tech-jobs">github</a> ·
+      {" "}<a href="https://huggingface.co/datasets/Aramente/eu-tech-jobs">hugging face</a> ·
+      {" "}<a href={`${base}feed.xml`}>rss</a> ·
+      {" "}<a href="mailto:kevin.duchier@gmail.com">removal</a>
     </p>
   </footer>
-  <script src={`${base}chip-filter.js`} defer></script>
-  <script>
-    const form = document.getElementById("filter-form");
-    const search = document.getElementById("search");
-    const country = document.getElementById("country");
-    const role = document.getElementById("role");
-    const status = document.querySelector(".filter-status");
-    const base = status?.dataset.base || "/";
-    const rows = Array.from(document.querySelectorAll("#jobs-table tbody tr"));
-
-    // Free-text input also live-filters the visible 100 rows for instant
-    // browse-mode feedback. Submit (button or Enter) builds the
-    // /search/ URL with all current selections combined.
-    function applyText() {
-      const q = (search?.value || "").toLowerCase().trim();
-      for (const row of rows) {
-        const haystack = row.dataset.haystack || "";
-        row.style.display = !q || haystack.includes(q) ? "" : "none";
-      }
-    }
-    search?.addEventListener("input", applyText);
-
-    function gotoSearch(e) {
-      if (e) e.preventDefault();
-      const params = new URLSearchParams();
-      const q = (search?.value || "").trim();
-      const wheres = country
-        ? Array.from(country.selectedOptions).map((o) => o.value).filter(Boolean)
-        : [];
-      const roles = role
-        ? Array.from(role.selectedOptions).map((o) => o.value).filter(Boolean)
-        : [];
-      if (q) params.set("q", q);
-      // Multi-value filter syntax: filter[where][]=France&filter[where][]=Germany
-      // (Pagefind treats multi-select within a category as OR.)
-      for (const w of wheres) params.append("filter[where][]", w);
-      for (const r of roles) params.append("filter[role][]", r);
-      location.href = `${base}search/${params.toString() ? "?" + params.toString() : ""}`;
-    }
-    form?.addEventListener("submit", gotoSearch);
-  </script>
 </Base>

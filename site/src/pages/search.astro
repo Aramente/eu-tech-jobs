@@ -5,14 +5,11 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   : import.meta.env.BASE_URL + "/";
 ---
 <Base title="Search — eu-tech-jobs" description="Filter EU AI/tech jobs by location, role, seniority, and remote policy.">
-  <header class="search-header">
-    <p class="crumb"><a href={base}>← All jobs</a></p>
-  </header>
   <main class="search-page">
     <div class="search-shell">
       <aside class="filter-rail">
-        <div class="filter-search">
-          <input id="q" type="search" placeholder="Search…" autocomplete="off" />
+        <div class="filter-search search-input-wrap">
+          <input id="q" type="search" class="search-input" placeholder="search…" autocomplete="off" />
         </div>
         <div id="filter-panels"></div>
         <button id="reset" type="button" class="rail-clear">Clear all</button>
@@ -224,24 +221,41 @@ const base = import.meta.env.BASE_URL.endsWith("/")
         }
         elList.innerHTML = "";
         const datas = await Promise.all(slice.map((r) => r.data()));
+        const now = Date.now();
+        const yearNow = new Date(now).getUTCFullYear();
         for (const d of datas) {
           const li = document.createElement("li");
           li.className = "result-item";
           const m = d.meta || {};
-          let posted = "";
+          let isNew = false;
+          let postedLabel = "";
           if (m.posted) {
-            const days = Math.round((Date.now() - new Date(m.posted).getTime()) / 86400000);
-            posted = days <= 1 ? "today" : days <= 7 ? `${days}d ago` : days <= 31 ? `${Math.round(days / 7)}w ago` : "";
+            const t = new Date(m.posted).getTime();
+            const yr = new Date(m.posted).getUTCFullYear();
+            if (isFinite(t) && t <= now && yr <= yearNow) {
+              const days = Math.floor((now - t) / 86400000);
+              isNew = days <= 1;
+              postedLabel = days <= 0 ? "TODAY" : days === 1 ? "1D" : days <= 7 ? `${days}D` : days <= 31 ? `${Math.round(days / 7)}W` : `${Math.round(days / 30)}MO`;
+            }
           }
           const where = m.where && m.where !== "Other" ? m.where : (m.country || m.location || "");
-          const remoteBadge = m.remote && m.remote.startsWith("remote") ? "Remote" : "";
-          const metaBits = [m.company, where, posted, remoteBadge].filter(Boolean).join(" · ");
+          const remoteLabel =
+            m.remote === "remote-global" ? "REMOTE-WW"
+            : m.remote === "remote-eu" ? "REMOTE-EU"
+            : m.remote === "remote" ? "REMOTE"
+            : m.remote === "hybrid" ? "HYBRID"
+            : "";
+          const metaBits = [
+            isNew ? `<span class="new">NEW</span>` : postedLabel,
+            remoteLabel,
+          ].filter(Boolean).join(" · ");
+          const orgBits = [m.company, where].filter(Boolean).join(" · ");
           const a = document.createElement("a");
           a.href = d.url;
           a.className = "result-link";
-          // One-liner: title (truncates) on the left, meta (mono) right-aligned.
           a.innerHTML = `
             <span class="result-title">${m.title || d.url}</span>
+            <span class="result-org">${orgBits}</span>
             <span class="result-meta">${metaBits}</span>
           `;
           li.appendChild(a);
@@ -307,47 +321,28 @@ const base = import.meta.env.BASE_URL.endsWith("/")
 </Base>
 
 <style>
-  /* Header — slim breadcrumb only */
-  .search-header { padding: 24px 24px 0; max-width: 1200px; margin: 0 auto; }
-  .crumb { margin: 0; font-size: 13px; color: var(--muted); }
-  .crumb a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 1px; }
-  .crumb a:hover { color: var(--fg); border-color: var(--accent); }
-
-  .search-page { padding-top: 32px; }
+  /* Per-DESIGN.md v0.2: search-specific layout. Result row CSS lives in
+     global.css (.result-link 3-col grid) — don't redefine here. */
+  .search-page { padding-top: 16px; }
 
   .search-shell {
     display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 56px;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
     margin-top: 8px;
   }
   @media (max-width: 800px) {
     .search-shell { grid-template-columns: 1fr; gap: 24px; }
   }
 
-  /* Filter rail */
   .filter-rail { padding-right: 0; }
-  .filter-search input {
-    width: 100%;
-    padding: 8px 0;
-    font-size: 14px;
-    border: 0;
-    border-bottom: 1px solid var(--border);
-    border-radius: 0;
-    background: transparent;
-    color: var(--fg);
-    margin-bottom: 24px;
-    outline: none;
-  }
-  .filter-search input:focus { border-bottom-color: var(--ink); }
-  .filter-search input::placeholder { color: var(--muted); }
+  .filter-search { margin-bottom: 24px; }
 
   details.filter-block {
     border: 0;
-    padding: 0;
-    margin-bottom: 24px;
-    border-top: 1px solid var(--border);
-    padding-top: 12px;
+    padding: 12px 0 0;
+    margin-bottom: 16px;
+    border-top: 1px solid var(--rule);
   }
   details.filter-block:first-of-type { border-top: 0; padding-top: 0; }
   details.filter-block summary {
@@ -360,27 +355,20 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   }
   details.filter-block summary::-webkit-details-marker { display: none; }
   .filter-block-label {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.08em;
+    font: 500 11px/1 var(--mono);
     text-transform: uppercase;
+    letter-spacing: 0.06em;
     color: var(--muted);
-    font-weight: 500;
   }
   .filter-block-toggle {
-    font-family: var(--mono);
-    font-size: 13px;
+    font: 500 13px/1 var(--mono);
     color: var(--muted);
     width: 12px;
     text-align: right;
+    font-size: 0;
   }
-  details[open] .filter-block-toggle::before { content: "−"; }
-  details:not([open]) .filter-block-toggle::before { content: "+"; }
-  .filter-block-toggle { /* glyph rendered via ::before */ }
-  details[open] > summary .filter-block-toggle,
-  details:not([open]) > summary .filter-block-toggle { /* hide raw text */ font-size: 0; }
-  details[open] > summary .filter-block-toggle::before,
-  details:not([open]) > summary .filter-block-toggle::before { font-size: 13px; }
+  details[open] .filter-block-toggle::before { content: "−"; font-size: 13px; }
+  details:not([open]) .filter-block-toggle::before { content: "+"; font-size: 13px; }
 
   .filter-options {
     display: flex;
@@ -393,11 +381,10 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   .filter-option {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 13px;
+    gap: 8px;
+    font: 400 13px/1.4 var(--body);
     cursor: pointer;
-    padding: 4px 0;
-    line-height: 1.4;
+    padding: 3px 0;
   }
   .filter-option-text {
     display: flex;
@@ -406,21 +393,20 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     gap: 8px;
     min-width: 0;
   }
-  .filter-option:hover .opt-name { color: var(--fg); }
   .filter-option input[type=checkbox] {
     margin: 0;
     accent-color: var(--ink);
     flex-shrink: 0;
   }
   .filter-option .opt-name {
-    color: var(--fg);
+    color: var(--ink);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
   .filter-option .opt-count {
     color: var(--muted);
-    font-size: 12px;
+    font: 500 11px/1.4 var(--mono);
     font-variant-numeric: tabular-nums;
   }
   .more-link {
@@ -428,48 +414,45 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     border: 0;
     padding: 6px 0 0;
     color: var(--muted);
-    font-size: 12px;
+    font: 500 11px/1 var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
     cursor: pointer;
     text-align: left;
   }
-  .more-link:hover { color: var(--fg); }
+  .more-link:hover { color: var(--ink); }
 
   .rail-clear {
     appearance: none;
     background: transparent;
     border: 0;
-    padding: 12px 0 0;
+    padding: 16px 0 0;
     color: var(--muted);
-    font: inherit;
-    font-size: 12px;
+    font: 500 11px/1 var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
     cursor: pointer;
     text-decoration: underline;
-    text-decoration-color: var(--border);
+    text-decoration-color: var(--rule);
     text-underline-offset: 3px;
   }
-  .rail-clear:hover { color: var(--fg); text-decoration-color: var(--accent); }
+  .rail-clear:hover { color: var(--ink); text-decoration-color: var(--ink); }
 
-  /* Results column — full width to host one-liner rows with right-aligned meta */
   .results { max-width: 100%; }
   .result-summary {
     color: var(--muted);
-    font-size: 12px;
-    font-family: var(--mono);
+    font: 500 11px/1 var(--mono);
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    margin: 0 0 16px;
+    margin: 0 0 12px;
   }
   .result-summary strong {
-    color: var(--fg);
-    font-family: var(--serif);
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0;
-    text-transform: none;
-    margin-right: 6px;
+    color: var(--ink);
+    font-weight: 600;
+    margin-right: 4px;
+    font-variant-numeric: tabular-nums;
   }
-  .result-summary .muted { color: var(--muted); }
-  .empty-line { color: var(--fg); font-family: var(--serif); font-size: 15px; text-transform: none; letter-spacing: 0; }
+  .empty-line { color: var(--ink); }
   .empty-clear {
     appearance: none;
     background: transparent;
@@ -478,107 +461,43 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     margin-left: 8px;
     color: var(--muted);
     font: inherit;
-    font-family: var(--serif);
-    font-size: 14px;
-    text-transform: none;
-    letter-spacing: 0;
     cursor: pointer;
     text-decoration: underline;
-    text-decoration-color: var(--accent);
+    text-decoration-color: var(--ink);
     text-underline-offset: 3px;
   }
-  .empty-clear:hover { color: var(--fg); }
-
-  .results-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .result-item {
-    border-bottom: 1px solid color-mix(in oklab, var(--border) 60%, transparent);
-    padding: 0;
-  }
-  .result-item:last-child { border-bottom: 0; }
-  /* Canonical row per DESIGN.md §4: stacked, title above, meta below.
-     Sentence-case meta in serif at 13px reads at desktop scan distance.
-     Mono uppercase only earns its keep on captions, not on every row. */
-  .result-link {
-    display: block;
-    text-decoration: none;
-    color: var(--fg);
-    padding: 14px 0;
-    transition: padding 120ms ease, box-shadow 120ms ease;
-  }
-  .result-link:hover {
-    box-shadow: inset 3px 0 0 var(--accent);
-    padding-left: 14px;
-  }
-  .result-title {
-    display: block;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.3;
-    letter-spacing: -0.005em;
-    color: var(--fg);
-    /* Up to 2 lines, ellipsis on overflow */
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .result-meta {
-    display: block;
-    color: var(--muted);
-    font-size: 13px;
-    font-family: var(--serif);
-    margin-top: 4px;
-    line-height: 1.5;
-    letter-spacing: 0;
-    text-transform: none;
-    font-variant-numeric: tabular-nums;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  #pager { justify-content: center; margin-top: 32px; }
+  .empty-clear:hover { color: var(--ink); }
 
   /* Active pills */
   .active-pills {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
-    margin: 0 0 16px;
+    gap: 4px;
+    margin: 0 0 12px;
   }
   .active-pill {
     appearance: none;
-    background: var(--row-hover);
-    color: var(--fg);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 4px 10px 4px 12px;
-    font: inherit;
-    font-size: 12px;
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    padding: 3px 8px;
+    font: 500 11px/1.4 var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    transition: background 80ms ease, border-color 80ms ease;
+    transition: background 80ms ease;
   }
-  .active-pill:hover { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }
+  .active-pill:hover { background: var(--ink); color: var(--paper); }
   .active-pill .pill-facet {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    font-weight: 400;
     color: var(--muted);
   }
-  .active-pill:hover .pill-facet { color: var(--on-ink); opacity: 0.7; }
-  .active-pill .pill-value { font-weight: 500; }
-  .active-pill .pill-x { font-size: 14px; opacity: 0.7; margin-left: 2px; }
+  .active-pill:hover .pill-facet { color: var(--paper); opacity: 0.7; }
+  .active-pill .pill-value { font-weight: 600; }
+  .active-pill .pill-x { font-size: 13px; opacity: 0.8; margin-left: 2px; }
 
-  @media (max-width: 700px) {
-    .result-link { padding: 12px 0; }
-    .result-title { font-size: 15px; }
-    .result-meta { font-size: 12px; }
-  }
+  #pager { justify-content: flex-start; margin-top: 24px; }
 </style>

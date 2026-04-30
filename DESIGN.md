@@ -1,223 +1,272 @@
 ---
 name: "eu-tech-jobs"
-version: 0.1.0
-description: "Editorial-minimal indie data product. Inky, generous, monospace meta, EU-yellow accent used sparingly."
-tags: [editorial, minimal, indie, data-product]
+version: 0.2.0
+description: "Live wire for the EU tech labor market. Terminal density, mono-forward, monochrome with a single red signal."
+tags: [terminal, dense, monochrome, data-instrument]
 target_audiences: [job-seeker, developer, recruiter]
 status: draft
 ---
 
 # eu-tech-jobs — Design System
 
-The system the site ships under. Hand this to an agent before any visual work — it should produce work indistinguishable from a careful pass.
+Hand this to an agent before any visual work. Implementation that fights the spec is wrong; if a rule below blocks something obviously good, edit the spec, then ship.
 
 ## 1. Visual Theme & Atmosphere
 
-Editorial-minimal indie data product. Reads like a typeset catalogue: confident type, generous breathing room, silence around each row, mono accents for metadata. Restraint over ornament. The data is the design — chrome apologises, never decorates. Spirit anchors: Pinboard's stubborn typography, every.to's column rhythm, lite.cnn's information density without UI noise.
+**Live wire for the EU tech labor market.** The site reads like a terminal plugged into something live: 12,178 rows, refreshed daily, scrolling past you in mono. Density is the tell. Restraint is the texture. Red is the signal. The data is the design — chrome stays out of the way, and the page never apologises for being a list of facts.
+
+**Anchors** (in priority order):
+1. **Bloomberg Terminal** — column rhythm, mono-forward, status strip as identity.
+2. **news.ycombinator** — stubborn density, no decoration, type does the work.
+3. **RemoteOK** — single-line job rows, salary in the row, no logos.
+4. **Reuters wire** — the feeling of a feed that won't stop.
+
+**Foil** — break character on the long-form job article only: shift to serif H1 + Inter body at reading width. The article is the wire story you clicked into.
+
+**Anti-anchors** (not us): Linear, Stripe, Pinterest-style cards, indie-blog cream-on-charcoal, anything that uses Inter Tight.
 
 ## 2. Color Palette & Roles
 
 ```
---bg          #fafaf7   page background (cream)
---fg          #141413   primary ink (near-black)
---ink         #141413   alias of --fg, used for buttons/wordmark
---on-ink      #ffffff   text on ink (CTAs, active chips)
---muted       #6b6b6b   secondary text, meta, captions
---accent      #ffcc00   EU-flag yellow — accent only, never a fill for text
---border      #e5e5e2   hairline rules, dividers, input bottoms
---row-hover   #f3f2ee   hover background
+--paper       #f4f1ea   page background, warm off-white (paper, not beige)
+--ink         #0a0a0a   primary text and borders, true near-black
+--ink-soft    #1a1a1a   alt for inverted backgrounds
+--rule        #d6d2c7   hairline dividers, table rules, input bottoms
+--muted       #5a5a52   meta, captions, secondary text
+--signal      #d72638   reserved single-purpose red — see usage rules
+--row-hover   #ece8de   subtle warm highlight, used sparingly
 ```
 
-Dark-mode tokens flip `--bg`/`--fg`/`--ink`/`--on-ink`. Accent stays yellow.
+Dark mode flips `--paper`/`--ink`/`--ink-soft`/`--row-hover`; `--signal` and `--rule` shift slightly cooler. Spec ships with light mode for v0.2.
 
 **Usage rules**
-- Primary CTAs: `--ink` background, `--on-ink` text. Never use `--accent` as a CTA fill (yellow doesn't carry text legibly at small sizes).
-- `--accent` lives in: hover-highlight marks (mark/excerpt highlights), wordmark dots, focus rings, hover-state border accents, the `+N` pill on chips.
-- Body links: ink, underlined with `--border` color, thicken to 2px with `--accent` color on hover.
-- Never apply both colour and underline to the same link state — pick one cue per state.
+- Primary CTAs: `--ink` background, `--paper` text. No exceptions.
+- Body: `--ink` on `--paper`. Borders: `--rule`.
+- `--signal` red is reserved for **time-sensitive data only**: "NEW" badge on jobs ≤24h, salary-disclosed pill, the wordmark mark, hot-company indicator. Never decoration. Never UI chrome (no red borders, no red focus rings, no red links). If the bit it marks isn't time-or-money-sensitive, it's not red.
+- No yellow anywhere. The previous EU-flag yellow was decoration; we ban decorative colour entirely.
+- No background fills on rows or cards beyond `--row-hover` for explicit hover.
 
 ## 3. Typography Rules
 
+Three families. Each owns one role and never crosses.
+
 ```
---serif   "Inter Tight", Inter, system-ui, sans-serif    // UI + body
---mono    "JetBrains Mono", ui-monospace, monospace      // meta, captions, badges
+--display     "Instrument Serif", "Tiempos Headline", Georgia, serif
+--mono        "JetBrains Mono", ui-monospace, "SF Mono", monospace
+--body        "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif
 ```
 
-**Scale (modular, ratio ≈1.25)**
-- 10px — chip-popover group heads, chip-pill counter
-- 11px – 12px — captions, badges, chip-row counts, mono meta
-- 13px — secondary text, helper copy, filter-block labels
-- 14px — base small, table cells, search input
-- 15px — body, table primary, result-meta line
-- 16px — result title (one-line list density)
-- 17px – 19px — section subheads, card titles
-- 24px — page subheads
-- 28px – 32px — page titles, wordmark
+Loaded via Google Fonts CDN: `Instrument+Serif:wght@400`, `JetBrains+Mono:wght@400;500;600`, `Inter:wght@400;500;600;700`.
 
-**Hierarchy rules**
-- Body uses `--serif` regular 400 / 1.55 line-height.
-- Long-form (job description): 16.5px / 1.7, max-width 660px.
-- All-caps + letter-spacing (`text-transform: uppercase; letter-spacing: 0.06em`) only on **mono captions**, never on serif body.
-- Tabular numerals (`font-variant-numeric: tabular-nums`) on counts and dates.
-- Titles: weight 600, slight negative tracking (-0.01em). Body: 400. Bold inside body: 600.
+**Role contract — do not cross**
+- `--display` (Instrument Serif): the wordmark only. One word, one place. Anywhere else is wrong.
+- `--mono` (JetBrains Mono): all UI chrome — status strip, filter labels, table headers, result-row meta column, badges, captions, counts, pagination, button text on small buttons. The site IS mono until proven otherwise.
+- `--body` (Inter): job description article body, result-row title, result-row company-location column, page lede where one exists.
+
+**Type scale (4 stops, modular)**
+- 11px — captions, mono meta, badges
+- 13px — secondary text, filter labels, status strip
+- 15px — body and result-row title
+- 17px — long-form body (job description), section subhead
+- 22px — long-form H1 (job description page only — the foil)
+- 40px — wordmark
+
+**Rules**
+- Mono is sentence-case lowercase by default. **UPPERCASE** only on captions and badges (e.g. `5D · REMOTE-EU`, `NEW`, `EU-TECH-JOBS`).
+- Letter-spacing on uppercase mono: 0.06em.
+- All numerics use `font-variant-numeric: tabular-nums`.
+- Body is 15/1.55. Long-form body 17/1.65, max-width 640px.
+- Wordmark uses `--display` italic (Instrument Serif's italic is the move) at 40px / 1.0.
 
 **Anti-patterns**
-- ❌ Don't size meta below 11px — gets unreadable on 14" screens.
-- ❌ Don't render serif text in uppercase + letter-spacing. That's a mono treatment.
-- ❌ Don't mix font-families inside a single line of meta.
+- ❌ Inter Tight (the v0.1 mistake — too generic).
+- ❌ Mono italic — JetBrains Mono italic is heavy and noisy; never use.
+- ❌ Mixing two font families in one line.
+- ❌ Bold weight (700) outside the wordmark and Inter body `<strong>`.
 
 ## 4. Component Stylings
 
+### Status strip (identity beat — every page)
+
+A persistent mono strip below the masthead on every page:
+
+```
+EU-TECH-JOBS // 12,178 OPEN // 603 COMPANIES // UPDATED 04:12 UTC // 47 NEW TODAY
+```
+
+- `--mono` 13px / uppercase / 0.06em letter-spacing / `--ink` text on `--paper`.
+- `//` separators in `--rule` color.
+- `47 NEW TODAY` is the only `--signal` red bit (when count > 0).
+- Padding: 8px 24px. Border-bottom: 1px `--rule`. Reads like a Reuters wire header, not a hero.
+- Wraps on narrow viewports — never scrolls horizontally.
+
+### Wordmark
+
+`--display` italic 40px, `--ink`. One subtle move: dot the i in "tech" with `--signal` red. Nothing else carries the brand. The status strip beneath it does the rest.
+
+### Result row (canonical density unit)
+
+**Single line on desktop ≥720px**, three-column flex:
+```
+[ TITLE — flex:1 ]    [ COMPANY · LOCATION — flex:0 0 32% ]    [ META — flex:0 0 18%, right-aligned ]
+```
+- Title: `--body` 15/500/-0.005em / `--ink`. Single-line ellipsis truncation.
+- Company-location: `--body` 14/400 / `--muted`. `·` separator in `--rule` color. Single-line ellipsis.
+- Meta: `--mono` 11/uppercase/0.06em / `--muted`. Right-aligned. Single line. Format: `5D · REMOTE-EU` or `NEW · €80K · REMOTE-EU` (when salary disclosed).
+- Salary in `--ink` (not muted) when present. `NEW` in `--signal` red when posted ≤24h.
+- Padding: 10px 0. Divider: 1px `--rule` (full opacity, not the v0.1 60% softening — Bloomberg uses crisp rules).
+- Hover: 2px `--ink` left bar appears, no padding shift, no transition delay. Cursor turns into a column-reader feel via `cursor: pointer`.
+- Excerpt: off by default. Pagefind matches bold the matched word in the title only.
+
+**Stacked at <720px**: title above, company-location middle, meta below. 6px gap. 12px padding.
+
 ### Buttons / CTAs
-- **Primary**: `--ink` bg, `--on-ink` text, 600 weight, 12-14px padding, 8px radius. Hover: lift 1px translateY, switch border to `--accent`.
-- **Secondary**: transparent bg, `--fg` text, 1px `--border`, hover: `--row-hover` bg, border becomes `--fg`.
-- **Tertiary text-link**: muted text, `--border` underline, hover: ink + accent underline.
-- Focus ring: 2px `--accent`, 2px offset.
+
+- **Primary** (Apply): `--ink` bg, `--paper` text, `--mono` 13/600 uppercase, padding 12/20, square (no radius — radius reads soft, we want hard). Hover: shifts to `--ink-soft`.
+- **Secondary** (Tailor CV): transparent bg, `--ink` text, 1px `--ink` border, otherwise same shape and type. Hover: `--row-hover` fill.
+- **Tertiary text-link**: `--mono` 12 / `--muted` / underline `--rule`. Hover: `--ink` + underline `--ink`.
+- Focus ring: 2px `--ink` outline, 2px offset.
 
 ### Inputs
-- **Boxed**: 1px `--border`, 6px radius, 8px padding. Focus: border becomes `--ink` (no shadow).
-- **Bare** (rail filter input): 0 border, 1px `--border` bottom rule, 0 radius, 8px vertical padding. Focus: bottom rule darkens to `--ink`.
 
-### Chips (filter triggers)
-- 999px radius pill, 1px `--border`, 8/14 padding. `--bg` fill.
-- **Active** (selection present): `--ink` bg, `--on-ink` text, `--ink` border. Selection summary baked into label: `Country: France +2` (the `+N` is an accent pill).
-- Caret `▾` is muted and 10px. Drop the gesture, use the chip itself as the popover trigger.
-
-### Pills (active filter chips)
-- Same shape as chips but smaller (4/10 padding, 12px text). `--row-hover` bg, `--border` outline.
-- Inner structure: mono uppercase facet label (10/0.06em) + serif value (500) + `×` (14px, 0.7 opacity).
-- Hover flips to `--ink` reversal.
-
-### Result row (the canonical density unit)
-- **Stacked** layout (default). Two lines: title, then meta.
-- Title: 16/500/-0.005em ink, can wrap to 2 lines with ellipsis on overflow.
-- Meta: 13px serif muted, sentence-case (NOT uppercase), `·` separator. Reads "Datadog · Paris · 5d ago · Remote-EU".
-- Padding: 14px 0. Hairline divider at 60% `--border` opacity.
-- Hover: 3px inset `--accent` stripe on the left, 14px padding-left shift, 120ms ease.
-- Excerpt: optional, 13px muted, 2-line `-webkit-line-clamp`. Default off — only render when explicit search query produces highlighted excerpt.
+- **Search field**: bare. No border, no radius, no fill. Bottom-rule 1px `--rule`. Padding 8px 0. `--mono` 14 prompt: `> search…` with a leading `>` glyph. Focus: bottom-rule darkens to `--ink`.
+- **Filter chips**: `--mono` 12 uppercase. Box: 1px `--rule`, 0 radius, padding 4/10. Active: `--ink` bg, `--paper` text. Hover: `--row-hover`. No round corners.
 
 ### Badges
-- Pure metadata text, NOT boxes. Mono uppercase 11px 0.06em, `--muted`.
-- Multiple badges on the same line are separated by `·` glyph at `--border` color.
 
-### Filter rail
-- 220px wide, 56px gutter from results column.
-- No border-right; whitespace separates.
-- Each facet block: top hairline rule, mono uppercase group head, list of options, `+N more` muted text-link to expand long lists.
-- `Clear all` is a small text-link demoted under the last block. Never a full-width button.
+Pure metadata text inside the result row's meta column. Not boxes. `--mono` 11 uppercase 0.06em `--muted`. `·` separator at `--rule` color. Exception: `NEW` and `€XXk` use `--signal` and `--ink` respectively as colour-only emphasis, no box.
+
+### Filter rail (search page)
+
+- 200px wide, 32px gutter (was 240/56 — too airy for terminal density).
+- No border-right.
+- Each facet block: top 1px `--rule`, mono uppercase 11/0.06em group head in `--muted`, list of options.
+- Option row: checkbox + label + count, `font-variant-numeric: tabular-nums` on count, count right-aligned.
+- "Clear all" is a small mono text-link demoted under the last block.
 
 ### Pagination
-- Inline numeric pages, 6/12 padding, 1px `--border`, 6px radius.
-- Current: `--ink` bg, `--on-ink` text.
+
+`--mono` 11 uppercase. 4/10 padding. 1px `--rule` border. No radius. Current page: `--ink` bg, `--paper` text.
 
 ### Dividers
-- 1px `--border` for full rules, `color-mix(in oklab, var(--border) 60%, transparent)` for in-list dividers.
-- Section dividers (CTA divider, footer top): 1px `--border`, no decoration.
+
+1px `--rule` everywhere. No softening, no opacity reduction. Crisp rules are the look.
 
 ## 5. Layout Principles
 
-- **Spacing scale**: 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 — all 4px multiples.
-- **Page max-width**: 1200px main, 660px long-form (job description).
-- **Grid**: filter rail 220px + 56px gutter + results column. Below 800px, stack.
-- **Vertical rhythm**: header padding 32–48px top depending on page weight. Sections 24–32px apart.
-- **Empty space is structural**, not optional. If a layout feels tight, remove an element before adding more padding.
+- **Spacing scale**: 4 / 8 / 12 / 16 / 24 / 32 / 48. (Drop 64 — it's never the right answer here.)
+- **Section gaps 32, block gaps 16, item gaps 8, inline gaps 4**. State this so agents stop guessing.
+- **Page max-width**: 1280px main. 640px for long-form (job description).
+- **Grid**: filter rail 200px + 32px gutter + results column. Below 720px: stack, results first, filter behind a `Filters` button (deferred to v0.3).
+- **Density target**: 28+ result rows above the fold at 1440×900. If a layout produces fewer than 20, it's not dense enough.
+- **Empty space is not the goal**. Ink rule density is. Bloomberg, not Apple Marketing.
 
 ## 6. Depth & Elevation
 
-- **Default**: flat. Elevation comes from hairline rules and whitespace, not shadows.
-- **One exception**: chip-popover floats on `0 8px 24px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06)` — this is the only place a soft shadow appears.
-- No card backgrounds. No elevation gradients. No glassmorphism.
+- **Flat. Always.** Elevation comes from rule contrast and `--row-hover` fills, never shadow.
+- **No shadows anywhere.** The chip-popover dropped its shadow in v0.2 — it now sits on a 1px `--ink` border instead.
+- **No card backgrounds**, no border-radius beyond what's already structural (none, in v0.2).
 
 ## 7. Motion & Interaction
 
-- Hover transitions: 80–120ms ease.
-- Reveal/hover-shift: max 1px translateY, 14px padding shift, 3px stripe inset. Nothing else moves.
-- No spinners — inline "Searching…" text only.
-- No skeleton states (yet). The page renders empty, then populates fast.
-- Reduced motion: respect `prefers-reduced-motion: reduce` — disable transitions only, layout stays.
+- Hover transitions: 80ms ease, transform-only (`box-shadow`, `transform`, `border-color`). Never animate background colour or padding.
+- No spinners. Inline mono "searching…" with blinking caret.
+- No skeleton states.
+- `prefers-reduced-motion: reduce` disables transitions; layout stays.
+- Optional v0.3+: ticker bar of newest 5 jobs scrolls right-to-left on the home page. Honor reduced-motion by freezing the latest 5 in place.
 
 ## 8. Do's and Don'ts
 
-✅ Use mono uppercase for **metadata only** — counts, captions, tag-style labels.
-✅ Reach for hairlines and whitespace before borders or shadows.
-✅ Demote secondary actions (text-link, muted) instead of styling them louder.
-✅ Right-align numeric counts with `tabular-nums`.
-✅ Use `·` glyph (middot) as the meta separator, not `|` or `,`.
-✅ Truncate with `text-overflow: ellipsis` only when the truncated string would still be useful — otherwise wrap.
-✅ Default to two-line stacked rows for list density. Single-line rows only when meta fits comfortably (≤ ~30% width).
+✅ Default to `--mono`. Reach for `--body` Inter only on result-row titles + long-form article body.
+✅ Use `--signal` red only for time-sensitive or money-sensitive data. Audit every red pixel by asking "what does this fact decay or expire?"
+✅ Keep rows dense. 28+ per fold at desktop, or it's not the look.
+✅ Crisp 1px rules. Never soften with opacity.
+✅ Tabular numerals on every count.
+✅ `//` separator in mono captions, `·` separator in body lines.
+✅ Status strip on every page, top-of-fold, identical structure.
 
-❌ Don't use yellow as a text colour or button fill.
-❌ Don't size meta below 11px on desktop.
-❌ Don't render serif body in uppercase.
-❌ Don't add background fills to badges or rail blocks.
-❌ Don't render every line in `var(--mono)` — that becomes a Bloomberg terminal, not a job board.
-❌ Don't add icon decorations to CTAs unless they carry semantic weight (e.g. ✨ on the Tailor-CV CTA earns its keep).
-❌ Don't use full-width buttons inside content rails — they read as wizard footers.
-❌ Don't redesign the same surface twice in one session — write the spec, then implement once.
+❌ No icons except `>` glyph in search field. (Unicode dot, middot, slash only.)
+❌ No background fills. No card shells. No rounded corners.
+❌ No hero blocks. No "Find your next role at…" lede. The data is the hero.
+❌ No yellow. No teal. No second accent color.
+❌ No Inter Tight. No DM Sans. No Geist. No "Linear-clone" fonts.
+❌ No tables for job listings. `<ol class="results-list">` of `.result-link` items only.
+❌ No motion on the page body — only ticker (when shipped) and hover-bar.
+❌ No "explainer copy" above the fold. If a paragraph teaches the user how to use the page, delete it and fix the page.
 
 ## 9. Example Snippets
 
-### Result row (canonical)
+### Status strip
+
+```html
+<div class="status-strip">
+  <span class="status-name">EU-TECH-JOBS</span>
+  <span class="status-sep">//</span>
+  <span><strong>12,178</strong> OPEN</span>
+  <span class="status-sep">//</span>
+  <span><strong>603</strong> COMPANIES</span>
+  <span class="status-sep">//</span>
+  <span>UPDATED 04:12 UTC</span>
+  <span class="status-sep">//</span>
+  <span class="status-new"><strong>47</strong> NEW TODAY</span>
+</div>
+```
+
+### Result row
 
 ```html
 <li class="result-item">
   <a href="/jobs/..." class="result-link">
-    <div class="result-title">Senior Backend Engineer</div>
-    <div class="result-meta">Datadog · Paris · 5d ago · Remote-EU</div>
+    <span class="result-title">Senior Backend Engineer</span>
+    <span class="result-org">Datadog · Paris</span>
+    <span class="result-meta">5D · REMOTE-EU · €80K</span>
   </a>
 </li>
 ```
 
 ```css
 .result-link {
-  display: block;
-  padding: 14px 0;
+  display: grid;
+  grid-template-columns: 1fr 32% 18%;
+  gap: 16px;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
   text-decoration: none;
-  color: var(--fg);
-  border-bottom: 1px solid color-mix(in oklab, var(--border) 60%, transparent);
-  transition: padding 120ms ease, box-shadow 120ms ease;
+  color: var(--ink);
+  position: relative;
+  transition: padding-left 80ms ease;
 }
-.result-link:hover {
-  box-shadow: inset 3px 0 0 var(--accent);
-  padding-left: 14px;
+.result-link:hover { padding-left: 14px; }
+.result-link::before {
+  content: "";
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 2px; background: var(--ink);
+  opacity: 0; transition: opacity 80ms ease;
 }
+.result-link:hover::before { opacity: 1; }
 .result-title {
-  font-size: 16px;
-  font-weight: 500;
+  font: 500 15px/1.3 var(--body);
   letter-spacing: -0.005em;
-  line-height: 1.3;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.result-org {
+  font: 400 14px/1.4 var(--body);
+  color: var(--muted);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .result-meta {
-  font-size: 13px;
+  font: 500 11px/1.4 var(--mono);
+  text-transform: uppercase; letter-spacing: 0.06em;
   color: var(--muted);
-  margin-top: 4px;
-  line-height: 1.5;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
 }
-```
-
-### Filter chip
-
-```html
-<button class="chip chip-active" aria-haspopup="listbox" aria-expanded="false">
-  Country: <strong>France</strong>
-  <span class="chip-pill">+2</span>
-  <span class="chip-caret">▾</span>
-</button>
-```
-
-### Active filter pill
-
-```html
-<button class="active-pill">
-  <span class="pill-facet">Country</span>
-  <span class="pill-value">France</span>
-  <span class="pill-x">×</span>
-</button>
 ```
 
 ## Notes for agents
 
-- All tokens are defined in `site/src/styles/global.css :root`. Reuse them; never inline a hex.
-- Component CSS lives next to the component (Astro `<style>` block) when it's page-specific, in `global.css` when it's reused.
-- Per-page spec deviations require a Do/Don't update here first.
-- When in doubt: take a thing away, not add a thing.
+- Tokens live in `site/src/styles/global.css :root`. Reuse; never inline a hex.
+- The status strip is a real component — add it to `Base.astro` once, not page-by-page.
+- Job article page (`/jobs/[slug]`) is the one **foil** — body shifts to `--body` Inter at long-form scale. Status strip and CTAs stay terminal.
+- When in doubt, take a thing away. Then take another thing away.
