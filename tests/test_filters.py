@@ -61,11 +61,20 @@ def test_empty_keeps():
     assert is_us_only_location("   ") is False
 
 
-def test_non_us_non_eu_keeps():
-    # Ambiguous (e.g. Singapore, Tokyo) — keep, no clear US signal.
-    assert is_us_only_location("Singapore") is False
-    assert is_us_only_location("Tokyo") is False
+def test_asia_drops():
+    # Singapore + Tokyo are not EU; new policy drops them too.
+    assert is_us_only_location("Singapore") is True
+    assert is_us_only_location("Tokyo, Japan") is True
+    assert is_us_only_location("Bengaluru, India") is True
+    assert is_us_only_location("Sydney, Australia") is True
+    assert is_us_only_location("Dubai, UAE") is True
+
+
+def test_remote_keeps():
+    # Globally-remote strings stay (reachable from EU).
     assert is_us_only_location("Remote") is False
+    assert is_us_only_location("Anywhere in the World") is False
+    assert is_us_only_location("Worldwide") is False
 
 
 def test_state_abbrev_alone_with_comma():

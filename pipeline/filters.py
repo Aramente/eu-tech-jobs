@@ -20,11 +20,14 @@ import re
 
 from pipeline.models import Job
 
-# Cities + countries / regions that signal US/Canada/LatAm locality.
-# Order roughly by frequency in the dataset to keep regex compile-time
-# constants short.
-_US_NA_PAT = re.compile(
+# Cities + countries / regions that signal a non-EU-relevant locality.
+# Covers: US + Canada + LatAm + Asia + Middle East + Oceania.
+# Globally-remote strings ("Remote", "Anywhere in the World", "Worldwide")
+# don't match here — they're caught by the EU/global counter-pattern below
+# and so always KEPT.
+_NON_EU_PAT = re.compile(
     r"\b("
+    # Americas
     r"USA|U\.S\.A?\.?|United States|United States of America|US\b|"
     r"North America|Americas|Latin America|LATAM|Canada|Mexico|"
     r"San Francisco|San Jose|Palo Alto|Mountain View|Sunnyvale|Berkeley|"
@@ -35,10 +38,36 @@ _US_NA_PAT = re.compile(
     r"Washington DC|Detroit|Minneapolis|St\.?\s*Louis|Tampa|Orlando|"
     r"Nashville|Charlotte|Raleigh|Salt Lake|Las Vegas|Honolulu|Anchorage|"
     r"Quebec|Québec|São Paulo|Buenos Aires|Bogotá|Bogota|Santiago|Lima|"
-    r"Mexico City|Guadalajara"
+    r"Mexico City|Guadalajara|"
+    # Asia (subcontinent)
+    r"India|Bengaluru|Bangalore|Mumbai|Bombay|New Delhi|Delhi|Pune|"
+    r"Hyderabad|Chennai|Madras|Gurugram|Gurgaon|Noida|Kolkata|Calcutta|"
+    r"Ahmedabad|Jaipur|Lucknow|"
+    # East / Southeast Asia
+    r"Singapore|Singapur|Tokyo|Tōkyō|Osaka|Yokohama|Kyoto|Nagoya|Sapporo|"
+    r"Japan|Beijing|Shanghai|Shenzhen|Guangzhou|Hangzhou|Chengdu|China|"
+    r"Hong Kong|Macau|Taipei|Taiwan|Seoul|South Korea|Republic of Korea|"
+    r"Bangkok|Thailand|Manila|Cebu|Quezon|Philippines|"
+    r"Jakarta|Surabaya|Indonesia|"
+    r"Kuala Lumpur|Penang|Malaysia|"
+    r"Ho Chi Minh|Hanoi|Vietnam|"
+    # Middle East
+    r"Dubai|Abu Dhabi|United Arab Emirates|UAE|Sharjah|"
+    r"Riyadh|Jeddah|Saudi Arabia|"
+    r"Doha|Qatar|Kuwait|Bahrain|Oman|"
+    r"Tel Aviv|Jerusalem|Haifa|Israel|"
+    # Oceania
+    r"Sydney|Melbourne|Brisbane|Perth|Adelaide|Canberra|Australia|"
+    r"Auckland|Wellington|New Zealand|"
+    # Africa / South Africa
+    r"Johannesburg|Cape Town|Pretoria|Durban|South Africa|"
+    r"Lagos|Nigeria|Cairo|Egypt|Nairobi|Kenya|Casablanca|Morocco"
     r")\b",
     re.IGNORECASE,
 )
+
+# Backwards-compat alias — old code referenced _US_NA_PAT.
+_US_NA_PAT = _NON_EU_PAT
 
 # US state postal codes — match when prefixed by ", " to avoid false hits
 # on words like "in", "or", "co" that overlap with state abbreviations.
@@ -79,15 +108,20 @@ _EU_OR_GLOBAL_PAT = re.compile(
 )
 
 
-def is_us_only_location(location: str | None) -> bool:
-    """True when the location string clearly names a US/NA place AND has
-    no EU/global counter-signal. Empty / None / unknown → False (keep)."""
+def is_non_eu_location(location: str | None) -> bool:
+    """True when the location string clearly names a non-EU place (US, Asia,
+    ME, Oceania, etc) AND has no EU/global counter-signal. Empty / None /
+    unknown → False (keep)."""
     if not location or not location.strip():
         return False
     s = location.strip()
     if _EU_OR_GLOBAL_PAT.search(s):
         return False
-    return bool(_US_NA_PAT.search(s) or _US_STATE_PAT.search(s))
+    return bool(_NON_EU_PAT.search(s) or _US_STATE_PAT.search(s))
+
+
+# Backwards-compat alias.
+is_us_only_location = is_non_eu_location
 
 
 def keep_job(job: Job) -> bool:
@@ -97,7 +131,7 @@ def keep_job(job: Job) -> bool:
     # happens to say.
     if job.remote_policy in ("remote-global", "remote-eu"):
         return True
-    return not is_us_only_location(job.location)
+    return not is_non_eu_location(job.location)
 
 
 def split_jobs(jobs: list[Job]) -> tuple[list[Job], list[Job]]:
