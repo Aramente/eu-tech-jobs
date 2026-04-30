@@ -160,6 +160,18 @@ def enrich_cmd(seed_dir: Path, verbose: bool) -> None:
     is_flag=True,
     help="Re-tag every job, not just untagged ones (use after a prompt change).",
 )
+@click.option(
+    "--concurrency",
+    default=20,
+    type=int,
+    help="Concurrent DeepSeek calls (20 is well under DeepSeek's per-key limit).",
+)
+@click.option(
+    "--checkpoint-every",
+    default=500,
+    type=int,
+    help="Write the parquet every N successful tag operations so a timeout can't lose work.",
+)
 @click.option("-v", "--verbose", is_flag=True)
 def tag_cmd(
     seed_dir: Path,
@@ -167,15 +179,19 @@ def tag_cmd(
     limit: int | None,
     variant: str | None,
     retag_all: bool,
+    concurrency: int,
+    checkpoint_every: int,
     verbose: bool,
 ) -> None:
     """Tag the latest snapshot's jobs with seniority/role/stack via DeepSeek (or Mistral).
 
     No-op when no LLM provider is configured (DEEPSEEK_API_KEY or
-    MISTRAL_API_KEY). Reads the latest jobs.parquet, tags in place, writes
-    back. Idempotent — already-tagged jobs are skipped.
+    MISTRAL_API_KEY). Reads the latest jobs.parquet, tags in parallel,
+    writes back periodically (checkpoint-every) so a timeout never loses
+    completed work.
     """
     import time as _time
+    from concurrent.futures import ThreadPoolExecutor, as_completed
     from datetime import date as _date
 
     import pyarrow.parquet as _pq
@@ -195,7 +211,8 @@ def tag_cmd(
         return
     chosen_variant = variant or DEFAULT_VARIANT
     click.echo(
-        f"Tagger active: provider = {selected_provider()}, variant = {chosen_variant}"
+        f"Tagger active: provider = {selected_provider()}, variant = {chosen_variant}, "
+        f"concurrency = {concurrency}"
     )
 
     parquet = output_dir / "latest" / "jobs.parquet"
@@ -215,15 +232,56 @@ def tag_cmd(
         f"({'retag-all' if retag_all else 'untagged-only'})."
     )
     targets = targets_pool if limit is None else targets_pool[:limit]
-    click.echo(f"Tagging {len(targets)} jobs…")
+    click.echo(f"Tagging {len(targets)} jobs at concurrency {concurrency}…")
+
+    companies = load_companies(seed_dir)
+
+    def _checkpoint(tagged_by_id: dict, processed: int) -> None:
+        """Write the current parquet so a future kill -9 doesn't lose work."""
+        final_jobs = [tagged_by_id.get(j.id, j) for j in jobs]
+        snapshot = Snapshot(
+            snapshot_date=_date.today(),
+            companies=companies,
+            jobs=final_jobs,
+            metadata=PipelineMetadata(
+                run_at=utcnow(),
+                pipeline_version="0.1.0",
+                company_count=len(companies),
+                job_count=len(final_jobs),
+            ),
+        )
+        write_snapshot(snapshot, output_dir)
+        click.echo(f"  ✓ checkpoint at {processed}/{len(targets)}")
 
     tagged_by_id: dict[str, object] = {}
     started = _time.time()
-    for i, j in enumerate(targets, 1):
-        tagged_by_id[j.id] = tag_job(j, variant=chosen_variant)
-        if i % 50 == 0:
-            elapsed = _time.time() - started
-            click.echo(f"  {i}/{len(targets)} ({elapsed:.0f}s elapsed)")
+    last_checkpoint = 0
+    completed = 0
+
+    with ThreadPoolExecutor(max_workers=concurrency) as pool:
+        future_to_job = {
+            pool.submit(tag_job, j, variant=chosen_variant): j for j in targets
+        }
+        for fut in as_completed(future_to_job):
+            j = future_to_job[fut]
+            try:
+                tagged_by_id[j.id] = fut.result()
+            except Exception as exc:  # noqa: BLE001
+                logging.warning("tag_job failed for %s: %s", j.id, exc)
+                tagged_by_id[j.id] = j
+            completed += 1
+            if completed % 100 == 0:
+                elapsed = _time.time() - started
+                rate = completed / max(elapsed, 1)
+                eta = (len(targets) - completed) / max(rate, 0.01)
+                click.echo(
+                    f"  {completed}/{len(targets)} "
+                    f"({elapsed:.0f}s · {rate:.1f}/s · eta {eta:.0f}s)"
+                )
+            if completed - last_checkpoint >= checkpoint_every:
+                _checkpoint(tagged_by_id, completed)
+                last_checkpoint = completed
+
     final_jobs = [tagged_by_id.get(j.id, j) for j in jobs]
 
     companies = load_companies(seed_dir)
