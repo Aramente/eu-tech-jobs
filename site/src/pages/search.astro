@@ -239,10 +239,10 @@ const base = import.meta.env.BASE_URL.endsWith("/")
           const a = document.createElement("a");
           a.href = d.url;
           a.className = "result-link";
+          // One-liner: title (truncates) on the left, meta (mono) right-aligned.
           a.innerHTML = `
-            <div class="result-title">${m.title || d.url}</div>
-            <div class="result-meta">${metaBits}</div>
-            ${d.excerpt ? `<div class="result-excerpt">${d.excerpt}</div>` : ""}
+            <span class="result-title">${m.title || d.url}</span>
+            <span class="result-meta">${metaBits}</span>
           `;
           li.appendChild(a);
           elList.appendChild(li);
@@ -449,8 +449,8 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   }
   .rail-clear:hover { color: var(--fg); text-decoration-color: var(--accent); }
 
-  /* Results column */
-  .results { max-width: 680px; }
+  /* Results column — full width to host one-liner rows with right-aligned meta */
+  .results { max-width: 100%; }
   .result-summary {
     color: var(--muted);
     font-size: 12px;
@@ -500,47 +500,43 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   }
   .result-item:last-child { border-bottom: 0; }
   .result-link {
-    display: block;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
     text-decoration: none;
     color: var(--fg);
-    padding: 20px 0 20px 0;
+    padding: 12px 0 12px 0;
     transition: padding 120ms ease, box-shadow 120ms ease;
   }
   .result-link:hover {
     box-shadow: inset 3px 0 0 var(--accent);
     padding-left: 14px;
-    padding-right: 0;
+  }
+  .result-title {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.3;
+    letter-spacing: -0.005em;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .result-link:hover .result-title { color: var(--fg); }
-  .result-title {
-    font-weight: 600;
-    font-size: 17px;
-    line-height: 1.3;
-    letter-spacing: -0.01em;
-  }
   .result-meta {
     color: var(--muted);
     font-size: 11px;
     font-family: var(--mono);
-    margin-top: 6px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-  }
-  .result-excerpt {
-    color: var(--muted);
-    font-size: 14px;
-    margin-top: 8px;
-    line-height: 1.55;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    flex: 0 0 auto;
+    text-align: right;
+    white-space: nowrap;
     overflow: hidden;
-  }
-  .result-excerpt mark {
-    background: rgba(255, 204, 0, 0.35);
-    color: inherit;
-    padding: 1px 2px;
-    border-radius: 2px;
+    text-overflow: ellipsis;
+    max-width: 50%;
   }
   #pager { justify-content: center; margin-top: 32px; }
 
@@ -578,9 +574,16 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   .active-pill .pill-value { font-weight: 500; }
   .active-pill .pill-x { font-size: 14px; opacity: 0.7; margin-left: 2px; }
 
-  @media (max-width: 600px) {
-    .result-title { font-size: 16px; }
-    .result-meta { font-size: 10px; }
-    .result-link { padding: 16px 0; }
+  @media (max-width: 700px) {
+    /* On narrow screens, fall back to stacked title + meta to avoid
+       truncating the title against a meta string. */
+    .result-link {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      padding: 14px 0;
+    }
+    .result-title { white-space: normal; overflow: visible; text-overflow: clip; font-size: 15px; }
+    .result-meta { text-align: left; max-width: 100%; font-size: 10px; }
   }
 </style>
