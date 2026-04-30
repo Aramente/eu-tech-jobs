@@ -292,6 +292,37 @@ def call_mistral(prompt: str, *, model: str | None = None) -> dict[str, Any]:
     return parsed
 
 
+class TaggerFatalError(Exception):
+    """Raised on auth / payment / quota errors that won't recover by retry —
+    the calling loop should abort instead of silently no-opping every job."""
+
+
+def _is_fatal_provider_error(exc: BaseException) -> bool:
+    """Recognize HTTP 401 / 402 / 403 / 429 from the OpenAI SDK or its
+    underlying httpx error hierarchy. These won't recover by retrying the
+    next job — they mean credentials/balance/quota — so the whole run
+    should crash loudly rather than producing a 'succeeded with 0 tags' run.
+    """
+    code = (
+        getattr(exc, "status_code", None)
+        or getattr(getattr(exc, "response", None), "status_code", None)
+    )
+    if code in (401, 402, 403, 429):
+        return True
+    msg = str(exc).lower()
+    return any(
+        kw in msg
+        for kw in (
+            "payment required",
+            "insufficient balance",
+            "invalid api key",
+            "authentication",
+            "quota",
+            "rate limit",
+        )
+    )
+
+
 def tag_job(job: Job, *, variant: str = DEFAULT_VARIANT) -> Job:
     """Tag a single job in place. No-op when no LLM provider is configured.
 
@@ -300,6 +331,12 @@ def tag_job(job: Job, *, variant: str = DEFAULT_VARIANT) -> Job:
     and a title alone like "Senior ML Engineer" is enough to classify
     role_family + seniority. The V1/V2 prompts handle the empty-description
     case explicitly.
+
+    Per-job exceptions (parse errors, transient 5xx) are swallowed and the
+    job is returned unchanged — one bad job shouldn't kill the run. But
+    auth/payment/quota errors (HTTP 401/402/403/429) are RAISED as
+    TaggerFatalError so the run aborts loudly instead of silently producing
+    a "succeeded" workflow with 0 tags.
     """
     if not is_configured() or variant not in VARIANTS:
         return job
@@ -308,7 +345,11 @@ def tag_job(job: Job, *, variant: str = DEFAULT_VARIANT) -> Job:
         return job  # nothing to work with at all
     try:
         raw, _usage = call_llm(job.title, stripped, variant=variant)
-    except Exception as exc:  # noqa: BLE001 — never break the run on tagger errors
+    except Exception as exc:  # noqa: BLE001
+        if _is_fatal_provider_error(exc):
+            raise TaggerFatalError(
+                f"LLM provider rejected the call (likely auth/balance): {exc}"
+            ) from exc
         logger.warning("tagger error for %s: %s", job.id, exc)
         return job
     # Grounding source: original description (LLM might cite words from it).

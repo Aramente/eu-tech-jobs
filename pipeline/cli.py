@@ -197,7 +197,12 @@ def tag_cmd(
     import pyarrow.parquet as _pq
 
     from pipeline.enrich.prompts import DEFAULT_VARIANT
-    from pipeline.enrich.tagger import is_configured, selected_provider, tag_job
+    from pipeline.enrich.tagger import (
+        TaggerFatalError,
+        is_configured,
+        selected_provider,
+        tag_job,
+    )
     from pipeline.models import PipelineMetadata, Snapshot, utcnow
     from pipeline.snapshot.differ import _row_to_job
     from pipeline.snapshot.writer import write_snapshot
@@ -262,25 +267,37 @@ def tag_cmd(
         future_to_job = {
             pool.submit(tag_job, j, variant=chosen_variant): j for j in targets
         }
-        for fut in as_completed(future_to_job):
-            j = future_to_job[fut]
-            try:
-                tagged_by_id[j.id] = fut.result()
-            except Exception as exc:  # noqa: BLE001
-                logging.warning("tag_job failed for %s: %s", j.id, exc)
-                tagged_by_id[j.id] = j
-            completed += 1
-            if completed % 100 == 0:
-                elapsed = _time.time() - started
-                rate = completed / max(elapsed, 1)
-                eta = (len(targets) - completed) / max(rate, 0.01)
-                click.echo(
-                    f"  {completed}/{len(targets)} "
-                    f"({elapsed:.0f}s · {rate:.1f}/s · eta {eta:.0f}s)"
-                )
-            if completed - last_checkpoint >= checkpoint_every:
-                _checkpoint(tagged_by_id, completed)
-                last_checkpoint = completed
+        try:
+            for fut in as_completed(future_to_job):
+                j = future_to_job[fut]
+                try:
+                    tagged_by_id[j.id] = fut.result()
+                except TaggerFatalError as exc:
+                    pool.shutdown(wait=False, cancel_futures=True)
+                    click.echo(
+                        f"\n✗ TAGGER FATAL: {exc}\n"
+                        "  Likely cause: DEEPSEEK_API_KEY balance / quota / "
+                        "credentials. Aborting before more wasted calls.",
+                        err=True,
+                    )
+                    raise SystemExit(2) from exc
+                except Exception as exc:  # noqa: BLE001
+                    logging.warning("tag_job failed for %s: %s", j.id, exc)
+                    tagged_by_id[j.id] = j
+                completed += 1
+                if completed % 100 == 0:
+                    elapsed = _time.time() - started
+                    rate = completed / max(elapsed, 1)
+                    eta = (len(targets) - completed) / max(rate, 0.01)
+                    click.echo(
+                        f"  {completed}/{len(targets)} "
+                        f"({elapsed:.0f}s · {rate:.1f}/s · eta {eta:.0f}s)"
+                    )
+                if completed - last_checkpoint >= checkpoint_every:
+                    _checkpoint(tagged_by_id, completed)
+                    last_checkpoint = completed
+        finally:
+            pass  # ThreadPoolExecutor `with` already handles shutdown
 
     final_jobs = [tagged_by_id.get(j.id, j) for j in jobs]
 
