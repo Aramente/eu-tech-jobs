@@ -27,9 +27,12 @@ const successRate = meta.extractor_results
     )
   : 100;
 
-const countries = Array.from(
-  new Set(Object.values(companies).map((c) => c.country).filter(Boolean))
-).sort();
+// "where" is the unified location/remote facet — same shape as Pagefind's
+// `where` filter on /search/. Sorted by job count desc so the most
+// populated options are first in the dropdown.
+const whereOptions = Object.entries(facetCounts.where)
+  .filter(([k, n]) => n > 0 && k !== "Other" && k !== "Remote / unknown")
+  .sort((a, b) => b[1] - a[1]);
 
 const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + "/";
 ---
@@ -65,16 +68,13 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
         type="search"
         placeholder={`Search all ${allJobs.length.toLocaleString()} jobs (Enter) or filter this page…`}
       />
-      <select id="country" data-facet="country">
-        <option value="">All countries</option>
-        {countries
-          .map((c) => ({ c, n: facetCounts.country[c] || 0, name: countryName(c) }))
-          .sort((a, b) => b.n - a.n)
-          .map(({ c, n, name }) => (
-            <option value={c} data-name={name} data-count={n}>
-              {name} ({n.toLocaleString()})
-            </option>
-          ))}
+      <select id="country" data-facet="where">
+        <option value="">Where (any country / remote)</option>
+        {whereOptions.map(([name, n]) => (
+          <option value={name} data-count={n}>
+            {name} ({n.toLocaleString()})
+          </option>
+        ))}
       </select>
       <select id="role" data-facet="role">
         <option value="">All roles</option>
@@ -185,10 +185,9 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
     function gotoSearchByCountry() {
       const sel = country;
       if (!sel || !sel.value) return;
-      const name = sel.selectedOptions[0].dataset.name || sel.value;
-      // Pagefind uses the `where` facet (country name + remote tiers).
+      // Value IS the where-facet name now (e.g. "France", "Remote — Europe").
       const params = new URLSearchParams();
-      params.set("filter[where]", name);
+      params.set("filter[where]", sel.value);
       location.href = `${base}search/?${params.toString()}`;
     }
     function gotoSearchByRole() {
