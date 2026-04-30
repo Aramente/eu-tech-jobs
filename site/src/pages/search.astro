@@ -239,8 +239,12 @@ const base = import.meta.env.BASE_URL.endsWith("/")
         if (currentPage > totalPages) currentPage = 1;
         const start = (currentPage - 1) * PAGE_SIZE;
         const slice = result.results.slice(start, start + PAGE_SIZE);
+        // filters values are either a string (single) or { any: [...] } (multi).
         const filterText = Object.entries(filters)
-          .map(([f, vs]) => `${f}: ${vs.join(" / ")}`)
+          .map(([f, vs]) => {
+            const arr = typeof vs === "string" ? [vs] : (vs?.any || []);
+            return `${f}: ${arr.join(" / ")}`;
+          })
           .join(" · ");
         elSummary.innerHTML = total === 0
           ? `<strong>No matches</strong>${filterText ? " for " + filterText : ""}. Try removing a filter.`
