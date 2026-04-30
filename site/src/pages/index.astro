@@ -61,16 +61,17 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
       <input
         id="search"
         type="search"
-        placeholder={`Free-text search all ${allJobs.length.toLocaleString()} jobs…`}
+        placeholder={`Search all ${allJobs.length.toLocaleString()} jobs…`}
       />
-      <select id="country" multiple size="6" aria-label="Where (multi-select with ⌘/Ctrl)">
+      {/* Chip-popover filters. Native <select multiple> is the source of truth
+          for state + non-JS fallback; chip-filter.js progressively enhances it
+          with a popover UI. Hidden via .chip-source CSS. */}
+      <select id="country" multiple class="chip-source" data-chip-label="Country" data-chip-group-prefix="Remote — " aria-label="Country and remote">
         {whereOptions.map(([name, n]) => (
-          <option value={name} data-count={n}>
-            {name} ({n.toLocaleString()})
-          </option>
+          <option value={name} data-count={n}>{name}</option>
         ))}
       </select>
-      <select id="role" multiple size="6" aria-label="Role (multi-select)">
+      <select id="role" multiple class="chip-source" data-chip-label="Role" aria-label="Role">
         {[
           ["engineering", "Engineering"],
           ["sales", "Sales"],
@@ -88,9 +89,7 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
         ].map(([v, label]) => {
           const n = facetCounts.role[v] || 0;
           return n === 0 ? null : (
-            <option value={v} data-count={n}>
-              {label} ({n.toLocaleString()})
-            </option>
+            <option value={v} data-count={n}>{label}</option>
           );
         })}
       </select>
@@ -98,10 +97,6 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
         Search →
       </button>
     </form>
-    <p class="meta" style="margin-top:-8px;font-size:12px;">
-      <strong>Tip:</strong> hold <kbd>⌘</kbd> (Mac) or <kbd>Ctrl</kbd> (Win/Linux) to pick multiple options in each list.
-      Pick e.g. <em>France</em> + <em>Remote — Europe</em> + <em>Remote — Worldwide</em> for "France or remote".
-    </p>
     <p class="meta filter-status" data-base={base}>
       Below: <strong>{pageJobs.length}</strong> freshest jobs across {allJobs.length.toLocaleString()} total
       · pick any combination of country, role, and free-text → click <strong>Search</strong>
@@ -160,6 +155,7 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
       We don't scrape LinkedIn or Indeed.
     </p>
   </footer>
+  <script src={`${base}chip-filter.js`} defer></script>
   <script>
     const form = document.getElementById("filter-form");
     const search = document.getElementById("search");

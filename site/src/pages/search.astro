@@ -27,6 +27,7 @@ const base = import.meta.env.BASE_URL.endsWith("/")
         <button id="reset" type="button" class="btn-secondary" style="margin-top:12px;width:100%">Reset all</button>
       </aside>
       <section class="results">
+        <div id="active-pills" class="active-pills" hidden></div>
         <p id="result-summary" class="meta">Loading…</p>
         <ol id="result-list" class="results-list"></ol>
         <nav id="pager" class="pagination"></nav>
@@ -42,6 +43,7 @@ const base = import.meta.env.BASE_URL.endsWith("/")
       const elSummary = document.getElementById("result-summary");
       const elPager = document.getElementById("pager");
       const elReset = document.getElementById("reset");
+      const elPills = document.getElementById("active-pills");
 
       const FACET_LABELS = {
         where: "Where",
@@ -166,9 +168,52 @@ const base = import.meta.env.BASE_URL.endsWith("/")
         }
       }
 
+      function renderActivePills() {
+        if (!elPills) return;
+        const entries = [];
+        for (const [facet, set] of Object.entries(selected)) {
+          for (const v of set) entries.push([facet, v]);
+        }
+        if (entries.length === 0) {
+          elPills.hidden = true;
+          elPills.innerHTML = "";
+          return;
+        }
+        elPills.hidden = false;
+        elPills.innerHTML = "";
+        for (const [facet, v] of entries) {
+          const pill = document.createElement("button");
+          pill.type = "button";
+          pill.className = "active-pill";
+          pill.innerHTML = `<span class="pill-facet">${FACET_LABELS[facet] || facet}</span><span class="pill-value">${v}</span><span class="pill-x" aria-hidden="true">×</span>`;
+          pill.setAttribute("aria-label", `Remove filter ${facet}: ${v}`);
+          pill.addEventListener("click", () => {
+            selected[facet]?.delete(v);
+            if (selected[facet] && selected[facet].size === 0) delete selected[facet];
+            const cb = document.querySelector(
+              `input[type="checkbox"][data-facet="${facet}"][value="${CSS.escape(v)}"]`,
+            );
+            if (cb) cb.checked = false;
+            currentPage = 1;
+            syncToUrl();
+            runSearch();
+          });
+          elPills.appendChild(pill);
+        }
+        if (entries.length > 1) {
+          const clear = document.createElement("button");
+          clear.type = "button";
+          clear.className = "active-pill clear-pill";
+          clear.textContent = "Clear all";
+          clear.addEventListener("click", () => elReset.click());
+          elPills.appendChild(clear);
+        }
+      }
+
       async function runSearch() {
         if (!pagefind) return;
         const q = elQ.value.trim();
+        renderActivePills();
         // Pagefind expects single values as a string and multi-value OR sets
         // wrapped in { any: [...] }. A plain array is NOT a valid filter shape
         // and silently matches nothing.
@@ -405,6 +450,47 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     border-radius: 2px;
   }
   #pager { justify-content: center; }
+
+  .active-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 0 12px;
+  }
+  .active-pill {
+    appearance: none;
+    background: var(--row-hover);
+    color: var(--fg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 4px 10px 4px 12px;
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 80ms ease, border-color 80ms ease;
+  }
+  .active-pill:hover { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }
+  .active-pill .pill-facet {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .active-pill:hover .pill-facet { color: var(--on-ink); opacity: 0.7; }
+  .active-pill .pill-value { font-weight: 500; }
+  .active-pill .pill-x { font-size: 14px; opacity: 0.7; margin-left: 2px; }
+  .active-pill.clear-pill {
+    background: transparent;
+    color: var(--muted);
+    border-color: transparent;
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+  }
+  .active-pill.clear-pill:hover { color: var(--fg); background: transparent; border-color: transparent; }
   kbd {
     background: var(--row-hover);
     border: 1px solid var(--border);
