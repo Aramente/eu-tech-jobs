@@ -1,0 +1,32 @@
+<div class="content-intro"><p>We are a global team of innovators and pioneers dedicated to shaping the future of observability. At New Relic, we build an intelligent platform that empowers companies to thrive in an AI-first world by giving them unparalleled insight into their complex systems. As we continue to expand our global footprint, we're looking for passionate people to join our mission. If you're ready to help the world's best companies optimize their digital applications, we invite you to explore a career with us!</p></div><p style="line-height: 1.2;"><strong>Your opportunity</strong></p>
+<p style="line-height: 1.2;">As a Senior Software Engineer within the Container Fabric (CF) organization, you will be a key driver in evolving New Relic’s global internal platform. We are looking for an operations-heavy engineer with 5–7 years of experience who can bridge the gap between high-performance Go development and large-scale Kubernetes orchestration. You will play a "Captain" role, leading critical deliverables and mentoring junior engineers while maintaining the reliability of our global fleet.<em><br></em></p>
+<p style="line-height: 1.2;"><strong><br>What you'll do</strong><em><br></em></p>
+<ul>
+<li><strong>Architectural Leadership:</strong> Drive the design and implementation of internal tools using <strong>Golang</strong>, specifically focusing on Kubernetes Operators and Controllers to automate resource management.</li>
+<li><strong>Platform Orchestration:</strong> Lead complex infrastructure shifts</li>
+<li><em><strong>Operational Excellence:</strong> Take ownership of incident response, authoring comprehensive retrospectives and implementing systemic hardening to prevent recurrence using advanced overcommit strategies.</em></li>
+</ul>
+<p style="line-height: 1.2;"><strong>This role requires</strong><em><br></em></p>
+<ul>
+<li><strong>Experience:</strong> 5–7 years in a DevOps, Site Reliability, or Infrastructure Engineering role.</li>
+<li><strong>Kubernetes Mastery:</strong> Deep internal knowledge of K8s primitives (Deployments, StatefulSets, Rollouts) and experience writing custom <strong>Kubernetes Operators</strong>.</li>
+<li><strong>Golang Proficiency:</strong> Strong experience building production-grade tools and services in Go, specifically for infrastructure automation.</li>
+<li><strong>Operations-Heavy Mindset:</strong> Proven track record of managing production environments, handling high-severity incidents, and improving <strong>SLA compliance</strong> through automation.</li>
+<li><strong>Cloud Infrastructure:</strong> Hands-on experience with cloud-native scaling tools (e.g., <strong>Karpenter</strong>, Cluster API) and managing OS migrations (e.g., Flatcar).</li>
+<li><strong>Mentorship:</strong> Ability to lead projects as a "Captain," providing technical direction and unblocking team members across different time zones.</li>
+</ul>
+<p style="line-height: 1.2;"><strong>Preferred Qualification</strong></p>
+<ul>
+<li><strong>CKA Certification:</strong> Certified Kubernetes Administrator is highly preferred.</li>
+<li><strong>AI/ML Infrastructure:</strong> Experience with <strong>GPU Operator enablement</strong> or hosting Small Language Models (SLMs) is a significant plus.</li>
+<li><strong>Tooling:</strong> Familiarity with Helm, GitOps (ArgoCD/Flux), and Grand Centra</li>
+</ul>
+<p>Please note that visa sponsorship is not available for this position.</p>
+<p>&nbsp;</p>
+<p>#LI-KT7 #LI-Hybrid</p><div class="content-conclusion"><p>Fostering a diverse, welcoming and inclusive environment is important to us. We work hard to make everyone feel comfortable bringing their best, most authentic selves to work every day. We celebrate our talented Relics’ different backgrounds and abilities, and recognize the different paths they took to reach us – including nontraditional ones. Their experiences and perspectives inspire us to make our products and company the best they can be. We’re looking for people who feel connected to our mission and values, not just candidates who check off all the boxes.&nbsp;</p>
+<p>If you require a reasonable accommodation to complete any part of the application or recruiting process, please reach out to <a href="mailto:resume@newrelic.com" target="\_blank">resume@newrelic.com</a>.</p>
+<p>We believe in empowering all Relics to achieve professional and business success through a flexible workforce model. This model allows us to work in a variety of workplaces that best support our success, including fully office-based, fully remote, or hybrid.</p>
+<p><strong>Our hiring process</strong><br><br>In compliance with applicable law, all persons hired will be required to verify identity and eligibility to work and to complete employment eligibility verification. Note: Our stewardship of the data of thousands of customers means that a criminal background check is required to join New Relic.<br><br>We will consider qualified applicants with arrest and conviction records based on individual circumstances and in accordance with applicable law including, but not limited to, the&nbsp;<a href="https://sfgov.org/olse/sites/default/files/FCO%20poster2020.pdf" target="\_blank">San Francisco Fair Chance Ordinance</a>.<br><br>Headhunters and recruitment agencies may not submit resumes/CVs through this website or directly to managers. New Relic does not accept unsolicited headhunter and agency resumes, and will not pay fees to any third-party agency or company that does not have a signed agreement with New Relic.</p>
+<p>New Relic develops and distributes encryption software and technology that complies with U.S. export controls and licensing requirements. Certain New Relic roles require candidates to pass an export compliance assessment as a condition of employment in any global location. If relevant, we will provide more information later in the application process.</p>
+<p>Candidates are evaluated based on qualifications, regardless of race, religion, ethnicity, national origin, sex, sexual orientation, gender expression or identity, age, disability, neurodiversity, veteran or marital status, political viewpoint, or other legally protected characteristics.&nbsp;</p>
+<p>Review our Applicant Privacy Notice at&nbsp;<a href="https://newrelic.com/termsandconditions/applicant-privacy-policy" target="\_blank">https://newrelic.com/termsandconditions/applicant-privacy-policy</a></p></div>

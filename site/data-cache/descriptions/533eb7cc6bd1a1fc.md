@@ -1,0 +1,63 @@
+<div class="content-intro"><p>Instawork is on a mission to create meaningful economic opportunities for skilled hourly professionals in communities around the globe. Our AI-powered labor marketplace helps local businesses scale, and enables global technology companies to push the frontiers of robotics and AI. Backed by world-class investors like Benchmark, Spark Capital, Craft Ventures, Greylock, Y Combinator, and others, we’re looking for exceptional talent to reimagine the way the world works.</p></div><p><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">As Manager/ Senior Manager of Finance at Instawork India, you will own and oversee the finance/accounting team for Instawork India, which is a wholly owned subsidiary of Instawork (U.S. company - <a href="http://www.instawork.com">www.instawork.com</a>).&nbsp; Additionally, you will own the Accounts Receivable for the U.S. company, including managing AR collections analysts.&nbsp; You will report directly to the U.S. Controller, but also work closely with the Country Head of Instawork India.</span></p>
+<p><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">You would be responsible for end-to-end financial management domestically, including payroll, accounts payable, all corporate accounting, including the month-end close, regulatory/compliance and financial reporting, budget, and forecasts preparation for Instawork’s Indian Entity.&nbsp;</span></p>
+<p><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">You will partner with the Country Head and help design and implement various internal policies for finance, expenses, and budgeting.&nbsp; You will also ensure that the Indian Entity is compliant with all the prevailing laws and regulations of the country and proactively advise the management of any changes in regulations.</span></p>
+<p><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Additionally, you would be working with the global finance team to help achieve other business goals as determined by the U.S. CFO and U.S. Controller from time to time.</span></p>
+<p><span style="font-size: 12pt; font-family: 'times new roman', times, serif;"><strong>Accounting</strong></span></p>
+<ul>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Lead and Own U.S. Accounts Receivable for the Company</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Initiate best-in-class global support of the month-end close, year-end close, and audit support</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Financial management, including corporate accounting, regulatory and financial reporting, budget, and forecasts preparation</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Own end-to-end accounting, payroll, and bookkeeping for the Indian entity, along with expense management and vendor payments</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Calculation and remittance of monthly statutory payments and Taxes eg, TDS PF, ESI, PT etc</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Preparation of financial statements and the company’s monthly MIS reports</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Coordination with Statutory auditors, external consultants, banks and other government agencies</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Preparation and filing of the company’s GST and Income tax returns</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Preparation &amp; submission of quarterly and annual returns</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Help design and implement various internal policies for finance, expenses, and budgeting</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Assist with Global accounting and reporting in conjunction with the U.S. CFO and U.S Controller</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Supervise, mentor, and guide the India finance team (2 personnel) and the AR collections analysts (3 personnel)</span></li>
+</ul>
+<p><span style="font-size: 12pt; font-family: 'times new roman', times, serif;"><strong>Compliance</strong></span></p>
+<p><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Own end to end compliance for the Indian entity including Financial Audit, RBI, STPI, MCA and other regulatory filings including:</span></p>
+<ul>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Periodic Tax and Statutory payments like EPF, ESI, state taxes etc.</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Periodic Regulatory Filings with RBI and MCA</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">STPI and export related compliances</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Annual Audit and Tax Filings</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Facilitate Board Meetings</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Assistance with Global compliance and regulatory filings</span></li>
+</ul>
+<p><span style="font-size: 12pt; font-family: 'times new roman', times, serif;"><strong>Who you are</strong></span></p>
+<ul>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">CA with 7-10 years of experience with strong knowledge of Indian Accounting</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Knowledge of US GAAP&nbsp;</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Experience working with a Big 4 firm is a plus</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Have handled Global Financial Operations, particularly Accounts Receivable a plus</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Ownership of financial operations workflows to support Corporate/ Global team</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">NetSuite experience is desirable</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Proficient in Microsoft Excel or Google Sheets required. Conversant with MS Office&nbsp;</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Excellent written and communication skills</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Ability to work some U.S. pacific time zone hours</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Proven experience with process improvements, automation and the ability to incorporate AI to improve processes</span></li>
+<li style="font-size: 12pt; font-family: 'times new roman', times, serif;"><span style="font-size: 12pt; font-family: 'times new roman', times, serif;">Excellent people management skills</span></li>
+</ul><div class="content-conclusion"><p><strong><span style="font-size: 14pt;">Our Values&nbsp;</span></strong></p>
+<ul>
+<li>
+<p><strong><span style="text-decoration: underline;">Empathy, Trust &amp; Candor</span><br></strong>We put ourselves in the shoes of our colleagues and customers and don’t shy away from uncomfortable conversations, instead building trust through honest and direct feedback.</p>
+</li>
+<li>
+<p><strong><span style="text-decoration: underline;">Bias for Action</span><br></strong>We practice high-velocity decision-making, clear-eyed that we often operate with incomplete information. Growing quickly means it’s OK to be wrong, so long as we learn from our mistakes and course correct!</p>
+</li>
+<li>
+<p><strong><span style="text-decoration: underline;">Always Be Learning</span><br></strong>We’re a curious bunch, and with AI transforming our workplace we encourage everyone to learn from each other, compounding our knowledge and experience to help us change an entire industry.</p>
+</li>
+<li>
+<p><strong><span style="text-decoration: underline;">Act Like an Owner</span><br></strong>We work long, hard, and smart, building products that delight our users and drive growth. Your ability to impact Instawork is limited only by your courage and conviction, not your job description.</p>
+</li>
+</ul>
+<p><strong><span style="font-size: 14pt;">About Instawork</span></strong></p>
+<p>Founded in 2015,&nbsp;<a href="https://www.instawork.com">Instawork</a> is the nation’s leading online labor marketplace for food services, hospitality, light industry, and logistics, connecting more than 7M skilled workers with local restaurants, hotels, warehouses, stadiums, and more. Our AI-powered platform serves thousands of businesses across more than 50 major markets in the United States and Canada. We're not just helping fill shifts, we're supporting local economies—and we're just getting started!</p>
+<p>Instawork has been featured by CBS News, The Wall Street Journal, The Washington Post, and the Associated Press. Forbes included us on their Next Billion Dollar Startups list; RetailTech Breakthrough named us Workforce Hiring Solution of the Year for 2025; and Inc. 5000 recognized us as one of the country's top 10% fastest-growing companies two years in a row. But what matters most is our impact. We're solving real problems for real people, and we’re doing it at scale.</p>
+<p>Join our team to help us build something that matters! We’re looking for superstars who want to help us shape the future of work. With hubs in San Francisco, Bangalore, and Chicago, city offices in New York, Phoenix, and Singapore, we're back to working together in-person five days a week because we believe the best ideas happen when great people collaborate face-to-face. We also value diverse perspectives and encourage applications from candidates of all backgrounds.<br><br>Ready to make an impact? Learn more at <a href="http://www.instawork.com/about">www.instawork.com/about</a>.</p>
+<p><a href="https://info.instawork.com/legal/california-personnel-privacy-policy">Personnel Privacy Policy</a></p>
+<p>&nbsp;</p></div>

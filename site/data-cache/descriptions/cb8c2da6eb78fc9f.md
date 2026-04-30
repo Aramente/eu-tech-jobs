@@ -1,0 +1,31 @@
+<p data-pm-slice="1 1 []"><strong>GAQ227R209</strong></p>
+<p><strong>Mission</strong></p>
+<p>Databricks is looking for a motivated and experienced Senior Contracts Negotiator to play a leading role in Databricks’ growing EMEA business. You will report to the Director &amp; Assistant General Counsel, EMEA Commercial Legal, and will be an important part of the team responsible for reviewing and negotiating customer agreements, providing legal support for revenue-generating activities of Databricks, and helping Databricks to improve processes.&nbsp;</p>
+<p><strong>The impact you will have:</strong></p>
+<p>You will work in partnership with the sales teams to enable some of the best known companies in the world to purchase Databricks’ cutting-edge AI and data analytics tools.&nbsp; You will diligently solve legal issues to enable smooth and timely transactions.&nbsp; You will work collaboratively within an experienced and supportive legal team and have the confidence to guide our sales teams on internal processes. If you have experience negotiating software-as-a-service (SaaS) transactions with enterprise companies that is a bonus.</p>
+<p>Your day-to-day role will include:</p>
+<ul>
+<li>Reviewing, drafting and negotiating commercial agreements, such as NDA’s, SOW’s and commercial ordering documents ensuring that Databricks’ risk position is protected and internal compliance requirements are met;</li>
+<li>Leading the end-to-end contract management lifecycle, providing expert advice to sales and professional services teams on contractual risks, commercial matters, as well as offering innovative solutions;</li>
+<li>Identifying and leading with process improvements, and developing good practices to streamline efficiency in particular looking to solve process issue using AI tools;</li>
+<li>Providing support and enablement to sales teams on key contractual requirements, best practices and contract management;</li>
+<li>Learning and then mastering Databricks’ internal structures, product offerings, technology, security/data protection positions and policies to give you a foundation for providing support across Databricks' lines of business;</li>
+<li>Bringing your understanding of Databricks’ commercial offerings to guide sales teams (and customers where needed) during negotiations;</li>
+<li>Applying critical thinking and problem-solving skills to propose business solutions which can meet the business’ and customers’ needs;</li>
+<li>Cultivating strong cross-functional relationships with key stakeholders and provide strategic advice on the Company's go-to-market efforts; &amp;</li>
+<li>Contributing as a team player to help further the status of the legal department as a respected and valued partner within the company.</li>
+</ul>
+<p><strong>Requirements for the role:</strong></p>
+<ul>
+<li>Bachelor's degree (or equivalent);</li>
+<li>Experience working in-house within a technology company that maintains a regular/quarterly sales cycle;</li>
+<li>3-5 years of experience negotiating NDAs, Order Forms and legal amendments;</li>
+<li>Knowledge of large CRM systems (like Salesforce) and contract management systems (like IronClad);</li>
+<li>Demonstrated ability to manage and prioritise time and business needs in the face of competing demands; &amp;</li>
+<li>Experience working with sales teams.</li>
+</ul><div class="content-conclusion"><p><strong>About Databricks</strong></p>
+<p><span style="font-family: arial, sans-serif;">Databricks is the data and AI company. More than 10,000 organizations worldwide — including Comcast, Condé Nast, Grammarly, and over 50% of the Fortune 500 — rely on the Databricks Data Intelligence Platform to unify and democratize data, analytics and AI. Databricks is headquartered in San Francisco, with offices around the globe and was founded by the original creators of Lakehouse, Apache Spark™, Delta Lake and MLflow. To learn more, follow Databricks on&nbsp;<span style="color: rgb(255, 54, 33);"><a style="color: rgb(255, 54, 33);" href="https://twitter.com/databricks" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://twitter.com/databricks&amp;source=gmail&amp;ust=1700237575733000&amp;usg=AOvVaw03FL8fJvOD97ytN02f5G2C">Twitter</a>,&nbsp;<a style="color: rgb(255, 54, 33);" href="https://www.linkedin.com/company/databricks" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.linkedin.com/company/databricks&amp;source=gmail&amp;ust=1700237575733000&amp;usg=AOvVaw15dLk3q8VxTfHEgCUg7NSt">LinkedIn</a>&nbsp;<span style="color: rgb(0, 0, 0);">and</span>&nbsp;<a style="color: rgb(255, 54, 33);" href="https://www.facebook.com/databricksinc" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.facebook.com/databricksinc&amp;source=gmail&amp;ust=1700237575733000&amp;usg=AOvVaw39EcncitnlqV72EG2-RqXJ">Facebook</a></span>.<br><br><strong>Benefits<br><br></strong></span>At Databricks, we strive to provide comprehensive benefits and perks that meet the needs of all of our employees. For specific details on the benefits offered in your region click <a href="https://docs.google.com/document/d/154un3e8Xav4BceOSlcYFZRGEuQI54xMxVydRwQn54eQ/edit?usp=sharing">here</a>.<br><br></p>
+<p><strong>Our Commitment to Diversity and Inclusion</strong></p>
+<p>At Databricks, we are committed to fostering a diverse and inclusive culture where everyone can excel. We take great care to ensure that our hiring practices are inclusive and meet equal employment opportunity standards. Individuals looking for employment at Databricks are considered without regard to age, color, disability, ethnicity, family or marital status, gender identity or expression, language, national origin, physical and mental ability, political affiliation, race, religion, sexual orientation, socio-economic status, veteran status, and other protected characteristics.</p>
+<p><strong>Compliance</strong></p>
+<p><strong><span style="font-weight: 400;">If access to export-controlled technology or source code is required for performance of job duties, it is within Employer's discretion whether to apply for a U.S. government license for such positions, and Employer may decline to proceed with an applicant on this basis alone.</span></strong></p></div>

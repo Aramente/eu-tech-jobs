@@ -1,6 +1,17 @@
 ---
+import { existsSync, readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { marked } from "marked";
+
 import Base from "../../layouts/Base.astro";
-import { jobs, companies, formatDate, displayCountry, boredCvLink } from "../../lib/data";
+import {
+  boredCvLink,
+  companies,
+  displayCountry,
+  formatDate,
+  jobs,
+} from "../../lib/data";
 
 export async function getStaticPaths() {
   return jobs.map((j) => ({ params: { id: j.id } }));
@@ -11,53 +22,132 @@ const job = jobs.find((j) => j.id === id);
 if (!job) throw new Error(`Job ${id} not found`);
 const company = companies[job.company_slug];
 const companyName = company?.name || job.company_slug;
-const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + "/";
+const country = company ? displayCountry(company.country) : "";
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : import.meta.env.BASE_URL + "/";
+
+// Read the per-job description from disk at build time. The file is
+// written by site/scripts/parquet-to-json.mjs from the parquet
+// description_md column. ~15k tiny files, one read per page render →
+// no in-memory big JSON.
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const descPath = join(
+  __dirname,
+  "..",
+  "..",
+  "..",
+  "data-cache",
+  "descriptions",
+  `${id}.md`,
+);
+const descriptionMd = existsSync(descPath) ? readFileSync(descPath, "utf8") : "";
+
+// Configure marked: GitHub-flavored, no smartypants, no header IDs (cleaner).
+marked.setOptions({ gfm: true, breaks: false, headerIds: false } as any);
+const descriptionHtml = descriptionMd ? (marked.parse(descriptionMd) as string) : "";
+
+// Schema.org JobPosting structured data — Google + LinkedIn pick this up.
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  title: job.title,
+  description: descriptionHtml || job.title,
+  datePosted: job.posted_at || undefined,
+  hiringOrganization: {
+    "@type": "Organization",
+    name: companyName,
+    sameAs: company?.career_url || undefined,
+  },
+  jobLocation: job.location
+    ? {
+        "@type": "Place",
+        address: { "@type": "PostalAddress", addressLocality: job.location },
+      }
+    : undefined,
+  applicantLocationRequirements:
+    job.remote_policy === "remote-eu"
+      ? { "@type": "Country", name: "Europe" }
+      : undefined,
+  jobLocationType:
+    job.remote_policy && job.remote_policy.startsWith("remote")
+      ? "TELECOMMUTE"
+      : undefined,
+  url: `https://aramente.github.io${base}jobs/${id}/`,
+  directApply: false,
+};
 ---
-<Base title={`${job.title} — ${companyName}`} description={`${job.title} at ${companyName} (${job.location || "remote"})`}>
+<Base
+  title={`${job.title} — ${companyName}`}
+  description={`${job.title} at ${companyName} (${job.location || "remote"})`}
+>
   <header>
-    <p class="lede"><a href={base}>← Back</a></p>
+    <p class="lede"><a href={base}>← All jobs</a></p>
   </header>
   <main>
     <article class="job" data-pagefind-body>
       <h1>{job.title}</h1>
-      <p class="meta">
+      <p class="meta job-meta">
         <a href={`${base}companies/${job.company_slug}/`}>{companyName}</a>
-        {company?.country && <> · {displayCountry(company.country)}</>}
+        {country && <> · {country}</>}
         {job.location && <> · {job.location}</>}
         {job.posted_at && <> · posted {formatDate(job.posted_at)}</>}
         {" · "}<span class="badge">{job.source}</span>
+        {job.role_family && (
+          <> · <span class="badge">{job.role_family}</span></>
+        )}
+        {job.seniority && (
+          <> · <span class="badge">{job.seniority}</span></>
+        )}
+        {job.remote_policy && (
+          <> · <span class="badge">{job.remote_policy}</span></>
+        )}
       </p>
-      <div style="display:flex; gap:12px; flex-wrap:wrap; margin: 20px 0;">
+
+      {descriptionHtml ? (
+        <div class="job-description" set:html={descriptionHtml} />
+      ) : (
+        <div class="job-description-fallback">
+          <p>
+            Full description not mirrored here for this job (source ATS:
+            {" "}<code>{job.source}</code>). Click <em>Apply on {job.source}</em> below
+            for the full posting.
+          </p>
+        </div>
+      )}
+
+      <hr class="cta-divider" />
+      <div class="cta-row">
         <a
-          class="btn-primary"
+          class="cta-primary"
           href={boredCvLink(job.url)}
           target="_blank"
           rel="noopener noreferrer"
-          style="background:var(--accent); color:#fff; padding:10px 16px; border-radius:6px; text-decoration:none; font-weight:500;"
         >
-          ✨ Tailor my CV for this job →
+          ✨ Tailor my CV for this job
         </a>
         <a
-          class="btn-secondary"
+          class="cta-secondary"
           href={job.url}
           target="_blank"
           rel="noopener noreferrer"
-          style="border:1px solid var(--border); padding:10px 16px; border-radius:6px; text-decoration:none;"
         >
           Apply on {job.source} →
         </a>
       </div>
-      <p class="meta" style="margin-top: 16px;">
-        Full job description lives on the source ATS — that page is always
-        authoritative. We surface listings here but never mirror copy.
+
+      <p class="meta source-note">
+        Source: <code>{job.source}</code> · last seen {formatDate(job.posted_at) || "—"}
+        {" · "}
+        <a href="mailto:kevin.duchier@gmail.com">request removal</a>.
+        We surface listings; the source ATS is always authoritative.
       </p>
     </article>
   </main>
-  <footer>
-    <p>
-      Built with <a href="https://aramente.github.io/bored-cv/">Bored CV</a> ·
-      Browse <a href={base}>all open jobs</a> ·
-      <a href="https://github.com/Aramente/eu-tech-jobs">repo</a>.
-    </p>
-  </footer>
+
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(schema)}
+  />
 </Base>

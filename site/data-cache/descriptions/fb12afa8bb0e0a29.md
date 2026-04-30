@@ -1,0 +1,37 @@
+<div class="content-intro"><p><strong>Secure Every Identity, from AI to Human<br><br></strong>Identity is the key to unlocking the potential of AI. Okta secures AI by building the trusted, neutral infrastructure that enables organizations to safely embrace this new era. This work requires a relentless drive to solve complex challenges with real-world stakes. We are looking for builders and owners who operate with speed and urgency and execute with excellence.<br><br>This is an opportunity to do career-defining work. We're all in on this mission. If you are too, let's talk.</p></div><p>As a Senior Solutions Engineer for the Auth0 platform, you are a strategic, customer-centric technical expert who combines a software engineering background with a passion for identity and security. You possess that rare combination of technical savviness and business insight and are looking for a career where you can utilize both to drive revenue directly and through a thriving partner ecosystem.<br><br>You will be a trusted advisor to both customers and a portfolio of strategic partners. You will partner with our sales and alliances teams to demonstrate, design, and validate identity solutions that solve complex challenges and contribute directly to our growth. You will empathize with customers, quickly discern their true needs, and architect solutions that deliver exceptional outcomes.<br><br>This position is based in Warsaw, Poland. The role is remote, with the expectation of a transition to a hybrid office model in the future (2-3 days per week).</p>
+<h3><strong>What You’ll Be Doing</strong></h3>
+<ul>
+<li>Act as the primary technical and identity domain expert during the sales cycle for both direct customers and partners.</li>
+<li>Deliver compelling product demonstrations, architecture walkthroughs, and whiteboard sessions to a wide range of audiences, from developers to C-level executives.</li>
+<li>Lead and support technical validation activities such as Proofs of Concept (PoCs).</li>
+<li>Collaborate with Account Executives on territory and account strategies to win new business.</li>
+<li>Build and manage deep technical relationships with assigned Partners, teaming with the Okta Partner Account Team to drive incremental revenue through the channel.</li>
+<li>Become a trusted advisor to your partners on all matters related to Identity and Access Management, helping them integrate Okta into their Go-To-Market (GTM) strategy.</li>
+</ul>
+<h3><strong>What You’ll Bring to the Role</strong></h3>
+<ul>
+<li>5+ years of customer-facing technical role (e.g., pre-sales engineering, consulting, professional services).</li>
+<li>A strong passion for serving the customer and our partners, ensuring their success.</li>
+<li>Understanding of Identity and Access Management (IAM) concepts and security protocols, including OAuth 2.0, OIDC or SAML.</li>
+<li>Knowledge of modern approaches to software development/hosting: familiarity with cloud platforms (AWS, Azure, GCP).</li>
+<li>Communication and presentation skills, with the ability to articulate complex technical ideas and business value to a highly skilled audience.</li>
+<li>Fluency in Polish and English is required.</li>
+</ul>
+<h3><strong>Nice to Have</strong></h3>
+<ul>
+<li>A Bachelor's degree in Engineering, Computer Science, MIS, or a comparable field.</li>
+<li>Hands-on experience with code: understand, troubleshoot, and preferably write in one or more of the following development areas: web (JavaScript, HTML, frontend frameworks), mobile (iOS, Android), or backend (Java, C#, Node.js, Python, PHP, Ruby).</li>
+<li>Demonstrated ability to architect and integrate CIAM solutions across web, mobile, and cloud platforms.</li>
+<li>Expertise in AI-driven customer experience integration with Auth0, including AI agents for internal or external use-cases, MCP servers, and Fine-Grained Authorization</li>
+<li>Public speaking, technical blogging, or conference presentation experience.</li>
+<li>Fluency in additional European languages is a strong plus.</li>
+</ul>
+<p>#LI-Hybrid<br>#LI-JB2</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p><div class="content-pay-transparency"><div class="pay-input"><div class="description"><p><span data-sheets-root="1">Below is the annual On Target Compensation (OTE) range for candidates located in Poland. Your actual OTE, which is inclusive of base salary and incentive compensation, will depend on factors such as your skills, qualifications, experience, and work location. In addition, Okta offers equity (where applicable) and comprehensive healthcare coverage and financial benefits including paid time off and parental leave in accordance with our applicable plans and policies. To learn more about our Total Rewards program please visit: https://rewards.okta.com/pol.<br></span></p></div><div class="title">The OTE range for this position for candidates located in Poland is between:</div><div class="pay-range"><span>330 000 zł</span><span class="divider">&mdash;</span><span>484 000 zł PLN</span></div></div></div><div class="content-conclusion"><p><strong><br>The Okta Experience</strong></p>
+<ul>
+<li><a href="http://rewards.okta.com">Supporting Your Well-Being</a>&nbsp;</li>
+<li><a href="https://www.okta.com/company/okta-for-good/">Driving Social Impact&nbsp;</a></li>
+<li><a href="https://www.okta.com/company/talent-connection-community/">Developing Talent and Fostering Connection + Community</a></li>
+</ul>
+<p>We are intentional about connection. Our global community, spanning over 20 offices worldwide, is united by a drive to innovate. Your journey begins with an immersive, in-person onboarding experience designed to accelerate your impact and connect you to our mission and team from day one.<br><br>Okta is an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, ancestry, marital status, age, physical or mental disability, or status as a protected veteran. We also consider for employment qualified applicants with arrest and convictions records, consistent with applicable laws.<br><br>If reasonable accommodation is needed to complete any part of the job application, interview process, or onboarding please&nbsp;<a href="https://docs.google.com/forms/d/1EfiEYZrIyhA2X4Fijk0R3RKYOzNoS3wtvyM4nhbZnXE/edit">use this Form</a> to request an accommodation.<br><br>Notice for New York City Applicants &amp; Employees: Okta may use Automated Employment Decision Tools (AEDT), as defined by New York City Local Law 144, that use artificial intelligence, machine learning, or other automated processes to assist in our recruitment and hiring process. In accordance with NYC Local Law 144, if you are an applicant or employee residing in New York City, please&nbsp;<a href="https://talent.okta.com/new-york-city-aedt-notice.html">click here</a> to view our full NYC AEDT Notice.<br><br>Okta is committed to complying with applicable data privacy and security laws and regulations. For more information, please see our Personnel and Job Candidate Privacy Notice at&nbsp;<a href="https://www.okta.com/legal/personnel-policy/">https://www.okta.com/legal/personnel-policy/</a>.</p></div>

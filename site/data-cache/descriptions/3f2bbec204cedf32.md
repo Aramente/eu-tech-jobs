@@ -1,0 +1,11 @@
+## Deine Aufgaben
+
+<ul><li>Steuerung von Bauprojekten im Neubau sowie im Altbaubestand - vorrangig Dachgeschossausbauten und Kernsanierungen</li><li>Schwerpunkt der Tätigkeit in den Leistungsphasen 1 bis 8 </li><li>Zuständigkeit für Angebotseinholung, Kalkulation, Vergabe sowie Bauabnahme</li><li>Absprachen mit Architekten und Fachplanern sowie notwendige Behördengänge</li><li>Koordination der projektbeteiligten Firmen</li><li>Reporting zum Projektstatus an die Bereichsleitung</li></ul>
+
+## Dein Profil
+
+<ul><li>abgeschlossenes Studium im Bereich Bauingenieurwesen / Bautechnikoder oder Ausbildung in einem bautechnischen Beruf mit einschlägiger Berufserfahrung</li><li>Berufserfahrung in der Steuerung von Bauprojekten, idealerweise im Alt- und Neubaubereich</li><li>technisches und statisches Verständnis für die Aufarbeitung von Bauplänen</li><li>Kenntnisse im Brandschutz und in der statischen Ertüchtigung von Zwischendecken</li><li>sicherer Umgang mit MS-Office sowie gute Deutsch- und Englischkenntnisse</li><li>Pkw-Führerschein der Fahrzeugklasse B</li><li>Die Präsenz am Dresdner Standort ist erforderlich.</li><li>Teamfähigkeit, Lösungsorientierung sowie eine selbstständige und pragmatische Arbeitsweise runden dein Profil ab.</li></ul>
+
+## Unsere ARGOmente
+
+<ul><li>Wir bieten Dir ein interessantes und abwechslungsreiches Aufgabenspektrum.</li><li>Bei uns findest du flache Hierarchien und ein angenehmes Betriebsklima.</li><li>flexible Arbeitszeitgestaltung mit einer Kernarbeitszeit</li><li>ein unbefristetes Beschäftigungsverhältnis</li><li>einen Dienstwagen zur 1%-Regelung</li><li>eine Jahresbonuszahlung zum Jahresende</li><li>individuelle Weiterbildungsmöglichkeiten mit Zertifikat</li><li>eine betriebliche Krankenversicherung mit Leistungserstattungen bis 300 EUR/Jahr</li><li>eine betriebliche Altersvorsorge mit 15% AG-Zuschuss</li><li>28 Urlaubstage + 2 Tage Zusatzurlaub</li><li>kostenloser Mitarbeiterparkplatz</li><li>jährliche Firmenfeiern im Sommer und zur Weihnachtszeit</li></ul>

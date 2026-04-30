@@ -1,0 +1,56 @@
+<h2><strong>🚀 Verkaufe mit Sinn. Starte deine Karriere im Fintech.</strong></h2>
+<p>Du willst in die <strong>Fintech-Welt einsteigen</strong>?<br>Du suchst einen Job, bei dem <strong>Leistung sich wirklich auszahlt</strong> und dein Einsatz über dein Einkommen entscheidet?</p>
+<p>Bei <strong>SumUp</strong> helfen wir kleinen Unternehmen, erfolgreich zu sein – mit smarten, einfachen Payment-Lösungen. Ob Café, Einzelhandel oder Marktstand: Unsere Technologie macht Kartenzahlungen überall möglich. Schnell. Einfach. Zuverlässig.</p>
+<p>Das ist deine Chance, <strong>wertvolle Sales-Erfahrung zu sammeln</strong> und deine Karriere in einem internationalen Fintech zu starten.</p>
+<p>&nbsp;</p>
+<h2><strong>🎯 Deine Rolle – dein Karrierestart</strong></h2>
+<p>Als <strong>Außendienstmitarbeiter\*in / Field Sales Representative (m/w/d)</strong> bei SumUp bist du von Anfang an verantwortlich für deinen eigenen Erfolg.</p>
+<p>Diese Rolle ist <strong>stark provisionsgetrieben</strong>:<br>💰 Du hast ein Fixgehalt – und eine <strong>ungedeckelte Provision</strong>.<br>🔥 Je mehr Einsatz, desto höher dein Verdienst.<br>📈 Dein Erfolg bestimmt dein Einkommen und deine Entwicklung.</p>
+<p>Du planst deinen Tag selbst, verantwortest dein eigenes Gebiet und sprichst Händler\*innen direkt vor Ort an. Jeder Abschluss zählt – und zahlt sich für dich aus.</p>
+<p>&nbsp;</p>
+<h2><strong>💡 Deine Aufgaben</strong></h2>
+<ul>
+<li>Aktive Ansprache lokaler Händler\*innen und Identifikation neuer Potenziale<br><br></li>
+<li>Präsentation unserer Payment-Lösungen – klar, praxisnah und überzeugend<br><br></li>
+<li>Souveräner Umgang mit Einwänden und Abschluss von Deals<br><br></li>
+<li>Aufbau eines eigenen, nachhaltigen Kundenportfolios<br><br></li>
+<li>Enge Zusammenarbeit mit einem ambitionierten, unterstützenden Sales-Team<br><br></li>
+</ul>
+<p>&nbsp;</p>
+<h2><strong>🧠 Das bringst du mit</strong></h2>
+<ul>
+<li>Ehrgeiz, Drive und Lust darauf, Ergebnisse zu erzielen<br><br></li>
+<li>Freude an direktem Kundenkontakt und Arbeit im Außendienst<br><br></li>
+<li>Technisches Grundverständnis und die Fähigkeit, Produkte einfach zu erklären<br><br></li>
+<li>Eine proaktive Hands-on-Mentalität<br><br></li>
+<li>Erste Vertriebserfahrung ist ein Plus – <strong>Motivation und Lernbereitschaft sind entscheidend</strong><strong><br><br></strong></li>
+</ul>
+<p>👉 <strong>Berufseinsteiger</strong><strong><em>innen, Absolvent</em></strong><strong>innen und Quereinsteiger\*innen sind ausdrücklich willkommen.</strong></p>
+<p>&nbsp;</p>
+<h2><strong>💸 Was wir dir bieten – und warum es sich lohnt</strong></h2>
+<ul>
+<li><strong>Leistungsorientierte Vergütung:</strong> Fixgehalt + <strong>ungedeckelte Provision</strong><strong><br><br></strong></li>
+<li>Volle Kontrolle über dein Einkommen – dein Einsatz setzt die Grenze<br><br></li>
+<li>Hohe Flexibilität bei der Gestaltung deines Arbeitstags<br><br></li>
+<li>Firmenwagen für deinen Außendienst <br><br></li>
+<li>Strukturiertes Onboarding und kontinuierliche Sales-Trainings<br><br></li>
+<li>Klare Entwicklungs- und Aufstiegsmöglichkeiten im Fintech-Umfeld</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li>2.000 € jährliches Budget für Weiterbildung<br><br></li>
+<li>Mental-Health-Angebote und ein faires Referral-Programm<br><br></li>
+<li>Corporate Benefits mit Rabatten bis zu 60 %<br><br></li>
+<li>Futureben-Rabatte für nachhaltige Produkte<br><br></li>
+<li>Subventionierte Urban Sports Club Mitgliedschaft<br><br></li>
+<li>Weitere attraktive Mitarbeiterrabatte<br><br></li>
+</ul>
+<p>&nbsp;</p>
+<h2><strong>Alternative Jobtitel</strong></h2>
+<p>Sales Representative, Account Manager, Vertriebsmitarbeiter\*in<em>, Sales Manager.</em></p>
+<h2><strong>Über SumUp</strong></h2>
+<p>Wir sind ein internationales Fintech-Unternehmen mit einer klaren Mission: kleine Unternehmen groß zu machen.<br>Wir entwickeln Produkte, die Unternehmer\*innen das Leben leichter machen – einfach, kraftvoll und immer am Puls der Zeit.</p>
+<p>Vielfalt, Offenheit und Teamgeist prägen unsere Kultur. Bei uns zählt, was du tust – und wie du gemeinsam mit uns wächst.</p>
+<p>Jetzt ist dein Moment. Gestalte deinen Erfolg mit SumUp – und hilf kleinen Unternehmen, jeden Tag stärker zu werden.<br><br><br><br>#DE-FS - Germany</p>
+<p>&nbsp;</p><div class="content-conclusion"><p><strong>Job Application Tip</strong></p>
+<p><span style="font-weight: 400;">We recognise that candidates feel they need to meet 100% of the job criteria in order to apply for a job. Please note that this is only a guide. If you don’t tick every box, it’s ok too because it means you have room to learn and develop your career at SumUp.</span></p></div>

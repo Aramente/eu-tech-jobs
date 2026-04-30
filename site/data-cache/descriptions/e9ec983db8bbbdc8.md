@@ -1,0 +1,28 @@
+<p><small>P-995</small></p>
+<p>At Databricks, we are passionate about enabling data teams to solve the world's toughest problems — from making the next mode of transportation a reality to accelerating the development of medical breakthroughs. We do this by building and running the world's best data and AI infrastructure platform so our customers can use deep data insights to improve their business.</p>
+<p>The Core Experiences Platforms Org in Bangalore is responsible for the main set of platforms to access and interact with core assets such as Workspaces, Notebooks, SQL queries and the necessary serving infrastructure to power multiple User Experiences.&nbsp;</p>
+<p>Databricks is experiencing very high growth, and several critical services rely on the platforms of the Core Experiences Platforms Org. We are focused on redesigning our systems to support the next stage of growth. This is an opportunity for you to be owning several critical next generation infrastructure for databricks, and be a central part of databricks' growth.</p>
+<p>As an Engineering Manager in the Core Experiences Platform Org, you will build and operate highly available and scalable platforms which serve multiple products in Databricks, allowing it to seamlessly scale and run across various geographic regions and clouds, and make Databricks the go-to product for big data processing in the cloud.&nbsp;You will report directly to the Sr. Manager of Engineering.</p>
+<p><strong>The Impact You Will Have:</strong></p>
+<ul>
+<li>You will hire great engineers to build an outstanding team</li>
+<li>You will support engineers in their career development by providing clear feedback, as well developing engineering leaders</li>
+<li>You will ensure high technical standards by instituting processes (architecture reviews, testing) and culture (engineering excellence)</li>
+<li>You will work with engineering and product leadership to build a long-term roadmap</li>
+<li>You will coordinate execution and collaborate with multiple product teams with feature requests from the platform<br><br></li>
+</ul>
+<p><strong>What We Look For:</strong></p>
+<ul>
+<li>Great at hiring and developing talent, especially leadership</li>
+<li>Great at creating efficient processes that increase velocity and quality</li>
+<li>2+ years of experience in managing teams that build and operate high-volume distributed systems in a SaaS environment</li>
+<li>5+ years of experience with distributed systems and building platforms and services which serve multiple product teams and customers</li>
+<li>Have experience in scaling engineering teams from 5 to 20+</li>
+<li>Team player that will work with other departments (PM, CS) and engineering teams.</li>
+<li>BS or higher in Computer Science, or a related field</li>
+</ul><div class="content-conclusion"><p><strong>About Databricks</strong></p>
+<p><span style="font-family: arial, sans-serif;">Databricks is the data and AI company. More than 10,000 organizations worldwide — including Comcast, Condé Nast, Grammarly, and over 50% of the Fortune 500 — rely on the Databricks Data Intelligence Platform to unify and democratize data, analytics and AI. Databricks is headquartered in San Francisco, with offices around the globe and was founded by the original creators of Lakehouse, Apache Spark™, Delta Lake and MLflow. To learn more, follow Databricks on&nbsp;<span style="color: rgb(255, 54, 33);"><a style="color: rgb(255, 54, 33);" href="https://twitter.com/databricks" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://twitter.com/databricks&amp;source=gmail&amp;ust=1700237575733000&amp;usg=AOvVaw03FL8fJvOD97ytN02f5G2C">Twitter</a>,&nbsp;<a style="color: rgb(255, 54, 33);" href="https://www.linkedin.com/company/databricks" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.linkedin.com/company/databricks&amp;source=gmail&amp;ust=1700237575733000&amp;usg=AOvVaw15dLk3q8VxTfHEgCUg7NSt">LinkedIn</a>&nbsp;<span style="color: rgb(0, 0, 0);">and</span>&nbsp;<a style="color: rgb(255, 54, 33);" href="https://www.facebook.com/databricksinc" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.facebook.com/databricksinc&amp;source=gmail&amp;ust=1700237575733000&amp;usg=AOvVaw39EcncitnlqV72EG2-RqXJ">Facebook</a></span>.<br><br><strong>Benefits<br><br></strong></span>At Databricks, we strive to provide comprehensive benefits and perks that meet the needs of all of our employees. For specific details on the benefits offered in your region click <a href="https://docs.google.com/document/d/154un3e8Xav4BceOSlcYFZRGEuQI54xMxVydRwQn54eQ/edit?usp=sharing">here</a>.<br><br></p>
+<p><strong>Our Commitment to Diversity and Inclusion</strong></p>
+<p>At Databricks, we are committed to fostering a diverse and inclusive culture where everyone can excel. We take great care to ensure that our hiring practices are inclusive and meet equal employment opportunity standards. Individuals looking for employment at Databricks are considered without regard to age, color, disability, ethnicity, family or marital status, gender identity or expression, language, national origin, physical and mental ability, political affiliation, race, religion, sexual orientation, socio-economic status, veteran status, and other protected characteristics.</p>
+<p><strong>Compliance</strong></p>
+<p><strong><span style="font-weight: 400;">If access to export-controlled technology or source code is required for performance of job duties, it is within Employer's discretion whether to apply for a U.S. government license for such positions, and Employer may decline to proceed with an applicant on this basis alone.</span></strong></p></div>

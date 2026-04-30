@@ -1,0 +1,29 @@
+<p data-pm-slice="1 1 []">SLSQ227R288</p>
+<p data-renderer-start-pos="1648">Do you want to help solve the world's toughest business problems with Data and AI? This is what we do every day at Databricks.</p>
+<p>We are looking for an Enterprise Sales Leader to join our growing business in the region. Leading a team of Enterprise Account Executives, you will be measured by achieving your team's overall quota and growing consumption amongst some of Databricks' top strategic FSI accounts in SEA. This is a team that is passionate about building a data ecosystem, technically knowledgeable and have a strong desire to drive value for our customers.</p>
+<p>This is a fantastic aopportunity to build upon a highly successful team achieving significant year on year growth, in a fast growing business which is a hugely impactful part of the APJ sales organisation. We are looking for owners, who will go the extra mile and want to be the very best at what they do.</p>
+<p>The position will report to the Strategic Enterprise Director.</p>
+<p><strong>The impact you will have:</strong></p>
+<ul>
+<li>Drive Revenue Success: Own and exceed your teams quarterly/annual sales targets.&nbsp;</li>
+<li>Build and Implement Strategic Plans: Develop and execute evolving revenue plans and growth tactics, mainly amongst strategic financial services customers.&nbsp;</li>
+<li>Cultivate strong executive relationships with customers/partners, and lead cross-functional teams.</li>
+<li>Create Trust-Based Relationships: develop long term customer, partner, and cross-functional relationships</li>
+<li>Distill Customer Needs and Value: Enable your team to understand commercial goals of your customer and how they relate to our value proposition</li>
+<li>Manage the Front-Line Voice of Databricks: Lead your team to effectively communicate the value proposition through proposals and presentations</li>
+</ul>
+<p><strong>What we look for:</strong></p>
+<ul>
+<li>Minimum 10+ years of experience working as a senior executive at a top-tier FSI, management consulting firm, and/or at a leading software company in a similar capacity.</li>
+<li>Experienced (5+ years) high-growth SaaS leader with experience leading a sales team to new heights.</li>
+<li>Experience selling to Enterprise Customers in the SEA region.&nbsp;</li>
+<li>Strong knowledge of the FSI technical landscape, ecosystem and existing relationships with Hyperscalers.&nbsp;</li>
+<li>Experience translating a highly technical product to business value for the CSuite. Experience in big data, selling against open source or freemium a plus.</li>
+<li>Track record of success executing against personal and team goals while always striving to uplevel your process</li>
+<li>Proven leadership ability to influence, develop, and empower employees to achieve personal objectives with a team first mindset</li>
+</ul><div class="content-conclusion"><p><strong>About Databricks</strong></p>
+<p><span style="font-family: arial, sans-serif;">Databricks is the data and AI company. More than 10,000 organizations worldwide — including Comcast, Condé Nast, Grammarly, and over 50% of the Fortune 500 — rely on the Databricks Data Intelligence Platform to unify and democratize data, analytics and AI. Databricks is headquartered in San Francisco, with offices around the globe and was founded by the original creators of Lakehouse, Apache Spark™, Delta Lake and MLflow. To learn more, follow Databricks on&nbsp;<span style="color: rgb(255, 54, 33);"><a style="color: rgb(255, 54, 33);" href="https://twitter.com/databricks" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://twitter.com/databricks&amp;source=gmail&amp;ust=1700237575733000&amp;usg=AOvVaw03FL8fJvOD97ytN02f5G2C">Twitter</a>,&nbsp;<a style="color: rgb(255, 54, 33);" href="https://www.linkedin.com/company/databricks" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.linkedin.com/company/databricks&amp;source=gmail&amp;ust=1700237575733000&amp;usg=AOvVaw15dLk3q8VxTfHEgCUg7NSt">LinkedIn</a>&nbsp;<span style="color: rgb(0, 0, 0);">and</span>&nbsp;<a style="color: rgb(255, 54, 33);" href="https://www.facebook.com/databricksinc" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.facebook.com/databricksinc&amp;source=gmail&amp;ust=1700237575733000&amp;usg=AOvVaw39EcncitnlqV72EG2-RqXJ">Facebook</a></span>.<br><br><strong>Benefits<br><br></strong></span>At Databricks, we strive to provide comprehensive benefits and perks that meet the needs of all of our employees. For specific details on the benefits offered in your region click <a href="https://docs.google.com/document/d/154un3e8Xav4BceOSlcYFZRGEuQI54xMxVydRwQn54eQ/edit?usp=sharing">here</a>.<br><br></p>
+<p><strong>Our Commitment to Diversity and Inclusion</strong></p>
+<p>At Databricks, we are committed to fostering a diverse and inclusive culture where everyone can excel. We take great care to ensure that our hiring practices are inclusive and meet equal employment opportunity standards. Individuals looking for employment at Databricks are considered without regard to age, color, disability, ethnicity, family or marital status, gender identity or expression, language, national origin, physical and mental ability, political affiliation, race, religion, sexual orientation, socio-economic status, veteran status, and other protected characteristics.</p>
+<p><strong>Compliance</strong></p>
+<p><strong><span style="font-weight: 400;">If access to export-controlled technology or source code is required for performance of job duties, it is within Employer's discretion whether to apply for a U.S. government license for such positions, and Employer may decline to proceed with an applicant on this basis alone.</span></strong></p></div>

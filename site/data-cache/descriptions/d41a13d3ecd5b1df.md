@@ -1,0 +1,41 @@
+<p>As a Manager, Sales Development, you will hire, mentor, develop, and grow a team of Sales Development Representatives. This role impacts one of the largest lines of business in the company through prospect generation and sales pipeline volume, and contributes to molding the future Account Executives and leaders of our sales organization.&nbsp;</p>
+<p><em>At Datadog, we place value in our office culture - the relationships and collaboration it builds and the creativity it brings to the table. We operate as a hybrid workplace to ensure our Datadogs can create a work-life harmony that best fits them.</em>&nbsp;</p>
+<p><strong>What You’ll Do:&nbsp;</strong></p>
+<ul>
+<li>Hire, oversee, and train a team of Sales Development Representatives (SDR)</li>
+<li>Facilitate the ramp up for all new team members, teaching them how to assess company needs, cater strategically to each prospect, and handle potential objections</li>
+<li>Motivate your team to exceed objectives through coaching, regular broadcast of results, and creative incentives to meet all goals</li>
+<li>Provide growth opportunities for SDRs to develop into full-cycle sales representatives</li>
+<li>Develop and maintain accurate team forecasts for the senior leadership team</li>
+</ul>
+<p><strong>Who You Are:&nbsp;</strong></p>
+<ul>
+<li>Experienced in hi-tech direct sales</li>
+<li>Motivated by helping people grow</li>
+<li>Familiar with SaaS/Cloud and Salesforce&nbsp;</li>
+<li>Proven in your written and verbal communication</li>
+<li>Passionate about coaching, mentorship, and team management</li>
+<li>Able to work cross-functionally, leveraging your organizational and time management expertise</li>
+</ul>
+<p><em>Datadog values people from all walks of life. We understand not everyone will meet all the above qualifications on day one. That's okay. If you’re passionate about technology and want to grow your experience, we encourage you to apply.</em></p>
+<p><strong>Benefits and Growth:</strong></p>
+<ul>
+<li>High income earning opportunities based on performance</li>
+<li>Opportunity for Presidents Club</li>
+<li>New hire stock equity (RSU) and employee stock purchase plan (ESPP)</li>
+<li>Continuous professional development, product training, and career pathing&nbsp;</li>
+<li>Sales training in MEDDIC and Command of the Message&nbsp;</li>
+<li>Intra-departmental mentor and buddy program for in-house networking&nbsp;</li>
+<li>An inclusive company culture, opportunity to join our Community Guilds</li>
+<li>Generous global benefits</li>
+</ul>
+<p><em>Benefits and Growth listed above may vary based on the country of your employment and the nature of your employment with Datadog.</em></p>
+<p style="color: white;">#LI-Hybrid</p><div class="content-conclusion"><hr>
+<p><strong>About Datadog:&nbsp;</strong></p>
+<p>Datadog (NASDAQ: DDOG) is a global SaaS business, delivering a rare combination of growth and profitability. We are on a mission to break down silos and solve complexity in the cloud age by enabling digital transformation, cloud migration, and infrastructure monitoring of our customers’ entire technology stacks. Built by engineers, for engineers, Datadog is used by organizations of all sizes across a wide range of industries. Together, we champion professional development, diversity of thought, innovation, and work excellence to empower continuous growth. Join the pack and become part of a collaborative, pragmatic, and thoughtful people-first community where we solve tough problems, take smart risks, and celebrate one another. Learn more about #DatadogLife on <a href="https://www.instagram.com/datadoghq/?hl=en" target="\_blank">Instagram</a>, <a href="https://www.linkedin.com/company/datadog" target="\_blank">LinkedIn,</a> and <a href="https://learn.datadoghq.com/" target="\_blank">Datadog Learning Center. </a></p>
+<hr>
+<p data-renderer-start-pos="215"><strong data-renderer-mark="true">Equal Opportunity at Datadog:</strong></p>
+<p>Datadog is proud to offer <a href="https://www.eeoc.gov/sites/default/files/2023-06/22-088\_EEOC\_KnowYourRights6.12ScreenRdr.pdf" target="\_blank">equal employment opportunity</a> to everyone regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, gender identity, veteran status, and other characteristics protected by law. We also consider qualified applicants regardless of criminal histories, consistent with legal requirements. Here are our <a href="https://www.datadoghq.com/legal/candidate-legal-notices/" target="\_blank">Candidate Legal Notices</a> for your reference.&nbsp;</p>
+<p>Datadog endeavors to make our Careers Page accessible to all users. If you would like to contact us regarding the accessibility of our website or need assistance completing the application process, please complete <a href="https://docs.google.com/forms/d/e/1FAIpQLSeoJeduEZ2NdZF\_65uZmWUrCM-zee7yADXX1s6Xr9zAGq8iKA/viewform" target="\_blank">this form</a>. This form is for accommodation requests only and cannot be used to inquire about the status of applications.&nbsp;</p>
+<p data-renderer-start-pos="662"><strong data-renderer-mark="true">Privacy and AI Guidelines:</strong></p>
+<p data-renderer-start-pos="662">Any information you submit to Datadog as part of your application will be processed in accordance with Datadog’s&nbsp;<a class="c-link" href="https://www.datadoghq.com/legal/applicant-candidate-privacy/" target="\_blank" data-stringify-link="https://www.datadoghq.com/legal/applicant-candidate-privacy/" data-sk="tooltip\_parent">Applicant and Candidate Privacy Notice</a>. For information on our AI policy, please visit <a href="https://www.datadoghq.com/legal/interviewing-at-datadog-ai-guidelines/" target="\_blank">Interviewing at Datadog AI Guidelines</a>.</p></div>

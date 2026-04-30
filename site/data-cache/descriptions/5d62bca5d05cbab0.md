@@ -1,0 +1,37 @@
+### **Position description**
+
+We are still at the beginning of our growth journey and are continuously introducing new processes, technologies, and tools. In this role, you will:
+
+* Be a pivotal engineering contributor to the design, implementation, and operation of Sonar's global network infrastructure spanning all office locations and cloud environments, ensuring fast, secure, and reliable connectivity for every SonarSourcer and every service.
+* Own key parts of our **WAN, LAN, SD-WAN, and DNS architecture**, ensuring that network services are resilient, performant, and aligned with the needs of a rapidly growing, globally distributed organization.
+* Design and maintain **network monitoring, alerting, and observability** capabilities that give us real-time visibility into network health, performance, and security posture across all sites and cloud interconnects.
+* Partner with Product Engineering, Information Security, and Infrastructure Engineering to ensure secure network controls and segmentation are **deeply and seamlessly integrated into engineering workflows**, not bolted on.
+* Use and champion **AI tooling** to make network operations more efficient -- from alert triage and anomaly detection to capacity planning and configuration management.
+* Help define and improve how we measure the reliability and performance of our network services (SLIs/SLOs, error budgets, and dashboards), making network health visible and actionable to stakeholders.
+
+## What You Will Do Daily:
+
+- **Network Architecture & Engineering**: Design, implement, and evolve Sonar's network infrastructure across all office locations and cloud environments. Evaluate and deploy technologies that improve reliability, throughput, and user experience while reducing operational complexity.
+- **Fortigate Firewall Architecture & Network Segmentation**: Configure, administer, and evolve our Fortigate firewall architecture, including rule sets, network segmentation policies, VPN tunnels, and high-availability configurations. Ensure firewall policies prioritize functionality and performance while maintaining a strong security posture, in coordination with the Information Security team.
+- **DNS, DHCP & Core Network Services**: Own the design, automation, and reliability of foundational network services (DNS, DHCP, NTP, IPAM). Implement policy-as-code and automation to ensure changes are reviewed, tested, and auditable before reaching production.
+- **Network Monitoring, Alerting & Observability**: Design, implement, and maintain network monitoring dashboards, alerting rules, and diagnostic runbooks. Continuously tune alerts to reduce noise, improve signal fidelity, and align with SLOs for critical network services and interconnects.
+- **Infrastructure as Code & Network Automation**: Use IaC and configuration management (e.g., Terraform, Ansible, or vendor-native automation) plus scripting languages (e.g., Python, Go) to deploy and manage network devices, configurations, and policies. Treat network configurations as software artifacts that can be versioned, tested, and rolled back safely.
+- **Multi-Cloud Networking & Hybrid Connectivity**: Design and operate cloud networking across GCP, Azure, and AWS (VPCs, VNets, peering, transit gateways, private endpoints, cloud-native load balancing) and hybrid connectivity (site-to-site VPN, dedicated interconnects) to ensure secure, low-latency communication between on-premises and cloud workloads.
+- **Incident Response & Post-Incident Engineering**: Participate in the on-call rotation for network services. Lead or contribute to post-incident reviews, turning root causes into preventative engineering changes (new alerts, automations, capacity adjustments, or documentation) that reduce MTTR and recurrence.
+- **AI-Enabled Network Operations**: Use AI tooling (e.g., LLM-based assistants, AIOps platforms) to accelerate alert triage, anomaly detection, and root cause analysis, while keeping humans in control of decisions. **Identify opportunities to embed AI in network operations workflows** (e.g., capacity forecasting, configuration drift detection) and help implement these safely and effectively.
+
+## Experience and qualifications
+
+- **Network Engineering & Operations Background**: Significant hands-on experience (4-7 years) in network engineering, network operations, or closely related roles in modern, fast-paced environments (e.g., SaaS, enterprise IT, multi-site corporate networks, or cloud-native infrastructure).
+- **Routing, Switching & WAN Expertise**: Deep practical experience designing and operating enterprise LAN/WAN environments, including routing protocols (BGP, OSPF), switching (VLANs, STP, MLAG/VPC), and SD-WAN technologies. Experience with multi-site network architectures and global traffic management.
+- **Fortigate Firewall & Network Security**: Proven experience configuring and administering Fortigate/FortiOS firewall platforms, including policy management, VPN (IPSec and SSL), SD-WAN, and high-availability configurations. Experience implementing network segmentation and zero-trust network access principles. Familiarity with other firewall platforms (e.g., Palo Alto, cloud-native firewalls) is a plus.
+- **Multi-Cloud Networking**: Hands-on experience with cloud networking across GCP, Azure, and AWS, including VPC/VNet design, peering, transit gateways, cloud-native load balancing, and hybrid connectivity (VPN, Direct Connect/Cloud Interconnect/ExpressRoute). Experience managing network infrastructure across multiple cloud providers simultaneously is strongly preferred.
+- **Automation & Infrastructure as Code**: Strong experience with network automation tools and frameworks (e.g., Ansible, Terraform, Nornir, NAPALM, or vendor-native APIs) and with scripting/programming languages (e.g., Python, Go, or equivalent) to automate network provisioning and configuration management. Track record of converting manual, repetitive operational work into **reliable automation and self-service capabilities**.
+- **DNS, DHCP & IPAM**: Practical experience operating and automating foundational network services at enterprise scale, with a focus on reliability, auditability, and integration with broader infrastructure automation.
+- **Network Monitoring & Observability**: Proven experience with network monitoring and observability platforms (e.g., SNMP-based tools, Datadog, ThousandEyes, LibreNMS, or similar), including building dashboards, tuning alerting, and working with SLIs/SLOs and error budgets for critical network services.
+- **Incident Management & Cross-Functional Collaboration**: Demonstrated experience participating in or leading incident response, root cause analysis, and post-incident follow-through in partnership with IT Ops, Security, and Engineering. Strong communication skills in English, **able to explain complex network and operational topics** to both technical and non-technical audiences.
+- **AI Fluency**: Comfortable using modern AI tooling (e.g., LLM-based assistants, automation frameworks) as part of daily work for analysis, content generation, and workflow automation. **Ability to reason about where AI is and isn't appropriate in network operations**, balancing speed with risk and control.
+
+### **Additional comments**
+
+This role is based in Geneva. We are unable to consider candidates unwilling to be in Geneva, but we are willing to relocate the right candidate.

@@ -1,0 +1,31 @@
+<div class="content-intro"><h2><span data-sheets-root="1">About Wolt</span></h2>
+<p><span data-sheets-root="1">At Wolt, we create technology that brings joy, simplicity and earnings to the neighborhoods of the world. In 2014 we started with delivery of restaurant food. Now we’re building the delivery of (almost) everything and you’ll find us in over 500 cities in 30 countries around the world. In 2022 we joined forces with DoorDash and together we keep on dreaming big and expanding across the globe.<br><br>Working at Wolt isn’t always easy, but it’s definitely exciting. Here you’ll learn more, build more, and ship more than in most other companies. You’ll be challenged a lot, but also have a lot of fun on the way. So, if you’re a self-starter with drive and entrepreneurial spirit, this could be the ride of your life.</span></p></div><h2>About the Team</h2>
+<p>The Workforce Planning &amp; Intelligence team helps DoorDash plan and fund Talent Acquisition capacity in a way that is analytically rigorous, operationally practical, and aligned to company commitments. We sit at the intersection of TA, Finance, and cross-functional G&amp;A leaders globally, translating hiring demand into resourcing plans and operating decisions. We’re a small, fast-paced team in a growing global organization, and our work has immediate, measurable impact on both business performance and financial outcomes.</p>
+<h2>About the Role</h2>
+<p>As a Senior Analyst, Workforce Strategy &amp; Planning, you will own core elements of global TA capacity planning—forecasting supply and demand, diagnosing funnel performance, and translating long-range hiring plans into resourcing requirements up to 24 months out. You’ll operate within a monthly planning rhythm, with two larger long-range planning cycles each year, and you will partner closely with Director+ leaders across TA, Finance, and other G&amp;A functions to ensure plans are fundable, executable, and aligned to commitments.</p>
+<p>This role is equal parts modeling and influence. You will build clean, auditable planning models and dashboards (primarily in Google Sheets and Sigma), but your differentiator will be converting analysis into simple narratives and clear recommendations that drive decisions. You’ll also help evolve how TA does resource planning—improving assumptions, operating rhythms, definitions, governance, and the linkage between efficiency and quality outcomes (retention and performance).</p>
+<h2>You’re excited about the role because you will…</h2>
+<ul>
+<li>Own and evolve monthly TA capacity planning: translate hiring demand into recruiter and TA operations capacity, identify gaps, and recommend actions to close them.</li>
+<li>Build and maintain 24-month forecasts, scenario models, and sensitivity analyses that connect hiring plans, funnel conversion, productivity, and time-to-fill into resourcing requirements.</li>
+<li>Produce leadership-ready readouts for Director+ stakeholders across TA, Finance, and G&amp;A—clarifying assumptions, risks, and tradeoffs so decisions happen quickly.</li>
+<li>Be the bridge between TA and Finance: align on inputs and definitions, explain drivers of variance, support funding decisions, and ensure plans meet financial commitments.</li>
+<li>Diagnose recruiting funnel and production performance, proactively flagging issues and identifying specific operational levers (process, staffing mix, prioritization, routing, tooling).</li>
+<li>Embed “quality” into planning: incorporate downstream outcomes such as 90-day and 1-year retention and performance signals into capacity discussions and strategy.</li>
+<li>Drive operational strategy improvements: partner with TA Ops and leaders to redesign how resource planning is done (governance, operating rhythm, metrics, and decision frameworks).</li>
+<li>Use modern analytics workflows, including AI-enabled analysis, to accelerate insight generation, automate repeatable work, and raise the team’s leverage.</li>
+</ul>
+<h2>We’re excited about you because…</h2>
+<ul>
+<li>You have 5+ years of experience in analytics, planning, strategy, or an operations-focused role where you owned recurring business-critical deliverables.</li>
+<li>You are an expert modeler in spreadsheets (Google Sheets/Excel): you build structured, auditable, scalable models and are fast, precise, and quality-oriented.</li>
+<li>You can build clear dashboards and analysis in modern BI tools (Sigma or similar), and you know how to define metrics so leaders trust what they’re seeing.</li>
+<li>You actively use AI tools to improve your analytical workflow—speeding up exploration, summarization, automation, and insight generation—while applying strong judgment and validation.</li>
+<li>You translate complexity into clarity: concise narratives, crisp recommendations, and an ability to explain tradeoffs in plain language to Director/VP audiences.</li>
+<li>You influence without authority and can earn trust quickly with senior leaders through strong executive communication, practical judgment, and reliable follow-through.</li>
+<li>You’re comfortable operating in ambiguity, setting structure where it doesn’t exist, and iterating quickly as plans and priorities change.</li>
+<li>You care about balancing efficiency and quality—and you look for systemic improvements to how planning is done, not just producing outputs.</li>
+<li>BA/BS or equivalent experience, ideally in a quantitative or math-forward discipline.</li>
+</ul>
+<p><iframe src="https://www.youtube.com/embed/GoL541\_xj9w" width="560" height="314"></iframe></p><div class="content-conclusion"><h2><span data-sheets-root="1">Our Commitment to Diversity and Inclusion</span></h2>
+<p><span data-sheets-root="1">We’re committed to growing and empowering a more inclusive community within our company, industry, and cities. That’s why we hire and cultivate diverse teams of people from all backgrounds, experiences, and perspectives. We believe that true innovation happens when everyone has room at the table and the tools, resources, and opportunity to excel.</span></p></div>

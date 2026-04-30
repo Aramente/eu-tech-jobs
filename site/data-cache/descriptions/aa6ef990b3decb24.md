@@ -1,0 +1,61 @@
+<div class="content-intro"><p><span style="font-family: helvetica, arial, sans-serif; font-size: 12pt;">Airbnb was born in 2007 when two hosts welcomed three guests to their San Francisco home, and has since grown to over 5 million hosts who have welcomed over 2 billion guest arrivals in almost every country across the globe. Every day, hosts offer unique stays and experiences that make it possible for guests to connect with communities in a more authentic way.</span></p></div><p><span style="font-family: arial, helvetica, sans-serif; color: #000000;"><strong>The Difference You Will Make:</strong></span></p>
+<p>We are seeking a dedicated and enthusiastic candidate to provide exceptional Customer Service support to the Airbnb community as a CS Specialist, Premium Support. The ideal candidate is hospitable, analytical, and committed to delivering the highest standards of service. This is a full time position based in Japan.</p>
+<p>The CS Specialist, Premium Support functions on the front line interacting directly with both customers &amp; internal stakeholders. As a CS Specialist, Premium Support, you will be responsible for providing end-to-end support to key members of our community, including but not limited to the Luxury segment. You will primarily take ownership of cases, ensuring complete resolution while fostering strong relationships with our users along the way. CS Specialist, Premium Support needs strong communication skills, problem-solving abilities, and customer service expertise. They should also be adaptable and responsive in our fast paced environment, sometimes under pressure, while remaining flexible, proactive, resourceful, efficient and demonstrating a high level of professionalism and confidentiality.&nbsp;</p>
+<p>As part of this role, you are required to be flexible and may be required to move to different teams within Community Support and/or take up different responsibilities from those set out below. The ideal candidate will be open to a role which will evolve based on business needs and will be flexible to meet those needs.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p><span style="font-family: arial, helvetica, sans-serif; color: #000000;"><strong>A Typical Day: </strong></span></p>
+<p>The responsibilities listed below are not exhaustive. Given the fast-moving nature of this work, the responsibilities set out below may change and additional duties may be assigned as needed.</p>
+<p><span style="font-family: arial, helvetica, sans-serif; color: #000000;"><strong>Complex case management: Provide the highest level of service to our community in each and every case</strong></span></p>
+<ul>
+<li>Interact with Airbnb customers and community members through all current and future channels, both inside and outside of Airbnb tools, including but not limited to livechat, social platforms, messaging, and directly through the phone</li>
+<li>Take end-to-end ownership of all assigned cases: ensuring a complete <em>final</em> resolution (or settlement, final decision, etc) is reached based on workflows &amp; management guidelines, fostering the relationship with our users along the way, and escalating accurately to other teams when appropriate</li>
+<li>Demonstrate ownership mentality &amp; good judgment as well as skill to question, adapt, and deviate from the workflow when needed only through management approval</li>
+<li>Be highly receptive to feedback from Management and Quality, and quickly adopt behaviors to improve the quality of your work&nbsp;</li>
+<li>Understands multiple perspectives on a topic or situation, and able to evaluate and present multiple options for addressing a problem</li>
+<li>Can be brought to engage more with senior stakeholders and to collaborate cross-functionally, with help from management</li>
+</ul>
+<p><span style="font-family: arial, helvetica, sans-serif; color: #000000;"><br><strong>Combining efficiency with bespoke quality: Provide personalized and exceptional customer support to guests and Hosts, ensuring their unique needs and preferences are met with the highest level of care and attention</strong></span></p>
+<ul>
+<li>Displays an ability to handle a larger volume of cases without negatively impacting the quality of the interaction &amp; the resolution</li>
+<li>Proactively anticipate and identify opportunities to enhance the user experience, and with the support of management, offers tailored solutions and recommendations that go above and beyond their expectations, and ensuring a seamless and memorable experience throughout their interactions with Airbnb</li>
+<li>Resolve user issues quickly and to a high level of mutual satisfaction, considering specific context and circumstances</li>
+<li>Personalize communications to users, demonstrating the highest hospitality standards</li>
+</ul>
+<p><span style="font-family: arial, helvetica, sans-serif; color: #000000;"><br><strong>Participating in your team’s improvement: Leverage your functional operational knowledge to proactively support the team success</strong></span></p>
+<ul>
+<li>Provide insights about community experience and continuous improvement opportunities to your Management</li>
+<li>Help document ways of working, best practices, and the norms for your service(s) as requested by management</li>
+<li>Provides technical/functional/SME to less experienced members of the team</li>
+<li>Shares ideas to improve processes and ways of working</li>
+<li>Willing to take on various tasks and responsibilities as needed (including moving teams) and&nbsp; showing openness to new challenges and a proactive approach to work</li>
+</ul>
+<p><span style="font-family: arial, helvetica, sans-serif; color: #000000;"><br><strong>Stakeholder engagement: You have gained the trust of internal &amp; external stakeholders through effective relationship management and delivering results</strong></span></p>
+<ul>
+<li>Displays flexibility, openness and approachability when resolving issues</li>
+<li>Understands key drivers of your function and how they relate to one another, as well as the business impact of those metrics</li>
+<li>You are on-call to handle emergency situations in the evenings &amp; weekends</li>
+</ul>
+<p><span style="font-family: arial, helvetica, sans-serif; color: #000000;"><strong>Your Expertise:</strong></span></p>
+<h4>Your background &amp; experience</h4>
+<ul>
+<li>3+ years of relevant experience in multicultural customer service teams, preferably in the hospitality industry (experience with high-profile and influential clientele is preferred) and in a role making calls and handling customer/client contacts</li>
+<li>Hospitality experience is a plus, in particular working for technology platforms. Prior experience using phone, messaging, or live chat to interact with users/customers is preferred.&nbsp;&nbsp;</li>
+<li>Experience engaging with executive-level stakeholders to resolve conflicts in a detailed, effective and timely manner, and demonstrated ability to explain complex ideas simply and clearly.</li>
+<li>Ability to work weekend days and public holidays, as well as early morning / evening shifts. Your schedule can change to meet business needs</li>
+</ul>
+<h4>Your skills &amp; expertise</h4>
+<ul>
+<li>Very good verbal and written communication skills for providing exceptional customer service to guests/hosts &amp; engage with stakeholders</li>
+<li>Active listening skills to understand guest needs and provide personalized recommendations and assistance</li>
+<li>Empathy and patience in dealing with customers, especially in high-pressure situations</li>
+<li>Ability to organize a high volume of work, multitask &amp; prioritize, and to work within prescribed schedules including breaks, lunches, and training time</li>
+<li>Passion for delivering exceptional customer service and setting a high bar</li>
+<li>Ability to thrive in an ambiguous, fast-paced, and complex environment, acting proactively to respond quickly and decisively</li>
+<li>Ability to adapt to new tasks and responsibilities as needed.&nbsp;</li>
+<li>Proactive attitude towards embracing new challenges and adjusting to changing priorities and environments.&nbsp;</li>
+<li>Capable of adjusting to evolving roles and job duties with openness and flexibility, as well as moving to a new team.</li>
+<li>Good computer skills, including Apple/Mac OS, Google Suite, and familiarity with CRM systems and the ability to quickly learn new tools</li>
+<li>Language proficiency both English and Japanese</li>
+</ul>
+<p><span style="font-family: arial, helvetica, sans-serif; color: #000000;"><strong>Our Commitment To Inclusion &amp; Belonging:</strong></span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; color: #000000;">Airbnb is committed to working with the broadest talent pool possible. We believe diverse ideas foster innovation and engagement, and allow us to attract creatively-led people, and to develop the best products, services and solutions. All qualified individuals are encouraged to apply.</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; color: #000000;">#ind</span></p>

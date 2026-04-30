@@ -1,0 +1,41 @@
+<div class="content-intro"><p>Elastic, the Search AI Company, enables everyone to find the answers they need in real time, using all their data, at scale — unleashing the potential of businesses and people. The Elastic Search AI Platform, used by more than 50% of the Fortune 500, brings together the precision of search and the intelligence of AI to enable everyone to accelerate the results that matter. By taking advantage of all structured and unstructured data — securing and protecting private information more effectively — Elastic’s complete, cloud-based solutions for search, security, and observability help organizations deliver on the promise of AI.</p></div><h2>What is The Role</h2>
+<p>Elastic is searching for an Enterprise Account Executive (SLEDH) to expand our business in States (primarily focused on northern and eastern part of India) along with Education &amp; Healthcare accounts. Our Enterprise Account Executives are individual contributors, passionate about building new business and growing the Elastic footprint within their set of accounts. Are you ready to help users tackle their hardest data problems through the power of search? If so, we’d love to hear from you!</p>
+<h2>What You Will Be Doing</h2>
+<ul>
+<li>Building awareness and driving demand for Elastic solutions within States &amp; EDU &amp; Healthcare accounts by helping users and customers derive value from their data sets.</li>
+<li>Serving as an evangelist for our Open-Source offerings while communicating and demonstrating the capabilities of our commercial features</li>
+<li>Uncovering new and diverse use cases to enable our users to work smarter, not harder</li>
+<li>Collaborating across Elastic business functions to ensure a seamless customer experience</li>
+<li>Working thoughtfully with customers to identify new business opportunities, managing through the sales cycle and closing complex transactions</li>
+<li>Building a robust business plan through community, customer and partner ecosystems to achieve significant Elastic growth within your accounts</li>
+</ul>
+<h2>What You Bring</h2>
+<ul>
+<li>A track-record of success in selling Software/Security Solutions/SaaS subscriptions into net new complex accounts, demonstrated by overachievement of quota and strong customer references</li>
+<li>A deep understanding and preferably experience selling into the ecosystem we live in, including Enterprise Search, Logging, Security, APM and Cloud</li>
+<li>The ability to build relationships and credibility with both Developers and Executives</li>
+<li>Predictability and accurate forecasting capabilities using SFDC</li>
+<li>An appreciation for the Open Source go-to-market model and the community of users who rely on our solutions every single day</li>
+<li>Previous experience selling into the Enterprise accounts included in this territory</li>
+</ul>
+<h2>Bonus Points</h2>
+<ul>
+<li>Previous experience selling in an Open Source model</li>
+</ul>
+<p>#LI-AS3</p><div class="content-conclusion"><h2><strong>Additional Information - We Take Care of Our People</strong></h2>
+<p>As a distributed company, diversity drives our identity. Whether you’re looking to launch a new career or grow an existing one, Elastic is the type of company where you can balance great work with great life. Your age is only a number. It doesn’t matter if you’re just out of college or your children are; we need you for what you can do.</p>
+<p>We strive to have parity of benefits across regions and while regulations differ from place to place, we believe taking care of our people is the right thing to do.</p>
+<ul>
+<li>Competitive pay based on the work you do here and not your previous salary</li>
+<li>Health coverage for you and your family in many locations</li>
+<li>Ability to craft your calendar with flexible locations and schedules for many roles</li>
+<li>Generous number of vacation days each year</li>
+<li>Increase your impact - We match up to $2000 (or local currency equivalent) for financial donations and service</li>
+<li>Up to 40 hours each year to use toward volunteer projects you love</li>
+<li>Embracing parenthood with minimum of 16 weeks of parental leave</li>
+</ul>
+<p>Different people approach problems differently. We need that. Elastic is an equal opportunity employer and is committed to creating an inclusive culture that celebrates different perspectives, experiences, and backgrounds. Qualified applicants will receive consideration for employment without regard to race, ethnicity, color, religion, sex, pregnancy, sexual orientation, gender perception or identity, national origin, age, marital status, protected veteran status, disability status, or any other basis protected by federal, state or local law, ordinance or regulation.</p>
+<p>We welcome individuals with disabilities and strive to create an accessible and inclusive experience for all individuals. To request an accommodation during the application or the recruiting process, please email <a href="mailto:candidate\_accessibility@elastic.co" target="\_blank">candidate\_accessibility@elastic.co</a><span class="gmail\_default">.</span>&nbsp;We will reply to your request within 24 business hours of submission.</p>
+<p><span style="color: #000000;">Applicants have rights under Federal Employment Laws, view posters linked below:</span> <a href="https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/fmlaen.pdf" target="\_blank">Family and Medical Leave Act (FMLA)</a> <span style="color: #000000;">Poster;</span><span style="color: #000000;">&nbsp;<a href="https://www.dol.gov/sites/dolgov/files/ofccp/pdf/pay-transp\_%20English\_formattedESQA508c.pdf" target="\_blank">Pay Transparency Nondiscrimination Provision</a> Poster; </span><a href="https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/eppabw.pdf" target="\_blank">Employee Polygraph Protection Act (EPPA)</a> <span style="color: #000000;">Poster and <a href="https://www.dol.gov/sites/dolgov/files/OFCCP/regs/compliance/posters/pdf/22-088\_EEOC\_KnowYourRights.pdf" target="\_blank">Know Your Rights</a> (Poster)</span></p>
+<p><span style="color: #000000;">Elasticsearch develops and distributes technology and information that is subject to U.S. and other countries’ export controls and licensing requirements for individuals who are located in or are nationals of the following sanctioned countries and regions: Belarus, Cuba, Iran, North Korea, Syria, or Russia, including the Ukrainian territories annexed by Russia (The Crimea region of Ukraine, The Donetsk People's Republic (DNR), The Luhansk People's Republic (LNR), Kherson or Zaporizhzhia). If you are located in or are a national of one of the listed countries or regions, an export license may be required as a condition of your employment in this role. Please note that national origin and/or nationality do not affect eligibility for employment with Elastic.</span></p>
+<p>Please see&nbsp;<a href="https://www.elastic.co/legal/applicant-privacy-statement" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.elastic.co/legal/applicant-privacy-statement&amp;source=gmail&amp;ust=1611068262479000&amp;usg=AFQjCNG3orAPk5sJIr9WVm0ZDxYw82c5DA">here</a>&nbsp;for our Privacy Statement.</p></div>

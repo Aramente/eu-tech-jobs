@@ -1,0 +1,83 @@
+<h2><strong>What we do</strong></h2>
+<p>At Doctolib, we build products that need to scale to millions of people throughout Europe and to yet remain easily maintainable by hundreds of developers. We do several daily deployments, and run 25K+ automated tests through our CI pipeline. The backend runs on Ruby on Rails, backed by PostgreSQL and MongoDB. Our PostgreSQL databases represent a total of 30TB and receive 30M queries by minute under high traffic.</p>
+<p>Working in the tech team at Doctolib involves building innovative products and features to improve the daily lives of care teams and patients. We work in feature teams in an agile environment, while collaborating with engineering, design, and business teams.</p>
+<h2><strong>What you’ll do</strong></h2>
+<p>As an <strong>Engineering Manager</strong>, you will lead Doctolib’s Core Backend team, <strong>ATP</strong>, which manages the backend foundations for Doctolib.</p>
+<p>ATP is part of the Platform domain, whose mission is to build and maintain the common building blocks of our system with a "Platform as a Product" mindset. We abstract and simplify the use of these complex, critical components, enabling product teams to focus on their core mission: building products faster for healthcare professionals and patients.</p>
+<p>At ATP, we concentrate specifically on our Ruby backend foundations, with a strong focus on quality, scalability, and usability. All Doctolib product teams rely on the foundations we provide, leveraging the components we build to accelerate their development while ensuring the highest standards of quality and security.</p>
+<p>As an Engineering Manager, you will guide a team of talented engineers, foster a culture of technical excellence, and help shape the future of Doctolib’s backend platform.&nbsp;You will be both a technical leader and a people manager, coaching and training your team members while building an amazing engineering organization at Doctolib. In this role, you will:&nbsp;</p>
+<ul>
+<li>Ensure business objectives are met as a team, by driving growth and performance of each team member;</li>
+<li>Together with your product partner, define a mission, vision for your team, align on a clear roadmap to make it happen, and be the end-to-end owner of the team’s delivery and quality;</li>
+<li>Participate in code reviews and be hands-on if required;</li>
+<li>Lead cross-functional initiatives to up-level our engineering team;</li>
+<li>Set standards and exceed security, reliability, performance and scalability requirements that are needed to continue to be the most trusted e-health SaaS;</li>
+</ul>
+<p>&nbsp;</p>
+<h2><strong>About our tech environment</strong></h2>
+<ul>
+<li>Our solutions are built on a single fully cloud-native platform that supports web and mobile app interfaces, multiple languages, and is adapted to the country and healthcare specialty requirements. To address these challenges, we are modularizing our platform run in a distributed architecture through reusable components.</li>
+<li>Our stack is composed of Rails, TypeScript, Java, Python, Kotlin, Swift, and React Native.</li>
+<li>We leverage AI ethically across our products to empower patients and health professionals. Discover our AI vision&nbsp;<a href="https://careers.doctolib.com/ai-careers/">here</a>&nbsp;and learn about our first AI hackathon&nbsp;<a href="https://medium.com/doctolib/building-for-healthcare-our-first-ai-hackathon-aa9d10d1a250">here!</a></li>
+</ul>
+<p>&nbsp;</p>
+<h2><strong>Who you are</strong></h2>
+<p>Before you read on — if you don't have the exact profile described below, but you feel this job description matches your skill set, we still encourage you to apply.</p>
+<p>You could be our next team mate if you:</p>
+<ul>
+<li>You have at least 8+ years of software engineering experience and 4+ years of management experience</li>
+<li>Are eager to be hands on with our stack: we use Ruby on Rails, Java/Kotlin, Typescript, React (and we are happy to help you ramp up);</li>
+<li>You understand the value of testing your code;</li>
+<li>Have the ability to adapt to the most efficient technologies to solve issues;</li>
+<li>Have proven experiences developing efficient, maintainable and secure products;</li>
+<li>Are comfortable speaking English in your day by day with the team; French fluency is a plus</li>
+</ul>
+<p>&nbsp;Now, it would be fantastic if you:&nbsp;</p>
+<ul>
+<li>Have already experience leading Platform initiatives;</li>
+<li>Have a great understanding of cloud infrastructures (tweak kube config for pitchfork, investigate auto scaling improvements, increase monitoring &amp; SLOs, ...) and security topics (rate limiting)</li>
+</ul>
+<h2><strong>What we offer</strong></h2>
+<ul>
+<li>Free comprehensive health insurance for you and your children</li>
+<li>25 days of paid vacation per year, plus up to 14 days of RTT</li>
+<li>Free mental health and coaching services through our partner Moka.care</li>
+<li>Work from abroad for up to 10 days per year thanks to our flexibility days policy</li>
+<li>Lunch vouchers (Swile card) worth €8.50 per working day, with €4.50 covered by Doctolib</li>
+<li>A subsidy from the work council to refund part of the membership to a sport club or a creative class</li>
+<li>50% reimbursement of your public transport subscription</li>
+<li>Parent Care Program: receive one additional month of leave on top of the legal parental leave</li>
+<li>For caregivers and workers with disabilities, a package including an adaptation of the remote policy, extra days off for medical reasons, and psychological support</li>
+<li>Relocation support in case of international mobility</li>
+<li>Access to the best AI tools for coding, development and dedicated training</li>
+</ul>
+<h2><strong>The interview process&nbsp;</strong></h2>
+<ul>
+<li>Recruiter Interview</li>
+<li>System Design interview</li>
+<li>Behavioral Interview</li>
+<li>EM Case study Interview</li>
+<li>At least one Reference Check</li>
+</ul>
+<h2><strong>Job details</strong></h2>
+<ul>
+<li>Permanent position</li>
+<li>Full Time</li>
+<li>Based in Levallois-Perret</li>
+<li>Hybrid position 3 days/week in the office</li>
+<li>Start date: As soon as possible</li>
+</ul>
+<p>&nbsp;</p>
+<div class="s-whitespace-pre-wrap s-break-words s-font-normal first:s-pt-0 last:s-pb-0 s-py-1 @md:s-py-2 @md:s-leading-7 s-copy-sm @sm:s-text-base @sm:s-leading-7 s-text-foreground dark:s-text-foreground-night">If you would like to find out more about tech life at Doctolib, feel free to read our latest&nbsp;<a class="s-break-all s-font-semibold s-transition-all s-duration-200 s-ease-in-out hover:s-underline s-text-highlight dark:s-text-highlight-night hover:s-text-highlight-400 dark:hover:s-text-highlight-400-night active:s-text-highlight-dark dark:active:s-text-highlight-dark-night" href="https://medium.com/doctolib" target="\_blank">Medium blog articles</a>!</div>
+<div class="s-whitespace-pre-wrap s-break-words s-font-normal first:s-pt-0 last:s-pb-0 s-py-1 @md:s-py-2 @md:s-leading-7 s-copy-sm @sm:s-text-base @sm:s-leading-7 s-text-foreground dark:s-text-foreground-night">&nbsp;</div>
+<div class="s-whitespace-pre-wrap s-break-words s-font-normal first:s-pt-0 last:s-pb-0 s-py-1 @md:s-py-2 @md:s-leading-7 s-copy-sm @sm:s-text-base @sm:s-leading-7 s-text-foreground dark:s-text-foreground-night"><em>At Doctolib, we are committed to improving access to healthcare for everyone. This translates into our recruitment process. We evaluate candidates based solely on qualifications and motivation, without any form of discrimination.</em></div>
+<div class="s-whitespace-pre-wrap s-break-words s-font-normal first:s-pt-0 last:s-pb-0 s-py-1 @md:s-py-2 @md:s-leading-7 s-copy-sm @sm:s-text-base @sm:s-leading-7 s-text-foreground dark:s-text-foreground-night">&nbsp;</div>
+<div class="s-whitespace-pre-wrap s-break-words s-font-normal first:s-pt-0 last:s-pb-0 s-py-1 @md:s-py-2 @md:s-leading-7 s-copy-sm @sm:s-text-base @sm:s-leading-7 s-text-foreground dark:s-text-foreground-night"><em>The more diverse ideas are heard, the more our product will truly improve healthcare for all. You are welcome to apply to Doctolib, regardless of your gender, religion, age, sexual orientation, ethnicity, disability.</em></div>
+<div class="s-whitespace-pre-wrap s-break-words s-font-normal first:s-pt-0 last:s-pb-0 s-py-1 @md:s-py-2 @md:s-leading-7 s-copy-sm @sm:s-text-base @sm:s-leading-7 s-text-foreground dark:s-text-foreground-night">&nbsp;</div>
+<div class="s-whitespace-pre-wrap s-break-words s-font-normal first:s-pt-0 last:s-pb-0 s-py-1 @md:s-py-2 @md:s-leading-7 s-copy-sm @sm:s-text-base @sm:s-leading-7 s-text-foreground dark:s-text-foreground-night"><em>To ensure equal opportunities, we invite you to exclude personal information (e.g. pictures, age) from your applications. If you require any accommodation, please let us know for support during the hiring process.</em></div>
+<div class="s-whitespace-pre-wrap s-break-words s-font-normal first:s-pt-0 last:s-pb-0 s-py-1 @md:s-py-2 @md:s-leading-7 s-copy-sm @sm:s-text-base @sm:s-leading-7 s-text-foreground dark:s-text-foreground-night">&nbsp;</div>
+<div class="s-whitespace-pre-wrap s-break-words s-font-normal first:s-pt-0 last:s-pb-0 s-py-1 @md:s-py-2 @md:s-leading-7 s-copy-sm @sm:s-text-base @sm:s-leading-7 s-text-foreground dark:s-text-foreground-night"><em>Join us in building the healthcare we all dream of!</em></div>
+<div class="s-whitespace-pre-wrap s-break-words s-font-normal first:s-pt-0 last:s-pb-0 s-py-1 @md:s-py-2 @md:s-leading-7 s-copy-sm @sm:s-text-base @sm:s-leading-7 s-text-foreground dark:s-text-foreground-night">&nbsp;</div>
+<div class="s-whitespace-pre-wrap s-break-words s-font-normal first:s-pt-0 last:s-pb-0 s-py-1 @md:s-py-2 @md:s-leading-7 s-copy-sm @sm:s-text-base @sm:s-leading-7 s-text-foreground dark:s-text-foreground-night"><em>All information provided is processed by Doctolib for application management. For data processing details, click <a class="s-break-all s-font-semibold s-transition-all s-duration-200 s-ease-in-out hover:s-underline s-text-highlight dark:s-text-highlight-night hover:s-text-highlight-400 dark:hover:s-text-highlight-400-night active:s-text-highlight-dark dark:active:s-text-highlight-dark-night" href="https://media.doctolib.com/image/upload/v1678356494/legal/Career-Privacy-Policy-Feb-23-EN.pdf" target="\_blank">here</a>.</em></div>
+<div class="s-whitespace-pre-wrap s-break-words s-font-normal first:s-pt-0 last:s-pb-0 s-py-1 @md:s-py-2 @md:s-leading-7 s-copy-sm @sm:s-text-base @sm:s-leading-7 s-text-foreground dark:s-text-foreground-night">&nbsp;</div>
+<div class="s-whitespace-pre-wrap s-break-words s-font-normal first:s-pt-0 last:s-pb-0 s-py-1 @md:s-py-2 @md:s-leading-7 s-copy-sm @sm:s-text-base @sm:s-leading-7 s-text-foreground dark:s-text-foreground-night"><em>Please contact hr.dataprivacy(at)doctolib.com for inquiries or to exercise your rights.</em></div>

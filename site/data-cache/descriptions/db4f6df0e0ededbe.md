@@ -1,0 +1,47 @@
+<div class="content-intro"><p><strong>Secure Every Identity, from AI to Human<br><br></strong>Identity is the key to unlocking the potential of AI. Okta secures AI by building the trusted, neutral infrastructure that enables organizations to safely embrace this new era. This work requires a relentless drive to solve complex challenges with real-world stakes. We are looking for builders and owners who operate with speed and urgency and execute with excellence.<br><br>This is an opportunity to do career-defining work. We're all in on this mission. If you are too, let's talk.</p></div><p><strong>Access Management Engineering Team</strong></p>
+<p>The Okta Access Management Team builds the foundation for authentication and authorization across Okta-protected resources. Our mission is to enable customers to access these resources securely. We develop Okta cloud services and client software that allow users to seamlessly login to devices and use Okta authenticators to access applications securely. The Access Management team is part of Workforce Identity Cloud (WIC) Engineering. Our team is fast-growing and impactful at Okta. Join our team and develop foundational blocks for products that help our customers daily, such as <a href="https://www.okta.com/products/fastpass/">Okta FastPass</a>, <a href="https://help.okta.com/oie/en-us/content/topics/identity-engine/devices/device-assurance.htm">Okta Device Assurance</a>, and <a href="https://www.okta.com/products/device-access/">Okta Device Access</a>. Learn more about Okta’s Engineering on <a href="https://www.okta.com/blog/?filters=okta%3Atopic%2Fengineering&amp;sort=featured">our blog</a>.</p>
+<p><strong><br>About You</strong></p>
+<p>The team is seeking a highly technical and experienced engineer on Android application platform &amp; SDKs. The ideal candidate should have solid experience in software development and be enthusiastic about writing Android client software. The role gives the candidate an excellent opportunity to learn about interesting problems in the security and identity space.</p>
+<ul>
+<li>You will join the Android Client Foundations team to design and implement foundational blocks and core platform components for Okta’s mobile line of products like Android Okta Verify app, Fastpass, Device Assurance etc and public SDKs.</li>
+<li>You are a highly technical and experienced engineer. You have a passion for working on mobile platforms, with deep expertise and extensive experience on the Android platform.</li>
+<li>You have successfully built an enterprise or consumer product on the Android platform.</li>
+<li>You are comfortable leading the technical path of an organization breaking ground in a new frontier.</li>
+<li>You will enjoy a high degree of responsibility and impact within Okta.</li>
+</ul>
+<p><strong><br>Job Duties and Responsibilities:</strong></p>
+<ul>
+<li>Stay up-to-date with the latest trends and technologies in Android development, evaluating and recommending new tools and approaches.</li>
+<li>Collaborate with cross-functional teams (QA, Product, Support, UX) for seamless integration.</li>
+<li>Propose and align on technical strategy</li>
+<li>Gather and refine requirements with Product and Engineering teams for prototyping Android client components.</li>
+<li>Following best practices, contribute to technical designs, proposals, and architectural decisions.</li>
+<li>Develop high-quality, maintainable software components with comprehensive unit/functional tests.</li>
+<li>Participate in code reviews, providing feedback and ensuring adherence to coding standards and security best practices.</li>
+<li>Contribute to technical documentation and knowledge sharing within the team.</li>
+</ul>
+<p><strong><br>Required Knowledge, Skills, And Abilities</strong></p>
+<ul>
+<li>14+ years of software development experience, with at least 5 years of experience in architecting enterprise software on Android.&nbsp;</li>
+<li>Expert-level proficiency in Kotlin and a deep understanding of the Android SDK, Android Jetpack, and the broader Android ecosystem. Experience with Java is a plus.</li>
+<li>Proven ability to thrive in agile environments, utilizing continuous integration and deployment (CI/CD) to ensure rapid and reliable software delivery.</li>
+<li>Strong communication skills and the ability to work across functions.</li>
+</ul>
+<p><strong><br>Nice-to-haves</strong></p>
+<ul>
+<li>Understanding of Identity and Access Management protocols and architecture (FIDO, U2F, WebAuth, SSO, SAML, Kerberos, OAuth, Federation, etc.)</li>
+<li>Security or Systems development experience on Android, such as root detection, code signing, or tamper resistance experience, PKI, SafetyNet.</li>
+<li>Knowledge of Mobile Device Management.</li>
+<li>Experience working on public-facing SDKs.</li>
+</ul>
+<p><strong><br>Education:</strong></p>
+<ul>
+<li>Bachelor’s degree in Computer Science or equivalent experience.</li>
+</ul>
+<p><br>#LI-Hybrid<br>P24161</p><div class="content-conclusion"><p><strong><br>The Okta Experience</strong></p>
+<ul>
+<li><a href="http://rewards.okta.com">Supporting Your Well-Being</a>&nbsp;</li>
+<li><a href="https://www.okta.com/company/okta-for-good/">Driving Social Impact&nbsp;</a></li>
+<li><a href="https://www.okta.com/company/talent-connection-community/">Developing Talent and Fostering Connection + Community</a></li>
+</ul>
+<p>We are intentional about connection. Our global community, spanning over 20 offices worldwide, is united by a drive to innovate. Your journey begins with an immersive, in-person onboarding experience designed to accelerate your impact and connect you to our mission and team from day one.<br><br>Okta is an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, ancestry, marital status, age, physical or mental disability, or status as a protected veteran. We also consider for employment qualified applicants with arrest and convictions records, consistent with applicable laws.<br><br>If reasonable accommodation is needed to complete any part of the job application, interview process, or onboarding please&nbsp;<a href="https://docs.google.com/forms/d/1EfiEYZrIyhA2X4Fijk0R3RKYOzNoS3wtvyM4nhbZnXE/edit">use this Form</a> to request an accommodation.<br><br>Notice for New York City Applicants &amp; Employees: Okta may use Automated Employment Decision Tools (AEDT), as defined by New York City Local Law 144, that use artificial intelligence, machine learning, or other automated processes to assist in our recruitment and hiring process. In accordance with NYC Local Law 144, if you are an applicant or employee residing in New York City, please&nbsp;<a href="https://talent.okta.com/new-york-city-aedt-notice.html">click here</a> to view our full NYC AEDT Notice.<br><br>Okta is committed to complying with applicable data privacy and security laws and regulations. For more information, please see our Personnel and Job Candidate Privacy Notice at&nbsp;<a href="https://www.okta.com/legal/personnel-policy/">https://www.okta.com/legal/personnel-policy/</a>.</p></div>

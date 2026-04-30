@@ -1,0 +1,53 @@
+<div class="content-intro"><h4><strong>Join Axon and be a Force for Good.</strong></h4>
+<p>At Axon, we’re on a mission to Protect Life. We’re explorers, pursuing society’s most critical safety and justice issues with our ecosystem of devices and cloud software. Like our products, we work better together. We connect with candor and care, seeking out diverse perspectives from our customers, communities and each other.<br><br>Life at Axon is fast-paced, challenging and meaningful. Here, you’ll take ownership and drive real change. Constantly grow as you work hard for a mission that matters at a company where you matter.</p></div><p><strong>Your Impact</strong><br><br>We are seeking highly skilled and innovative Machine Learning Scientists to join our AI team, focusing on AI applications (LLM and Computer Vision) in Cloud, Devices and Robotics. As a key member of our research and development efforts, you will play a crucial role in advancing the state-of-the-art in Large Language Models (LLMs), Multimodal Large Language Models (MLLMs), Computer Vision and GenAI technologies for law enforcement and beyond. You will collaborate with cross-functional teams to design, develop, and deploy cutting-edge LLM, MLLM, CV models and algorithms and solutions that enable intelligent reasoning, perception and understanding of multimodal data. <br><br><strong>What You’ll Do</strong><br>Location: any cities with Axon Engineering Hub in US, Vietnam, EU (see <a href="https://www.axon.com/company">https://www.axon.com/company</a>)</p>
+<ul>
+<li>EU: Tampere, Finland or London, UK or Brussels, Belgium&nbsp;</li>
+</ul>
+<h4><strong>Responsibilities</strong></h4>
+<ul>
+<li>Own one or more key technical areas across LLM, MLLM, CV product portfolio.</li>
+<li>Provide technical leadership to junior scientists, guiding the transition of R&amp;D concepts into impactful Axon product feature.</li>
+<li>Research and develop cutting-edge techniques in LLM, MLLMs, GenAI, and Computer Vision across cloud, devices and sensors based data sources.</li>
+<li>Design and implement efficient and scalable MLLM models for inference and analysis of multimodal data.</li>
+<li>Explore novel approaches to address challenges in NLP, NLU, Object Detection, Object Recognition, Object Tracking, Segmentation, and Scene Understanding.</li>
+<li>Optimize AI models, algorithms for performance, memory footprint, and energy efficiency to meet the requirements of resource-constrained devices.</li>
+<li>Join force with MLEs or firmware or hardware engineers to leverage hardware accelerators and optimize algorithms for specific hardware architectures.</li>
+<li>Evaluate the performance of LLM, MLLM, CV models using real-world datasets and design experiments to validate their effectiveness.</li>
+<li>Stay up-to-date with the latest research trends and advancements in computer vision, machine learning, and deep learning, MLLMs, GenAI and integrate relevant findings into our projects.</li>
+<li>Contribute to patent disclosures, academic publications, and technical documentation to share insights and findings with the broader community.</li>
+<li>Experience coach and mentor junior scientists.</li>
+</ul>
+<h4>What You Bring</h4>
+<ul>
+<li>PhD and with +5 years for ML Scientist, +8 years for Sr. ML Scientist, +10 years for Principal ML Scientist experience in Computer Science or a related field with a focus on LLM, MLLMs, Computer Vision, GenAI.</li>
+<li>Proven track record of research excellence in LLM, MLLM, Computer Vision, Robotics Perception, GenAI, demonstrated through publications in top-tier conferences or journals.</li>
+<li>Strong proficiency in programming languages such as Python, C/C++, experience with deep learning frameworks such as TensorFlow, PyTorch, or Keras and experience with ROS or robotic operational system.</li>
+<li>Drive one or more phases of the ML development lifecycle: shape datasets, investigate modeling approaches and architectures, train/evaluate/tune models and implement the end-to-end training pipeline.</li>
+<li>Leverage state-of-the-art research to deliver high quality models enabling multiple AI projects at scale.</li>
+<li>Contribute back to the research community via academic publications, tech blogs, open-source code and contributing to internal/external AI challenges</li>
+<li>Experience in developing computer vision algorithms for resource-constrained devices such as mobile phones, IoT devices, or embedded systems is highly desirable.</li>
+<li>Excellent problem-solving skills, analytical thinking, and the ability to work independently as well as collaboratively in a team environment.</li>
+<li>Strong communication skills and the ability to effectively present complex technical concepts to both technical and non-technical audiences.</li>
+</ul>
+<h4><strong>Benefits that Benefit You</strong></h4>
+<ul>
+<li>Competitive salary and 401k with employer match</li>
+<li>Discretionary paid time off</li>
+<li>Paid parental leave for all</li>
+<li>Medical, Dental, Vision plans</li>
+<li>Fitness Programs</li>
+<li>Emotional &amp; Mental Wellness support</li>
+<li>Learning &amp; Development programs</li>
+<li>And yes, we have snacks in our offices</li>
+</ul>
+<p><em>Benefits listed herein may vary depending on the nature of your employment and the location where you work</em></p>
+<p><em><strong>Location:&nbsp;</strong>This role is based out of our Brussels, Belgium office and follows a hybrid schedule. We rely on in-person collaboration and ask that team members work onsite Tuesday through Friday, with flexibility to work remotely on Mondays. We believe connection fuels innovation, and our in-office culture is designed to support meaningful teamwork and mentorship.</em></p><div class="content-conclusion"><p>Don’t meet every single requirement? That's ok. At Axon, we Aim Far. We think big with a long-term view because we want to reinvent the world to be a safer, better place. We are also committed to building diverse teams that reflect the communities we serve.</p>
+<p>Studies have shown that women and people of color are less likely to apply to jobs unless they check every box in the job description. If you’re excited about this role and our mission to Protect Life but your experience doesn’t align perfectly with every qualification listed here, we encourage you to apply anyways. You may be just the right candidate for this or other roles.</p>
+<p><strong>Important Notes</strong></p>
+<p><em>The above job description is not intended as, nor should it be construed as, exhaustive of all duties, responsibilities, skills, efforts, or working conditions associated with this job. The job description may change or be supplemented at any time in accordance with business needs and conditions.</em></p>
+<p><em>Some roles may also require legal eligibility to work in a firearms environment.</em></p>
+<p><em>We collect personal information from applicants to evaluate candidates for employment. You may request access, deletion, or exercise other CCPA rights at&nbsp;<strong data-stringify-type="bold"><a class="c-link c-link--underline" href="mailto:axongreenhousesupport@axon.com" target="\_blank" data-stringify-link="mailto:axongreenhousesupport@axon.com" data-sk="tooltip\_parent">axongreenhousesupport@axon.com</a></strong>&nbsp;or via our&nbsp;<a class="c-link c-link--underline" href="https://privacyportal.onetrust.com/webform/0efc1702-9321-4119-bc9d-a06c3a1d3e4e/ca57cc26-a159-4193-9f6e-58ffe3fd2509" target="\_blank" data-stringify-link="https://privacyportal.onetrust.com/webform/0efc1702-9321-4119-bc9d-a06c3a1d3e4e/ca57cc26-a159-4193-9f6e-58ffe3fd2509" data-sk="tooltip\_parent">Axon Privacy Web Form</a>. For more information, please see the Your California Privacy Rights section of our&nbsp;<a class="c-link c-link--underline" href="https://www.axon.com/candidateprivacypolicy" target="\_blank" data-stringify-link="https://www.axon.com/candidateprivacypolicy" data-sk="tooltip\_parent">Applicant and Candidate Privacy Notice.</a></em></p>
+<p><em>Axon’s mission is to Protect Life and is committed to the well-being and safety of its employees as well as Axon’s impact on the environment. All Axon employees must be aware of and committed to the appropriate environmental, health, and safety regulations, policies, and procedures. Axon employees are empowered to report safety concerns as they arise and activities potentially impacting the environment.</em></p>
+<p><em>We are an equal opportunity employer that promotes justice, advances equity, values diversity and fosters inclusion. We’re committed to hiring the best talent — regardless of race, creed, color, ancestry, religion, sex (including pregnancy), national origin, sexual orientation, age, citizenship status, marital status, disability, gender identity, genetic information, veteran status, or any other characteristic protected by applicable laws, regulations and ordinances — and empowering all of our employees so they can do their best work. If you have a disability or special need that requires assistance or accommodation during the application or the recruiting process, please email <a href="mailto:recruitingops@axon.com">recruitingops@axon.com. </a>&nbsp;Please note that this email address is for accommodation purposes only. Axon will not respond to inquiries for other purposes.</em></p>
+<p>Phishing alert:&nbsp; Axon will never ask you to pay for any part of the hiring process, including training, equipment, or background checks. We do not make job offers via text message, WhatsApp, or instant messaging platforms without a formal interview process.&nbsp; All legitimate job openings are listed on our official careers page at <a href="https://www.axon.com/careers">https://www.axon.com/careers</a>. &nbsp;If you receive a suspicious offer or outreach from an email address that is not <strong>@axon.com</strong>, or if you are asked for sensitive personal information (bank details, Social Security Number) prematurely, please ignore the message and report it to <a href="mailto:recruitingops@axon.com">recruitingops@axon.com</a>.</p>
+<p>&nbsp;</p></div>

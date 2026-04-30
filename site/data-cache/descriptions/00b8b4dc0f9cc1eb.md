@@ -1,0 +1,68 @@
+<p>Join a team of passionate and hardworking entrepreneurs to transform healthcare!&nbsp;</p>
+<p>Working in the tech team at Doctolib involves building innovative products and features to improve the daily lives of care teams and patients. We work in feature teams in an agile environment, while collaborating with engineering, design, and business teams.</p>
+<p>Doctolib is looking for a Senior Site Reliability Engineer to keep Doctolib production database systems running smoothly. You will also be a key-player to support the exponential growth of Doctolib services.</p>
+<h2><strong>What you will do</strong></h2>
+<p>You will join a team of developers, DBA and SRE responsible for:</p>
+<ul>
+<li>Improving and protecting the health of our datastores,</li>
+<li>Empowering the whole tech teams to use our datastores in the most efficient way,</li>
+<li>Collaborating everyday with our Database Architects, Principal Engineers and Site Reliability Engineers from other teams.</li>
+</ul>
+<p>As a Senior Site Reliability Engineer in our Doctolib Database Optimization team, you will play a critical role in ensuring the reliability, availability, and performance of our databases. You will:</p>
+<p>Design, build and maintain core infrastructure databases that allow Doctolib scaling to support hundreds of thousands of concurrent users.</p>
+<ul>
+<li>Automate deployment, scaling, and maintenance of databases to enhance system reliability and operational efficiency,</li>
+<li>Implement and improve monitoring, alerting, and incident response processes to identify and address potential issues before they impact both practitioners and patients,</li>
+<li>Provide documentation and tooling to empower the feature teams in their use of their databases, while ensuring their reliability,</li>
+<li>Mitigate production database issues during working hours when the issue cannot be fixed by the responsible feature team,</li>
+<li>Research and evaluate new technologies, tools, and best practices to continuously improve the reliability and availability of our systems and processes.&nbsp;&nbsp;</li>
+</ul>
+<h2><strong>Who you are</strong></h2>
+<p>Are you convinced that you have exactly what it takes for the position? Then we encourage you to apply. Even if you don't meet every requirement, you might be exactly the right future Doctoliber for this or other positions!</p>
+<ul>
+<li>Have a strong hands-on experience (6y+) on a production platform, if possible at scale,</li>
+<li>Have proven experience with cloud platforms such as AWS, Azure or Google Cloud,&nbsp;</li>
+<li>Have proven experience with datastores such as PostgreSQL and/or Kafka and/or Couchbase,</li>
+<li>Have solid understanding of containerization and orchestration technologies (Docker and Kubernetes),</li>
+<li>Have proficiency in at least one programming language (Ruby, Python, Go, Java, etc.) and understanding of infrastructure as code principles,</li>
+<li>Are fluent in English.</li>
+</ul>
+<p>Now, it would be fantastic if you:</p>
+<ul>
+<li>Have an experience with monitoring and observability tools,</li>
+<li>Like troubleshooting performance issues in complex environments.</li>
+</ul>
+<h2 class="s-pb-2 s-pt-4 s-heading-xl s-text-foreground dark:s-text-foreground-night">What we offer</h2>
+<ul class="s-list-disc s-pb-2 s-pl-6 s-text-foreground dark:s-text-foreground-night s-copy-sm @sm:s-text-base @sm:s-leading-7">
+<li class="s-break-words s-text-foreground dark:s-text-foreground-night s-copy-sm @sm:s-text-base @sm:s-leading-7"><span class="s-font-semibold s-text-foreground dark:s-text-foreground-night">Free Health Insurance for you</span></li>
+<li class="s-break-words s-text-foreground dark:s-text-foreground-night s-copy-sm @sm:s-text-base @sm:s-leading-7"><span class="s-font-semibold s-text-foreground dark:s-text-foreground-night">Up to 14 days of RTT</span></li>
+<li class="s-break-words s-text-foreground dark:s-text-foreground-night s-copy-sm @sm:s-text-base @sm:s-leading-7"><span class="s-font-semibold s-text-foreground dark:s-text-foreground-night">A flexible workplace policy offering both hybrid and office-based modes</span></li>
+<li class="s-break-words s-text-foreground dark:s-text-foreground-night s-copy-sm @sm:s-text-base @sm:s-leading-7"><span class="s-font-semibold s-text-foreground dark:s-text-foreground-night">Flexibility days allowing to work in EU countries and the UK 10 days per year</span></li>
+<li class="s-break-words s-text-foreground dark:s-text-foreground-night s-copy-sm @sm:s-text-base @sm:s-leading-7"><span class="s-font-semibold s-text-foreground dark:s-text-foreground-night">Wellbeing program with free mental health and coaching through moka.care</span></li>
+<li class="s-break-words s-text-foreground dark:s-text-foreground-night s-copy-sm @sm:s-text-base @sm:s-leading-7"><span class="s-font-semibold s-text-foreground dark:s-text-foreground-night">Special support package for caregivers and workers with disabilities</span></li>
+<li class="s-break-words s-text-foreground dark:s-text-foreground-night s-copy-sm @sm:s-text-base @sm:s-leading-7"><span class="s-font-semibold s-text-foreground dark:s-text-foreground-night">Lunch voucher with Swile card</span></li>
+<li class="s-break-words s-text-foreground dark:s-text-foreground-night s-copy-sm @sm:s-text-base @sm:s-leading-7"><span class="s-font-semibold s-text-foreground dark:s-text-foreground-night">Work Council subsidy for sport club membership or creative activities</span></li>
+<li class="s-break-words s-text-foreground dark:s-text-foreground-night s-copy-sm @sm:s-text-base @sm:s-leading-7"><span class="s-font-semibold s-text-foreground dark:s-text-foreground-night">Bicycle subsidy</span></li>
+<li class="s-break-words s-text-foreground dark:s-text-foreground-night s-copy-sm @sm:s-text-base @sm:s-leading-7"><span class="s-font-semibold s-text-foreground dark:s-text-foreground-night">Public transportation reimbursement</span></li>
+<li class="s-break-words s-text-foreground dark:s-text-foreground-night s-copy-sm @sm:s-text-base @sm:s-leading-7"><span class="s-font-semibold s-text-foreground dark:s-text-foreground-night">Relocation support for international mobility</span></li>
+</ul>
+<h2>The interview process&nbsp;</h2>
+<ul>
+<li>Recruiter Interview</li>
+<li>DBRE technical interview</li>
+<li>System Design Interview</li>
+<li>Behavioral interview</li>
+<li>Reference Check</li>
+<li>Offer!</li>
+</ul>
+<h2 class="s-pb-2 s-pt-4 s-heading-xl s-text-foreground dark:s-text-foreground-night">Job details</h2>
+<ul class="s-list-disc s-pb-2 s-pl-6 s-text-foreground dark:s-text-foreground-night s-copy-sm @sm:s-text-base @sm:s-leading-7">
+<li class="s-break-words s-text-foreground dark:s-text-foreground-night s-copy-sm @sm:s-text-base @sm:s-leading-7"><strong class="s-font-semibold s-text-foreground dark:s-text-foreground-night">Contract</strong>: Permanent position</li>
+<li class="s-break-words s-text-foreground dark:s-text-foreground-night s-copy-sm @sm:s-text-base @sm:s-leading-7"><strong class="s-font-semibold s-text-foreground dark:s-text-foreground-night">Workplace</strong>: Paris&nbsp;</li>
+<li class="s-break-words s-text-foreground dark:s-text-foreground-night s-copy-sm @sm:s-text-base @sm:s-leading-7"><strong class="s-font-semibold s-text-foreground dark:s-text-foreground-night">Start date</strong>: As soon as possible</li>
+<li class="s-break-words s-text-foreground dark:s-text-foreground-night s-copy-sm @sm:s-text-base @sm:s-leading-7"><strong class="s-font-semibold s-text-foreground dark:s-text-foreground-night">Remuneration</strong>: Competitive salary package according to your profile<br><br></li>
+</ul>
+<div class="s-whitespace-pre-wrap s-break-words s-font-normal first:s-pt-0 last:s-pb-0 s-py-1 @md:s-py-2 @md:s-leading-7 s-copy-sm @sm:s-text-base @sm:s-leading-7 s-text-foreground dark:s-text-foreground-night"><em>At Doctolib, we are committed to improving access to healthcare for everyone. This translates into our recruitment process. We evaluate candidates based solely on qualifications and motivation, without any form of discrimination.</em></div>
+<div class="s-whitespace-pre-wrap s-break-words s-font-normal first:s-pt-0 last:s-pb-0 s-py-1 @md:s-py-2 @md:s-leading-7 s-copy-sm @sm:s-text-base @sm:s-leading-7 s-text-foreground dark:s-text-foreground-night"><em>The more diverse ideas are heard, the more our product will truly improve healthcare for all. You are welcome to apply to Doctolib, regardless of your gender, religion, age, sexual orientation, ethnicity, disability.</em></div>
+<div class="s-whitespace-pre-wrap s-break-words s-font-normal first:s-pt-0 last:s-pb-0 s-py-1 @md:s-py-2 @md:s-leading-7 s-copy-sm @sm:s-text-base @sm:s-leading-7 s-text-foreground dark:s-text-foreground-night"><em>To ensure equal opportunities, we invite you to exclude personal information (e.g. pictures, age) from your applications. If you require any accommodation, please let us know for support during the hiring process. Join us in building the healthcare we all dream of!</em></div>
+<div class="s-whitespace-pre-wrap s-break-words s-font-normal first:s-pt-0 last:s-pb-0 s-py-1 @md:s-py-2 @md:s-leading-7 s-copy-sm @sm:s-text-base @sm:s-leading-7 s-text-foreground dark:s-text-foreground-night"><em>All information provided is processed by Doctolib for application management. For data processing details, click <a href="https://doctolib.legal/B2C-Privacy-Policy-Career-FR" target="\_blank">here</a>. Please contact hr.dataprivacy(at)doctolib.com for inquiries or to exercise your rights.</em></div>

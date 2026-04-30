@@ -1,0 +1,49 @@
+<p>Are you passionate about making an impact through technology and controls? At SumUp, we’re looking for an IT Internal Auditor to strengthen our Internal Audit team in Berlin. In this role, you’ll help ensure our IT environment is secure, compliant, and ready to support millions of businesses worldwide.</p>
+<h3><strong>About SumUp</strong></h3>
+<p>SumUp is a leading global fintech company committed to leveling the playing field for small businesses. Since 2012, we’ve been a trusted partner for over 4 million merchants in 36 markets worldwide. Our mission is to make business simple and affordable by providing tools that help entrepreneurs get paid, manage finances, and grow their customer relationships.</p>
+<h3><strong>Team Description</strong></h3>
+<p>You’ll be part of our Internal Audit team, reporting directly to the Global Head of Internal Audit. The team plays a crucial role in safeguarding SumUp’s operations, ensuring compliance with regulatory requirements, and driving continuous improvement across the business. This role focuses on strengthening our IT audit capabilities— an essential part of our audit plan and risk management strategy.</p>
+<h3>&nbsp;</h3>
+<h3><strong>What You’ll Do</strong></h3>
+<ul>
+<li>Lead and execute IT-focused internal audits, ensuring that SumUp’s systems and controls meet regulatory and business requirements<br><br></li>
+<li>Uncover insights and improve audit efficiency by analysing data: run queries, extract information from systems, and apply advanced analytics</li>
+<li>Develop a focused IT audit plan, shaping how we evaluate technology risks across the company<br><br></li>
+<li>Translate findings into clear, actionable recommendations and present them with confidence to management and stakeholders<br><br></li>
+<li>Act as an independent voice for control and compliance, building trust while navigating resistance and influencing change</li>
+<li>Build strong relationships with stakeholders to foster a culture of proactive internal controls<br><br></li>
+<li>Stay ahead of the curve by keeping up with evolving IT standards, regulations, and best practices</li>
+</ul>
+<p>&nbsp;</p>
+<h3><strong>You’ll Be Great for This Role If</strong></h3>
+<ul>
+<li>You have at least 4 years of internal audit experience within a regulated financial services environment.<br><br></li>
+<li>You bring proven IT auditing expertise and strong knowledge of audit standards and risk management.<br><br></li>
+<li>You are experienced with IT general controls, compliance, governance, and security frameworks (e.g. COBIT, ISO 27001, PCI DSS, ITIL, NIST, LGPD, GDPR).<br><br></li>
+<li>You have advanced data analytics skills and can leverage them in your audit work.<br><br></li>
+<li>You communicate clearly in English and are skilled in writing impactful reports.<br><br></li>
+<li>You are ethical, independent, and confident in influencing change across different levels of the organisation.<br><br></li>
+</ul>
+<p><em>Nice to have:</em> Professional certifications such as CIA, CISA, CPA, CISSP, CISM, or CRISC; knowledge of data analytics tools.</p>
+<p>&nbsp;</p>
+<h3><strong>Why You Should Join SumUp</strong></h3>
+<p>🌎 Opportunity to work with SumUppers globally on large-scale fintech products used by millions of businesses worldwide, from our Berlin office. This involves an office-first setup</p>
+<p>🌈 Commitment to Diversity and Inclusion: be part of a workplace that values and promotes diversity, fostering an inclusive environment where everyone's perspectives are respected and embraced</p>
+<p>🚀 Enrolment onto our Virtual Stock Option programme: you will own a stake in SumUp’s future success</p>
+<p>📚 A dedicated annual L&amp;D budget of €2000 for attending conferences and/or advancing your career through further education</p>
+<p>💶 A corporate pension scheme where we match up to 20% of your contributions</p>
+<p>🏖️ Generous time off: enjoy 28 days of paid leave plus public holidays and special leave days</p>
+<p>🚵🏾‍♂️ Numerous other benefits such as Urban Sports Club subsidy, Kita placement assistance, subsidised office lunches</p>
+<p>🌴 Break4me: 1-month sabbatical after 3 years of service</p>
+<p>🔗 Referral Bonus: earn additional rewards by referring talented individuals to join the SumUp team</p>
+<p>&nbsp;</p>
+<p><strong>About SumUp</strong></p>
+<p>&nbsp;</p>
+<p>We believe in the everyday hero.</p>
+<p>&nbsp;</p>
+<p>Small business owners are at the heart of all we do, so we create powerful, easy-to-use financial solutions to help them run their businesses. With a founder’s mentality and a 'team-first’ attitude, our diverse teams across Europe, South America, Australia and the United States work together to ensure that the small business owners we partner with can be successful doing what they love.&nbsp;</p>
+<p>&nbsp;</p>
+<p><em>SumUp is an Equal Employment Opportunity employer that proudly pursues and hires a diverse workforce. SumUp does not make hiring or employment decisions on the basis of race, colour, religion or religious belief, ethnic or national origin, nationality, sex, gender, gender identity, sexual orientation, disability, age or any other basis protected by applicable laws or prohibited by company policy. SumUp also strives for a healthy and safe workplace and strictly prohibits harassment of any kind.</em></p>
+<p>&nbsp;</p>
+<p><em>SumUp will not accept unsolicited resumes from any source other than directly from a candidate.</em><em>&nbsp;</em></p><div class="content-conclusion"><p><strong>Job Application Tip</strong></p>
+<p><span style="font-weight: 400;">We recognise that candidates feel they need to meet 100% of the job criteria in order to apply for a job. Please note that this is only a guide. If you don’t tick every box, it’s ok too because it means you have room to learn and develop your career at SumUp.</span></p></div>

@@ -1,0 +1,84 @@
+<div class="content-intro"><h2><strong>About Remote</strong></h2>
+<div><span style="font-size: 12pt; font-family: helvetica, arial, sans-serif;">Remote is solving modern organizations’ biggest challenge – navigating global employment compliantly with ease. We make it possible for businesses of all sizes to recruit, pay, and manage international teams. With our core values at heart and future focused work culture, our team works tirelessly on ambitious problems, asynchronously, around the world. You can find Remoters working from 6 different continents (Antarctica left to go!) and all of our positions are fully remote.<br><br><span class="discussion-id-2f7cb4da-dab4-8068-a80f-001c50b2d808 suggestion-update notion-enable-hover" data-token-index="0">With Innovation as one of the core values, we have built Automation and AI capabilities into the requirements for every role.</span><br><br>We encourage every member of the Remote team to bring their talents, experiences and culture to the table to help us build the best-in-class HR platform.</span></div>
+<div>&nbsp;</div>
+<div><span style="font-size: 12pt; font-family: helvetica, arial, sans-serif;">If you are energetic, curious, motivated and ambitious, be part of our world. Apply now and define the future of work!</span></div></div><p><em><strong>This is not an active job opening, but a way for us to connect with talent as we plan for future opportunities. If you’re not interested in interviewing for a role that isn’t currently open, we kindly ask that you wait until an active position aligns with your career goals.</strong></em></p>
+<p>We’re always looking for exceptional talent to join us in our mission to make work accessible for everyone, everywhere. While this specific role isn’t currently open, we’re planning for strategic growth in 2025 and beyond. This posting is part of our Future Opening pipeline initiative, which helps us connect with outstanding professionals early on.</p>
+<p>By expressing your interest in this role, you’ll have the opportunity to start a conversation with us about your expertise and learn more about Remote’s vision and goals. Being part of our Evergreen Pipeline means staying top of mind for future roles that align with your skills and experience. It’s also a chance to explore how your career goals might fit into Remote’s exciting journey of global growth.&nbsp;We’ll keep your information on file for 1 year and be in touch if we see a match in that time.</p>
+<h2><strong>What this job can offer you</strong></h2>
+<p>Sales helps our prospective customers and active customers to fully experience our Global HR Platform. Sales is the team responding to incoming queries and help customers understand how to maximise Remote’s full suite of products to meet their employment needs. To enable them to embody our value of Transparency, we have a fair price guarantee.</p>
+<p>This is an exciting time to join Remote and make a personal difference in the global employment space as an&nbsp;<strong>Account Executive</strong>, joining our <strong>Sales</strong> <strong>Team</strong>. This is a pure hunting role as an Account Executive, driving net new business for Remote.</p>
+<h2><strong>What you bring</strong></h2>
+<ul>
+<li>Fluent level of <strong>German</strong> and <strong>English</strong></li>
+<li>High level of integrity and work ethic</li>
+<li>Self-motivated and self-directed; able to work independently and as an active member of the team</li>
+<li>Efficient in multitasking, prioritization, and time management</li>
+<li>In-depth understanding of company services and its position in the industry</li>
+<li>In-depth knowledge of sales processes</li>
+<li>Demonstrated ability to initiate and convert prospects, close deals and achieve sales quotas</li>
+<li>Success in qualifying opportunities involving multiple key decision makers</li>
+<li>Strong problem identification and objections resolution skills</li>
+<li>Ability to confidently make cold calls to build pipelines</li>
+<li>Ability to build trust with a client and work as an advisor</li>
+<li>Capable of forecasting sales to achieve targets on a monthly basis</li>
+<li>Experience with customer relationship management (CRM) tools</li>
+<li>Strong customer service skills</li>
+<li>Experience in the HR industry a plus</li>
+<li>It's not required to have experience working remotely, but considered a plus</li>
+</ul>
+<h2><strong>Key Responsibilities&nbsp;</strong></h2>
+<ul>
+<li>Create 'Land' opportunity deals that include detailed notes with accurate close dates</li>
+<li>Maintain a clean and current pipeline of volume based, high velocity opportunities</li>
+<li>Efficiently present and deliver all information to potential clients</li>
+<li>Proactively answer potential client questions and follow-up call questions in a prompt manner</li>
+<li>Internal collaboration and communication with key departments that support client process, experience and support</li>
+<li>Close sales deals efficiently while kindly guiding clients through process</li>
+<li>Meet and exceed sales quota based on role level and manage the entire sales cycle</li>
+<li>Identify new opportunities and manage the entire sales cycle from prospecting to close</li>
+<li>Understands the communication needs of small and mid-sized business customers, and designs solutions to meet those unique business needs.</li>
+<li>Self-generates leads by contacting prospective clients by telephone, cold call premise visits, networking, and industry events.</li>
+</ul>
+<h2><strong>Practicals</strong></h2>
+<ul>
+<li><strong>You'll report to:</strong>&nbsp;Manager, Sales</li>
+<li><strong>Team:</strong>&nbsp;Sales</li>
+<li><strong>Location</strong>:For this position we welcome everyone to apply, but we will prioritize applications from the following locations as we encourage our teams to diversify; DACH region</li>
+</ul>
+<h2><strong>Remote Compensation Philosophy</strong></h2>
+<p>Remote's <a href="https://www.notion.so/remotecom/people-Total-Rewards-1945bce8d3924ece9421ba8630f57b0c">Total Rewards philosophy</a> is to ensure fair, unbiased compensation and fair <span class="link-annotation-unknown-block-id-1691622878">equity</span><span class="discussion-level-1 discussion-id-f2a82bc4-09e4-4a71-ad93-755b1d26a690 notion-enable-hover" data-token-index="3"> pay </span>along with competitive benefits in all locations in which we operate. We do not agree to or encourage cheap-labor practices and therefore we ensure to pay above in-location rates. We hope to inspire other companies to support global talent-hiring and bring local wealth to developing countries.</p>
+<p>At first glance our salary bands seem quite wide - here is some context. At Remote we have international operations and a globally distributed workforce.&nbsp; We use geo ranges to consider geographic pay differentials as part of our global compensation strategy to remain competitive in various markets while we hiring globally.<br><br><strong data-stringify-type="bold">The On-Target Earnings for this position is between $74,650 USD to $168,000 USD. The base salary is 50%</strong>. Our salary ranges are determined by role, level and location, and our job titles may span more than one career level. The actual base pay for the successful candidate in this role is dependent upon many factors such as location, transferable or job-related skills, work experience, relevant training, business needs, and market demands. The base salary range may be subject to change.</p>
+<p><em data-stringify-type="italic">At Remote, we foster internal mobility as a key element of our culture of employee growth and development, supported by a compensation philosophy that guarantees pay equity and fairness. Therefore, all compensation changes associated with an internal move will be reviewed by the Total Rewards &amp; People Enablement team on a case by case basis.</em></p>
+<h2><strong>Application process</strong></h2>
+<ol>
+<li>Interview with Recruiter&nbsp;</li>
+<li>Interview Hiring Manager</li>
+<li>Feedback&nbsp;</li>
+</ol><div class="content-conclusion"><h2><strong>Benefits</strong></h2>
+<div class="p-rich\_text\_section">
+<div class="p-rich\_text\_section"><span style="font-size: 12pt;">Our full benefits &amp; perks are explained in our handbook at&nbsp;<a class="c-link" href="http://remote.com/r/benefits" target="\_blank" data-stringify-link="http://remote.com/r/benefits" data-sk="tooltip\_parent">remote.com/r/benefits</a>. As a global company, each country works differently, but some benefits/perks are for all Remoters:</span></div>
+<ul class="p-rich\_text\_list p-rich\_text\_list\_\_bullet" data-stringify-type="unordered-list" data-indent="0" data-border="0">
+<li style="font-size: 12pt;" data-stringify-indent="0" data-stringify-border="0"><span style="font-size: 12pt;">work from anywhere</span></li>
+<li style="font-size: 12pt;" data-stringify-indent="0" data-stringify-border="0"><span style="font-size: 12pt;">flexible paid time off</span></li>
+<li style="font-size: 12pt;" data-stringify-indent="0" data-stringify-border="0"><span style="font-size: 12pt;">flexible working hours (we are&nbsp;<a class="c-link" href="https://remote.com/async" target="\_blank" data-stringify-link="https://www.notion.so/remotecom/Working-Async-at-Remote-80c01cd443ad4c77a8ceaef7c5fba5d0" data-sk="tooltip\_parent">async</a>)</span></li>
+<li style="font-size: 12pt;" data-stringify-indent="0" data-stringify-border="0"><span style="font-size: 12pt;">16 weeks paid parental leave</span></li>
+<li style="font-size: 12pt;" data-stringify-indent="0" data-stringify-border="0"><span style="font-size: 12pt;">mental health support services</span></li>
+<li style="font-size: 12pt;" data-stringify-indent="0" data-stringify-border="0"><span style="font-size: 12pt;">stock options</span></li>
+<li style="font-size: 12pt;" data-stringify-indent="0" data-stringify-border="0"><span style="font-size: 12pt;">learning budget</span></li>
+<li style="font-size: 12pt;" data-stringify-indent="0" data-stringify-border="0"><span style="font-size: 12pt;">home office budget &amp; IT equipment</span></li>
+<li style="font-size: 12pt;" data-stringify-indent="0" data-stringify-border="0"><span style="font-size: 12pt;">budget for local in-person social events or co-working spaces</span></li>
+</ul>
+</div>
+<h2><strong>How you’ll plan your day (and life)</strong></h2>
+<p><span style="font-size: 12pt; font-family: helvetica, arial, sans-serif;">We work async at Remote which means you can plan your schedule around your life (and not around meetings). Read more at <a href="https://remote.com/async" target="\_blank">remote.com/async</a>.</span></p>
+<p><span style="font-size: 12pt; font-family: helvetica, arial, sans-serif;">You will be empowered to take ownership and be proactive. When in doubt you will default to action instead of waiting. Your <strong>life-work balance</strong> is important and you will be encouraged to put yourself and your family first, and fit work around your needs.</span></p>
+<p><span style="font-size: 12pt; font-family: helvetica, arial, sans-serif;">If that sounds like something you want, apply now!</span></p>
+<h2><strong>How to apply</strong></h2>
+<ol>
+<li style="font-size: 12pt; font-family: helvetica, arial, sans-serif;"><span style="font-size: 12pt; font-family: helvetica, arial, sans-serif;">Please fill out the form below and upload your CV with a PDF format.</span></li>
+<li style="font-size: 12pt; font-family: helvetica, arial, sans-serif;"><span style="font-size: 12pt; font-family: helvetica, arial, sans-serif;"><strong data-stringify-type="bold">We kindly ask you to submit your application and CV in English, as this is the standardised language we use here at Remote.</strong></span></li>
+<li style="font-size: 12pt; font-family: helvetica, arial, sans-serif; text-align: left;"><span style="font-size: 12pt; font-family: helvetica, arial, sans-serif;">If you don’t have an up to date CV but you are still interested in talking to us, please feel free to add a copy of your LinkedIn profile instead.</span></li>
+</ol>
+<p><span style="font-size: 12pt; font-family: helvetica, arial, sans-serif;">Not only do we encourage folks from all ethnic groups, genders, sexuality, age, abilities, disability status and any other under-represented group to apply, but we prioritize a sense of belonging. We have 4 ERGs (Women, Disability, Queer, Minorities in Tech) who meet regularly with the People team. During your interviews and beyond, we ask &amp; encourage anybody who needs an accommodation to request one from their recruiter.<br></span></p>
+<p><span style="font-size: 12pt; font-family: helvetica, arial, sans-serif;">We will ask you to voluntarily tell us your pronouns at interview stage, and you will have the option to answer our anonymous demographic questionnaire when you apply below. As an equal employment opportunity employer it’s important to us that our workforce reflects people of all backgrounds, identities, and experiences and this data will help us to stay accountable. We thank you for providing this data, if you chose to.</span></p>
+<p><span style="font-size: 12pt; font-family: helvetica, arial, sans-serif;">At Remote, we embrace AI as a valuable tool while prioritizing human creativity and authenticity.&nbsp;We look forward to meeting candidates who balance innovation with genuine expertise and experience.&nbsp;To learn more about Remote's AI guidelines check see&nbsp;<a href="https://www.notion.so/remotecom/Guidelines-on-using-AI-when-applying-for-a-job-at-Remote-11ccb4dadab4805f80a7c73b6567bd8f" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.notion.so/remotecom/Guidelines-on-using-AI-when-applying-for-a-job-at-Remote-11ccb4dadab4805f80a7c73b6567bd8f&amp;source=gmail&amp;ust=1733927526443000&amp;usg=AOvVaw2sIVooKuyGfRra1PtGXreV">here</a>.&nbsp;</span><br><br><span style="font-size: 12pt; font-family: helvetica, arial, sans-serif;"><em>Please note we accept applications on an ongoing basis.&nbsp;</em></span></p></div>

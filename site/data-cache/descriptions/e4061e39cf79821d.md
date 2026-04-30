@@ -1,0 +1,28 @@
+<div class="content-intro"><p><strong data-stringify-type="bold">The future of AI — whether in training or evaluation, classical ML or agentic workflows — starts with high-quality data.</strong></p>
+<p>At HumanSignal, we’re building the platform that powers the creation, curation, and evaluation of that data. From fine-tuning foundation models to validating agent behaviors in production, our tools are used by leading AI teams to ensure models are grounded in real-world signal, not noise.</p>
+<p>Our open-source product,&nbsp;<strong data-stringify-type="bold">Label Studio</strong>, has become the&nbsp;<strong data-stringify-type="bold">de facto standard</strong> for labeling and evaluating data across modalities — from text and images to time series and agents-in-environments. With over 250,000 users and hundreds of millions of labeled samples, it’s the most widely adopted OSS solution for teams working on building AI systems.&nbsp;</p>
+<p><strong data-stringify-type="bold">Label Studio Enterprise</strong>&nbsp;builds on that traction with the security, collaboration, and scalability features needed to support mission-critical AI pipelines — powering everything from model training datasets to eval test sets to continuous feedback loops.We started before foundation models were mainstream, and we’re doubling down now that AI is eating the world. If you're excited to help leading AI teams build smarter, more accurate systems — we’d love to talk.</p></div><h2 class="font-claude-response-heading text-text-100 mt-1 -mb-0.5">Get Paid $100 for 90 Minutes of Fun!</h2>
+<p class="font-claude-response-body whitespace-normal break-words">Love being active? Enjoy trying new things? Want to make some quick cash while helping build the future of AI?</p>
+<p class="font-claude-response-body whitespace-normal break-words">We're looking for energetic people in Columbus, Ohio to participate in a super casual, fun data collection study. Think of it as getting paid to hang out, move around, and be yourself in front of a camera—no experience needed, no memorization, just you doing simple everyday actions!</p>
+<h2 class="font-claude-response-heading text-text-100 mt-1 -mb-0.5">What You'll Do</h2>
+<p class="font-claude-response-body whitespace-normal break-words">Visit our Columbus location for a<span class="Apple-converted-space">&nbsp;</span><strong>90-minute session</strong><span class="Apple-converted-space">&nbsp;</span>where you'll:</p>
+<ul class="[&amp;:not(:last-child)\_ul]:pb-1 [&amp;:not(:last-child)\_ol]:pb-1 list-disc space-y-2.5 pl-7">
+<li class="whitespace-normal break-words">Perform easy, everyday activities like walking, gesturing, talking, and moving around</li>
+<li class="whitespace-normal break-words">Work with our friendly team who'll capture images, videos, and audio</li>
+<li class="whitespace-normal break-words">Try different setups with various props, backgrounds, and lighting</li>
+<li class="whitespace-normal break-words">Just be yourself—no acting skills required!</li>
+<li class="whitespace-normal break-words">Share 8-10 photos from your photo library to aid the study</li>
+</ul>
+<h2 class="font-claude-response-heading text-text-100 mt-1 -mb-0.5">Why You'll Love This</h2>
+<ul class="[&amp;:not(:last-child)\_ul]:pb-1 [&amp;:not(:last-child)\_ol]:pb-1 list-disc space-y-2.5 pl-7">
+<li class="whitespace-normal break-words"><strong>Quick cash</strong><span class="Apple-converted-space">&nbsp;</span>— $100 for 90 minutes</li>
+<li class="whitespace-normal break-words"><strong>Zero pressure</strong><span class="Apple-converted-space">&nbsp;</span>— just be yourself and have fun</li>
+<li class="whitespace-normal break-words"><strong>Bring your people</strong><span class="Apple-converted-space">&nbsp;</span>— friends and family can join</li>
+<li class="whitespace-normal break-words"><strong>Referral bonuses</strong><span class="Apple-converted-space">&nbsp;</span>— earn $25 per successful referral</li>
+<li class="whitespace-normal break-words"><strong>Help shape AI technology</strong><span class="Apple-converted-space">&nbsp;</span>that learns from real human movement and expression</li>
+<li class="whitespace-normal break-words"><strong>Flexible scheduling</strong><span class="Apple-converted-space">&nbsp;</span>— find a time that works for you</li>
+</ul>
+<p class="font-claude-response-body whitespace-normal break-words">Ready to make some easy money while contributing to cutting-edge AI development? Sign up today!</p>
+<hr class="border-border-300 my-2">
+<p class="font-claude-response-body whitespace-normal break-words"><em>Important: This opportunity is a 1099 contractor assignment and does not constitute employment with HumanSignal.</em></p>
+<p class="font-claude-response-body whitespace-normal break-words"><em><strong>Demographic Information Disclosure:</strong><span class="Apple-converted-space">&nbsp;</span>This research study requires the collection of demographic information (including but not limited to age, gender, ethnicity, and physical characteristics) to ensure appropriate diversity and representation in AI training data. All demographic information collected will be used solely for research purposes and handled in accordance with applicable privacy laws. Participation in this study is completely voluntary, and you have the right to decline participation or withdraw at any time without penalty. By participating, you consent to the collection of this demographic information as part of the study requirements.</em></p>

@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  actions: write  # required so the workflow can trigger site-deploy.yml
 
 concurrency:
   # Don't fight the daily run for the snapshot.

@@ -1,0 +1,45 @@
+<p><span style="font-weight: 400;">We are Datadog's in-house product experts. The technical solutions team enables Datadog's worldwide growth by educating potential clients and ensuring that existing customers are happy and successful. A Technical Account Manager (TAM) will continue to provide hands-on technical services to our largest customers by supporting, adopting and providing guidance over the comprehensive suite of products and features available at Datadog. A TAM is held in high regard as an expert and trusted advisor for how IT Operations translates to business value.</span></p>
+<p><em><span style="font-weight: 400;">At Datadog, we place value in our office culture - the relationships and collaboration it builds and the creativity it brings to the table. We operate as a hybrid workplace to ensure our Datadogs can create a work-life harmony that best fits them.</span></em></p>
+<p><strong>What You’ll Do:</strong></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Advise on technical support and product adoption for customers in line with pre-sales, post-sales and the renewal processes</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Analyze customer’s IT Operations environment on a regular basis and provide recommendations that will maximize Datadog’s value.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Be the customer’s advocate by knowing their goals and use cases then suggesting process changes, product adoption, configuration and additional features to meet their requirements</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Participate and prepare for Monthly and Quarterly Business Reviews with customers</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Collaborate with Datadog’s product management, engineering and technical services teams to help identify new features and products</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Continuously evolve best practice to technical product adoption and customer success</span></li>
+</ul>
+<p><strong>Who You Are:</strong></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Someone with a solid technical grounding and hands-on experience of IT Operations</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Confident in your hands on experience AWS, Azure or GCP</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Comfortable scripting languages like Python, Javascript, Ruby, Perl, Go, PHP, or Chef/Puppet etc.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Skilled in using CI/CD tools e.g. Jenkins, Gitlab etc.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Knowledgeable about Containerization tools e.g. Docker, Kubernetes or Rancher etc.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Able to sit up to 4 hours, traveling to and from client sites&nbsp;</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Able to travel via auto, train or air up to 30% of the time</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Previous experience working as a TAM supporting mid-market and/or Enterprise customers in the cloud space</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Experienced using Datadog and/or other cloud monitoring tools</span></li>
+<li><span style="font-weight: 400;">Fluent in written and spoken Portuguese and English</span></li>
+</ul>
+<p><em><span style="font-weight: 400;">Datadog values people from all walks of life. We understand not everyone will meet all the above qualifications on day one. That's okay. If you’re passionate about technology and want to grow your skills, we encourage you to apply.</span></em></p>
+<p><strong>Benefits and Growth:</strong></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Best-in-breed onboarding</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Generous global benefits</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Intra-departmental mentor and buddy program for in-house networking</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">New hire stock equity (RSUs) and employee stock purchase plan (ESPP)</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Continuous professional development, product training, and career pathing</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">An inclusive company culture, able to join our Community Guilds and Inclusion Talks</span></li>
+</ul>
+<p><em><span style="font-weight: 400;">Benefits and Growth listed above may vary based on the country of your employment and the nature of your employment with Datadog.</span></em></p>
+<p style="color: white;">&nbsp;</p>
+<p style="color: white;">#LI-Hybrid</p><div class="content-conclusion"><hr>
+<p><strong>About Datadog:&nbsp;</strong></p>
+<p>Datadog (NASDAQ: DDOG) is a global SaaS business, delivering a rare combination of growth and profitability. We are on a mission to break down silos and solve complexity in the cloud age by enabling digital transformation, cloud migration, and infrastructure monitoring of our customers’ entire technology stacks. Built by engineers, for engineers, Datadog is used by organizations of all sizes across a wide range of industries. Together, we champion professional development, diversity of thought, innovation, and work excellence to empower continuous growth. Join the pack and become part of a collaborative, pragmatic, and thoughtful people-first community where we solve tough problems, take smart risks, and celebrate one another. Learn more about #DatadogLife on <a href="https://www.instagram.com/datadoghq/?hl=en" target="\_blank">Instagram</a>, <a href="https://www.linkedin.com/company/datadog" target="\_blank">LinkedIn,</a> and <a href="https://learn.datadoghq.com/" target="\_blank">Datadog Learning Center. </a></p>
+<hr>
+<p data-renderer-start-pos="215"><strong data-renderer-mark="true">Equal Opportunity at Datadog:</strong></p>
+<p>Datadog is proud to offer <a href="https://www.eeoc.gov/sites/default/files/2023-06/22-088\_EEOC\_KnowYourRights6.12ScreenRdr.pdf" target="\_blank">equal employment opportunity</a> to everyone regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, gender identity, veteran status, and other characteristics protected by law. We also consider qualified applicants regardless of criminal histories, consistent with legal requirements. Here are our <a href="https://www.datadoghq.com/legal/candidate-legal-notices/" target="\_blank">Candidate Legal Notices</a> for your reference.&nbsp;</p>
+<p>Datadog endeavors to make our Careers Page accessible to all users. If you would like to contact us regarding the accessibility of our website or need assistance completing the application process, please complete <a href="https://docs.google.com/forms/d/e/1FAIpQLSeoJeduEZ2NdZF\_65uZmWUrCM-zee7yADXX1s6Xr9zAGq8iKA/viewform" target="\_blank">this form</a>. This form is for accommodation requests only and cannot be used to inquire about the status of applications.&nbsp;</p>
+<p data-renderer-start-pos="662"><strong data-renderer-mark="true">Privacy and AI Guidelines:</strong></p>
+<p data-renderer-start-pos="662">Any information you submit to Datadog as part of your application will be processed in accordance with Datadog’s&nbsp;<a class="c-link" href="https://www.datadoghq.com/legal/applicant-candidate-privacy/" target="\_blank" data-stringify-link="https://www.datadoghq.com/legal/applicant-candidate-privacy/" data-sk="tooltip\_parent">Applicant and Candidate Privacy Notice</a>. For information on our AI policy, please visit <a href="https://www.datadoghq.com/legal/interviewing-at-datadog-ai-guidelines/" target="\_blank">Interviewing at Datadog AI Guidelines</a>.</p></div>

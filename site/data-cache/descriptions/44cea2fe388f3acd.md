@@ -1,0 +1,10 @@
+<img src="https://we-work-remotely.imgix.net/logos/0083/6659/logo.gif?ixlib=rails-4.0.0&w=50&h=50&dpr=2&fit=fill&auto=compress" />
+
+<p>
+  <strong>Headquarters:</strong> Boulder, CO
+    <br /><strong>URL:</strong> <a href="https://newlawbusinessmodel.com">https://newlawbusinessmodel.com</a>
+</p>
+
+<div>If you would thrive running and scaling a line of business that makes it possible for your multi-year subscription customers to build and grow a tech-enabled business they love and can run with ease, you might be a great fit as our Marketing Automation and Practice Management Business Unit Manager (SaaS Stack Product Owner).<br><br></div><div>Using a collection of off-the-shelf technologies (e.g. inbound digital marketing automation, practice/business management, scheduling software, etc.) configured in a way that has continuously proven successful for our niche market customers (members/subscribers), you would provide them with all the tools they need to efficiently manage their sales, marketing, and service delivery. You would also manage the delivery of marketing assets created by internal and external (agency/vendor) teams for our members to use with that SaaS suite to grow their firms.</div><div><br></div><div>Leveraging your expertise in inbound digital marketing and business process automation, technology, operations, and efficiency, you would lead an established fantastic team that has technical expertise in system configuration and account management as well as existing SOPs and playbooks, manage and expand this $1M+/year BPO business unit’s P&amp;L, and drive efficiency, customer success, and program enhancements through process and technology (especially as the technology landscape continues to evolve).</div><div><br></div>
+
+<p><strong>To apply:</strong> <a href="https://weworkremotely.com/remote-jobs/new-law-business-model-marketing-automation-saas-services-line-of-business-owner">https://weworkremotely.com/remote-jobs/new-law-business-model-marketing-automation-saas-services-line-of-business-owner</a></p>

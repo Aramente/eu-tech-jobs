@@ -1,0 +1,63 @@
+<div class="gmail\_default" style="font-size: small;">
+<div>
+<p><strong>Why Mozilla?</strong></p>
+<p><span style="font-weight: 400;">Mozilla Corporation is the non-profit-backed technology company that has shaped the internet for the better over the last 25 years. We make pioneering brands like Firefox, the privacy-minded web browser. Now, with more than 225 million people around the world using our products each month, we’re shaping the next 25 years of technology and helping to reclaim an internet built for people, not companies. Our work focuses on diverse areas including AI, social media, security and more. And we’re doing this while never losing our focus on our core mission – to make the internet better for people.&nbsp;</span></p>
+<p><span style="font-weight: 400;">The Mozilla Corporation is wholly owned by the non-profit 501(c) Mozilla Foundation. This means we aren’t beholden to any shareholders — only to our mission. Along with thousands of volunteer contributors and collaborators all over the world, Mozillians design, build and distribute </span><strong>open-source</strong><span style="font-weight: 400;"> software that enables people to enjoy the internet on their terms.&nbsp;</span></p>
+<p><strong>About this team and role:</strong></p>
+<p><span style="font-weight: 400;">The Localization Team manages the infrastructure that powers localization across all Mozilla products and services, and supports our global community of volunteer localizers. As a Senior Engineer, you’ll contribute to a range of Mozilla localization projects and technologies — from open source libraries like moz-l10n to Pontoon, our Django-based Translation Management System. You’ll also work on internationalization features that shape the experience of Firefox and other Mozilla products, and have the opportunity to engage with development of standards such as Unicode MessageFormat and DOM Localization.</span></p>
+<p><span style="font-weight: 400;">You’ll contribute to architectural discussions and help drive feature development within the team. At Mozilla, Senior Engineers are expected to work independently on well-defined projects, collaborate closely with peers, and play a key role in delivering high-quality software that advances the team’s goals and Mozilla’s mission.</span></p>
+<p><strong>What you’ll do:&nbsp;</strong></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Contribute to the development of Python and JavaScript libraries (such as moz-l10n) and tools that support Mozilla’s localization infrastructure.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Improve localization and internationalization within the Firefox codebase to make features more adaptable and accessible across languages and regions.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Collaborate with engineers and program managers to design and implement new Pontoon features.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Engage with our community of volunteer developers and localizers to support and guide Mozilla’s localization efforts.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Collaborate effectively with teammates and internal clients across regions and time zones.</span></li>
+</ul>
+<p><strong>What you’ll bring:&nbsp;</strong></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Strong experience developing and maintaining libraries and tools using Python and JavaScript.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Solid understanding of web technologies, APIs, and modern development workflows.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Experience with open source development practices and community collaboration.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Ability to collaborate effectively in a distributed team, across time zones and disciplines.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Excellent communication skills, with an emphasis on clarity and working across technical and non-technical roles.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Professional fluency in English (written and verbal).</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Commitment to our values:</span></li>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Welcoming differences</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Being relationship-minded</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Practicing responsible participation</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Having grit</span></li>
+</ul>
+</ul>
+<p><strong>Bonus points:</strong></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Experience with internationalization (i18n) and localization (l10n) concepts, tools, or workflows.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Programming experience in Rust and C++.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Fluency in another language and understanding of linguistic diversity (e.g., grammar, plurals, text direction, and cultural conventions).</span></li>
+</ul>
+<p><strong>What you’ll get:</strong></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Generous performance-based bonus plans to all eligible employees - we share in our success as one team</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Rich medical, dental, and vision coverage</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Generous retirement contributions with 100% immediate vesting (regardless of whether you contribute)</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Quarterly all-company wellness days where everyone takes a pause together</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Country specific holidays plus a day off for your birthday</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">One-time home office stipend</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Annual professional development budget</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Quarterly well-being stipend</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Considerable paid parental leave</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Employee referral bonus program</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Other benefits (life/AD&amp;D, disability, EAP, etc. - varies by country)</span></li>
+</ul>
+<strong>About Mozilla&nbsp;</strong>
+<p>Mozilla exists to build the Internet as a public resource accessible to all because we believe that open and free is better than closed and controlled. When you work at Mozilla, you give yourself a chance to make a difference in the lives of Web users everywhere. And you give us a chance to make a difference in your life every single day. Join us to work on the Web as the platform and help create more opportunity and innovation for everyone online.</p>
+<p><strong>Commitment to diversity, equity, inclusion, and belonging</strong></p>
+<p>Mozilla understands that valuing diverse creative practices and forms of knowledge are crucial to and enrich the company’s core mission.&nbsp; We encourage applications from everyone, including members of all equity-seeking communities, such as (but certainly not limited to) women, racialized and Indigenous persons, persons with disabilities, persons of all sexual orientation<span style="color: #003366;">s, </span>gender identities, and expressions.</p>
+<p>We will ensure that qualified individuals with disabilities are provided reasonable accommodations to participate in the job application or interview process, to perform essential job functions, and to receive other benefits and privileges of employment, as appropriate. Please contact us at <a class="external-link" href="mailto:hiringaccommodation@mozilla.com">hiringaccommodation@mozilla.com</a> to request accommodation.</p>
+<p>We are an equal opportunity employer. We do not discriminate on the basis of race (including hairstyle and texture), religion (including religious grooming and dress practices), gender, gender identity, gender expression, color, national origin, pregnancy, ancestry, domestic partner status, disability, sexual orientation, age, genetic predisposition, medical condition, marital status, citizenship status, military or veteran status, or any other basis covered by applicable laws.&nbsp; Mozilla will not tolerate discrimination or harassment based on any of these characteristics or any other unlawful behavior, conduct, or purpose.</p>
+<p>Group: D</p>
+<p>#LI-REMOTE</p>
+<p>Req ID: R2984</p>
+</div>
+</div><div class="content-pay-transparency"><div class="pay-input"><div class="description"><p><strong>Hiring Ranges:</strong></p></div><div class="title">Remote Spain</div><div class="pay-range"><span>€57.000</span><span class="divider">&mdash;</span><span>€77.000 EUR</span></div></div></div>

@@ -1,0 +1,39 @@
+## Das sind wir
+
+<p>Da bist du ja – wir haben schon auf dich gewartet! Wir sind clicks digital – durch unsere 17-jährige Erfahrung sind wir eine der führenden Performance-Marketing-Agenturen und süchtig nach Reichweite, guten Google Rankings und echten Erfolgen, die wir unseren Kunden #aroundtheworld liefern. </p><p>Du willst Teil unseres Teams werden, gemeinsam an unseren #teamgoals arbeiten und die revolutionäre Veränderung der Arbeitswelt durch KI aus erster Hand erfahren? Worauf wartest du noch – bewirb dich jetzt und gestalte mit uns deine Zukunft im Online-Marketing!</p><br><p>Für unseren Standort in Dresden suchen wir zum schnellstmöglichen Zeitpunkt einen Teamleiter Online Marketing (m/w/d).</p>
+
+## #thatsus
+
+So digital unser Geschäft ist, so menschlich ist unser Miteinander. Unsere #teamkultur ist ein zentraler Baustein unseres Erfolges und unseres gesamten Unternehmens. Gemeinsam als #unique Team wollen wir tolle Ergebnisse erzielen und unsere Kunden glücklich machen. Wir schätzen und leben wechselseitiges Vertrauen, respektvollen Umgang, hohe Eigenverantwortlichkeit, Verbindlichkeit sowie Förderung &amp; Forderung in einem ausgewogenen Maß. <br><br>Kurz: Wir lieben Menschlichkeit!
+
+## #thatswork
+
+<ul><li>Du bist für das Teammanagement und die Teamführung des Content-Marketing-Teams zuständig</li><li>Du entwickelst Services &amp; Produkte zur Umsatz- und Effizienzsteigerung weiter und konzipierst Neue </li><li>Du leitest und managst Projekte zielorientiert und führst Kunden unter Einbezug aktuellster KI-Entwicklungen zum Erfolg</li><li>Du konzipierst Content-Marketing-Kampagnen und führst diese souverän &amp; kreativ</li><li>Du konzipierst komplexe Workflows zur Marketing-Automatisierung und setzt diese auf</li><li>Du betreust &amp; berätst Key Account-Kunden im Bereich Inbound &amp; Content Marketing</li><li>Du bereitest Pitches und Termine zur Neukundengewinnung vor und führst diese souverän durch</li><li>Du konzipierst Schulungen, Workshops &amp; Produkt-Demos und führst diese souverän durch</li><li>Du findest proaktiv Themen, planst &amp; erstellst themenrelevante Beiträge für das interne Marketing und prüfst diese fachlich</li></ul>
+
+## #profil
+
+<ul><li>Du hast eine Ausbildung oder ein Studium im Bereich Online-Marketing, Kommunikationswissenschaften, Geistes- oder Sprachwissenschaften oder Medienmanagement erfolgreich abgeschlossen</li><li>Du besitzt einschlägige Berufserfahrung im Bereich Content-Marketing, Inbound-Marketing und Marketin- Automatisierung, idealerweise im E-Commerce oder bei einer Agentur</li><li>Du verfügst über tiefgreifendes &amp; kanalübergreifendes Wissen im Bereich Online-Marketing, insbesondere im Content-Marketing sowie Social-Media-Marketing</li><li>Du bist erfahren in strategischer Planung von Content-Marketing-Strategien und verfügst über ausgezeichnete Fähigkeiten zur Erstellung von hochwertigem Content</li><li>Du hattest bereits Führungsverantwortung und liebst es, dich und dein Team voranzubringen</li><li>Du hast ein gutes Gefühl für Menschen, ein Auge für Details, verhandlungssichere Deutschkenntnisse sowie fließende Englischkenntnisse</li><li>Du bist ein Teamplayer und die Zusammenarbeit mit anderen Teams sowie die Kommunikation mit verschiedenen Stakeholdern fällt dir leicht</li></ul><br><strong>#nicetohave:</strong><ul><li>Du hast einen sicheren Umgang bei der Anwendung von agilen Projektmethoden</li><li>Kenntnisse im Umgang mit gängigen Web-Analyse-Systemen wie Google Analytics, Sistrix, Google Search Console zeichnen dich aus</li></ul>
+
+## #feelgoodagency
+
+<ul><li>Wir bieten dir Events, die du und deine Kolleg:innen mitgestalten könnt</li><li>Du kannst dich weiterentwickeln und wirklich etwas bewegen – und das in einer der spannendsten Branchen mit viel Kundenkontakt auf B2B-Ebene.</li><li style="border:0px solid;margin:0px;">Wir arbeiten hybrid – mal im Büro, mal zuhause. Die Mischung macht’s!</li><li>Genieße das Arbeiten innerhalb agiler Teams mit flachen Hierarchien, einem festen Weiterbildungsbudget und einer guten Netzwerkorganisation – und in der Mittagspause einen Snack auf der Dachterrasse mit Blick auf die Dresdner Altstadt.</li><li>Wie klingen ein unbefristeter Arbeitsvertrag, zahlreiche Events, Obst, Müsli, Gemüse, Softdrinks sowie eine bezuschusste betriebliche Altersvorsorge für dich? Bei uns findest du eine sichere, erfüllende und humorvolle Arbeitsumgebung!</li><li>Zusätzlich profitierst du von familienfreundlichen Kernarbeitszeiten werktags von 09:00 – 15:00 Uhr, 29 Tagen Urlaub, Kindkrank-Tagen auf Kulanz und der Möglichkeit, Überstunden unkompliziert abzubummeln</li></ul><br>Mehr zu all unseren Benefits findest du auf unserer <a target="_blank" href="https://clicks.digital/karriere" rel="noreferrer noopener">Karriereseite</a>.
+
+## #letsgo
+
+Das klingt toll für dich? Dann melde dich gern bei uns. Zuallererst wollen wir dich als Mensch kennenlernen und können in einem ruhigen Gespräch gemeinsam herausfinden, ob und wie wir harmonieren. Anschließend lernst du unser Team kennen, schnupperst bei uns rein und wenn alles passt, erhältst du direkt ein Jobangebot. Selbstverständlich sind wir während des gesamten Onboardings permanent für dich da. Unser Ziel: Eine Win-Win-Situation und ein ernstgemeintes Willkommen!
+
+## Wo?
+
+Im wunderschönen Dresden an der Elbe.
+
+## Beginn?
+
+Wir suchen ab sofort Unterstützung und freuen uns auf deine Bewerbung.
+
+## Neugierig auf deine neuen Kollegen?
+
+Schau dich ganz einfach auf unserer <a href="https://www.facebook.com/clicks.de" target="_blank" rel="noreferrer noopener">Facebook</a>-Seite oder auf unseren <a href="https://clicks.digital/team-content" target="_blank" rel="noreferrer noopener">Team-Seiten</a> um und verschaffe dir einen ersten Eindruck von uns.
+
+## ein click. kann alles verändern
+
+Du möchtest unkompliziert mit Nicole &amp; Juliane in Kontakt treten? Dann nutze einfach eine der folgenden Möglichkeiten:

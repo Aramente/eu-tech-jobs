@@ -1,0 +1,32 @@
+<p>P-1521</p>
+<p><em><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;P-363&quot;}" data-sheets-userformat="{&quot;2&quot;:12801,&quot;3&quot;:{&quot;1&quot;:0},&quot;12&quot;:0,&quot;15&quot;:&quot;DM Sans&quot;,&quot;16&quot;:9}">Note that this is a hybrid role and the person needs to go to the office, based in Amsterdam, at least 3x a week.</span></em></p>
+<p><strong>Platform Monitoring Engineer</strong></p>
+<p><strong>Mission</strong></p>
+<p>At Databricks, we are passionate about empowering data teams to tackle the world’s most challenging problems — from bringing the next mode of transportation to reality to accelerating the development of medical breakthroughs. We achieve this by building and operating the world’s best data and AI infrastructure platform, enabling our customers to leverage deep data insights and enhance their business. Founded by engineers — and customer-obsessed — we leap at every opportunity to tackle technical challenges, from designing next-gen UI/UX for interfacing with data to scaling our services and infrastructure across millions of virtual machines. And we're only getting started.&nbsp;</p>
+<p>We are seeking an exceptional Senior Platform Monitoring Engineer to join our Platform Monitoring Team. This is a high-impact technical role for someone who thrives at the intersection of platform reliability, incident response, and customer obsession. You will serve as a critical first responder for the Databricks Platform, leading complex investigations, designing observability solutions, and driving systemic improvements that enhance customer experience and platform stability.</p>
+<h3><strong>The Impact You Will Have</strong></h3>
+<ul>
+<li>Lead platform incident investigation, coordinating cross-functional teams through rapid detection, mitigation, and resolution to minimize customer impact.</li>
+<li>Conduct thorough post-incident root cause analysis across infrastructure, services, and cloud providers to identify systemic patterns and prevent future occurrences.</li>
+<li>&nbsp;Design and implement customer-focused alerting pipelines and end-to-end observability workflows to enhance detection coverage and reduce mean time to detection.</li>
+<li>Build automation tools, establish reusable monitoring patterns, and resolve reliability gaps that directly impact customer experience.</li>
+</ul>
+<p>&nbsp;</p>
+<h3><strong>What We Are Looking For:</strong></h3>
+<ul>
+<li>Minimum of 5 years of experience as an SRE, DevOps Engineer, Production Engineer, or similar role.</li>
+<li>Production-level experience with at least one major cloud provider (AWS, Azure, GCP) and proficiency in container and orchestration technologies (Docker, Kubernetes).</li>
+</ul>
+<ul>
+<li>Hands-on experience with monitoring, logging, and alerting tools such as ELK, Prometheus, Grafana, PagerDuty, etc. Ability to architect monitoring solutions that correlate metrics, logs, and traces.</li>
+</ul>
+<ul>
+<li>Strong proficiency in Python or similar languages with the ability to build production-quality automation tools.</li>
+<li>Experience owning critical phases of the incident lifecycle from detection through resolution and post-mortem analysis in demanding production environments.</li>
+<li>BS or Master's, or PhD in Computer Science or Computer Engineering, or related Engineering field.</li>
+</ul><div class="content-conclusion"><p><strong>About Databricks</strong></p>
+<p><span style="font-family: arial, sans-serif;">Databricks is the data and AI company. More than 10,000 organizations worldwide — including Comcast, Condé Nast, Grammarly, and over 50% of the Fortune 500 — rely on the Databricks Data Intelligence Platform to unify and democratize data, analytics and AI. Databricks is headquartered in San Francisco, with offices around the globe and was founded by the original creators of Lakehouse, Apache Spark™, Delta Lake and MLflow. To learn more, follow Databricks on&nbsp;<span style="color: rgb(255, 54, 33);"><a style="color: rgb(255, 54, 33);" href="https://twitter.com/databricks" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://twitter.com/databricks&amp;source=gmail&amp;ust=1700237575733000&amp;usg=AOvVaw03FL8fJvOD97ytN02f5G2C">Twitter</a>,&nbsp;<a style="color: rgb(255, 54, 33);" href="https://www.linkedin.com/company/databricks" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.linkedin.com/company/databricks&amp;source=gmail&amp;ust=1700237575733000&amp;usg=AOvVaw15dLk3q8VxTfHEgCUg7NSt">LinkedIn</a>&nbsp;<span style="color: rgb(0, 0, 0);">and</span>&nbsp;<a style="color: rgb(255, 54, 33);" href="https://www.facebook.com/databricksinc" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.facebook.com/databricksinc&amp;source=gmail&amp;ust=1700237575733000&amp;usg=AOvVaw39EcncitnlqV72EG2-RqXJ">Facebook</a></span>.<br><br><strong>Benefits<br><br></strong></span>At Databricks, we strive to provide comprehensive benefits and perks that meet the needs of all of our employees. For specific details on the benefits offered in your region click <a href="https://docs.google.com/document/d/154un3e8Xav4BceOSlcYFZRGEuQI54xMxVydRwQn54eQ/edit?usp=sharing">here</a>.<br><br></p>
+<p><strong>Our Commitment to Diversity and Inclusion</strong></p>
+<p>At Databricks, we are committed to fostering a diverse and inclusive culture where everyone can excel. We take great care to ensure that our hiring practices are inclusive and meet equal employment opportunity standards. Individuals looking for employment at Databricks are considered without regard to age, color, disability, ethnicity, family or marital status, gender identity or expression, language, national origin, physical and mental ability, political affiliation, race, religion, sexual orientation, socio-economic status, veteran status, and other protected characteristics.</p>
+<p><strong>Compliance</strong></p>
+<p><strong><span style="font-weight: 400;">If access to export-controlled technology or source code is required for performance of job duties, it is within Employer's discretion whether to apply for a U.S. government license for such positions, and Employer may decline to proceed with an applicant on this basis alone.</span></strong></p></div>

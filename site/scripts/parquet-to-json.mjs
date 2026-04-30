@@ -34,8 +34,10 @@ function isoDate(v) {
 }
 
 // description_md is intentionally omitted from the lite payload — at scale
-// (~20k jobs × multi-KB descriptions) the JSON.stringify call OOMs Node.
-// Per-job pages link out to the source ATS for the full description.
+// (~15k jobs × multi-KB descriptions) the JSON.stringify call OOMs Node.
+// Instead each job's description is written to its own .md file in
+// `data-cache/descriptions/` and the per-job Astro page reads only its
+// own file at build time. ~15k tiny disk reads, no big JSON ever exists.
 const jobsLite = jobs.map((j) => ({
   id: j.id,
   company_slug: j.company_slug,
@@ -47,7 +49,20 @@ const jobsLite = jobs.map((j) => ({
   remote_policy: j.remote_policy,
   seniority: j.seniority,
   role_family: j.role_family,
+  has_description: !!(j.description_md && j.description_md.length > 50),
 }));
+
+// Per-job description files. Path is intentionally outside `src/` so Vite
+// doesn't try to watch / bundle 15k files.
+const DESC_DIR = join(__dirname, "..", "data-cache", "descriptions");
+mkdirSync(DESC_DIR, { recursive: true });
+let descCount = 0;
+for (const j of jobs) {
+  if (j.description_md && j.description_md.length > 0) {
+    writeFileSync(join(DESC_DIR, `${j.id}.md`), j.description_md);
+    descCount++;
+  }
+}
 
 const companiesByslug = Object.fromEntries(companies.map((c) => [c.slug, c]));
 
@@ -64,5 +79,6 @@ if (existsSync(feedSrc)) {
 }
 
 console.log(
-  `[parquet-to-json] ${jobsLite.length} jobs, ${companies.length} companies → src/data/`
+  `[parquet-to-json] ${jobsLite.length} jobs, ${companies.length} companies, ` +
+    `${descCount} per-job .md files → src/data/ + data-cache/descriptions/`
 );

@@ -1,0 +1,124 @@
+<div class="content-intro"><h2><strong>About Anthropic</strong></h2>
+<p>Anthropic’s mission is to create reliable, interpretable, and steerable AI systems. We want AI to be safe and beneficial for our users and for society as a whole. Our team is a quickly growing group of committed researchers, engineers, policy experts, and business leaders working together to build beneficial AI systems.</p></div><p>As the EMEA AE Lead, Beneficial Deployments at Anthropic, you'll build and lead a foundational sales team driving Claude adoption across mission-driven organisations in Europe, the Middle East, and Africa. You'll leverage your consultative sales expertise and passion for social impact to secure strategic partnerships with nonprofits, foundations, INGOs, educational institutions, and social enterprises across the EMEA market.</p>
+<p>This is a player-coach role requiring someone who can personally close complex deals while building a high-performing regional team. You'll operate with significant autonomy across time zones while maintaining tight alignment with global strategy. Our team and verticals are evolving rapidly—the ideal candidate thrives in ambiguity, is energised by building from scratch, and can flex across changing priorities as we learn what works.</p>
+<p>The ideal candidate brings deep experience in the EMEA nonprofit or social impact technology landscape, established relationships with mission-driven institutions, and a proven track record of building teams that drive revenue and mission impact simultaneously.</p>
+<h3 class="heading"><strong>Role Focus</strong></h3>
+<p>This role will lead EMEA sales efforts across Beneficial Deployments verticals, which currently include:</p>
+<ul>
+<li>
+<p><strong>Nonprofits &amp; Foundations:</strong> INGOs, charitable trusts, foundations, and social enterprises across Europe, Middle East, and Africa. Navigate federated organisational structures, EU/UK regulatory requirements, and diverse funding mechanisms.</p>
+</li>
+<li>
+<p><strong>Education:</strong> Educational institutions, EdTech organisations, and learning-focused nonprofits working to expand access and improve outcomes.</p>
+</li>
+<li>
+<p><strong>Emerging Markets:</strong> Partnerships in Africa and India with organisations driving social impact at scale.</p>
+</li>
+</ul>
+<p><em>Note: Verticals and priorities may evolve as the team learns and grows. We're looking for someone comfortable with a shifting remit who can help shape what this role becomes.</em></p>
+<h3 class="heading"><strong>Responsibilities</strong></h3>
+<ul>
+<li>
+<p>Win new business and drive revenue for Anthropic within EMEA mission-driven organisations. Navigate complex multi-stakeholder ecosystems to reach decision-makers, educate them about Claude, and help them succeed with Anthropic</p>
+</li>
+<li>
+<p>Build and lead a regional team supporting EMEA customers, both inbound and outbound. Establish team structure, hiring priorities, and operational processes for scaling—while rolling up your sleeves to close deals yourself</p>
+</li>
+<li>
+<p>Design and execute innovative sales strategies tailored to diverse EMEA contexts: nonprofit budget cycles and grant timelines, foundation giving patterns, and varying regulatory environments across jurisdictions</p>
+</li>
+<li>
+<p>Navigate complex stakeholder ecosystems including INGO executive teams, foundation programme officers, university leadership, trustees, executive directors, and IT departments to build consensus</p>
+</li>
+<li>
+<p>Develop and maintain relationships with key EMEA ecosystem players: nonprofit networks (Bond, NCVO, European Foundation Centre), education networks, and implementation partners</p>
+</li>
+<li>
+<p>Inform product roadmaps by gathering feedback from EMEA nonprofit and education users. Provide insights on regional requirements including data sovereignty, language support, and compliance needs</p>
+</li>
+<li>
+<p>Continuously refine the EMEA sales methodology by incorporating learnings into playbooks, templates, and best practices. Adapt global processes for regional contexts while contributing insights back to the global team</p>
+</li>
+<li>
+<p>Ensure all sales activities comply with relevant data protection regulations (GDPR, UK GDPR) and address customer concerns about data sovereignty, AI ethics, and responsible deployment</p>
+</li>
+<li>
+<p>Partner effectively with SF-based teams across time zones, maintaining regular cadence with Elizabeth Kelly and cross-functional stakeholders while operating with significant regional autonomy</p>
+</li>
+<li>
+<p>Help shape team processes and culture as we scale from 1 to N</p>
+</li>
+</ul>
+<h3 class="heading"><strong>You May Be a Good Fit If You Have</strong></h3>
+<ul>
+<li>
+<p>8+ years of B2B sales experience in nonprofit technology, EdTech, or social impact sectors, preferably in EMEA SaaS or emerging technologies</p>
+</li>
+<li>
+<p>Track record of managing complex sales cycles within nonprofits, INGOs, foundations, or educational institutions, securing strategic deals by understanding both mission requirements and technical needs</p>
+</li>
+<li>
+<p>Experience building and scaling sales teams, with proven ability to recruit, develop, and retain top talent while operating across multiple time zones and cultural contexts</p>
+</li>
+<li>
+<p>Deep understanding of nonprofit or education sector operations, including INGO federated structures, European foundation giving, UK charity sector dynamics, and/or higher education procurement</p>
+</li>
+<li>
+<p>Demonstrated ability to navigate diverse stakeholder ecosystems including trustees, executive directors, programme officers, and procurement committees</p>
+</li>
+<li>
+<p><strong>A scrappy mentality—comfortable wearing multiple hats, building from scratch, driving clarity in ambiguous situations, and doing whatever it takes to further the mission</strong></p>
+</li>
+<li>
+<p>Strong understanding of GDPR and UK data protection, with ability to address customer concerns about AI ethics and responsible deployment</p>
+</li>
+<li>
+<p>Proven experience exceeding revenue targets while operating autonomously, managing an evolving pipeline across multiple market segments and time zones</p>
+</li>
+<li>
+<p>Excellent communication skills with ability to adapt style across cultural contexts</p>
+</li>
+<li>
+<p>Fluency in English required; proficiency in French valued given Francophone Africa coverage; additional European languages a plus</p>
+</li>
+<li>
+<p>A genuine passion for social impact and experience with or commitment to advancing mission-driven work through technology</p>
+</li>
+</ul>
+<h3 class="heading"><strong>Strong Candidates May Also Have</strong></h3>
+<ul>
+<li>
+<p>Active involvement in the EMEA nonprofit or education community through board service, advisory roles, or sector leadership</p>
+</li>
+<li>
+<p>Existing relationships with major INGOs (Save the Children, Oxfam, IRC, MSF, CARE, World Vision), foundations, or educational institutions</p>
+</li>
+<li>
+<p>Familiarity with nonprofit data privacy requirements, AI ethics frameworks, and responsible technology deployment</p>
+</li>
+<li>
+<p>Track record of building strategic partnerships with foundations or philanthropic advisors</p>
+</li>
+<li>
+<p>Experience presenting at nonprofit conferences (Bond Conference, NCVO Conference, Skoll World Forum) or education forums</p>
+</li>
+<li>
+<p>Understanding of specific verticals: education technology, digital health, financial inclusion/economic mobility programmes</p>
+</li>
+</ul>
+<h3 class="heading"><strong>Logistics</strong></h3>
+<p><strong>Location:</strong> London. Must be able to travel within EMEA (up to 30%) and to SF headquarters quarterly.</p>
+<p><strong>Time Zone Coverage:</strong> Must maintain regular overlap with SF-based teams (typically 4-5 hours daily) while covering EMEA business hours.</p>
+<p><strong>Travel:</strong> Regular travel within EMEA for customer meetings, conferences, and team gatherings; quarterly travel to SF for alignment and planning.</p><div class="content-pay-transparency"><div class="pay-input"><div class="description"><p>The annual compensation range for this role is listed below.&nbsp;</p>
+<p>For sales roles, the range provided is the role’s On Target Earnings ("OTE") range, meaning that the range includes both the sales commissions/sales bonuses target and annual base salary for the role.</p></div><div class="title">Annual Salary:</div><div class="pay-range"><span>£280,000</span><span class="divider">&mdash;</span><span>£330,000 GBP</span></div></div></div><div class="content-conclusion"><h2><strong>Logistics</strong></h2>
+<p><strong>Minimum education: </strong>Bachelor’s degree or an equivalent combination of education, training, and/or experience</p>
+<p><strong>Required field of study:&nbsp;</strong>A field relevant to the role as demonstrated through coursework, training, or professional experience</p>
+<p><strong>Minimum years of experience: </strong>Years of experience required will correlate with the internal job level requirements for the position</p>
+<p><strong>Location-based hybrid policy:</strong> Currently, we expect all staff to be in one of our offices at least 25% of the time. However, some roles may require more time in our offices.</p>
+<p><strong data-stringify-type="bold">Visa sponsorship:</strong>&nbsp;We do sponsor visas! However, we aren't able to successfully sponsor visas for every role and every candidate. But if we make you an offer, we will make every reasonable effort to get you a visa, and we retain an immigration lawyer to help with this.</p>
+<p><strong>We encourage you to apply even if you do not believe you meet every single qualification.</strong> Not all strong candidates will meet every single qualification as listed.&nbsp; Research shows that people who identify as being from underrepresented groups are more prone to experiencing imposter syndrome and doubting the strength of their candidacy, so we urge you not to exclude yourself prematurely and to submit an application if you're interested in this work. We think AI systems like the ones we're building have enormous social and ethical implications. We think this makes representation even more important, and we strive to include a range of diverse perspectives on our team.<br><br><strong data-stringify-type="bold">Your safety matters to us.</strong> To protect yourself from potential scams, remember that Anthropic recruiters only contact you from&nbsp;@anthropic.com&nbsp;email addresses. In some cases, we may partner with vetted recruiting agencies who will identify themselves as working on behalf of Anthropic. Be cautious of emails from other domains. Legitimate Anthropic recruiters will never ask for money, fees, or banking information before your first day. If you're ever unsure about a communication, don't click any links—visit&nbsp;<u data-stringify-type="underline"><a class="c-link c-link--underline" href="http://anthropic.com/careers" target="\_blank" data-stringify-link="http://anthropic.com/careers" data-sk="tooltip\_parent" data-remove-tab-index="true">anthropic.com/careers</a></u>&nbsp;directly for confirmed position openings.</p>
+<h2><strong>How we're different</strong></h2>
+<p>We believe that the highest-impact AI research will be big science. At Anthropic we work as a single cohesive team on just a few large-scale research efforts. And we value impact — advancing our long-term goals of steerable, trustworthy AI — rather than work on smaller and more specific puzzles. We view AI research as an empirical science, which has as much in common with physics and biology as with traditional efforts in computer science. We're an extremely collaborative group, and we host frequent research discussions to ensure that we are pursuing the highest-impact work at any given time. As such, we greatly value communication skills.</p>
+<p>The easiest way to understand our research directions is to read our recent research. This research continues many of the directions our team worked on prior to Anthropic, including: GPT-3, Circuit-Based Interpretability, Multimodal Neurons, Scaling Laws, AI &amp; Compute, Concrete Problems in AI Safety, and Learning from Human Preferences.</p>
+<h2><strong>Come work with us!</strong></h2>
+<p>Anthropic is a public benefit corporation headquartered in San Francisco. We offer competitive compensation and benefits, optional equity donation matching, generous vacation and parental leave, flexible working hours, and a lovely office space in which to collaborate with colleagues. <strong data-stringify-type="bold">Guidance on Candidates' AI Usage:</strong>&nbsp;Learn about&nbsp;<a class="c-link" href="https://www.anthropic.com/candidate-ai-guidance" target="\_blank" data-stringify-link="https://www.anthropic.com/candidate-ai-guidance" data-sk="tooltip\_parent">our policy</a>&nbsp;for using AI in our application process</p></div>

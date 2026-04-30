@@ -1,0 +1,28 @@
+<p><strong>CSQ326R35</strong></p>
+<p><strong>Mission</strong></p>
+<p>The AI Forward Deployed Engineering (AI FDE) team is a highly specialized customer-facing AI team at Databricks. We deliver professional services engagements to help our customers build and productionize first-of-its-kind AI applications. We work cross-functionally to shape long-term strategic priorities and initiatives alongside engineering, product, and developer relations, as well as support internal subject matter expert (SME) teams. We view our team as an ensemble: we look for individuals with strong, unique specializations to improve the overall strength of the team. This team is the right fit for you if you love working with customers, teammates, and fueling your curiosity for the latest trends in GenAI, LLMOps, and ML more broadly. This role can be remote.</p>
+<p><strong>The impact you will have:</strong></p>
+<ul>
+<li>Develop cutting-edge GenAI solutions, incorporating the latest techniques from our Mosaic AI research to solve customer problems</li>
+<li>Own production rollouts of consumer and internally facing GenAI applications</li>
+<li>Serve as a trusted technical advisor to customers across a variety of domains</li>
+<li>Present at conferences such as Data + AI Summit, recognized as a thought leader internally and externally</li>
+<li>Collaborate cross-functionally with the product and engineering teams to influence priorities and shape the product roadmap&nbsp;</li>
+</ul>
+<p><strong>What we look for:</strong></p>
+<ul>
+<li>Experience building GenAI applications, including RAG, multi-agent systems, Text2SQL, fine-tuning, etc., with tools such as HuggingFace, LangChain, and DSPy</li>
+<li>Minimum of 5+ years of relevant experience as a Data Scientist preferably working in a consulting role</li>
+<li>Expertise in deploying production-grade GenAI applications, including evaluation and optimizations&nbsp;</li>
+<li>Extensive years of hands-on industry data science experience, leveraging common machine learning and data science tools, i.e. pandas, scikit-learn, PyTorch, etc.</li>
+<li>Experience building production-grade machine learning deployments on AWS, Azure, or GCP</li>
+<li>Graduate degree in a quantitative discipline (Computer Science, Engineering, Statistics, Operations Research, etc.) or equivalent practical experience</li>
+<li>Experience communicating and/or teaching technical concepts to non-technical and technical audiences alike</li>
+<li>Passion for collaboration, life-long learning, and driving business value through AI</li>
+<li>[Preferred] Experience using the Databricks Intelligence Platform and Apache Spark™ to process large-scale distributed datasets</li>
+</ul><div class="content-conclusion"><p><strong>About Databricks</strong></p>
+<p><span style="font-family: arial, sans-serif;">Databricks is the data and AI company. More than 10,000 organizations worldwide — including Comcast, Condé Nast, Grammarly, and over 50% of the Fortune 500 — rely on the Databricks Data Intelligence Platform to unify and democratize data, analytics and AI. Databricks is headquartered in San Francisco, with offices around the globe and was founded by the original creators of Lakehouse, Apache Spark™, Delta Lake and MLflow. To learn more, follow Databricks on&nbsp;<span style="color: rgb(255, 54, 33);"><a style="color: rgb(255, 54, 33);" href="https://twitter.com/databricks" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://twitter.com/databricks&amp;source=gmail&amp;ust=1700237575733000&amp;usg=AOvVaw03FL8fJvOD97ytN02f5G2C">Twitter</a>,&nbsp;<a style="color: rgb(255, 54, 33);" href="https://www.linkedin.com/company/databricks" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.linkedin.com/company/databricks&amp;source=gmail&amp;ust=1700237575733000&amp;usg=AOvVaw15dLk3q8VxTfHEgCUg7NSt">LinkedIn</a>&nbsp;<span style="color: rgb(0, 0, 0);">and</span>&nbsp;<a style="color: rgb(255, 54, 33);" href="https://www.facebook.com/databricksinc" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.facebook.com/databricksinc&amp;source=gmail&amp;ust=1700237575733000&amp;usg=AOvVaw39EcncitnlqV72EG2-RqXJ">Facebook</a></span>.<br><br><strong>Benefits<br><br></strong></span>At Databricks, we strive to provide comprehensive benefits and perks that meet the needs of all of our employees. For specific details on the benefits offered in your region click <a href="https://docs.google.com/document/d/154un3e8Xav4BceOSlcYFZRGEuQI54xMxVydRwQn54eQ/edit?usp=sharing">here</a>.<br><br></p>
+<p><strong>Our Commitment to Diversity and Inclusion</strong></p>
+<p>At Databricks, we are committed to fostering a diverse and inclusive culture where everyone can excel. We take great care to ensure that our hiring practices are inclusive and meet equal employment opportunity standards. Individuals looking for employment at Databricks are considered without regard to age, color, disability, ethnicity, family or marital status, gender identity or expression, language, national origin, physical and mental ability, political affiliation, race, religion, sexual orientation, socio-economic status, veteran status, and other protected characteristics.</p>
+<p><strong>Compliance</strong></p>
+<p><strong><span style="font-weight: 400;">If access to export-controlled technology or source code is required for performance of job duties, it is within Employer's discretion whether to apply for a U.S. government license for such positions, and Employer may decline to proceed with an applicant on this basis alone.</span></strong></p></div>

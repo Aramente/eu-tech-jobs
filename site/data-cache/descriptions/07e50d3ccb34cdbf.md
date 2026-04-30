@@ -1,0 +1,47 @@
+<div class="content-intro"><p>1 in 4 people in the US have a treatable mental health condition, but most providers don't accept insurance, making therapy too expensive for most people. <strong>Headway’s mission is to fix this by building a new mental healthcare system everyone can access.</strong> We started by solving the biggest barrier to care: insurance. The admin work - credentialing, claims, payment reconciliation - is a nightmare. We've automated that.</p>
+<p>But we're going further. Over 70,000 providers across all 50 states run their practice on our software, serving over 1 million patients. We are building the best tools for therapists to run their entire practice, reimagining the experience of finding a therapist, and investing in the platform foundations to enable this at scale. We aren't just a billing layer; we are becoming the platform where care actually happens.</p>
+<p>We're a Series D company with $325M+ in funding (a16z, Accel, GV, etc.), looking for exceptional people to help us achieve this mission. We want your time here to be the most meaningful experience of your career. Join us, and help change mental healthcare for the better.</p></div><p>As Headway’s Senior Manager, FP&amp;A, you will be at the center of the financial processes that drive operational excellence and keep our business moving forward while holding accountability. You will support the overall corporate finance function through the cadence of monthly reporting, forecasting and exec-level KPI reviews. You will serve as a critical business partner to G&amp;A functional leaders across the organization, and identify areas of opportunity while supporting strategic decision-making. This is an exciting opportunity for an experienced, detail-oriented leader who wants to make a significant impact on Headway’s growth and success.</p>
+<p>You will:&nbsp;</p>
+<ul>
+<li>Drive financial planning processes, ensuring the company resource allocation stays within budget and forecasts are tightly linked to the company’s strategic goals</li>
+<li>Support and evolve the company-wide operating model, ensuring key inputs are linked to company growth and profitability and the model is a reliable foundation for forecasting and planning</li>
+<li>Perform robust financial analysis on financial results and operating KPIs, identifying underlying trends and areas of opportunity</li>
+<li>Build and deliver monthly/quarterly reporting packages that tell the story behind the numbers for the exec team and Board</li>
+<li>Leverage tooling/systems to ensure automation of critical processes as we scale</li>
+<li>Support competitive intelligence, M&amp;A and other corporate development initiatives</li>
+<li>Support investor reporting, due diligence, and board-level discussions</li>
+</ul>
+<p>You’d be a great fit if:</p>
+<ul>
+<li>You have 8-10+ years of strategic finance/FP&amp;A experience at a high-growth startup, ideally including 2+ years of consulting/banking/investing</li>
+<li>You understand that people drive change, not spreadsheets, and are passionate about working with partners across all levels of the organization to steer progress</li>
+<li>You have exceptional analytical skills with the ability to drill down into the weeds while maintaining a strategic lens</li>
+<li>You have strong financial acumen and expertise in building financial models to support multiple business needs</li>
+<li>You are excited about AI and how it's reshaping finance, and you actively explore and apply AI tools to drive faster insights, greater efficiency, and smarter decision-making</li>
+<li>You are a curious self-starter, resourceful and have a knack for problem-solving</li>
+<li>You’re energized by joining an early-stage startup and making immediate impact in a high-growth environment&nbsp;</li>
+<li>You are an excellent communicator with strong interpersonal skills</li>
+</ul>
+<p><strong>Compensation and Benefits:</strong></p>
+<p>The expected base pay range for this position is $144,000 - $225,000&nbsp;based on a variety of factors including qualifications, experience, and geographic location. In addition to base salary, this role may be eligible for an equity grant, depending on the position and level.</p>
+<p><em>We are committed to offering a comprehensive and competitive total rewards package, including robust health and wellness benefits, retirement savings, and meaningful ownership opportunities through equity. Compensation decisions are made holistically, ensuring fairness and alignment with market benchmarks while recognizing individual contributions and potential.</em></p>
+<ul>
+<li>Benefits offered include:</li>
+<ul>
+<li>Equity compensation</li>
+<li>Medical, Dental, and Vision coverage</li>
+<li>HSA / FSA</li>
+<li>401K</li>
+<li>Work-from-Home Stipend</li>
+<li>Therapy Reimbursement</li>
+<li>16-week parental leave for eligible employees</li>
+<li>Carrot Fertility annual reimbursement and membership</li>
+<li>13 paid holidays each year as well as a Holiday Break during the week between December 25th and December 31st</li>
+<li>Flexible PTO</li>
+<li>Employee Assistance Program (EAP)</li>
+<li>Training and professional development</li>
+</ul>
+</ul>
+<p>#LI-LN1</p><div class="content-conclusion"><p>We believe a team's strength is in its people, and we cannot achieve this mission without a team that reflects the diversity of this problem – across race, ethnicity, gender, sexuality, age, national origin, religion, family status, disability, military status, and experience. Headway is committed to the full inclusion of all qualified individuals. As part of this commitment, Headway will ensure that persons with disabilities are provided with reasonable accommodations. If reasonable accommodation is needed to participate in the job application or interview process, to perform essential job functions, and/or receive other benefits and privileges of employment, please inform the recruiter when they contact you to schedule your interview.</p>
+<p>Headway participates in E-Verify. To learn more, click <a href="https://www.e-verify.gov/sites/default/files/everify/posters/EVerifyParticipationPoster.pdf">here.</a></p>
+<p>A notice to Headway applicants: To protect yourself against phishing and recruitment fraud, please note that Headway only accepts applications through our official careers page at https://headway.co/careers. Headway will never refer you to external websites, ask for payment or personal information, or conduct interviews via messaging apps. All official communication will come from a @findheadway.com email address. If you are contacted by someone claiming to be from Headway via an unofficial channel, please do not share any information and report it as spam.</p></div>

@@ -1,0 +1,114 @@
+<div class="content-intro"><h2><strong>About Anthropic</strong></h2>
+<p>Anthropic’s mission is to create reliable, interpretable, and steerable AI systems. We want AI to be safe and beneficial for our users and for society as a whole. Our team is a quickly growing group of committed researchers, engineers, policy experts, and business leaders working together to build beneficial AI systems.</p></div><h1><strong>À propos du poste</strong></h1>
+<p>En tant que membre de l'équipe d'IA appliquée chez Anthropic, vous serez un·e architecte avant-vente dont l'objectif est de devenir un conseiller technique de confiance qui aidera les grandes entreprises à comprendre la valeur de Claude et à définir leur vision de la manière dont elles peuvent intégrer et déployer Claude avec succès dans leur infrastructure technologique. Vous combinerez votre expertise technique approfondie avec des compétences en contact avec la clientèle pour concevoir des solutions LLM innovantes qui répondent à des défis commerciaux complexes tout en respectant nos normes élevées en matière de sécurité et de fiabilité.</p>
+<p>En étroite collaboration avec nos équipes de ventes, de produits et d'ingénierie, vous guiderez les clients depuis la découverte technique initiale jusqu'à la réussite du déploiement. Vous mettrez à profit votre expertise pour aider les clients à comprendre les capacités de Claude, à développer des évaluations et à concevoir des architectures évolutives qui maximisent la valeur de nos systèmes d'IA.</p>
+<h1><strong>Responsabilités&nbsp;:</strong></h1>
+<ul>
+<li>Travailler en partenariat avec les responsables de comptes pour comprendre en profondeur les besoins des clients et les traduire en solutions techniques, en veillant à l'adéquation entre les objectifs commerciaux et la mise en œuvre technique</li>
+<li>Agir en tant que conseiller·ère technique principal·e auprès des entreprises clientes tout au long de leur parcours d'adoption de Claude, de la découverte à l'évaluation initiale en passant par le déploiement. Vous devrez assurer la coordination interne entre plusieurs équipes et parties prenantes pour assurer la réussite des clients</li>
+<li>Assister les clients qui développent des projets avec l'API Claude et Claude pour le travail</li>
+<li>Créer et diffuser un contenu technique convaincant adapté à différents publics. Vous devrez être capable d'aller de l'approfondissement technique pour les équipes de développement et à des conversations axées sur la valeur commerciale avec les dirigeants.</li>
+<li>Guider les décisions d'architecture technique et aider les clients à intégrer efficacement Claude dans leur infrastructure technologique existante.</li>
+<li>Aider les clients à élaborer des cadres d'évaluation pour mesurer les performances de Claude dans leurs cas d'utilisation spécifiques.</li>
+<li>Identifier les modèles d'intégration courants et apporter des perspectives à nos équipes Produit et Ingénierie.</li>
+<li>Se rendre occasionnellement sur les sites des clients pour des ateliers, des approfondissements techniques et l'établissement de relations</li>
+<li>Maintenir une connaissance approfondie des derniers développements en matière de capacités LLM et de modèles de mise en œuvre</li>
+</ul>
+<h1><strong>Profil recherché&nbsp;:</strong></h1>
+<ul>
+<li>Plus de 5&nbsp;ans d'expérience dans des postes techniques en contact avec les clients, tels qu'architecte de solutions, ingénieur commercial ou responsable de compte technique</li>
+<li>Expérience de travail avec des entreprises clientes, dans le cadre de cycles d'achat complexes impliquant de multiples parties prenantes</li>
+<li>Capacité exceptionnelle à établir des relations avec diverses parties prenantes et à leur communiquer des concepts techniques, notamment des cadres supérieurs, des équipes informatiques et d'ingénierie, etc.</li>
+<li>Solides compétences en communication technique avec la capacité de traduire les exigences des clients entre les parties prenantes techniques et commerciales</li>
+<li>Expérience de la conception d'architectures cloud évolutives et de l'intégration avec des systèmes d'entreprise</li>
+<li>À l'aise avec Python</li>
+<li>Familiarité avec les cadres et outils LLM courants ou une formation en apprentissage automatique ou en science des données</li>
+<li>Enthousiasme à l'idée de participer à une collaboration inter-organisationnelle, de trouver des compromis et de trouver un équilibre entre des priorités concurrentes</li>
+<li>L'amour de l'enseignement, du mentorat et de la réussite des autres</li>
+<li>Excellentes compétences en matière de communication et de relations interpersonnelles, capables de transmettre des sujets complexes en termes facilement compréhensibles à un ensemble varié de parties prenantes externes et internes. Vous aimez collaborer avec d'autres organisations, faire des compromis et équilibrer des priorités concurrentes.</li>
+<li>Passion pour la réflexion créative sur la manière d'utiliser la technologie de façon sûre et bénéfique, et qui favorise ultimement l'avancement des systèmes d'IA sûrs.</li>
+</ul>
+<h2 class="heading"><strong>Date limite de candidature&nbsp;: </strong>Aucune. Les candidatures seront examinées au fur et à mesure de leur réception.</h2>
+<h2 class="heading"><strong>About the role</strong></h2>
+<p>As an Applied AI team member at Anthropic, you will be a Pre-Sales architect focused on becoming a trusted technical advisor helping large enterprises understand the value of Claude and paint the vision on how they can successfully integrate and deploy Claude into their technology stack. You'll combine your deep technical expertise with customer-facing skills to architect innovative LLM solutions that address complex business challenges while maintaining our high standards for safety and reliability.</p>
+<p>Working closely with our Sales, Product, and Engineering teams, you'll guide customers from initial technical discovery through successful deployment. You'll leverage your expertise to help customers understand Claude's capabilities, develop evals, and design scalable architectures that maximize the value of our AI systems.</p>
+<h2 class="heading"><strong>Responsibilities:</strong></h2>
+<ul>
+<li>
+<p>Partner with account executives to deeply understand customer requirements and translate them into technical solutions, ensuring alignment between business objectives and technical implementation</p>
+</li>
+<li>
+<p>Serve as the primary technical advisor to enterprise customers throughout their Claude adoption journey, from discovery to initial evaluation through deployment. You will need to coordinate internally across multiple teams &amp; stakeholders to drive customer success</p>
+</li>
+<li>
+<p>Support customers building with both the Claude API and Claude for Work</p>
+</li>
+<li>
+<p>Create and deliver compelling technical content tailored to different audiences. You will need to be able to spread the gamut from technical deep dives for engineering &amp; development teams up to business value focused conversations with executives</p>
+</li>
+<li>
+<p>Guide technical architecture decisions and help customers integrate Claude effectively into their existing technology stack</p>
+</li>
+<li>
+<p>Help customers develop evaluation frameworks to measure Claude's performance for their specific use cases</p>
+</li>
+<li>
+<p>Identify common integration patterns and contribute insights back to our Product and Engineering teams</p>
+</li>
+<li>
+<p>Travel occasionally to customer sites for workshops, technical deep dives, and relationship building</p>
+</li>
+<li>
+<p>Maintain strong knowledge of the latest developments in LLM capabilities and implementation patterns</p>
+</li>
+</ul>
+<h2 class="heading"><strong>You may be a good fit if you have:</strong></h2>
+<ul>
+<li>
+<p>5+ years of experience in technical customer-facing roles such as Solutions Architect, Sales Engineer, or Technical Account Manager</p>
+</li>
+<li>Native French speaker with fluent English proficiency</li>
+<li>
+<p>Experience working with enterprise customers, navigating complex buying cycles involving multiple stakeholders</p>
+</li>
+<li>
+<p>Exceptional ability to build relationships with and communicate technical concepts to diverse stakeholders to include C-suite executives, engineering &amp; IT teams, and more</p>
+</li>
+<li>
+<p>Strong technical communication skills with the ability to translate customer requirements between technical and business stakeholders</p>
+</li>
+<li>
+<p>Experience designing scalable cloud architectures and integrating with enterprise systems</p>
+</li>
+<li>
+<p>Comfortable with python</p>
+</li>
+<li>
+<p>Familiarity with common LLM frameworks and tools or a background in machine learning or data science</p>
+</li>
+<li>
+<p>Excitement for engaging in cross-organizational collaboration, working through trade-offs, and balancing competing priorities</p>
+</li>
+<li>
+<p>A love of teaching, mentoring, and helping others succeed</p>
+</li>
+<li>
+<p>Excellent communication and interpersonal skills, able to convey complicated topics in easily understandable terms to a diverse set of external and internal stakeholders. You enjoy engaging in cross-organizational collaboration, working through trade-offs, and balancing competing priorities</p>
+</li>
+<li>
+<p>Passion for thinking creatively about how to use technology in a way that is safe and beneficial, and ultimately furthers the goal of advancing safe AI systems</p>
+</li>
+</ul>
+<p><strong>Deadline to apply:&nbsp;</strong>None. Applications will be reviewed on a rolling basis.&nbsp;</p><div class="content-pay-transparency"><div class="pay-input"><div class="description"><p>The annual compensation range for this role is listed below.&nbsp;</p>
+<p>For sales roles, the range provided is the role’s On Target Earnings ("OTE") range, meaning that the range includes both the sales commissions/sales bonuses target and annual base salary for the role.</p></div><div class="title">Annual Salary:</div><div class="pay-range"><span>€190.000</span><span class="divider">&mdash;</span><span>€215.000 EUR</span></div></div></div><div class="content-conclusion"><h2><strong>Logistics</strong></h2>
+<p><strong>Minimum education: </strong>Bachelor’s degree or an equivalent combination of education, training, and/or experience</p>
+<p><strong>Required field of study:&nbsp;</strong>A field relevant to the role as demonstrated through coursework, training, or professional experience</p>
+<p><strong>Minimum years of experience: </strong>Years of experience required will correlate with the internal job level requirements for the position</p>
+<p><strong>Location-based hybrid policy:</strong> Currently, we expect all staff to be in one of our offices at least 25% of the time. However, some roles may require more time in our offices.</p>
+<p><strong data-stringify-type="bold">Visa sponsorship:</strong>&nbsp;We do sponsor visas! However, we aren't able to successfully sponsor visas for every role and every candidate. But if we make you an offer, we will make every reasonable effort to get you a visa, and we retain an immigration lawyer to help with this.</p>
+<p><strong>We encourage you to apply even if you do not believe you meet every single qualification.</strong> Not all strong candidates will meet every single qualification as listed.&nbsp; Research shows that people who identify as being from underrepresented groups are more prone to experiencing imposter syndrome and doubting the strength of their candidacy, so we urge you not to exclude yourself prematurely and to submit an application if you're interested in this work. We think AI systems like the ones we're building have enormous social and ethical implications. We think this makes representation even more important, and we strive to include a range of diverse perspectives on our team.<br><br><strong data-stringify-type="bold">Your safety matters to us.</strong> To protect yourself from potential scams, remember that Anthropic recruiters only contact you from&nbsp;@anthropic.com&nbsp;email addresses. In some cases, we may partner with vetted recruiting agencies who will identify themselves as working on behalf of Anthropic. Be cautious of emails from other domains. Legitimate Anthropic recruiters will never ask for money, fees, or banking information before your first day. If you're ever unsure about a communication, don't click any links—visit&nbsp;<u data-stringify-type="underline"><a class="c-link c-link--underline" href="http://anthropic.com/careers" target="\_blank" data-stringify-link="http://anthropic.com/careers" data-sk="tooltip\_parent" data-remove-tab-index="true">anthropic.com/careers</a></u>&nbsp;directly for confirmed position openings.</p>
+<h2><strong>How we're different</strong></h2>
+<p>We believe that the highest-impact AI research will be big science. At Anthropic we work as a single cohesive team on just a few large-scale research efforts. And we value impact — advancing our long-term goals of steerable, trustworthy AI — rather than work on smaller and more specific puzzles. We view AI research as an empirical science, which has as much in common with physics and biology as with traditional efforts in computer science. We're an extremely collaborative group, and we host frequent research discussions to ensure that we are pursuing the highest-impact work at any given time. As such, we greatly value communication skills.</p>
+<p>The easiest way to understand our research directions is to read our recent research. This research continues many of the directions our team worked on prior to Anthropic, including: GPT-3, Circuit-Based Interpretability, Multimodal Neurons, Scaling Laws, AI &amp; Compute, Concrete Problems in AI Safety, and Learning from Human Preferences.</p>
+<h2><strong>Come work with us!</strong></h2>
+<p>Anthropic is a public benefit corporation headquartered in San Francisco. We offer competitive compensation and benefits, optional equity donation matching, generous vacation and parental leave, flexible working hours, and a lovely office space in which to collaborate with colleagues. <strong data-stringify-type="bold">Guidance on Candidates' AI Usage:</strong>&nbsp;Learn about&nbsp;<a class="c-link" href="https://www.anthropic.com/candidate-ai-guidance" target="\_blank" data-stringify-link="https://www.anthropic.com/candidate-ai-guidance" data-sk="tooltip\_parent">our policy</a>&nbsp;for using AI in our application process</p></div>

@@ -1,0 +1,38 @@
+<p>&nbsp;</p>
+<p><span style="font-size: 10pt;"><strong>Over ons</strong></span></p>
+<p><span style="font-size: 10pt;">Bij SumUp geloven we in de alledaagse held – de lokale ondernemers die met lef en doorzettingsvermogen hun droom najagen en van hun passie een bedrijf maken.</span><br><br><span style="font-size: 10pt;">Kleine ondernemers staan centraal in alles wat we doen. Daarom ontwikkelen we krachtige, gebruiksvriendelijke financiële oplossingen die hen helpen hun bedrijf te runnen en te laten groeien. Met een ondernemersmentaliteit en een ‘team-first’-houding werken onze diverse teams in Europa, Zuid-Amerika en de Verenigde Staten samen om ervoor te zorgen dat ondernemers succesvol kunnen zijn met wat ze het liefste doen.</span></p>
+<p><span style="font-size: 10pt;"><strong>Functiebeschrijving</strong></span></p>
+<p><span style="font-size: 10pt;">Als Sales Medewerker Buitendienst bouw je dagelijks aan sterke relaties met lokale ondernemers. Jij laat zien hoe SumUp’s producten en oplossingen hen helpen slimmer en efficiënter te werken.</span><br><br><span style="font-size: 10pt;">Met ons uitgebreide productaanbod bied je oplossingen op maat en treed je op als een betrouwbare adviseur. Je wordt onderdeel van een ambitieus Field Sales-team, waarin we mensen zoeken die gepassioneerd zijn over sales, gedreven zijn om te slagen en bewezen hebben dat ze doelstellingen kunnen overtreffen.</span><br><br><span style="font-size: 10pt;">Ons doel? Nog meer ondernemers ondersteunen en versterken – en daar hebben we jouw talent voor nodig.</span></p>
+<p><span style="font-size: 10pt;"><strong>Wat je gaat doen</strong></span></p>
+<ul>
+<li style="font-size: 10pt;"><span style="font-size: 10pt;">Lokale ondernemers in jouw regio identificeren en benaderen, met focus op kleine en middelgrote bedrijven.</span></li>
+<li style="font-size: 10pt;"><span style="font-size: 10pt;">Persoonlijke gesprekken voeren en overtuigende productdemo’s geven die laten zien hoe SumUp het verschil maakt.</span></li>
+<li style="font-size: 10pt;"><span style="font-size: 10pt;">De unieke waarde van onze producten helder communiceren en klantbehoeften en bezwaren professioneel behandelen.</span></li>
+<li style="font-size: 10pt;"><span style="font-size: 10pt;">Actief nieuwe leads genereren en een sterke sales pipeline opbouwen via netwerken, verwijzingen en gerichte acties.</span></li>
+</ul>
+<p><span style="font-size: 10pt;"><strong>Jij bent een sterke match voor deze rol als:</strong></span></p>
+<ul>
+<li style="font-size: 10pt;"><span style="font-size: 10pt;">Je eerder succesvol bent geweest in buitendienstverkoop of een vergelijkbare rol (bij voorkeur in de horeca-, retail- of POS-sector).</span></li>
+<li style="font-size: 10pt;"><span style="font-size: 10pt;">Je bent gewend om verkoopdoelen te overtreffen en uitstekende resultaten te behalen.</span></li>
+<li style="font-size: 10pt;"><span style="font-size: 10pt;">Je beschikt over sterke communicatieve vaardigheden en bouwt makkelijk vertrouwen op voor duurzame klantrelaties.</span></li>
+<li style="font-size: 10pt;"><span style="font-size: 10pt;">Je weet hoe je marktonderzoek doet en nieuwe kansen signaleert.</span></li>
+<li style="font-size: 10pt;"><span style="font-size: 10pt;">Je ervaring hebt met outbound leadgeneratie, cold calling en het opbouwen van een pipeline.</span></li>
+<li style="font-size: 10pt;"><span style="font-size: 10pt;">Je zowel in het Nederlands als in het Engels uitstekend kunt communiceren, mondeling én schriftelijk.</span></li>
+</ul>
+<p><span style="font-size: 10pt;"><strong>Waarom werken bij SumUp?</strong></span></p>
+<ul>
+<li style="font-size: 10pt;"><span style="font-size: 10pt;">Onderdeel worden van een wereldwijd techbedrijf met meer dan 3.000 medewerkers van 93 nationaliteiten, verspreid over 22 kantoren.</span></li>
+<li style="font-size: 10pt;"><span style="font-size: 10pt;">De kans om je eigen pad te creëren en mee te bouwen aan de toekomst van kleine ondernemingen wereldwijd.</span></li>
+<li style="font-size: 10pt;"><span style="font-size: 10pt;">Regelmatige ontbijtjes, teamuitjes, kantoorfeesten en sportactiviteiten.</span></li>
+<li style="font-size: 10pt;"><span style="font-size: 10pt;">Een persoonlijk ontwikkelingsbudget voor conferenties en externe trainingen.</span></li>
+<li style="font-size: 10pt;"><span style="font-size: 10pt;">Een competitief salarispakket (basissalaris + onbeperkte commissie).</span></li>
+<li style="font-size: 10pt;"><span style="font-size: 10pt;">28 dagen betaald verlof en toegang tot het SumUp Sabbatical-programma.</span></li>
+<li style="font-size: 10pt;"><span style="font-size: 10pt;">Medewerker-verwijzingsprogramma, mentale gezondheidszorg via het Employee Assistance Program, plus voordelen voor fitness en taallessen.</span></li>
+<li style="font-size: 10pt;"><span style="font-size: 10pt;">Vervoerstoelage en een bedrijfspensioenregeling.</span></li>
+</ul>
+<p><span style="font-size: 10pt;"><strong>Over SumUp</strong></span></p>
+<p><span style="font-size: 10pt;">Bij SumUp staan kleine ondernemers altijd centraal. Met onze slimme tools helpen we hun bedrijf efficiënt te runnen, zodat ze meer tijd hebben voor waar ze echt goed in zijn.</span><br><br><span style="font-size: 10pt;">Wij zijn een werkgever die gelijke kansen biedt en zich inzet voor een divers personeelsbestand. SumUp neemt geen aanwerving beslissingen op basis van ras, huidskleur, religie, etniciteit, geslacht, genderidentiteit), seksuele geaardheid, handicap, leeftijd of enige andere grond die wordt beschermd door de wet. We streven naar een veilige en inclusieve werkomgeving en verbieden elke vorm van discriminatie of intimidatie.</span></p>
+<p><span style="font-size: 10pt;">👉 Klaar om samen met ons kleine ondernemers te versterken? Solliciteer nu en help mee de toekomst van lokaal ondernemerschap vorm te geven!</span></p>
+<p>#remote #SumUPNLFS</p>
+<p>&nbsp;</p><div class="content-conclusion"><p><strong>Job Application Tip</strong></p>
+<p><span style="font-weight: 400;">We recognise that candidates feel they need to meet 100% of the job criteria in order to apply for a job. Please note that this is only a guide. If you don’t tick every box, it’s ok too because it means you have room to learn and develop your career at SumUp.</span></p></div>

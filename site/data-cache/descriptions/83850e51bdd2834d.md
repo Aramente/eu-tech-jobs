@@ -1,0 +1,60 @@
+<div class="content-intro"><p>Celonis is the global leader in Process Intelligence and the pioneer of Process Mining technology. As one of the world’s fastest-growing enterprise SaaS companies, we are changemakers pushing the boundaries of what’s possible. We invest heavily in advanced AI capabilities—specifically our Process Intelligence Graph—to turn data insights into immediate business action. We believe there is a massive opportunity to unlock global productivity and sustainability by placing intelligence at the core of every business process. Join our mission to make processes work for people, companies, and the planet.</p></div><p><strong>The Team:</strong><br><br>The Celonis<strong> Value Engineering (VE) </strong>team<strong> </strong>is focused on managing the entire customer value lifecycle, from sales through value realization, renewal and expansion. As a <strong>Value Engineer Manager</strong>, you will lead a dynamic team who come from a variety of backgrounds to identify, frame and deliver value to our customers.</p>
+<p><strong>The Role:</strong><br><br>As a <strong>Pre-sales and Solution Engineering (Value Engineering) Manager</strong>, you will lead a team of Value Engineers and drive end-to-end customer value journeys, landing and expanding existing customers (ACV growth) and renewals (renewal rate). You will work closely with the Celonis GTM Leadership Teams and be responsible for the end-to-end value journey for all customers within your region/vertical, supporting customers to achieve their strategic goals and realize significant value using Celonis Process Intelligence Platform. You are a trusted advisor to the Celonis Executive Team, supporting their engagements with strategic customers and senior stakeholders.&nbsp;</p>
+<p>As a leader in one of the fastest-growing tech companies globally, you will bring together deep process and industry knowledge with a proven consulting skill set and strong analytical abilities. You will foster a positive and supportive work environment for your teams, promoting employee satisfaction and career growth.</p>
+<p><strong>The work you’ll do:</strong></p>
+<p><strong>Identify &amp; Frame Value For Prospects/Customers</strong></p>
+<ul>
+<li>Own the end-to-end customer value journey, including responsibility for landing, expanding, adoption and renewing accounts</li>
+<li>Translate customers’ strategic objectives into high-impact Celonis use cases and evangelize Process Intelligence across prospects and customers</li>
+<li>Communicate the value opportunity and strategic roadmap to C-Level executives in partnership with sales leadership and Celonis executives</li>
+<li>Serve as an executive sponsor across the customer portfolio and solidify Celonis as a strategic business transformation platform for our customers</li>
+</ul>
+<p><strong>Create &amp; Scale Value Across The Portfolio</strong></p>
+<ul>
+<li>Lead customers through the Celonis Value Journey, support the deployment of new features, apps, and products across the customer base, and advance strategic growth programs in pursuit of value creation</li>
+<li>Ensure customer success and architect improvement measures and manage change within the customer base, while pioneering new methodologies within Celonis’ Value Engineering organisation</li>
+<li>Direct Celonis Value Engineering, Services and Ecosystem resources through the Celonis Customer Value Journey, creating durable value for our customers&nbsp;</li>
+<li>Take ownership and build strategic customer relationships as an executive sponsor</li>
+<li>Host QBRs (Quarterly Business Reviews) and EBRs (Executive Business Reviews) to communicate results and realized value to senior management and C-level executives</li>
+</ul>
+<p><strong>Grow &amp; Lead Celonis Talent</strong></p>
+<ul>
+<li>Recruit the next-generation of Celonis Value Engineers, while setting a high-standard for candidate excellence</li>
+<li>Develop world-class talent through hands-on engagement, continuous feedback, and active mentorship&nbsp;</li>
+<li>Lead by example and consistently demonstrate the Celonis Leadership Principles (lead with purpose, facilitate greatness, embrace difference, and cultivate balance)</li>
+<li>Effectively allocate Celonis resources to deliver on company sales, renewals, value,&nbsp; and adoption targets&nbsp;</li>
+<li>Communicate success and risks proactively within the organization&nbsp;</li>
+</ul>
+<p><strong>The qualifications you need:</strong></p>
+<ul>
+<li><strong>Domain Expertise:</strong> Demonstrate your business domain expertise, such as in Finance or Supply Chain as well as experience in strategic transformation initiatives (e.g. Shared Services Transformation or System Transformation) and ability to build a compelling value roadmap for the customer</li>
+<li><strong>Industry Expertise:</strong> Demonstrate a deep understanding of industry trends and strategic challenges of the C-Suite and build an integrated Celonis Process Intelligence roadmap</li>
+<li><strong>Product Expertise:</strong> Experience with guiding customer’s IT teams throughout their Celonis Process Intelligence journey, demonstrating hands-on the power of Process Intelligence and proven ability to accelerate value realization by building dashboards, Apps, Action Flows</li>
+<li><strong>Project Management:</strong> Plan and manage project scope, expectations and timelines. Leverage partners from the Celonis Ecosystem wherever possible.</li>
+<li><strong>Executive Stakeholder Management</strong>: Experience in preparing and communicating results to stakeholders and management, both internally and externally.</li>
+<li><strong>Value Selling Methodology:</strong> Demonstrate experience of following the Celonis value selling methodology alongside the customer journey: including discovery, qualification, value assessment and PoV’s, and demonstrate the full value potential of Celonis Process Intelligence</li>
+<li><strong>Value Realization:</strong> Proven track record of identifying and prioritizing use cases, implementing improvement measures and becoming a change agent for the customer by establishing an operating model and training users for the customer to realize value and renew/expand their subscription with Celonis</li>
+<li><strong>Sales &amp; Commercial Acumen:</strong> Demonstrate ability to qualify all VE engagements, do discovery with customers directly, steer/allocate resources efficiently, and champion our value selling methodology with our customers.</li>
+</ul>
+<p><em><strong>Leadership Skills:</strong> Proven ability to lead by example, including being on the front line with your teams, hands-on in all aspects and a role model for the organization.&nbsp;</em></p>
+<p>&nbsp;</p><div class="content-conclusion"><p><strong>What Celonis can offer you:</strong></p>
+<ul class="p-rich\_text\_list p-rich\_text\_list\_\_bullet p-rich\_text\_list--nested" data-stringify-type="unordered-list" data-list-tree="true" data-indent="0" data-border="0">
+<li><span style="text-decoration: underline;">Pioneer Innovation:</span> Work with the global leader in Process Mining and the Process Intelligence Graph to shape the future of AI-driven business operations.</li>
+<li><span style="text-decoration: underline;">Ownership from Day 1:</span> Every full-time "Celonaut" is an owner, receiving Restricted Stock Units (RSUs) and merit-based refresh grants.</li>
+<li><span style="text-decoration: underline;">Unrivaled Family Support:</span> Benefit from our inclusive parental leave policy—24 weeks of fully paid leave for primary carers and 12 weeks for supporting carers, available from your first day of employment.</li>
+<li><span style="text-decoration: underline;">Work-Life Integration:</span> Enjoy Unlimited PTO (in applicable regions) and generous PTO globally, as well as a flexible hybrid work model that balances remote focus with vibrant office collaboration.</li>
+<li><span style="text-decoration: underline;">Continuous Growth:</span> Elevate your skills through our 70-20-10 learning framework, mentorship programs, and access to a dedicated learning platform.</li>
+<li><span style="text-decoration: underline;">Holistic Well-being:</span> Prioritize your health with subsidized Wellhub memberships, mental health counseling, and dedicated "Wellness Weeks" that prioritize work/life balance.</li>
+<li><span style="text-decoration: underline;">Drive Sustainability:</span> Participate in annual Impact Days, where you receive paid time off to volunteer for community and environmental causes with your local office, or virtually.</li>
+<li><span style="text-decoration: underline;">Global Inclusion &amp; Belonging:</span> Find community through our Inclusion Think Tank and participate in our annual Inclusion Days, ensuring every voice is heard and valued.</li>
+<li><span style="text-decoration: underline;">Value-Driven Impact:</span> Join a mission-led organization where our core values—Live for Customer Value, The Best Team Wins, We Own It, and Earth Is Our Future—drive every decision.</li>
+</ul>
+<p><strong>About Us:</strong></p>
+<p>Celonis makes processes work — for people, companies, and the planet. Powered by process mining and AI, the Celonis Process Intelligence Platform integrates process data and business context to create a living digital twin of business operations. We enable thousands of companies worldwide to understand how their business actually runs and, together with their partners, build intelligent solutions that transform and continuously improve the way they operate — unlocking billions in value. Celonis is headquartered in Munich, Germany, and New York City, USA, with more than 20 offices worldwide.</p>
+<p><br>Get familiar with the Celonis Process Intelligence Platform by watching this <a href="https://academy.celonis.com/learn/video/discover-the-ems">video</a>.</p>
+<p><strong>Celonis Inclusion Statement:</strong></p>
+<p>At Celonis, we believe our people make us who we are and that “The Best Team Wins”. We know that the best teams are made up of people who bring different perspectives to the table. And when everyone feels included, able to speak up and knows their voice is heard - that's when creativity and innovation happen.<strong><br></strong></p>
+<p><strong>Your Privacy:</strong></p>
+<p>Any information you submit to Celonis as part of your application will be processed in accordance with Celonis’ <a href="https://www.celonis.com/careers/candidate-notices">Accessibility and Candidate Notices</a></p>
+<p>By submitting this application, you confirm that you agree to the storing and processing of your personal data by Celonis as described in our <a href="https://www.celonis.com/careers/privacy-notice/">Privacy Notice for the Application and Hiring Process</a>.</p>
+<p>Please be aware of common job offer scams, impersonators and frauds. Learn more <a href="https://www.celonis.com/careers/fraud-alert/">here</a>.</p></div>

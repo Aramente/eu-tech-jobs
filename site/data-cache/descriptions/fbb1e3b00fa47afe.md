@@ -1,0 +1,33 @@
+<div class="content-intro"><h2><span data-sheets-root="1">About Wolt</span></h2>
+<p><span data-sheets-root="1">At Wolt, we create technology that brings joy, simplicity and earnings to the neighborhoods of the world. In 2014 we started with delivery of restaurant food. Now we’re building the delivery of (almost) everything and you’ll find us in over 500 cities in 30 countries around the world. In 2022 we joined forces with DoorDash and together we keep on dreaming big and expanding across the globe.<br><br>Working at Wolt isn’t always easy, but it’s definitely exciting. Here you’ll learn more, build more, and ship more than in most other companies. You’ll be challenged a lot, but also have a lot of fun on the way. So, if you’re a self-starter with drive and entrepreneurial spirit, this could be the ride of your life.</span></p></div><p>Wolt Benefits is&nbsp; a rapidly growing B2B business at Wolt, with a clear mission: to bring the same great user experience that Wolt is known for to business users around the world. Through Wolt’s established delivery network and a wide range of restaurant and retail partners, Wolt for Work helps companies support their employees wherever they work, strengthen team connections, and simplify the way they run office and team events.</p>
+<p>As we continue to scale, we are looking for a hands-on Enterprise Sales Manager to join our journey and help accelerate Wolt Benefits’s growth in Israel. This role sits at the heart of our expansion efforts, combining strategic enterprise sales with a strong execution mindset and close collaboration across teams.</p>
+<h2>What you’ll be doing</h2>
+<p>In this role, you will take full ownership of the enterprise sales acquisition process and play a key role in expanding Wolt Benefit’s footprint among large and complex organizations.</p>
+<p>Day-to-day in this role you’ll:</p>
+<ul>
+<li>Own the full end-to-end enterprise sales funnel, from prospecting to closing new business.</li>
+<li>Identify and engage target enterprise and corporate customers, building strong relationships with key decision-makers.</li>
+<li>Act as a trusted problem-solver for prospective clients, working closely with internal stakeholders to shape tailored solutions when needed.</li>
+<li>Analyze sales and funnel data to generate insights and continuously optimize acquisition activities.</li>
+<li>Collaborate closely with Account Managers to ensure smooth handovers and long-term success for both clients and the business.</li>
+<li>Work with Marketing to build acquisition pipelines through partnerships, events, and targeted initiatives.</li>
+</ul>
+<h2>Our humble expectations</h2>
+<ul>
+<li>Experience in B2B or enterprise sales, with a proven track record of closing complex, high-value deals.</li>
+<li>Strong ability to lead sales conversations end-to-end, including discovery, storytelling, demos, negotiation, and closing.</li>
+<li>Excellent communication and presentation skills, with the ability to adapt your message to different stakeholders.</li>
+<li>A structured, analytical approach to problem-solving, paired with a bias for action and execution.</li>
+<li>Experience working with CRM tools and managing a well-organized sales pipeline.</li>
+<li>Fluency in Hebrew and English.</li>
+</ul>
+<h2>What we offer</h2>
+<p>A key role in a fast-growing B2B business within one of Wolt’s most exciting growth areas.</p>
+<p>High ownership and real impact, with the opportunity to shape how Wolt for Work grows in the enterprise segment.</p>
+<p>Close collaboration with experienced sales, marketing, and account management teams in a supportive and ambitious environment.</p>
+<p>A dynamic, hands-on role that blends strategy, execution, and relationship-building.</p>
+<p>The opportunity to grow alongside the business as Wolt for Work continues to scale locally and globally.</p>
+<h2>Next steps</h2>
+<p>If this opportunity sounds exciting to you, we’d love to hear from you. Applications are reviewed on an ongoing basis, so we encourage you to apply as soon as possible through our careers page.<br>Please note that we do not accept applications via email due to GDPR.</p>
+<p><iframe src="https://www.youtube.com/embed/GoL541\_xj9w" width="560" height="314"></iframe></p><div class="content-conclusion"><h2><span data-sheets-root="1">Our Commitment to Diversity and Inclusion</span></h2>
+<p><span data-sheets-root="1">We’re committed to growing and empowering a more inclusive community within our company, industry, and cities. That’s why we hire and cultivate diverse teams of people from all backgrounds, experiences, and perspectives. We believe that true innovation happens when everyone has room at the table and the tools, resources, and opportunity to excel.</span></p></div>

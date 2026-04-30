@@ -1,0 +1,39 @@
+<div class="content-intro"><p>Intercom is the AI Customer Service company on a mission to help businesses provide incredible customer experiences.&nbsp;</p>
+<p>Our AI agent Fin, the most advanced customer service AI agent on the market, lets businesses deliver always-on, impeccable customer service and ultimately transform their customer experiences for the better. Fin can also be combined with our Helpdesk to become a complete solution called the Intercom Customer Service Suite, which provides AI enhanced support for the more complex or high touch queries that require a human agent.&nbsp;</p>
+<p>Founded in 2011 and trusted by nearly 30,000 global businesses, Intercom is setting the new standard for customer service. Driven by our core values, we push boundaries, build with speed and intensity, and consistently deliver incredible value to our customers.</p></div><h2>What's the opportunity?&nbsp;</h2>
+<p>The <strong>Research, Analytics &amp; Data Science (RAD)</strong> team turns insight into action. We uncover customer, product, and business insights and translate them into tools and decision systems embedded directly into GTM workflows.</p>
+<p>AI has unlocked an entirely new generation of internal tools for our GTM teams. We’re evolving from static dashboards to LLM and agent-powered workflows that <em>do</em> the work: auto-researching accounts, summarizing prior interactions, drafting personalized outreach, flagging renewal risk, and assembling decks and docs - enabling Sales and Success to focus on high-value conversations.</p>
+<p>The RAD team partners closely with GTM Systems to define problems, solutions, and measure impact - from prototype to production.</p>
+<p>This is a high-ownership role for someone who thrives in ambiguity, is energized by solving complex real-world problems, and is motivated by seeing their work translate into tangible business impact.</p>
+<h2>What will I be doing?&nbsp;</h2>
+<ul>
+<li><strong>Design, evaluate, and ship AI-powered internal tools</strong> for GTM use cases - including account research &amp; summaries, next-best-action recommendations, renewal propensity, pipeline risk detection, QBR/autobrief generation, and post-call summarization &amp; follow-ups.</li>
+<li><strong>Work end-to-end:</strong> Own the full lifecycle, from problem definition and data modeling to building production-ready tools, including writing Python backends and React frontends.</li>
+<li><strong>Prototype fast, ship to learn:</strong> Rapidly build with users, then productionize quickly to iterate and deliver impact.</li>
+<li><strong>Instrument for adoption and outcomes:</strong> Define success through real usage and measurable business impact (e.g., improved win rate, conversion, expansion).</li>
+<li><strong>Evangelize and enable:</strong> Document playbooks, run enablement sessions, and help leaders operationalize new tooling across teams.</li>
+</ul>
+<h2>What skills do I need?&nbsp;</h2>
+<ul>
+<li>Proven track record of applied data science with measurable GTM impact - you’ve shipped models or tools that moved metrics like conversion, cycle time, or retention.</li>
+<li>LLM/ML application experience - familiarity with RAG, prompt and tool design, vector search, evals and have leveraged AI for development.</li>
+<li>Excellent SQL skills and fluency in Python or R, with experience applying analytical and statistical methods to business problems.</li>
+<li>Experience with orchestration tools (e.g., DBT, Airflow) for deploying reliable data workflows.</li>
+<li>Strong communication and empathy - ability to translate complex data concepts for non-technical stakeholders.</li>
+<li>Collaborative<strong> </strong>product mindset<strong> </strong>- comfort working closely with Sales and Success teams to turn ambiguity into clear deliverables.</li>
+</ul>
+<h2>Benefits&nbsp;</h2>
+<p>We are a well treated bunch, with awesome benefits! If there’s something important to you that’s not on this list, talk to us!&nbsp;</p>
+<ul>
+<li>Competitive salary and equity in a fast-growing start-up</li>
+<li>We serve lunch every weekday, plus a variety of snack foods and a fully stocked kitchen</li>
+<li>Regular compensation reviews - we reward great work</li>
+<li>Peace of mind with life assurance, as well as comprehensive health and dental insurance for you and your dependents</li>
+<li>Open vacation policy and flexible holidays so you can take time off when you need it</li>
+<li>Paid maternity leave, as well as 6 weeks paternity leave for fathers, to let you spend valuable time with your loved ones</li>
+<li>MacBooks are our standard, but we’re happy to get you whatever equipment helps you get your job done</li>
+</ul>
+<p>#LI-Hybrid</p><div class="content-conclusion"><p><strong>Policies&nbsp;</strong></p>
+<p>Intercom has a hybrid working policy. We believe that working in person helps us stay connected, collaborate easier and create a great culture while still providing flexibility to work from home. We expect employees to be in the office at least three days per week.</p>
+<p>We have a radically open and accepting culture at Intercom. We avoid spending time on divisive subjects to foster a safe and cohesive work environment for everyone. As an organization, our policy is to not advocate on behalf of the company or our employees on any social or political topics out of our internal or external communications. We respect personal opinion and expression on these topics on personal social platforms on personal time, and do not challenge or confront anyone for their views on non-work related topics. Our goal is to focus on doing incredible work to achieve our goals and unite the company through our <a href="https://www.intercom.com/careers">core values</a>.&nbsp;&nbsp;</p>
+<p>Intercom values diversity and is committed to a policy of Equal Employment Opportunity. Intercom will not discriminate against an applicant or employee on the basis of race, color, religion, creed, national origin, ancestry, sex, gender, age, physical or mental disability, veteran or military status, genetic information, sexual orientation, gender identity, gender expression, marital status, or any other legally recognized protected basis under federal, state, or local law.</p></div>

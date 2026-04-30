@@ -1,0 +1,62 @@
+Contentsquare is the all-in-one experience intelligence platform designed to be easily used by anyone who cares about digital journeys. With our flexible and scalable platform, organizations quickly get a deep understanding of their customers’ whole online journey.
+
+We are a global leader in the experience analytics space, with a growing presence across 15 offices worldwide. We’re here to stay—and we’re looking for team members who are excited to drive impact and help us scale even further.
+
+Our aim is to create an inclusive workplace where everyone learns and succeeds. Contentsquare has built a community of individuals who are daring, understanding, and deliberate. We invite you to join us in making the complex simpler—for our customers, their customers, and each other.
+
+*Important note: Be careful of scammers pretending to be from Contentsquare. We will never ask for money or contact you through random texts. Any communication from our in house Talent Acquisition team will only ever come from our [contentsquare.com](http://contentsquare.com) or @contentsquare-ext.com domain. For more information, visit our careers blog.*
+
+**About the job:**
+
+This role requires a driven individual who can achieve and exceed targets while supporting our Global Mid Market Sales function. Based in our Cairo office on a hybrid basis (in-office a few days per week), you will play a crucial role in generating quality pipeline that converts to revenue. You'll work with both inbound MQLs and conduct outbound prospecting to key accounts.
+
+## What you’ll do:
+
+- Research target accounts and contacts to identify key decision-makers and understand business challenges
+- Prospect and generate qualified opportunities through outbound activities including cold calling, personalised emails, and social selling to Mid Market accounts
+- Qualify inbound Marketing Qualified Leads (MQLs), conducting discovery calls to assess fit and buying intent
+- Schedule qualified meetings for Account Executives, ensuring proper handoff with detailed opportunity context
+- Consistently meet or exceed KPI and activity expectations
+- Achieve quarterly quotas and goals for qualified opportunities, meetings booked, and pipeline generated
+- Stay current on industry trends, competitive landscape, and product updates to effectively communicate value propositions
+
+## What you’ll need to succeed:
+
+- Fluent in English (written and verbal communication)
+- Coachable and eager to learn - thrives in a continuously evolving business environment and actively seeks feedback
+- Growth-minded - thinks strategically about business impact while driving personal success
+- Proactive and resilient - takes initiative rather than waiting for direction
+- Minimum 1 year successful sales/SDR track record
+- Relevant experience in SaaS, Analytics, or CRM software solutions
+- Competitive nature and drive to succeed (demonstrated through professional or personal achievements)
+- Ability to work effectively in a hybrid environment with strong self-management skills
+
+**Why you should join Contentsquare**
+
+We invest in our people through career development, mentorship, social events, philanthropic activities, and competitive benefits. We are always assessing the perks we offer to ensure we’re aligned with the employees' needs.
+
+Here are a few we want to highlight:
+
+- Virtual onboarding, Hackathon, and various opportunities to interact with your team and global colleagues both on and offsite each year
+
+- Work flexibility: hybrid and remote work policies
+
+- Generous paid time-off policy (every location is different)
+
+- Lifestyle allowance
+
+- A Culture Crew in every country we’re based in to coordinate regular activities for employees to get to know each other and bond outside of work
+
+- Every full-time employee receives stock options, allowing them to share in the company’s success
+
+- We have multiple Employee Resource Groups, that offer a safe space for individuals who share common identities, life experiences, or allyship to connect, support one another, and passionately advocate for the issues close to their hearts
+
+- And more benefits tailored to each country
+
+*Contentsquare is an equal opportunity employer. Qualified applicants will receive consideration for employment without regard to sex, gender identity or expression, sexual orientation, race, color, religion, national origin, disability, protected veteran status, age, or any other characteristic protected by law.*
+
+*Your personal data is used by Contentsquare for recruitment purposes only. Read our* [*Job Candidate Privacy Notice*](https://contentsquare.com/privacy-center/job-candidate-privacy-notice/) *to find out more about data protection at Contentsquare and your rights. You can exercise your rights by using our dedicated Data Subject Rights Portal* [*here*](https://contentsquare.com/privacy-center/data-subject-request-portal/)*.*
+
+*Your personal data will be securely stored in our hosting provider’s data center in Oregon (US west). We have implemented appropriate transfer mechanisms under applicable data protection laws.*
+
+*Contentsquare may use AI-assisted tools to help review and screen applications. All decisions involving hiring are made by human reviewers, and your personal data will be processed in accordance with our*[*Candidate Privacy Policy*](https://contentsquare.com/fr-fr/privacy-center/job-candidate-privacy-notice/)*.*

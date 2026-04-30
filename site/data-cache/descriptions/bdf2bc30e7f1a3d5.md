@@ -1,0 +1,15 @@
+## 1KOMMA5°
+
+Bei <strong>1KOMMA5°</strong> verfolgen wir eine Vision: <strong>Living on wind and sunlight forever for free</strong>. Dafür bauen wir mit Heartbeat AI das Energiesystem der Zukunft. Bist du dabei?<br>Wir bringen regionales Handwerk und skalierbare Software zusammen: Solar, Speicher, Wärmepumpe und E-Mobilität denken wir nicht einzeln, sondern steuern sie als intelligentes, integriertes Gesamtsystem in unserem virtuellen Kraftwerk. Direkt verbunden mit dem Strommarkt – in Echtzeit, vollautomatisiert. So wird Energie dann genutzt, wenn sie erneuerbar verfügbar und besonders günstig ist. Bis 2030 wollen wir 1,5 Millionen Haushalte auf erneuerbare Energien umstellen. Über 3.000 Menschen arbeiten jeden Tag daran, an mehr als 80 Standorten weltweit, von Finnland bis Australien.<br> <br><strong>Du willst Verantwortung übernehmen und Lösungen bauen, die wirklich zählen? Bewirb dich jetzt und gestalte mit uns die Energiewelt von morgen.</strong>
+
+## Deine Position
+
+<ul><li>Tauche ein in die Welt der Logistik und lerne, wie Werkzeuge fachgerecht kommissioniert, verpackt und versendet werden – inklusive der Disposition von Lade- und Transporthilfsmitteln</li><li>Unterstütze aktiv bei der Warenannahme und bring unsere Produkte mithilfe von modernen Hilfsmitteln wie dem Gabelstapler sicher an ihren Platz</li><li>Beteilige Dich an spannenden Planungs- und Organisationsprozessen und bring Deine Ideen zur Optimierung datenbasierter Abläufe ein</li><li>Erstelle Ladelisten und Beladepläne mit Köpfchen und sorg für eine lückenlose Dokumentation durch korrekte Versand- und Begleitpapiere</li><li>Werde Teil der Logistikzentrale, in der jede Bewegung zählt und jeder Handgriff für reibungslose Abläufe sorgt</li></ul>
+
+## Dein Profil
+
+<ul><li>Ein hohes Maß an Verantwortungsbewusstsein und die Motivation, Aufgaben selbstständig und zuverlässig zu erledigen</li><li>Freude an der Zusammenarbeit im Team und ein offenes, kommunikatives Wesen, das sich schnell in neue Abläufe einfindet</li><li>Ein gutes Organisationstalent sowie ein ausgeprägtes räumliches Vorstellungsvermögen, das Dir im Alltag weiterhilft</li><li>Neugier auf Warenströme, Transportprozesse und alles, was sich in einem modernen Lager bewegt</li><li>Solide Kenntnisse in Deutsch und Mathematik sowie ein guter Haupt- oder Realschulabschluss als Fundament für Deine Ausbildung</li></ul>
+
+## Benefits
+
+<ul><li>Ein sicherer Arbeitsplatz mit moderner Ausstattung und attraktiven Konditionen in einer Branche mit echter Zukunft</li><li>Zugang zu einer betrieblichen Altersvorsorge und vielen weiteren Zusatzleistungen, die weit über den Standard hinausgehen</li><li>Ein herzliches, familiäres Team, das Dich von Anfang an willkommen heißt und in dem Zusammenhalt großgeschrieben wird</li><li>Ein persönlicher Mentor, der Dir während Deiner gesamten Ausbildungszeit zur Seite steht und Dir bei Fragen jederzeit weiterhilft</li><li>Kurze Entscheidungswege, direkter Draht zur Geschäftsführung und ein Arbeitsumfeld, in dem Deine Meinung zählt und Deine Ideen willkommen sind</li></ul>

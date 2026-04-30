@@ -1,0 +1,29 @@
+<div class="content-intro"><h2><span data-sheets-root="1">About Wolt</span></h2>
+<p><span data-sheets-root="1">At Wolt, we create technology that brings joy, simplicity and earnings to the neighborhoods of the world. In 2014 we started with delivery of restaurant food. Now we’re building the delivery of (almost) everything and you’ll find us in over 500 cities in 30 countries around the world. In 2022 we joined forces with DoorDash and together we keep on dreaming big and expanding across the globe.<br><br>Working at Wolt isn’t always easy, but it’s definitely exciting. Here you’ll learn more, build more, and ship more than in most other companies. You’ll be challenged a lot, but also have a lot of fun on the way. So, if you’re a self-starter with drive and entrepreneurial spirit, this could be the ride of your life.</span></p></div><p>The Global Support team drives Wolt’s long-term strategy, scalable processes, and sustainable business models across our 30+ markets. We work closely with regional teams, and functional leaders across Product, Analytics, Legal, Other Global functions and more to execute high-impact, company-wide initiatives.</p>
+<p>We’re looking for a Strategy &amp; Operations Manager to join our Global Support team. In this role, you will redefine how we collect, analyze, and act on refunds and contact rate, working closely with regional and product teams to improve customer experience - ensuring their voices shape our decisions and initiatives.&nbsp;</p>
+<p>Strategy and Operations Managers are critical in standardising and improving our operating models across our markets. To be successful in this role is to have an impact across multiple markets in a way that positively impacts our overall customer experience and helps us become more financially efficient as a business.&nbsp;</p>
+<h2>What you’ll be doing</h2>
+<p>The Employee’s duties and responsibilities include among other things:</p>
+<ul>
+<li><strong>Optimize Contact Rate Reduction:</strong> Systematically analyze and address key drivers of customer support inquiries. Develop and implement high-impact process improvements, prioritize automation opportunities, and collaborate with the Support Product team to enhance self-service solutions.</li>
+<li><strong>Drive Data-Backed Operational Excellence:</strong> Establish and refine KPIs to monitor performance, conduct deep-dive analyses to identify trends, and generate actionable insights that inform strategic decisions.</li>
+<li><strong>Strategic Stakeholder Engagement:</strong> Build and maintain strong partnerships with Regional Support, Product, Analytics, Merchant Operations, and Delivery Operations teams to drive alignment on key business objectives.</li>
+<li><strong>Expand Outsourcing Capabilities:</strong> Strategically assess and implement internal and external outsourcing opportunities to optimize cost, efficiency, and service quality.</li>
+<li><strong>Ensure Agile Response to Business Needs:</strong> Maintain a proactive and flexible approach to addressing urgent operational challenges—whether responding to performance fluctuations in specific markets, supporting new product launches, or facilitating entry into new markets.</li>
+<li><strong>Scale Wolt’s Operational Model:</strong> Identify and execute opportunities to enhance tools, products, and workflows across functions, ensuring operational efficiency and scalability as the business grows.</li>
+</ul>
+<h2>Qualifications&nbsp;</h2>
+<ul>
+<li><strong>Experience in Strategy &amp; Operations</strong> – 4+ years of experience in business development, strategy, or operations, with a track record of driving growth, optimizing processes, and leading cross-functional initiatives in a fast-paced environment. Experience in tech, support, or delivery is a plus, but not required</li>
+<li><strong>Data-driven &amp; Analytical </strong>– Strong skills in analytics, research, and problem-solving. You use data to drive strategy, monitor performance, and uncover improvement opportunities.</li>
+<li><strong>Project Management &amp; Execution</strong> – Ability to lead projects, work cross-functionally, and manage multiple priorities. You thrive in structured problem-solving and have a bias for action.</li>
+<li><strong>Excellent Communication</strong> – Strong storytelling and data-backed decision-making. You communicate insights and strategic visions clearly at all levels.</li>
+<li><strong>Stakeholder Management</strong> – Experience working with regional teams, product managers, and leadership to drive alignment and impact.</li>
+<li><strong>Tooling</strong> –&nbsp; Proficiency in Looker, SQL, or similar business analytics tools to extract insights and drive action is a plus.</li>
+<li><strong>Additional Requirements</strong> – Fluency in English and valid EU work authorization.&nbsp;</li>
+</ul>
+<h2>Additional Information</h2>
+<p>If you are excited about working in a high-growth environment, taking ownership, and being part of an extremely ambitious team, then click below to apply and get the conversation going!</p>
+<p>We will be reviewing applications on an on-going basis, so send through your application along with your CV as soon as possible! 💙</p>
+<p><iframe src="https://www.youtube.com/embed/GoL541\_xj9w" width="560" height="314"></iframe></p><div class="content-conclusion"><h2><span data-sheets-root="1">Our Commitment to Diversity and Inclusion</span></h2>
+<p><span data-sheets-root="1">We’re committed to growing and empowering a more inclusive community within our company, industry, and cities. That’s why we hire and cultivate diverse teams of people from all backgrounds, experiences, and perspectives. We believe that true innovation happens when everyone has room at the table and the tools, resources, and opportunity to excel.</span></p></div>

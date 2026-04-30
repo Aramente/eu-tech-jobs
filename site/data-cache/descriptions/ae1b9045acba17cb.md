@@ -1,0 +1,58 @@
+<div class="content-intro"><p>From Fivetran’s founding until now, our mission has remained the same: to make access to data as simple and reliable as electricity. With Fivetran, customer data arrives in their warehouses, canonical and ready to query, with no engineering or maintenance required. We’re proud that more organizations continue to leverage our technology every day to become truly data-driven.</p></div><p><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><strong>About the Role</strong></span></p>
+<p><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Fivetran is building data pipelines to power the modern data stack for thousands of companies.</span></p>
+<p><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">We're looking for a Senior Software Engineer to join our mission critical database connector team and perform a healthy mix of design and implementation tasks to advance the technical foundation behind the Fivetran product offering.</span></p>
+<p><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">As a senior engineer in the database connector team, focusing on capturing data from relational databases, you will contribute to the entire software development lifecycle for the capabilities critical to making our largest enterprise customers successful. You will collaborate with engineers across the engineering organization as we identify opportunities for product improvements. You will be responsible for ensuring the technical excellence of your team and own services by reviewing code and contributing to architectural designs.</span></p>
+<p><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">A successful candidate will be experienced and confident enough to be decisive when needed, and be practical enough to build and iterate on the system while it's in production. Having strong ownership and proactiveness is key to the success of this role.</span></p>
+<p><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">This is a full-time position based out of our Novi Sad office. Our hybrid work model offers a blend of remote flexibility and in-person collaboration, including two days in the office each week to connect and build as a team.</span></p>
+<p><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><strong>Technologies You’ll Use</strong></span></p>
+<ul>
+<li style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">C, Java, SQL, Google BigQuery, Snowflake</span></li>
+<li style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Database and/or Postgres specific</span></li>
+<li style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">GCP, AWS, Azure</span></li>
+</ul>
+<p><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><strong>What You’ll Do</strong></span></p>
+<ul>
+<li style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Design, implement and test code.&nbsp;</span></li>
+<li style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Review and approve technical design documents and pull requests.</span></li>
+<li style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Mentor other members of the team and assist with their challenges.</span></li>
+<li style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Care and take ownership of our database connectors, and leverage your skills towards improving code quality by identifying issues, gaps, and maintaining the code.&nbsp;</span></li>
+<li style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Collaborate with different parties (sibling teams, PM, Customer support and sales) to deliver the best product with high quality and scalability.</span></li>
+<li style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Work across the project lifecycle: requirements, design, prototype, implementation, review, testing, release, and monitor product and iterate again with feedbacks.</span></li>
+</ul>
+<p><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><strong>Skills We’re Looking For</strong></span></p>
+<ul>
+<li style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Experience in C</span></li>
+<li style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Experience in Relational Databases, SQL language, and DBMS call-level interfaces</span></li>
+<li style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Experience with data replication, ETL/ELT tools, cloud and software-defined infrastructure tools (AWS Cloud Formation, Kubernetes, Docker)</span></li>
+<li style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">You know how to design and code systems and software that is effective, intuitive, easy to operate, and elegantly simple.&nbsp;</span></li>
+<li style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">You know complex structures, object orientation, exceptions, and memory management techniques.</span></li>
+<li style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">You are adaptable and have the willingness to learn new skills while being flexible to work within new environments.</span></li>
+</ul>
+<p><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><strong>Optional Bonus Skills​</strong></span></p>
+<ul>
+<li style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Experience in Postgres and its internal, such as the Write-Ahead-Logging, is a strong plus</span></li>
+<li style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Java</span></li>
+<li style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">API technologies and analytics is a plus</span></li>
+<li style="font-family: helvetica, arial, sans-serif; font-size: 10pt;"><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;">Be confident to dive into the nitty-gritty innards of database systems</span></li>
+</ul>
+<p><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;" data-sheets-root="1">#LI-NR1</span></p>
+<p><span style="font-family: helvetica, arial, sans-serif; font-size: 10pt;" data-sheets-root="1">#LI-HYBRID</span></p><div class="content-conclusion"><p>&nbsp;</p>
+<p class="p-rich\_text\_section" style="line-height: 1.3;"><strong data-stringify-type="bold">Perks and Benefits</strong></p>
+<ul>
+<li>100% employer-paid medical insurance<strong>\*</strong></li>
+<li>Generous paid time-off policy (PTO), plus paid sick time, inclusive parental leave policy, holidays, and volunteer days off</li>
+<li>RSU stock grants\*</li>
+<li>Professional development and training opportunities</li>
+<li>Company virtual happy hours, free food, and fun team-building activities</li>
+<li>Monthly cell phone stipend</li>
+<li>Access to an innovative mental health support platform that offers personalized care and resources in areas such as: therapy, coaching, and self-guided mindfulness exercises for all covered employees and their covered dependents.</li>
+</ul>
+<p style="line-height: 1.3;"><em><strong>\*</strong>May vary by country and worker type - please reach out to your recruiter for more information</em></p>
+<p style="line-height: 1.3;"><em>Click <a href="https://drive.google.com/drive/folders/1CdawUwjo1Q1B7ghZJ\_owdmmHB8VtqhBu?usp=sharing" target="\_blank">here</a> to learn more about Fivetran's Benefits by Region.</em></p>
+<hr>
+<p style="line-height: 1.3;">We’re honored to be <a class="c-link" href="https://fivetran.com/blog/hvr-acquisition-series-d" target="\_blank" data-stringify-link="https://fivetran.com/blog/hvr-acquisition-series-d" data-sk="tooltip\_parent">valued at over $5.6 billion</a>, but more importantly, we’re proud of our&nbsp;<a class="c-link" href="https://fivetran.com/culture" target="\_blank" data-stringify-link="https://fivetran.com/culture" data-sk="tooltip\_parent">core values of Get Stuck In, Do the Right Thing, and One Team, One Dream</a>. Read about us in&nbsp;<a class="c-link" href="https://fivetran-com.s3.amazonaws.com/news/forbes-aug-sept-2022-digital-reprint-10-21-22.pdf" target="\_blank" data-stringify-link="https://fivetran-com.s3.amazonaws.com/news/forbes-aug-sept-2022-digital-reprint-10-21-22.pdf" data-sk="tooltip\_parent">Forbes</a>.&nbsp; &nbsp; &nbsp;</p>
+<p style="line-height: 1.3;">Fivetran brings together high-quality talent across the globe to make data access as easy and reliable as electricity for our customers. We value and recognize that our customers benefit from having innovative teams made of people from many backgrounds, experiences, and identities. Fivetran promotes diversity, equity, inclusion &amp; belonging through attracting, recruiting, developing, and retaining a diverse workforce, not only because it is the right thing to do, but because it helps us build a world-class company to better serve our customers, our people and our communities.</p>
+<p style="line-height: 1.3;">To learn more about Fivetran’s culture and what it’s like to be part of the team, <a href="https://www.youtube.com/watch?v=xlhtp4dGh8o" target="\_blank">click here</a> and enjoy our video.</p>
+<p style="line-height: 1.3;">To learn more about our candidate privacy policy, you can <a href="https://fivetran.com/candidate-privacy" target="\_blank">read our statement here</a>.</p>
+<hr>
+<p style="line-height: 1.3;"><em>We are committed to ensuring that all candidates have an equal opportunity to participate in our interview process. If you require accommodations at any stage of the process due to a disability, medical condition, or any other circumstance, please don't hesitate to submit your request by filling out this <a href="https://forms.gle/V7k3t4u9j523XkEt6">form</a>. We will work with you to provide reasonable accommodations to facilitate your participation and ensure a fair and accessible interview experience. Your request and any information provided will be kept confidential and will not impact your candidacy. We look forward to hearing from you and accommodating your needs to the best of our ability.</em></p></div>

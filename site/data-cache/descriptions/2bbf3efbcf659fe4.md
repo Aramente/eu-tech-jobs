@@ -1,0 +1,83 @@
+<div class="content-intro"><p>Intercom is the AI Customer Service company on a mission to help businesses provide incredible customer experiences.&nbsp;</p>
+<p>Our AI agent Fin, the most advanced customer service AI agent on the market, lets businesses deliver always-on, impeccable customer service and ultimately transform their customer experiences for the better. Fin can also be combined with our Helpdesk to become a complete solution called the Intercom Customer Service Suite, which provides AI enhanced support for the more complex or high touch queries that require a human agent.&nbsp;</p>
+<p>Founded in 2011 and trusted by nearly 30,000 global businesses, Intercom is setting the new standard for customer service. Driven by our core values, we push boundaries, build with speed and intensity, and consistently deliver incredible value to our customers.</p></div><h2>What's the opportunity?&nbsp;</h2>
+<p>Principal Engineers at Intercom have the opportunity to lead the definition and execution of key strategic initiatives.<strong> </strong>You will work autonomously and be accountable for strategic execution in part of the engineering organization. You will build both back-end and front-end systems, and work closely with designers, product managers, researchers, and data analysts. You will coach and mentor other engineers and partner closely with the Group Engineering Managers on technical strategy and leadership.</p>
+<p>Learn more about our engineering culture at <a href="http://intercom.engineering/">intercom.engineering</a></p>
+<h2>What will I be doing?&nbsp;</h2>
+<p>As an experienced engineer you will:</p>
+<ul>
+<li>Have a mastery of domain knowledge and work as a leader within the R&amp;D org to drive key strategic projects.</li>
+<li>
+<p>Provide assessments of project progress, risks and challenges to engineering leadership to help guide resource allocation and prioritisation.</p>
+</li>
+<li>
+<p>Contribute to our technical architecture as we grow. We scale to service requests from all our customers’ customers. We’re growing and so are they.</p>
+</li>
+<li>
+<p>Care about agility as much you care for scalability and availability. Continuous deployment keeps us focused on incremental releases. Even our biggest technical achievements roll out piece by piece, feature flagged out of sight.</p>
+</li>
+<li>
+<p>Contribute to all phases of software development including ideation, prototyping, design and implementation. This role has a mix of both hands-on development as well as lead/architecture work.</p>
+</li>
+<li>
+<p>Build using the best tools in the industry. We invest heavily in AI-powered developer tools that remove friction and help you focus on solving meaningful problems.</p>
+</li>
+<li>
+<p>Play an active role in hiring, mentoring and career development of other engineers</p>
+</li>
+<li>
+<p>Raise the bar for technical standards, performance, reliability, and operational excellence</p>
+</li>
+</ul>
+<h2>What skills do I need?&nbsp;</h2>
+<ul>
+<li>
+<p>Ideally, you’ve built an exciting SaaS product in your previous roles and loved the satisfaction that comes with knowing that people around the world are using something you’ve created</p>
+</li>
+<li>
+<p>Significant, demonstrated impact that your work has had on the product and/or the teams</p>
+</li>
+<li>
+<p>Deep knowledge of a high-level programming language (for example, Ruby, Python, Perl etc.) but it doesn’t need to be a language that we use here! Great people are effective and learn what we use quickly (or introduce us to better ways of working)</p>
+</li>
+<li>
+<p>You will have experience with Distributed systems</p>
+</li>
+<li>
+<p>2+ years of experience as the primary technical leader for a team</p>
+</li>
+<li>
+<p>Experience collaborating directly with technical leaders, product teams and designers, and a proven track record of delivering value to customers or users. Engineers at Intercom are pragmatists who work closely with others on cross-disciplinary teams and have a strong sense of product strategy.</p>
+</li>
+</ul>
+<h2>Benefits&nbsp;</h2>
+<p>We are a well treated bunch, with awesome benefits! If there’s something important to you that’s not on this list, talk to us!&nbsp;</p>
+<ul>
+<li>
+<p>Competitive salary and equity in a fast-growing start-up</p>
+</li>
+<li>
+<p>We serve lunch every weekday, plus a variety of snack foods and a fully stocked kitchen</p>
+</li>
+<li>
+<p>Regular compensation reviews - we reward great work!</p>
+</li>
+<li>Pension scheme &amp; match up to 4%</li>
+<li>
+<p>Peace of mind with life assurance, as well as comprehensive health and dental insurance for you and your dependents</p>
+</li>
+<li>
+<p>Flexible paid time off policy</p>
+</li>
+<li>
+<p>Paid maternity leave, as well as 6 weeks paternity leave for fathers, to let you spend valuable time with your loved ones</p>
+</li>
+<li>
+<p>MacBooks are our standard, but we’re happy to get you whatever equipment helps you get your job done</p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p><div class="content-conclusion"><p><strong>Policies&nbsp;</strong></p>
+<p>Intercom has a hybrid working policy. We believe that working in person helps us stay connected, collaborate easier and create a great culture while still providing flexibility to work from home. We expect employees to be in the office at least three days per week.</p>
+<p>We have a radically open and accepting culture at Intercom. We avoid spending time on divisive subjects to foster a safe and cohesive work environment for everyone. As an organization, our policy is to not advocate on behalf of the company or our employees on any social or political topics out of our internal or external communications. We respect personal opinion and expression on these topics on personal social platforms on personal time, and do not challenge or confront anyone for their views on non-work related topics. Our goal is to focus on doing incredible work to achieve our goals and unite the company through our <a href="https://www.intercom.com/careers">core values</a>.&nbsp;&nbsp;</p>
+<p>Intercom values diversity and is committed to a policy of Equal Employment Opportunity. Intercom will not discriminate against an applicant or employee on the basis of race, color, religion, creed, national origin, ancestry, sex, gender, age, physical or mental disability, veteran or military status, genetic information, sexual orientation, gender identity, gender expression, marital status, or any other legally recognized protected basis under federal, state, or local law.</p></div>

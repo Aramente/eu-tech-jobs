@@ -1,0 +1,22 @@
+<p>At Databricks, the Go-To-Market Talent Sourcer plays an important role which is dynamic and exciting! The Talent Sourcer is an essential part of the organization, building relationships with recruiters and hiring managers and developing sourcing strategies that ensure we attract some of the world's best talent.</p>
+<p>We're looking for someone experienced in sourcing sales professionals who understands the value of nurturing talent pools and can also apply talent insights to help the organization make better decisions.&nbsp;</p>
+<p>You'll help scale the Databricks workforce while having fun!</p>
+<p><strong>The impact you will have:</strong></p>
+<ul>
+<li>Find, assess and present profiles for a variety of roles including Account Executives, Solutions Architects, Data &amp; AI</li>
+<li>Engage with passive talent using sourcing tools and using strategic sourcing methodologies.</li>
+<li>Use data to assess the market, talent map and build diverse pipelines.</li>
+<li>Offer an extraordinary candidate experience to all potential candidates.</li>
+</ul>
+<p><strong>What we look for:</strong></p>
+<ul>
+<li>3 years+ sourcing experience in technical or go to market recruiting.</li>
+<li>Expertise in both traditional and advanced talent sourcing techniques</li>
+<li>Experience implementing creative approaches to recruiting, with knowledge of the latest creative resources and techniques</li>
+<li>Bachelor's degree or equivalent required</li>
+</ul><div class="content-conclusion"><p><strong>About Databricks</strong></p>
+<p><span style="font-family: arial, sans-serif;">Databricks is the data and AI company. More than 10,000 organizations worldwide — including Comcast, Condé Nast, Grammarly, and over 50% of the Fortune 500 — rely on the Databricks Data Intelligence Platform to unify and democratize data, analytics and AI. Databricks is headquartered in San Francisco, with offices around the globe and was founded by the original creators of Lakehouse, Apache Spark™, Delta Lake and MLflow. To learn more, follow Databricks on&nbsp;<span style="color: rgb(255, 54, 33);"><a style="color: rgb(255, 54, 33);" href="https://twitter.com/databricks" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://twitter.com/databricks&amp;source=gmail&amp;ust=1700237575733000&amp;usg=AOvVaw03FL8fJvOD97ytN02f5G2C">Twitter</a>,&nbsp;<a style="color: rgb(255, 54, 33);" href="https://www.linkedin.com/company/databricks" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.linkedin.com/company/databricks&amp;source=gmail&amp;ust=1700237575733000&amp;usg=AOvVaw15dLk3q8VxTfHEgCUg7NSt">LinkedIn</a>&nbsp;<span style="color: rgb(0, 0, 0);">and</span>&nbsp;<a style="color: rgb(255, 54, 33);" href="https://www.facebook.com/databricksinc" target="\_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.facebook.com/databricksinc&amp;source=gmail&amp;ust=1700237575733000&amp;usg=AOvVaw39EcncitnlqV72EG2-RqXJ">Facebook</a></span>.<br><br><strong>Benefits<br><br></strong></span>At Databricks, we strive to provide comprehensive benefits and perks that meet the needs of all of our employees. For specific details on the benefits offered in your region click <a href="https://docs.google.com/document/d/154un3e8Xav4BceOSlcYFZRGEuQI54xMxVydRwQn54eQ/edit?usp=sharing">here</a>.<br><br></p>
+<p><strong>Our Commitment to Diversity and Inclusion</strong></p>
+<p>At Databricks, we are committed to fostering a diverse and inclusive culture where everyone can excel. We take great care to ensure that our hiring practices are inclusive and meet equal employment opportunity standards. Individuals looking for employment at Databricks are considered without regard to age, color, disability, ethnicity, family or marital status, gender identity or expression, language, national origin, physical and mental ability, political affiliation, race, religion, sexual orientation, socio-economic status, veteran status, and other protected characteristics.</p>
+<p><strong>Compliance</strong></p>
+<p><strong><span style="font-weight: 400;">If access to export-controlled technology or source code is required for performance of job duties, it is within Employer's discretion whether to apply for a U.S. government license for such positions, and Employer may decline to proceed with an applicant on this basis alone.</span></strong></p></div>

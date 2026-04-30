@@ -1,0 +1,46 @@
+<p>We are searching for an ambitious Commercial Growth Account Executive. Your role will primarily be identifying new workloads to expand MongoDB's usage into accounts that are already leveraging our Database as a Service (DBaaS), Atlas, in a self-serve manner. You'll focus on helping customers understand the continuous evolution of our developer data platform and its additional features that could be leveraged for their specific use cases. You will support customers at any stage of their journey, fostering greater adoption, retention, and overall satisfaction. This role provides an excellent opportunity for growth in a highly dynamic sales team.</p>
+<p>We are looking to speak to candidates who are based in Dublin for our hybrid working model.</p>
+<h3>Day to Day</h3>
+<ul>
+<li>Identify new workloads and potential use cases within existing accounts to drive increased Atlas consumption via your own pipeline generation and outbound activities</li>
+<li>Articulate the value of MongoDB's expanded feature set and evolving developer data platform</li>
+<li>Support customers throughout their journey, addressing any queries and ensuring optimal product usage</li>
+<li>Develop relationships within customer accounts to promote greater visibility and deepen the partnership between MongoDB and your account's decision-makers</li>
+<li>Strategically navigate diverse industries with a data-driven discovery and sales process to help land and expand customer workloads</li>
+</ul>
+<h3>What you bring to the table</h3>
+<ul>
+<li>At least 1 years of Sales experience, with a preference for database or software</li>
+<li>Consistent record of meeting or exceeding targets in a highly competitive environment (top 10% performer)</li>
+<li>Dynamic, enthusiastic, tenacious, team-oriented mindset</li>
+<li>Excellent verbal and written communication skills</li>
+<li>Experience working within a quota and commission structure</li>
+<li>College degree or equivalent work experience</li>
+<li>High EQ, coachability, intellectual curiosity, and motivation to build a career at MongoDB</li>
+<li>Native Italian speaker</li>
+</ul>
+<h3>Things we love</h3>
+<ul>
+<li>Familiarity with database, developer personas, and open-source technology</li>
+<li>Experience with sales tech stack tools like Salesforce.com, Outreach, and Chorus.ai</li>
+</ul>
+<h3>Why You Should Apply</h3>
+<ul>
+<li>We offer an industry-leading onboarding process for Associate Commercial Growth AE’s that prioritizes professional development</li>
+<li>High earning potential and a welcoming, inclusive workplace<a href="https://www.youtube.com/watch?v=w8fOfvvUcko&amp;list=PL4RCxklHWZ9s9TQD1hPFWdOOwZuECDQb1&amp;index=39"> Meet MongoDB’s Employee Affinity Groups!</a></li>
+<li>Continuous career development, sales training in MEDDPIC, and Command of the Message</li>
+<li>Benefits include:</li>
+<ul>
+<li>Sales Bootcamp</li>
+<li>Cross-departmental mentor and buddy programs</li>
+</ul>
+<li>Join us at MongoDB, where your work matters, your individuality is embraced, and you have the freedom to create. You'll be a part of a culture that values your wellbeing and supports your professional and personal journey. We’re committed to making a real-world impact, and we can't wait to see what kind of difference you can make. Learn more about working at MongoDB and help us transform the world!</li>
+</ul>
+<h3>About MongoDB</h3>
+<p>MongoDB is built for change, empowering our customers and our people to innovate at the speed of the market. We have redefined the database for the AI era, enabling innovators to create, transform, and disrupt industries with software. MongoDB’s unified database platform, the most widely available, globally distributed database on the market, helps organizations modernize legacy workloads, embrace innovation, and unleash AI. Our cloud-native platform, MongoDB Atlas, is the only globally distributed, multi-cloud database and is available across AWS, Google Cloud, and Microsoft Azure.</p>
+<p>With offices worldwide and over 60,000 customers, including 75% of the Fortune 100 and AI-native startups, relying on MongoDB for their most important applications, we’re powering the next era of software.</p>
+<p>Our compass at MongoDB is our <a href="https://www.mongodb.com/company">Leadership Commitment,</a> guiding how and why we make decisions, show up for each other, and win. It’s what makes us MongoDB.&nbsp;</p>
+<p>To drive the personal growth and business impact of our employees, we’re committed to developing a supportive and enriching culture for everyone. <a href="https://www.mongodb.com/company/blog/culture/employee-benefits-that-make-a-difference-at-mongodb">From employee affinity groups, to fertility assistance and a generous parental leave policy</a>, we value our employees’ wellbeing and want to support them along every step of their professional and personal journeys.<a href="https://www.mongodb.com/blog/channel/culture"> Learn more about what it’s like to work at MongoDB</a>, and help us make an impact on the world!</p>
+<p>MongoDB is committed to providing any necessary accommodations for individuals with disabilities within our application and interview process. To request an accommodation due to a disability, please inform your recruiter.</p>
+<p>MongoDB is an equal opportunities employer.</p>
+<p>Req ID: 426246</p>

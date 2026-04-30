@@ -1,0 +1,44 @@
+**Sales at TRACTIAN**
+
+The Sales team is the driving force behind revenue at Tractian, generating new opportunities, acquiring top-tier customers like Hyundai, Bosch, and Kraft Heinz, and strengthening relationships with our current accounts. Backed by strategic investors with a track record of building unicorns, Tractian is poised to set new benchmarks in industrial technology. Recognized on the Forbes AI 50 list in 2024 and ranked in the 98th percentile by RepVue for inbound leads, we deliver undeniable value—boosting machine reliability, delivering immediate ROI, and achieving world-class revenue retention that matches the best in tech. At Tractian, top performers are recognized, rewarded, and empowered to overachieve their goals.
+
+**What you'll do**
+
+As a Regional Sales Director at Tractian, you will be responsible for driving regional revenue performance, ensuring forecast accuracy, and executing a sustainable growth strategy across your assigned markets. You will build, lead, and develop a high-performing, multi-layered sales organization, coaching Regional Sales Managers and Account Executives to deliver consistent results across new customer acquisition and account expansion.
+
+You will establish disciplined operating rhythms, partner closely with cross-functional leaders in Sales Engineering, Customer Success, Marketing, and Product, and help Tractian deepen its presence within complex industrial organizations. Your leadership will play a critical role in accelerating adoption of Tractian’s maintenance and reliability platform across the region.
+
+## Responsibilities
+
+- Define and execute the regional sales strategy by combining strong product knowledge, market insight, and disciplined execution standards.
+- Build, lead, and scale a multi-layered sales organization, developing Regional Sales Managers and senior Account Executives to deliver consistent performance across new business and account expansion.
+- Drive predictable revenue outcomes through structured pipeline management, deal strategy reviews, and support for complex, executive-level negotiations.
+- Own regional talent strategy, including hiring, performance management, and succession planning, to ensure sustained leadership depth and organizational stability.
+- Implement repeatable onboarding, enablement, and operating rhythms that reduce ramp time, increase productivity, and support consistent execution across the region.
+- Establish and maintain senior-level relationships with strategic customers to support expansion opportunities and long-term partnerships.
+- Design and continuously refine territory structures, account segmentation, and coverage models to optimize regional performance and enable scalable growth.
+
+## Requirements
+
+- 3+ years of experience leading and developing sales leaders and high-performing, quota-carrying teams in a B2B environment.
+- 8+ years of experience selling complex B2B solutions, with a strong track record of success in enterprise or strategic accounts.
+- Proven ability to deliver predictable revenue results through structured forecasting, pipeline management, and deal governance.
+- Experience selling into industrial, manufacturing, maintenance, or reliability-focused organizations, or equivalent exposure to complex technical buying environments.
+- Strong operational leadership skills, with deep understanding of enterprise sales methodologies, territory and coverage design, and account-based selling models.
+- Experience using CRM and sales analytics tools (e.g., HubSpot) to drive data-informed decision-making, accountability, and execution discipline.
+- Executive-level communication and negotiation skills, with demonstrated success influencing senior stakeholders and closing complex, competitive deals.
+- Strategic, people-focused leader with the ability to scale teams, improve performance, and execute against long-term regional growth objectives.
+
+**Compensation**
+
+Full-time employment with all mandatory statutory social and health insurance
+
+Paid vacation: 20 days annually, plus national holidays
+
+Pension Scheme, 1,5% match
+
+International travel for company kick-off events at our headquarters in Atlanta, GA, United States
+
+Sports Incentive – Monthly bonus for regular participation in physical activities
+
+Long-Term Benefit – After four years of service, enjoy a fully funded trip anywhere in the world

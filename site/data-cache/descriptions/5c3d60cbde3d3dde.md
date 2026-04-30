@@ -1,0 +1,33 @@
+<div class="content-intro"><p>We are a global team of innovators and pioneers dedicated to shaping the future of observability. At New Relic, we build an intelligent platform that empowers companies to thrive in an AI-first world by giving them unparalleled insight into their complex systems. As we continue to expand our global footprint, we're looking for passionate people to join our mission. If you're ready to help the world's best companies optimize their digital applications, we invite you to explore a career with us!</p></div><p><strong>Your opportunity</strong><strong><br></strong>New Relic is currently seeking a Director of Channel and Alliances to join our APJ Alliances &amp; Channels Team! The A&amp;C organisation owns all partner relationships, identifies how to engage with varying types of partners, how to identify and close potential opportunities involving a partner, building /executing joint GTM initiatives, improve product value through integrations, and distribution through leading cloud marketplaces. This individual will establish relationships and partnerships with leading cloud providers and provide mentorship to a few direct team members. If this aligns with your experience we would love to talk to you!</p>
+<p><br><strong>What you'll do</strong></p>
+<ul>
+<li>Lead a team of APJ-based partner managers with responsibilities to build partnerships end to end inclusive of contractual requirements, adding New Relic technology offerings to the marketplace, building /executing go to market efforts, monitoring opportunities and reporting</li>
+<li>Build, strengthen, and maintain relationships at multiple levels across all cloud partners that will drive increased visibility and grow the partnership</li>
+<li>Ensure our partners’ sales, technical, service and management resources are enabled as needed to make the partnership successful</li>
+<li>Drive a joint partner business planning process in which mutual performance objectives, identifying joint customer targets and critical achievements are defined</li>
+<li>Align with the cloud partners and internal alliance team members to identify how to build / launch SaaS offerings for New Relic in these partners</li>
+<li>Work with your team to seek out and document standard processes for co-selling by partner</li>
+<li>Build/Own partner sourced pipeline for all partners</li>
+<li>Maintain high level relationships with all cloud partners, ensuring that our strategic goals are aligned with activities in the field while providing autonomy to your team members</li>
+<li>Ensure training, enablement and educational sessions are held for all partners</li>
+<li>Maintain reports on Partner Opportunities developed, pipeline and deals won</li>
+</ul>
+<p><strong>This role requires</strong></p>
+<ul>
+<li>Bachelor’s degree or foreign equivalent required from an accredited institution. Will also consider progressive experience in the specialty in lieu of every year of education and extensive proven experience, with strong alliances/ business partnerships/ account management experience in APJ</li>
+<li>Significant experience in both building and leading successful at-scale cloud provider ecosystem partnerships</li>
+<li>Impressive track record in building joint business plans, value propositions, campaigns and GTM strategies as well as successful achievement of both strategic and identifying / driving joint opportunity goals</li>
+</ul>
+<p><strong>Bonus points if you have</strong></p>
+<ul>
+<li>Experience within the Observability space in APJ</li>
+<li>Ability to synthesize, communicate, and evangelize a vision with internal and external partners</li>
+<li>Global Delivery Model experience</li>
+</ul>
+<p>Please note that visa sponsorship is not available for this position.<br><br><br></p><div class="content-conclusion"><p>Fostering a diverse, welcoming and inclusive environment is important to us. We work hard to make everyone feel comfortable bringing their best, most authentic selves to work every day. We celebrate our talented Relics’ different backgrounds and abilities, and recognize the different paths they took to reach us – including nontraditional ones. Their experiences and perspectives inspire us to make our products and company the best they can be. We’re looking for people who feel connected to our mission and values, not just candidates who check off all the boxes.&nbsp;</p>
+<p>If you require a reasonable accommodation to complete any part of the application or recruiting process, please reach out to <a href="mailto:resume@newrelic.com" target="\_blank">resume@newrelic.com</a>.</p>
+<p>We believe in empowering all Relics to achieve professional and business success through a flexible workforce model. This model allows us to work in a variety of workplaces that best support our success, including fully office-based, fully remote, or hybrid.</p>
+<p><strong>Our hiring process</strong><br><br>In compliance with applicable law, all persons hired will be required to verify identity and eligibility to work and to complete employment eligibility verification. Note: Our stewardship of the data of thousands of customers means that a criminal background check is required to join New Relic.<br><br>We will consider qualified applicants with arrest and conviction records based on individual circumstances and in accordance with applicable law including, but not limited to, the&nbsp;<a href="https://sfgov.org/olse/sites/default/files/FCO%20poster2020.pdf" target="\_blank">San Francisco Fair Chance Ordinance</a>.<br><br>Headhunters and recruitment agencies may not submit resumes/CVs through this website or directly to managers. New Relic does not accept unsolicited headhunter and agency resumes, and will not pay fees to any third-party agency or company that does not have a signed agreement with New Relic.</p>
+<p>New Relic develops and distributes encryption software and technology that complies with U.S. export controls and licensing requirements. Certain New Relic roles require candidates to pass an export compliance assessment as a condition of employment in any global location. If relevant, we will provide more information later in the application process.</p>
+<p>Candidates are evaluated based on qualifications, regardless of race, religion, ethnicity, national origin, sex, sexual orientation, gender expression or identity, age, disability, neurodiversity, veteran or marital status, political viewpoint, or other legally protected characteristics.&nbsp;</p>
+<p>Review our Applicant Privacy Notice at&nbsp;<a href="https://newrelic.com/termsandconditions/applicant-privacy-policy" target="\_blank">https://newrelic.com/termsandconditions/applicant-privacy-policy</a></p></div>

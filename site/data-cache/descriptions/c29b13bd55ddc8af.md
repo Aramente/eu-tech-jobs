@@ -1,0 +1,11 @@
+## Deine Aufgaben
+
+<strong>Standort:</strong> Leipzig<br><strong>Start:</strong> ab sofort / nach Vereinbarung<br><strong>Arbeitszeit:</strong> 15 - 20 Stunden pro Woche (flexibel nach Absprache)<br><strong>Befriste</strong><strong>t:</strong> 3-4 Monate<ul><li>Erstellung und Pflege von Gründerzeitzertifikaten</li><li>Analyse und Aufbereitung von Objektbeschreibungen (Schwerpunkt Gründerzeitobjekte)</li><li>Recherche und Dokumentation objektspezifischer Merkmale und historischer Details</li><li>Unterstützung des Teams in Marketing und Vermietung </li><li>Digitale und physische Ablage von Objektunterlagen (Dokumentenmanagement)</li><li>Digitalisierung von Bestandsdokumenten und Datenpflege in internen Systemen</li></ul>
+
+## Dein Profil
+
+<ul><li><p>Du bist immatrikulierter Student (m/w/d) im Bereich Bereich Marketing, Medien, Kommunikation, Immobilienwirtschaft, Facility Management oder einem verwandten Studiengang</p></li><li><p>Interesse an immobilienwirtschaftlichen Themen sowie Marketing</p></li><li><p>Strukturierte und selbstständige Arbeitsweise sowie ein sicherer Umgang mit MS Office (insbesondere Excel)</p></li><li><p>Idealerweise erste praktische Erfahrungen im Bereich Immobilien, Marketing oder Administration (z. B. durch Praktika)</p></li><li><p>Gute organisatorische Fähigkeiten sowie ein Auge für Details</p></li><li><p>Affinität zu digitalen Tools und Dokumentenmanagement</p></li><li><p>Sehr gute Deutschkenntnisse in Wort und Schrift</p></li><li><p>Teamgeist, Verantwortungsbewusstsein und eine proaktive Arbeitsweise runden dein Profil ab</p></li></ul>
+
+## Unsere ARGOmente
+
+<ul><li><p>Einblicke in die Abläufe eines professionellen Immobilienunternehmens</p></li><li><p>Abwechslungsreiche Aufgaben mit direktem Bezug zur Praxis</p></li><li><p>Flexible Arbeitszeiten, die sich gut mit dem Studium vereinbaren lassen</p></li><li><p>Eine offene, familiäre Unternehmenskultur mit flachen Hierarchien und einem hilfsbereiten Team</p></li><li><p>Möglichkeit zur fachlichen und persönlichen Weiterentwicklung</p></li><li><p>Moderne Arbeitsmittel und ein zentral gelegenes Büro</p></li></ul><p>Du möchtest praxisnahe Einblicke in die Immobilienwirtschaft gewinnen oder suchst eine Möglichkeit zum Einstieg in die Branche? Dann werde Teil unseres Teams!</p>

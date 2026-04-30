@@ -1,0 +1,31 @@
+<p><strong>This is Adyen</strong></p>
+<p>Adyen provides payments, data, and financial products in a single solution for customers like Meta, Uber, LVMH, Leboncoin, Decathlon, and Qonto - making us the financial technology platform of choice. At Adyen, everything we do is engineered for ambition.&nbsp;</p>
+<p>For our teams, we create an environment with opportunities for our people to succeed, backed by the culture and support to ensure they are enabled to truly own their careers. We are motivated individuals who tackle unique technical challenges at scale and solve them as a team. Together, we deliver innovative and ethical solutions that help businesses achieve their ambitions faster.&nbsp;</p>
+<p>Adyen France is certified Best place to work 2025 and Best place to work for Women 2023.</p>
+<p><strong>Solutions Engineer</strong></p>
+<p>Adyen is looking for an Solutions Engineer with a solid understanding of and hands-on experience with technology, integration design, project management and a strong merchant focus. As a Solutions Engineer you will be the primary point of contact for our merchant's technical teams, guiding them through the design, development, testing, and launch phases of their integrations with Adyen's platform. Your focus will be on ensuring an exceptional merchant experience throughout the project lifecycle.&nbsp;</p>
+<p>In this role, you will have the opportunity to work on diverse projects that encompass various payment solutions, including e-commerce platforms, marketplaces, and card issuing programs. By leveraging your technical proficiency and business acumen, you will play a vital role in guaranteeing a smooth implementation process and maintaining open lines of communication with our merchants and internal teams. This position is based in our Paris office, and the ideal candidate is both consultative and technical.</p>
+<p><strong>What you'll do:</strong></p>
+<ul>
+<li>Utilize development and programming expertise to create scalable and robust solutions for merchant integrations, while ensuring adherence to payment best practices.</li>
+<li>Serve as a consultative partner in specific verticals such as e-commerce, point of sale, and multi-faceted platforms, guiding merchants through integration processes.</li>
+<li>Collaborate cross-functionally with Sales, Account Managers, Product, and Engineering teams to deliver seamless merchant experiences and drive continuous improvements.</li>
+<li>Leverage project management and technical consulting skills to oversee high-quality project delivery, guaranteeing the technical integrity of merchant integrations.</li>
+<li>Provide consultation on optimizing payment solutions, including checkout experiences, authentication, omni-channel payments, and platform onboarding, while collaborating with Developers and Product Managers to enhance the platform.</li>
+</ul>
+<p><strong>Who you are:</strong></p>
+<ul>
+<li>5+ years experience integrating and/or providing technical consultation when integrating with Web APIs</li>
+<li>Proven ability to quickly learn new technologies, understand complex systems (APIs, databases, SDK's, etc.), and desire to improve technical acumen</li>
+<li>Excellent communication skills; comfortable leading meetings with high level decision makers</li>
+<li>Ability to identify and clearly communicate pragmatic solutions to complex integration problems</li>
+<li><em>A good level of written and spoken business English &amp; French is required for this position</em></li>
+<li>Experience in the payments landscape is a big plus</li>
+</ul>
+<p><em>\*\*Internally, the role is being called Implementation Engineer</em></p>
+<p><strong>Our Diversity, Equity and Inclusion commitments</strong></p>
+<p>Our unique approach is a product of our diverse perspectives. This diversity of backgrounds and cultures is essential in helping us maintain our momentum. Our business and technical challenges are unique, and we need as many different voices as possible to join us in solving them - voices like yours. No matter who you are or where you’re from, we welcome you to be your true self at Adyen.&nbsp;</p>
+<p>Studies show that women and members of underrepresented communities apply for jobs only if they meet 100% of the qualifications. Does this sound like you? If so, Adyen encourages you to reconsider and apply. We look forward to your application!</p>
+<p><strong>What’s next?</strong></p>
+<p>Ensuring a smooth and enjoyable candidate experience is critical for us. We aim to get back to you regarding your application within 5 business days. Our interview process tends to take about 4 weeks to complete, but may fluctuate depending on the role.<a href="https://careers.adyen.com/how-we-hire"> Learn more about our hiring process here</a>. Don’t be afraid to let us know if you need more flexibility.</p>
+<p>This role is based out of our Paris office. We are an office-first company and value in-person collaboration; we do not offer remote-only roles. We implemented a hybrid working policy which provides flexibility to our employees while ensuring an office-first company</p>

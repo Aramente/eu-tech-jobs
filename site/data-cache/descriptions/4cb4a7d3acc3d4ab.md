@@ -1,0 +1,19 @@
+## Your Mission
+
+This student job offers a unique opportunity to gain practical experience in the maintenance of hardware and the meticulous analysis of manual tests, all within the dynamic field of automotive infotainment systems.<br> You'll be instrumental in ensuring the reliability and performance of critical hardware components, contributing directly to the quality of in-car technologies.<br> <br>Your role will involve hands-on tasks related to hardware upkeep, troubleshooting, and preparing test environments. Additionally, you'll develop analytical skills by performing detailed manual test analyses, identifying issues, and documenting findings to improve system functionality. Working alongside experienced engineers, you'll receive valuable mentorship and gain insights into the intersection of hardware, software, and quality assurance in a leading automotive company. This position is perfect for students eager to apply their problem-solving abilities and attention to detail in a real-world, high-tech environment.
+
+## Sneak preview of your future tasks
+
+<ul><li>Flashing ECUs</li><li>Preparing HW and SW for stability testing activities for next generation in-car infotainment system</li><li>Planning test activities</li><li>Writing and executing test cases</li><li>Documenting the test progress</li></ul>
+
+## Your Profile
+
+<strong>Education</strong><ul><li>You continue your master studies (or equivalent) in electronic/embedded engineering, automotive engineering, computer science or a comparable field</li><li>It is mandatory to be enrolled in a university for the whole duration of the employment/internship</li></ul><strong>Technical Skills</strong><ul><li>Basic understanding of testing workflow, e.g. creation of bugs</li><li>First experience in testing software and/or hardware testing, ideally embedded software</li><li>Experience with X-Ray or other Test Management tools</li><li>Scripting Knowledge in Python/C or C++ (CAPL is a plus)</li><li>Open-Source Background is a plus</li><li>Driving permission in Germany is a plus</li></ul><strong>Personal Skills</strong><ul><li>Team-player having very good communication skills</li><li>Self-organized and highly collaborative</li><li>Open and outgoing personality</li><li>Flexible and can-do attitude</li><li>Continuous learning attitude</li></ul><strong>Skills</strong><ul><li>Fluent English, German is a plus</li></ul>
+
+## Why us?
+
+<ul><li>A chance to work on a new generation of Infotainment Systems, which will power millions of cars</li><li>An international, interdisciplinary software hub, which is part of the Mercedes Benz AG</li><li>Great company values that we are passionate about and live by every day at work. Have a look for yourself at <a href="http://mbition.io/">mbition.io</a> and scroll down to The MBition Experience</li><li>Agile working methods and open feedback culture</li><li>A brand new modern and fully accessible office facing the Spree</li><li>Flexible working hours</li></ul>
+
+## Interested?
+
+We look forward to receiving your complete application, including CV (in English or German) and relevant references with the following information:<br><ul><li> Job title and reference number</li><li> Salary expectations</li><li> Earliest start date</li><li>Please only apply when you are currently enrolled in a university/hochschule</li><li>Must be based in Berlin or willing to relocate</li></ul>You don't bring everything with you? Don't worry, MBition is proud of our diverse workforce and passionate about having MBitioneers from all backgrounds and perspectives. MBition is and always will be an equal opportunity employer. We are looking for employees who convince us above all with their personality and passionately motivated to join the team!
