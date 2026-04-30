@@ -169,10 +169,14 @@ const base = import.meta.env.BASE_URL.endsWith("/")
       async function runSearch() {
         if (!pagefind) return;
         const q = elQ.value.trim();
-        // Pagefind wants filter sets as plain {facet: [...values]}.
+        // Pagefind expects single values as a string and multi-value OR sets
+        // wrapped in { any: [...] }. A plain array is NOT a valid filter shape
+        // and silently matches nothing.
         const filters = {};
         for (const [facet, set] of Object.entries(selected)) {
-          if (set.size > 0) filters[facet] = Array.from(set);
+          if (set.size === 0) continue;
+          const arr = Array.from(set);
+          filters[facet] = arr.length === 1 ? arr[0] : { any: arr };
         }
         elSummary.textContent = "Searching…";
         // Pagefind handles empty query natively — no need to send a wildcard.
