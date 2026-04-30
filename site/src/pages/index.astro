@@ -58,15 +58,11 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
       visible 100 with the dropdowns; type to <a href={`${base}search/`}>full-text
       search all {allJobs.length.toLocaleString()} jobs</a> instead.
     </p>
-    <form
-      class="filters"
-      role="search"
-      onsubmit={`event.preventDefault(); const q = document.getElementById('search').value.trim(); if (q) location.href = '${base}search/?q=' + encodeURIComponent(q);`}
-    >
+    <form id="filter-form" class="filters" role="search">
       <input
         id="search"
         type="search"
-        placeholder={`Search all ${allJobs.length.toLocaleString()} jobs (Enter) or filter this page…`}
+        placeholder={`Free-text search all ${allJobs.length.toLocaleString()} jobs…`}
       />
       <select id="country" data-facet="where">
         <option value="">Where (any country / remote)</option>
@@ -101,11 +97,14 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
           );
         })}
       </select>
+      <button id="search-btn" type="submit" class="btn-search">
+        Search →
+      </button>
     </form>
     <p class="meta filter-status" data-base={base}>
       Below: <strong>{pageJobs.length}</strong> freshest jobs across {allJobs.length.toLocaleString()} total
-      · pick a country or role above to <strong>see all matching jobs</strong> (jumps to faceted search)
-      · or hit Enter in the search box for free-text.
+      · pick any combination of country, role, and free-text → click <strong>Search</strong>
+      (or hit Enter) for full-corpus faceted results. Add more filters once on /search/.
     </p>
     {pageJobs.length === 0 ? (
       <p class="empty">No jobs in this snapshot.</p>
@@ -161,6 +160,7 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
     </p>
   </footer>
   <script>
+    const form = document.getElementById("filter-form");
     const search = document.getElementById("search");
     const country = document.getElementById("country");
     const role = document.getElementById("role");
@@ -168,8 +168,9 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
     const base = status?.dataset.base || "/";
     const rows = Array.from(document.querySelectorAll("#jobs-table tbody tr"));
 
-    // Free-text input still filters the visible 100 (instant feedback).
-    // Enter forwards to /search/ for the global query (handled by form submit).
+    // Free-text input also live-filters the visible 100 rows for instant
+    // browse-mode feedback. Submit (button or Enter) builds the
+    // /search/ URL with all current selections combined.
     function applyText() {
       const q = (search?.value || "").toLowerCase().trim();
       for (const row of rows) {
@@ -179,25 +180,18 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
     }
     search?.addEventListener("input", applyText);
 
-    // Country / role dropdown changes redirect to /search/ with the
-    // matching Pagefind facet pre-selected — Kevin's expected behavior:
-    // pick "France" → see all 952 French jobs, not 12 of 100 visible.
-    function gotoSearchByCountry() {
-      const sel = country;
-      if (!sel || !sel.value) return;
-      // Value IS the where-facet name now (e.g. "France", "Remote — Europe").
+    function gotoSearch(e) {
+      if (e) e.preventDefault();
       const params = new URLSearchParams();
-      params.set("filter[where]", sel.value);
-      location.href = `${base}search/?${params.toString()}`;
+      const q = (search?.value || "").trim();
+      const w = country?.value || "";
+      const r = role?.value || "";
+      if (q) params.set("q", q);
+      if (w) params.set("filter[where]", w);
+      if (r) params.set("filter[role]", r);
+      // Nothing selected → just go to /search/ unfiltered.
+      location.href = `${base}search/${params.toString() ? "?" + params.toString() : ""}`;
     }
-    function gotoSearchByRole() {
-      const sel = role;
-      if (!sel || !sel.value) return;
-      const params = new URLSearchParams();
-      params.set("filter[role]", sel.value);
-      location.href = `${base}search/?${params.toString()}`;
-    }
-    country?.addEventListener("change", gotoSearchByCountry);
-    role?.addEventListener("change", gotoSearchByRole);
+    form?.addEventListener("submit", gotoSearch);
   </script>
 </Base>
