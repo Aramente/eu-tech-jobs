@@ -187,9 +187,17 @@ function deriveWhere(job, company) {
     }
   }
 
-  // Fall back to company HQ
-  if (company?.country && company.country !== "XX") {
-    return COUNTRY_NAMES[company.country] || company.country;
+  // Fall back to company HQ — but only for EU countries. A job at a US-HQ
+  // company with location "Hybrid" / "Remote" / "NAMER" should not be
+  // stamped "United States" — that polluted the EU-only board with
+  // 1,634 ghost-US jobs. Those land in "Other" instead.
+  const EU_HQ_COUNTRIES = new Set([
+    "FR", "DE", "GB", "ES", "IT", "NL", "BE", "SE", "DK", "FI", "NO",
+    "IE", "PT", "PL", "CZ", "AT", "CH", "EE", "LT", "LV", "GR", "RO",
+    "BG", "HU", "SK", "SI", "HR", "LU", "IS", "CY", "MT", "UA",
+  ]);
+  if (company?.country && EU_HQ_COUNTRIES.has(company.country)) {
+    return COUNTRY_NAMES[company.country];
   }
   if (job.remote_policy === "remote") return "Remote — unspecified";
   return "Other";

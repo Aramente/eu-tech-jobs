@@ -118,7 +118,9 @@ const whereFacet: string = whereByJobId[jobId] || "Other";
   description={`${job.title} at ${companyName} (${job.location || "remote"})`}
 >
   <header>
-    <p class="lede"><a href={base}>← All jobs</a></p>
+    <p class="lede">
+      <a href={base} id="back-link" data-base={base}>← All jobs</a>
+    </p>
   </header>
   <main>
     <article class="job" data-pagefind-body>
@@ -136,6 +138,16 @@ const whereFacet: string = whereByJobId[jobId] || "Other";
         <span data-pagefind-filter={`remote:${job.remote_policy}`} hidden></span>
       )}
       <span data-pagefind-filter={`company:${companyName}`} hidden></span>
+      <!-- Pagefind meta — surfaced on result cards in /search/. -->
+      <span data-pagefind-meta={`company:${companyName}`} hidden></span>
+      {country && <span data-pagefind-meta={`country:${country}`} hidden></span>}
+      {job.location && <span data-pagefind-meta={`location:${job.location}`} hidden></span>}
+      {job.posted_at && <span data-pagefind-meta={`posted:${job.posted_at.slice(0, 10)}`} hidden></span>}
+      <span data-pagefind-meta={`where:${whereFacet}`} hidden></span>
+      {job.remote_policy && <span data-pagefind-meta={`remote:${job.remote_policy}`} hidden></span>}
+      {job.role_family && <span data-pagefind-meta={`role:${job.role_family}`} hidden></span>}
+      {job.seniority && <span data-pagefind-meta={`seniority:${job.seniority}`} hidden></span>}
+      <span data-pagefind-meta={`source:${job.source}`} hidden></span>
       <h1>{job.title}</h1>
       <p class="meta job-meta">
         <a href={`${base}companies/${job.company_slug}/`}>{companyName}</a>
@@ -170,19 +182,19 @@ const whereFacet: string = whereByJobId[jobId] || "Other";
       <div class="cta-row">
         <a
           class="cta-primary"
-          href={boredCvLink(job.url)}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          ✨ Tailor my CV for this job
-        </a>
-        <a
-          class="cta-secondary"
           href={job.url}
           target="_blank"
           rel="noopener noreferrer"
         >
           Apply on {job.source} →
+        </a>
+        <a
+          class="cta-secondary"
+          href={boredCvLink(job.url)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ✨ Tailor my CV first
         </a>
       </div>
 
@@ -200,4 +212,19 @@ const whereFacet: string = whereByJobId[jobId] || "Other";
     type="application/ld+json"
     set:html={JSON.stringify(schema)}
   />
+  <script>
+    // Preserve search state on back-nav: if the user came from /search/,
+    // "← All jobs" returns to that exact filter set instead of the home page.
+    const back = document.getElementById("back-link");
+    if (back) {
+      const ref = document.referrer;
+      if (ref && new URL(ref, location.href).pathname.endsWith("/search/")) {
+        back.textContent = "← Back to results";
+        back.addEventListener("click", (e) => {
+          e.preventDefault();
+          history.back();
+        });
+      }
+    }
+  </script>
 </Base>
