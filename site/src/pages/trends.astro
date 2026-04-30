@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import { jobs, companies, meta, formatDate, displayCountry } from "../lib/data";
+import { jobs, companies, meta, formatDate, countryName } from "../lib/data";
 
 // Aggregations
 const jobsByCompany: Record<string, number> = {};
@@ -92,7 +92,7 @@ const maxRecent = recentlyActive[0]?.count ?? 1;
         {topHiringCurated.map((row) => (
           <tr>
             <td><a href={`${base}companies/${row.slug}/`}>{row.name}</a></td>
-            <td><span class="badge">{displayCountry(row.country)}</span></td>
+            <td><span class="badge">{countryName(row.country)}</span></td>
             <td>{row.count}</td>
             <td>
               <span style={`display:inline-block;height:6px;background:var(--accent);width:${bar(row.count, maxHiring)}px;border-radius:3px`}></span>
@@ -115,7 +115,7 @@ const maxRecent = recentlyActive[0]?.count ?? 1;
           {recentlyActive.map((row) => (
             <tr>
               <td><a href={`${base}companies/${row.slug}/`}>{row.name}</a></td>
-              <td><span class="badge">{displayCountry(row.country)}</span></td>
+              <td><span class="badge">{countryName(row.country)}</span></td>
               <td>{row.count}</td>
               <td>
                 <span style={`display:inline-block;height:6px;background:var(--accent);width:${bar(row.count, maxRecent)}px;border-radius:3px`}></span>
@@ -133,7 +133,7 @@ const maxRecent = recentlyActive[0]?.count ?? 1;
       <tbody>
         {countryRows.map(([cc, n]) => (
           <tr>
-            <td><span class="badge">{displayCountry(cc)}</span></td>
+            <td><span class="badge">{countryName(cc)}</span></td>
             <td>{n}</td>
             <td>
               <span style={`display:inline-block;height:6px;background:var(--accent);width:${bar(n, maxCountry)}px;border-radius:3px`}></span>

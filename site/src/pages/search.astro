@@ -4,163 +4,390 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : import.meta.env.BASE_URL + "/";
 ---
-<Base title="Search jobs — eu-tech-jobs" description="Filter 12,000+ EU AI/tech jobs by location, role, seniority, and remote policy.">
+<Base title="Search jobs — eu-tech-jobs" description="Filter EU AI/tech jobs by location, role, seniority, and remote policy.">
   <header>
     <h1>Search jobs</h1>
     <p class="lede">
-      <a href={base}>← Back</a> · Full-text search with filters: location,
-      role family, seniority, remote policy. Combine multiple filters across
-      different categories with <strong>AND</strong>, multi-select within
-      a category with <strong>OR</strong>.
-    </p>
-    <p class="meta">
-      Tip — pick "France" + "Remote — Europe" + "Remote — Worldwide"
-      under <em>where</em> for "France <strong>or</strong> remote-friendly".
-      Layer on a role to AND-narrow.
+      <a href={base}>← Back</a> · Pick filters in any combination.
+      Multi-select within a category is OR; multiple categories AND.
     </p>
   </header>
   <main>
-    <link rel="stylesheet" href={`${base}pagefind/pagefind-ui.css`} />
-    <div id="search"></div>
-    <script is:inline src={`${base}pagefind/pagefind-ui.js`}></script>
+    <div class="search-shell">
+      <aside class="filter-rail">
+        <div class="filter-search">
+          <input
+            id="q"
+            type="search"
+            placeholder="Free-text (optional)"
+            autocomplete="off"
+          />
+        </div>
+        <div id="filter-panels"></div>
+        <button id="reset" type="button" class="btn-secondary" style="margin-top:12px;width:100%">Reset all</button>
+      </aside>
+      <section class="results">
+        <p id="result-summary" class="meta">Loading…</p>
+        <ol id="result-list" class="results-list"></ol>
+        <nav id="pager" class="pagination"></nav>
+      </section>
+    </div>
+
     <script is:inline define:vars={{ base }}>
-      // Pagefind UI doesn't auto-read filter URL params (only ?q=).
-      // We parse them ourselves and click the matching checkboxes after
-      // the filter panel renders. Supports `?filter[where]=France` from
-      // the home-page dropdowns and bookmarkable filter combinations.
-      function parseFilterParams() {
-        const out = {};
-        const usp = new URLSearchParams(location.search);
-        for (const [key, value] of usp.entries()) {
-          const m = key.match(/^filter\[([^\]]+)\](?:\[\])?$/);
-          if (m) {
-            (out[m[1]] = out[m[1]] || []).push(value);
-          }
-        }
-        return out;
-      }
+      const PAGE_SIZE = 25;
 
-      function applyUrlFilters(filters) {
-        // Wait for the filter panel to render — Pagefind builds it
-        // asynchronously after the first search runs (or after the empty
-        // search runs).
-        let attempts = 0;
-        const tryApply = () => {
-          attempts++;
-          let allFound = true;
-          for (const [key, values] of Object.entries(filters)) {
-            for (const v of values) {
-              const block = document.querySelector(
-                `.pagefind-ui__filter-block[data-filter-name="${key}"]`,
-              );
-              if (!block) { allFound = false; continue; }
-              // Pagefind renders each option as a label with the text
-              // matching the value. Find the matching checkbox.
-              const labels = block.querySelectorAll(
-                ".pagefind-ui__filter-value",
-              );
-              let hit = null;
-              for (const lbl of labels) {
-                const txt = (lbl.textContent || "")
-                  .replace(/\s*\(\d[\d,]*\)\s*$/, "")
-                  .trim();
-                if (txt === v) { hit = lbl; break; }
-              }
-              if (!hit) { allFound = false; continue; }
-              const cb = hit.querySelector('input[type="checkbox"]');
-              if (cb && !cb.checked) { cb.click(); }
-            }
-          }
-          if (!allFound && attempts < 20) {
-            setTimeout(tryApply, 250);
-          }
-        };
-        setTimeout(tryApply, 300);
-      }
+      const elQ = document.getElementById("q");
+      const elPanels = document.getElementById("filter-panels");
+      const elList = document.getElementById("result-list");
+      const elSummary = document.getElementById("result-summary");
+      const elPager = document.getElementById("pager");
+      const elReset = document.getElementById("reset");
 
-      function mountSearch() {
-        if (typeof PagefindUI === "undefined") {
-          setTimeout(mountSearch, 100);
-          return;
-        }
-        const ui = new PagefindUI({
-          element: "#search",
-          showSubResults: false,
-          showImages: false,
-          baseUrl: base,
-          showEmptyFilters: true,
-          translations: {
-            placeholder: "search 12,000+ EU AI/tech jobs",
-            filters_label: "Refine results",
-          },
-        });
+      const FACET_LABELS = {
+        where: "Where",
+        role: "Role",
+        seniority: "Seniority",
+        remote: "Remote policy",
+        company: "Company",
+      };
 
-        const filters = parseFilterParams();
+      // Multi-select state: {facet -> Set<value>}
+      const selected = {};
+      let currentPage = 1;
+
+      function syncFromUrl() {
         const usp = new URLSearchParams(location.search);
         const q = usp.get("q") || "";
-
-        if (Object.keys(filters).length > 0 || q) {
-          // Trigger an empty search (or initial query) so Pagefind
-          // renders the filter panel — we then tick the right boxes.
-          // Pagefind UI requires *some* trigger before filters appear.
-          if (q) {
-            // Already handled by Pagefind UI's built-in ?q= reader.
-          } else {
-            // Simulate typing a single space to force initial render of
-            // results + filter panel, then immediately clear it.
-            const input = document.querySelector(
-              ".pagefind-ui__search-input",
-            );
-            if (input) {
-              input.focus();
-              // Use the synthetic event Pagefind listens to.
-              input.value = "";
-              input.dispatchEvent(new Event("input", { bubbles: true }));
-            }
-            // Pagefind also shows "All N results" on empty search if
-            // showEmptyFilters is true. The filter panel renders even
-            // without a query in 1.5+.
+        if (q) elQ.value = q;
+        for (const [k, v] of usp.entries()) {
+          const m = k.match(/^filter\[([^\]]+)\](?:\[\])?$/);
+          if (m) {
+            const facet = m[1];
+            (selected[facet] = selected[facet] || new Set()).add(v);
           }
-          applyUrlFilters(filters);
         }
       }
 
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", mountSearch);
-      } else {
-        mountSearch();
+      function syncToUrl() {
+        const usp = new URLSearchParams();
+        const q = elQ.value.trim();
+        if (q) usp.set("q", q);
+        for (const [facet, values] of Object.entries(selected)) {
+          for (const v of values) usp.append(`filter[${facet}][]`, v);
+        }
+        const url = `${location.pathname}${usp.toString() ? "?" + usp.toString() : ""}`;
+        history.replaceState(null, "", url);
       }
+
+      // Init Pagefind JS API
+      let pagefind = null;
+      let allFilters = null;
+
+      async function initPagefind() {
+        try {
+          pagefind = await import(/* @vite-ignore */ `${base}pagefind/pagefind.js`);
+          await pagefind.options({ baseUrl: base });
+          allFilters = await pagefind.filters();
+          renderFilterPanels();
+          syncFromUrl();
+          // Reflect URL state in the panels
+          for (const [facet, values] of Object.entries(selected)) {
+            for (const v of values) {
+              const cb = document.querySelector(
+                `input[type="checkbox"][data-facet="${facet}"][value="${CSS.escape(v)}"]`,
+              );
+              if (cb) cb.checked = true;
+            }
+          }
+          await runSearch();
+        } catch (err) {
+          elSummary.textContent = "Search index failed to load: " + (err.message || err);
+        }
+      }
+
+      function renderFilterPanels() {
+        if (!allFilters) return;
+        const order = ["where", "role", "seniority", "remote", "company"];
+        elPanels.innerHTML = "";
+        for (const facet of order) {
+          const values = allFilters[facet];
+          if (!values || Object.keys(values).length === 0) continue;
+          const sortedValues = Object.entries(values).sort((a, b) => b[1] - a[1]);
+          // Cap "company" to top 30 with a "more" toggle to avoid 600 boxes
+          const cap = facet === "company" ? 30 : sortedValues.length;
+          const visible = sortedValues.slice(0, cap);
+          const hidden = sortedValues.slice(cap);
+          const block = document.createElement("details");
+          block.className = "filter-block";
+          block.open = facet === "where" || facet === "role";
+          const summary = document.createElement("summary");
+          summary.textContent = FACET_LABELS[facet] || facet;
+          block.appendChild(summary);
+          const wrap = document.createElement("div");
+          wrap.className = "filter-options";
+          const renderOpt = ([val, count]) => {
+            const id = `f-${facet}-${val.replace(/[^a-zA-Z0-9_-]/g, "_")}`;
+            const label = document.createElement("label");
+            label.className = "filter-option";
+            const input = document.createElement("input");
+            input.type = "checkbox";
+            input.id = id;
+            input.value = val;
+            input.dataset.facet = facet;
+            input.addEventListener("change", () => {
+              if (!selected[facet]) selected[facet] = new Set();
+              if (input.checked) selected[facet].add(val);
+              else selected[facet].delete(val);
+              if (selected[facet].size === 0) delete selected[facet];
+              currentPage = 1;
+              syncToUrl();
+              runSearch();
+            });
+            const text = document.createElement("span");
+            text.innerHTML = `<span class="opt-name">${val}</span> <span class="opt-count">${count.toLocaleString()}</span>`;
+            label.appendChild(input);
+            label.appendChild(text);
+            return label;
+          };
+          for (const v of visible) wrap.appendChild(renderOpt(v));
+          if (hidden.length > 0) {
+            const more = document.createElement("button");
+            more.type = "button";
+            more.className = "more-link";
+            more.textContent = `+ ${hidden.length} more`;
+            more.addEventListener("click", () => {
+              for (const v of hidden) wrap.insertBefore(renderOpt(v), more);
+              more.remove();
+            });
+            wrap.appendChild(more);
+          }
+          block.appendChild(wrap);
+          elPanels.appendChild(block);
+        }
+      }
+
+      async function runSearch() {
+        if (!pagefind) return;
+        const q = elQ.value.trim();
+        // Pagefind wants filter sets as plain {facet: [...values]}.
+        const filters = {};
+        for (const [facet, set] of Object.entries(selected)) {
+          if (set.size > 0) filters[facet] = Array.from(set);
+        }
+        elSummary.textContent = "Searching…";
+        // Pagefind handles empty query natively — no need to send a wildcard.
+        const result = q
+          ? await pagefind.search(q, { filters })
+          : await pagefind.search(null, { filters });
+        if (!result) {
+          elSummary.textContent = "Index unavailable.";
+          elList.innerHTML = "";
+          elPager.innerHTML = "";
+          return;
+        }
+        const total = result.results.length;
+        const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+        if (currentPage > totalPages) currentPage = 1;
+        const start = (currentPage - 1) * PAGE_SIZE;
+        const slice = result.results.slice(start, start + PAGE_SIZE);
+        const filterText = Object.entries(filters)
+          .map(([f, vs]) => `${f}: ${vs.join(" / ")}`)
+          .join(" · ");
+        elSummary.innerHTML = total === 0
+          ? `<strong>No matches</strong>${filterText ? " for " + filterText : ""}. Try removing a filter.`
+          : `<strong>${total.toLocaleString()}</strong> matching ${q ? `"${q}"` : "jobs"}${filterText ? " · " + filterText : ""} · showing ${start + 1}–${Math.min(start + PAGE_SIZE, total)}.`;
+        elList.innerHTML = "";
+        const datas = await Promise.all(slice.map((r) => r.data()));
+        for (const d of datas) {
+          const li = document.createElement("li");
+          li.className = "result-item";
+          const a = document.createElement("a");
+          a.href = d.url;
+          a.className = "result-link";
+          a.innerHTML = `
+            <div class="result-title">${d.meta?.title || d.url}</div>
+            <div class="result-meta">${d.meta?.image_alt || ""} ${d.excerpt ? "<em>" + d.excerpt + "</em>" : ""}</div>
+          `;
+          li.appendChild(a);
+          elList.appendChild(li);
+        }
+        renderPager(totalPages);
+      }
+
+      function renderPager(totalPages) {
+        elPager.innerHTML = "";
+        if (totalPages <= 1) return;
+        const mk = (p, label, active) => {
+          const el = document.createElement(active ? "span" : "a");
+          el.textContent = label || String(p);
+          if (active) el.className = "current";
+          else {
+            el.href = "#";
+            el.addEventListener("click", (e) => {
+              e.preventDefault();
+              currentPage = p;
+              runSearch();
+              window.scrollTo(0, 0);
+            });
+          }
+          elPager.appendChild(el);
+        };
+        if (currentPage > 1) mk(currentPage - 1, "← Prev");
+        const max = Math.min(totalPages, 8);
+        for (let p = 1; p <= max; p++) mk(p, String(p), p === currentPage);
+        if (totalPages > max) {
+          const dots = document.createElement("span");
+          dots.textContent = "…";
+          elPager.appendChild(dots);
+          mk(totalPages, String(totalPages), totalPages === currentPage);
+        }
+        if (currentPage < totalPages) mk(currentPage + 1, "Next →");
+      }
+
+      let textTimer = null;
+      elQ.addEventListener("input", () => {
+        clearTimeout(textTimer);
+        textTimer = setTimeout(() => {
+          currentPage = 1;
+          syncToUrl();
+          runSearch();
+        }, 200);
+      });
+
+      elReset.addEventListener("click", () => {
+        for (const facet of Object.keys(selected)) delete selected[facet];
+        elQ.value = "";
+        for (const cb of document.querySelectorAll("#filter-panels input[type=checkbox]")) {
+          cb.checked = false;
+        }
+        currentPage = 1;
+        syncToUrl();
+        runSearch();
+      });
+
+      initPagefind();
     </script>
   </main>
 </Base>
 
 <style>
-  /* Pagefind UI customization to match site theme */
-  :global(.pagefind-ui) {
-    --pagefind-ui-primary: var(--accent);
-    --pagefind-ui-text: var(--fg);
-    --pagefind-ui-background: var(--bg);
-    --pagefind-ui-border: var(--border);
-    --pagefind-ui-tag: var(--row-hover);
-    --pagefind-ui-border-radius: 8px;
-    --pagefind-ui-font: inherit;
+  .search-shell {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 32px;
     margin-top: 16px;
   }
-  :global(.pagefind-ui__search-input) {
-    font-size: 16px !important;
+  @media (max-width: 800px) {
+    .search-shell { grid-template-columns: 1fr; }
   }
-  :global(.pagefind-ui__filter-panel) {
-    margin-top: 12px;
+  .filter-rail {
+    border-right: 1px solid var(--border);
+    padding-right: 24px;
   }
-  :global(.pagefind-ui__filter-block details) {
+  .filter-search input {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--fg);
+    margin-bottom: 16px;
+  }
+  details.filter-block {
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 8px 12px;
+    padding: 4px 12px;
     margin-bottom: 8px;
   }
-  :global(.pagefind-ui__filter-block summary) {
+  details.filter-block summary {
     font-weight: 500;
     cursor: pointer;
+    padding: 6px 0;
+    font-size: 13px;
+    list-style: none;
+  }
+  details.filter-block summary::after {
+    content: "▾";
+    float: right;
+    color: var(--muted);
+    font-size: 11px;
+  }
+  details[open].filter-block summary::after { content: "▴"; }
+  .filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px 0 8px;
+    max-height: 320px;
+    overflow-y: auto;
+  }
+  .filter-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 2px 0;
+    line-height: 1.4;
+  }
+  .filter-option:hover .opt-name { color: var(--fg); }
+  .filter-option input[type=checkbox] {
+    margin: 0;
+    accent-color: var(--accent);
+  }
+  .filter-option .opt-name { color: var(--fg); }
+  .filter-option .opt-count { color: var(--muted); font-size: 12px; }
+  .more-link {
+    background: none;
+    border: 0;
     padding: 4px 0;
+    color: var(--accent);
+    font-size: 12px;
+    cursor: pointer;
+    text-align: left;
+  }
+  .more-link:hover { text-decoration: underline; }
+
+  .results-list {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0;
+  }
+  .result-item {
+    border-bottom: 1px solid var(--border);
+    padding: 12px 0;
+  }
+  .result-item:last-child { border-bottom: 0; }
+  .result-link {
+    display: block;
+    text-decoration: none;
+    color: var(--fg);
+  }
+  .result-link:hover .result-title {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  .result-title { font-weight: 500; font-size: 16px; line-height: 1.3; }
+  .result-meta {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 4px;
+  }
+  .result-meta em { font-style: normal; }
+  .result-meta em mark {
+    background: rgba(26, 115, 232, 0.18);
+    color: inherit;
+    padding: 1px 2px;
+    border-radius: 2px;
+  }
+  #pager { justify-content: center; }
+  kbd {
+    background: var(--row-hover);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font: inherit;
+    font-size: 0.9em;
   }
 </style>

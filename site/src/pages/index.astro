@@ -7,7 +7,6 @@ import {
   meta,
   PAGE_SIZE,
   formatDate,
-  displayCountry,
   countryName,
   jobUrlPath,
   facetCounts,
@@ -64,16 +63,14 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
         type="search"
         placeholder={`Free-text search all ${allJobs.length.toLocaleString()} jobs…`}
       />
-      <select id="country" data-facet="where">
-        <option value="">Where (any country / remote)</option>
+      <select id="country" multiple size="6" aria-label="Where (multi-select with ⌘/Ctrl)">
         {whereOptions.map(([name, n]) => (
           <option value={name} data-count={n}>
             {name} ({n.toLocaleString()})
           </option>
         ))}
       </select>
-      <select id="role" data-facet="role">
-        <option value="">All roles</option>
+      <select id="role" multiple size="6" aria-label="Role (multi-select)">
         {[
           ["engineering", "Engineering"],
           ["sales", "Sales"],
@@ -101,6 +98,10 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
         Search →
       </button>
     </form>
+    <p class="meta" style="margin-top:-8px;font-size:12px;">
+      <strong>Tip:</strong> hold <kbd>⌘</kbd> (Mac) or <kbd>Ctrl</kbd> (Win/Linux) to pick multiple options in each list.
+      Pick e.g. <em>France</em> + <em>Remote — Europe</em> + <em>Remote — Worldwide</em> for "France or remote".
+    </p>
     <p class="meta filter-status" data-base={base}>
       Below: <strong>{pageJobs.length}</strong> freshest jobs across {allJobs.length.toLocaleString()} total
       · pick any combination of country, role, and free-text → click <strong>Search</strong>
@@ -124,7 +125,7 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
                   <td><a href={`${base}jobs/${jobUrlPath(j)}/`}>{j.title}</a></td>
                   <td class="company">
                     <a href={`${base}companies/${j.company_slug}/`}>{name}</a>{" "}
-                    {country && <span class="badge">{displayCountry(country)}</span>}
+                    {country && <span class="badge">{countryName(country)}</span>}
                   </td>
                   <td class="meta">{j.location || "—"}</td>
                   <td class="meta">{formatDate(j.posted_at)}</td>
@@ -184,12 +185,17 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
       if (e) e.preventDefault();
       const params = new URLSearchParams();
       const q = (search?.value || "").trim();
-      const w = country?.value || "";
-      const r = role?.value || "";
+      const wheres = country
+        ? Array.from(country.selectedOptions).map((o) => o.value).filter(Boolean)
+        : [];
+      const roles = role
+        ? Array.from(role.selectedOptions).map((o) => o.value).filter(Boolean)
+        : [];
       if (q) params.set("q", q);
-      if (w) params.set("filter[where]", w);
-      if (r) params.set("filter[role]", r);
-      // Nothing selected → just go to /search/ unfiltered.
+      // Multi-value filter syntax: filter[where][]=France&filter[where][]=Germany
+      // (Pagefind treats multi-select within a category as OR.)
+      for (const w of wheres) params.append("filter[where][]", w);
+      for (const r of roles) params.append("filter[role][]", r);
       location.href = `${base}search/${params.toString() ? "?" + params.toString() : ""}`;
     }
     form?.addEventListener("submit", gotoSearch);

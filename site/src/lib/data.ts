@@ -108,18 +108,6 @@ export function formatDate(iso: string | null | undefined): string {
   return `${d}/${m}/${y}`;
 }
 
-/**
- * Display the company's country.
- * "XX" is the placeholder we assign to aggregator-discovered companies whose
- * country couldn't be inferred — show that as "Remote" since they all came
- * from remote-friendly aggregators (RemoteOK, WeWorkRemotely, JustJoin.it).
- */
-export function displayCountry(code: string | null | undefined): string {
-  if (!code) return "—";
-  if (code === "XX") return "Remote";
-  return code;
-}
-
 /** Full country names — used in dropdowns and Pagefind filter values. */
 export const COUNTRY_NAMES: Record<string, string> = {
   FR: "France", DE: "Germany", GB: "United Kingdom", ES: "Spain", IT: "Italy",
