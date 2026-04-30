@@ -48,6 +48,10 @@ jobs:
             git config user.email "actions@github.com"
             git add data/
             git commit -m "chore(data): full v2 retag of $(date -u +%Y-%m-%d) snapshot"
+            # Rebase onto any commits that landed on main while we were
+            # tagging (UI changes etc), then push. Prevents the
+            # not-fast-forward rejection that kills the run.
+            git pull --rebase origin main
             git push
             echo "pushed=true" >> "$GITHUB_OUTPUT"
           else
