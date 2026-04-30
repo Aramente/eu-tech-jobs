@@ -46,6 +46,7 @@ jobs:
         run: uv run pipeline publish
         continue-on-error: true
       - name: Commit data
+        id: commit
         run: |
           if [[ -n "$(git status --porcelain data/)" ]]; then
             git config user.name "eu-tech-jobs-bot"
@@ -53,6 +54,13 @@ jobs:
             git add data/
             git commit -m "chore(data): daily snapshot $(date -u +%Y-%m-%d)"
             git push
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
           else
             echo "No data changes to commit."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
           fi
+      - name: Trigger site deploy
+        if: steps.commit.outputs.pushed == 'true'
+        run: gh workflow run site-deploy.yml
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
