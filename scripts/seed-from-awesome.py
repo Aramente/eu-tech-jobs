@@ -108,7 +108,7 @@ def _probe_ats(slug: str) -> tuple[str, str] | None:
         ("lever", f"https://api.lever.co/v0/postings/{slug}?mode=json",
          lambda d: isinstance(d, list) and len(d) > 0),
         ("ashby", f"https://api.ashbyhq.com/posting-api/job-board/{slug}",
-         lambda d: bool((d.get("jobs") if isinstance(d, dict) else None))),
+         lambda d: bool(d.get("jobs") if isinstance(d, dict) else None)),
         ("workable", f"https://apply.workable.com/api/v1/widget/accounts/{slug}",
          lambda d: bool(d.get("jobs") or d.get("totalCount"))),
         ("smartrecruiters",
@@ -165,8 +165,14 @@ def _probe_one(name: str, url: str) -> tuple[str, str, str, str] | None:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--commit", action="store_true", help="Write to companies/{ai,tech}/, not companies/_drafts/")
-    parser.add_argument("--max", type=int, default=300, help="Cap candidates probed (avoid runaway probes).")
+    parser.add_argument(
+        "--commit", action="store_true",
+        help="Write to companies/{ai,tech}/, not companies/_drafts/",
+    )
+    parser.add_argument(
+        "--max", type=int, default=300,
+        help="Cap candidates probed (avoid runaway probes).",
+    )
     args = parser.parse_args()
 
     existing = _existing_slugs()

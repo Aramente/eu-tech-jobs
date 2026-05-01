@@ -17,9 +17,6 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-import pyarrow.parquet as pq
-import yaml
-
 ROOT = Path(__file__).resolve().parents[1]
 SNAPSHOTS = ROOT / "data" / "snapshots"
 ARCHIVE_DIR = ROOT / "companies" / "_archive"

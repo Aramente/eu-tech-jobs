@@ -27,7 +27,6 @@ import json
 import logging
 import os
 import re
-from datetime import datetime
 from urllib.parse import urlparse
 
 import httpx
@@ -112,11 +111,10 @@ def _looks_like_job_url(url: str, source_domain: str) -> bool:
     )
     if job_domain == source_domain:
         return True
-    if any(url.endswith(d) or f".{d}/" in url or f".{d}?" in url for d in ats_subdomains):
-        return True
-    if any(d in url for d in ats_subdomains):
-        return True
-    return False
+    # The ATS-subdomain checks above each catch a slightly different shape;
+    # fold them into one "any of these is in the URL" once we've confirmed
+    # the URL host is well-formed (done by the early return).
+    return any(d in url for d in ats_subdomains)
 
 
 def parse_jobs(payload: dict, company_slug: str, source_url: str) -> list[Job]:
@@ -354,7 +352,8 @@ async def fetch_jobs(
         except ExtractorTransientError as exc:
             # 403 from Cloudflare / bot mitigation, 401, etc — try Playwright.
             msg = str(exc)
-            if " 403" in msg or " 401" in msg or "Just a moment" in msg or "challenge" in msg.lower():
+            blocked_signals = (" 403", " 401", "Just a moment", "challenge")
+            if any(sig in msg for sig in blocked_signals[:-1]) or "challenge" in msg.lower():
                 static_blocked = True
                 logger.info(
                     "Custom-page %s static fetch blocked (%s) — trying Playwright",

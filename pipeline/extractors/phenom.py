@@ -13,7 +13,6 @@ jobs.fedex.com, etc).
 from __future__ import annotations
 
 import logging
-import re
 from datetime import datetime
 from typing import Any
 from urllib.parse import urlparse
@@ -154,7 +153,7 @@ async def _fetch_page(
 # (and downstream geo filter drops non-EU rows).
 def _split_countries(handle: str) -> tuple[str, list[str]]:
     """Return (clean_url_template, [country names])."""
-    from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
+    from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
     parts = urlsplit(handle)
     qs = parse_qsl(parts.query, keep_blank_values=True)

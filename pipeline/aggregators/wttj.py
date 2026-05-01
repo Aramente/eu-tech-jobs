@@ -246,8 +246,8 @@ async def fetch_all(
             logger.info("WTTJ %s → +%d jobs (pass 1)", country, country_jobs)
 
         # Pass 2: targeted queries — top-5 EU countries × 4 queries × 5 pages = 100 calls max.
-        TARGETED_COUNTRIES = ["FR", "DE", "GB", "ES", "NL"]
-        for country in TARGETED_COUNTRIES:
+        targeted_countries = ["FR", "DE", "GB", "ES", "NL"]
+        for country in targeted_countries:
             for q in TARGETED_QUERIES:
                 added = 0
                 for page in range(5):  # 500 max per (country, query)

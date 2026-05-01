@@ -140,7 +140,7 @@ def _probe_ats(slug: str) -> tuple[str, str] | None:
         ("lever", f"https://api.lever.co/v0/postings/{slug}?mode=json",
          lambda d: isinstance(d, list) and len(d) > 0),
         ("ashby", f"https://api.ashbyhq.com/posting-api/job-board/{slug}",
-         lambda d: bool((d.get("jobs") if isinstance(d, dict) else None))),
+         lambda d: bool(d.get("jobs") if isinstance(d, dict) else None)),
         ("workable", f"https://apply.workable.com/api/v1/widget/accounts/{slug}",
          lambda d: bool(d.get("jobs") or d.get("totalCount"))),
         ("smartrecruiters",
@@ -238,7 +238,8 @@ def main() -> int:
                 continue
             path.write_text(yaml.safe_dump(data, sort_keys=False, allow_unicode=True))
             hits += 1
-            print(f"  + {slug:35s} {provider}:{handle:30s} ({country}, YC {yc_co.get('batch', '?')})")
+            batch = yc_co.get("batch", "?")
+            print(f"  + {slug:35s} {provider}:{handle:30s} ({country}, YC {batch})")
 
     print(f"\n✓ {hits} new YC EU company YAMLs in {target_dir.relative_to(ROOT)}")
     return 0
