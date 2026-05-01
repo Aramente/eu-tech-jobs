@@ -77,15 +77,15 @@ const path = Astro.url?.pathname || "/";
       <div class="status-strip" role="status">
         <span class="status-name">EU-TECH-JOBS</span>
         <span class="status-sep">//</span>
-        <span><strong>{jobCount.toLocaleString()}</strong> OPEN</span>
+        <span><strong>{jobCount.toLocaleString("en-US")}</strong> OPEN</span>
         <span class="status-sep">//</span>
-        <span><strong>{companyCount.toLocaleString()}</strong> COMPANIES</span>
+        <span><strong>{companyCount.toLocaleString("en-US")}</strong> COMPANIES</span>
         <span class="status-sep">//</span>
         <span>UPDATED {updatedLabel}</span>
         {newToday > 0 && (
           <>
             <span class="status-sep">//</span>
-            <span class="status-new"><strong>{newToday.toLocaleString()}</strong> NEW TODAY</span>
+            <span class="status-new"><strong>{newToday.toLocaleString("en-US")}</strong> NEW TODAY</span>
           </>
         )}
       </div>

@@ -53,7 +53,7 @@ function metaFor(j) {
 ---
 <Base title={`Page ${pageNum} — eu-tech-jobs`}>
   <main>
-    <p class="page-marker">Page {pageNum} of {totalPages} · {all.length.toLocaleString()} jobs total</p>
+    <p class="page-marker">Page {pageNum} of {totalPages} · {all.length.toLocaleString("en-US")} jobs total</p>
     <ol class="results-list">
       {pageJobs.map((j) => {
         const m = metaFor(j);

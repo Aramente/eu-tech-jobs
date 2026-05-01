@@ -17,7 +17,7 @@ const ranked = [...list].sort((a, b) => {
 ---
 <Base title="Companies — eu-tech-jobs">
   <main>
-    <p class="page-marker">{list.length.toLocaleString()} companies · ranked by open positions</p>
+    <p class="page-marker">{list.length.toLocaleString("en-US")} companies · ranked by open positions</p>
     <ol class="company-list">
       {ranked.map((c, i) => {
         const n = byCompany[c.slug]?.length ?? 0;
@@ -30,7 +30,7 @@ const ranked = [...list].sort((a, b) => {
                 {countryName(c.country)}
                 {c.categories?.length ? ` · ${c.categories.join(" · ")}` : ""}
               </span>
-              <span class="company-count"><strong>{n.toLocaleString()}</strong> open</span>
+              <span class="company-count"><strong>{n.toLocaleString("en-US")}</strong> open</span>
             </a>
           </li>
         );

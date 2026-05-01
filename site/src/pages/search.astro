@@ -11,7 +11,22 @@ const base = import.meta.env.BASE_URL.endsWith("/")
         <div class="filter-search search-input-wrap">
           <input id="q" type="search" class="search-input" placeholder="search…" autocomplete="off" />
         </div>
-        <div id="filter-panels"></div>
+        <div id="filter-panels">
+          {[
+            ["where", "Where"],
+            ["role", "Role"],
+            ["seniority", "Seniority"],
+            ["remote", "Remote"],
+            ["company", "Company"],
+          ].map(([id, label]) => (
+            <details class="filter-block" data-facet={id} open={id === "where" || id === "role"}>
+              <summary>
+                <span class="filter-block-label">{label}</span>
+              </summary>
+              <div class="filter-options"><p class="rail-loading">loading…</p></div>
+            </details>
+          ))}
+        </div>
         <button id="reset" type="button" class="rail-clear">Clear all</button>
       </aside>
       <section class="results">
@@ -94,23 +109,21 @@ const base = import.meta.env.BASE_URL.endsWith("/")
 
       function renderFilterPanels() {
         if (!allFilters) return;
-        const order = ["where", "role", "seniority", "remote", "company"];
-        elPanels.innerHTML = "";
-        for (const facet of order) {
+        // Populate the pre-rendered <details> blocks (SSR placeholder) instead
+        // of wiping innerHTML — keeps first-paint stable, no flicker.
+        for (const block of elPanels.querySelectorAll("details.filter-block")) {
+          const facet = block.dataset.facet;
+          const wrap = block.querySelector(".filter-options");
           const values = allFilters[facet];
-          if (!values || Object.keys(values).length === 0) continue;
+          if (!values || Object.keys(values).length === 0) {
+            block.style.display = "none";
+            continue;
+          }
           const sortedValues = Object.entries(values).sort((a, b) => b[1] - a[1]);
           const cap = facet === "company" ? 30 : sortedValues.length;
           const visible = sortedValues.slice(0, cap);
           const hidden = sortedValues.slice(cap);
-          const block = document.createElement("details");
-          block.className = "filter-block";
-          block.open = facet === "where" || facet === "role";
-          const summary = document.createElement("summary");
-          summary.innerHTML = `<span class="filter-block-label">${FACET_LABELS[facet] || facet}</span><span class="filter-block-toggle" aria-hidden="true">+</span>`;
-          block.appendChild(summary);
-          const wrap = document.createElement("div");
-          wrap.className = "filter-options";
+          wrap.innerHTML = "";
           const renderOpt = ([val, count]) => {
             const id = `f-${facet}-${val.replace(/[^a-zA-Z0-9_-]/g, "_")}`;
             const label = document.createElement("label");
@@ -148,8 +161,6 @@ const base = import.meta.env.BASE_URL.endsWith("/")
             });
             wrap.appendChild(more);
           }
-          block.appendChild(wrap);
-          elPanels.appendChild(block);
         }
       }
 
@@ -352,23 +363,32 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     display: flex;
     justify-content: space-between;
     align-items: center;
+    user-select: none;
   }
   details.filter-block summary::-webkit-details-marker { display: none; }
+  details.filter-block summary::after {
+    content: "+";
+    font: 500 13px/1 var(--mono);
+    color: var(--muted);
+    width: 12px;
+    text-align: right;
+  }
+  details[open].filter-block summary::after { content: "−"; }
+  details.filter-block summary:hover::after { color: var(--ink); }
   .filter-block-label {
     font: 500 11px/1 var(--mono);
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--muted);
   }
-  .filter-block-toggle {
-    font: 500 13px/1 var(--mono);
+  details[open].filter-block .filter-block-label,
+  details.filter-block summary:hover .filter-block-label { color: var(--ink); }
+  .rail-loading {
+    font: 400 12px/1.4 var(--mono);
     color: var(--muted);
-    width: 12px;
-    text-align: right;
-    font-size: 0;
+    margin: 8px 0;
+    font-style: italic;
   }
-  details[open] .filter-block-toggle::before { content: "−"; font-size: 13px; }
-  details:not([open]) .filter-block-toggle::before { content: "+"; font-size: 13px; }
 
   .filter-options {
     display: flex;
