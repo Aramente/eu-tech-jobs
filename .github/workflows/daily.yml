@@ -33,7 +33,12 @@ jobs:
           # env-var names the pipeline code reads (*_API_KEY).
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL }}
-        run: uv run pipeline tag --limit 1000 -v
+        # Tags are now carried over from yesterday's snapshot in
+        # pipeline run, so this step only tags actually-untagged jobs.
+        # Limit 5000 covers a rebuild from scratch in ~3 days at our
+        # ~12k corpus size, and a single day's new-job intake any day
+        # after that. Cost: ~$0.50/day at DeepSeek pricing.
+        run: uv run pipeline tag --limit 5000 -v
         continue-on-error: true
       - name: Compute diff + RSS + alerts
         env:

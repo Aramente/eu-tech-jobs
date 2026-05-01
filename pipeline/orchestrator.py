@@ -206,6 +206,47 @@ async def run_pipeline(
     )
 
     if not dry_run:
+        # Carry over LLM tags (role_family, seniority) from yesterday's
+        # snapshot so the daily `pipeline tag --limit N` step doesn't
+        # have to re-tag everything every morning. Without this, each
+        # `pipeline run` produces fully-untagged jobs and tag coverage
+        # never catches up — measured 8% in production before this fix.
+        _merge_prior_tags(kept_jobs, output_dir)
         write_snapshot(snapshot, output_dir)
 
     return snapshot
+
+
+def _merge_prior_tags(jobs: list, output_dir: Path) -> int:
+    """Carry over LLM tags from the previous snapshot for jobs whose id
+    is unchanged. Returns the number of jobs whose tags were preserved."""
+    prior = output_dir / "latest" / "jobs.parquet"
+    if not prior.exists():
+        return 0
+    import pyarrow.parquet as pq
+
+    try:
+        rows = pq.read_table(prior).to_pylist()
+    except Exception as exc:  # corrupt parquet shouldn't block a daily run
+        logger.warning("Could not read prior snapshot for tag carry-over: %s", exc)
+        return 0
+    tag_map: dict[str, tuple] = {}
+    for r in rows:
+        rf = r.get("role_family")
+        sn = r.get("seniority")
+        if rf or sn:
+            tag_map[r["id"]] = (rf, sn)
+    n = 0
+    for j in jobs:
+        if (j.role_family is None and j.seniority is None) and j.id in tag_map:
+            rf, sn = tag_map[j.id]
+            j.role_family = rf
+            j.seniority = sn
+            n += 1
+    if n:
+        logger.info(
+            "Carried over LLM tags for %d/%d jobs from previous snapshot.",
+            n,
+            len(jobs),
+        )
+    return n
