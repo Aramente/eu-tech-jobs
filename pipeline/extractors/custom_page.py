@@ -276,31 +276,45 @@ async def fetch_jobs(
     """Fetch and LLM-extract jobs from an arbitrary careers URL.
 
     Two-pass: try static httpx first (fast, free). If the page text is
-    too short (JS-only), fall back to Playwright headless render, then
-    LLM-extract from that. Playwright is opt-in via the `browser` extra
-    — falls through gracefully when not installed.
+    too short (JS-only), or the static fetch hit a Cloudflare-style
+    bot wall, fall back to Playwright headless render and LLM-extract
+    from that. Playwright is opt-in via the `browser` extra and falls
+    through gracefully when not installed.
     """
     owns = client is None
     client = client or httpx.AsyncClient()
+    html = ""
+    static_blocked = False
     try:
         try:
             html = await _fetch_html(client, handle)
         except ExtractorNotFoundError:
             return []
+        except ExtractorTransientError as exc:
+            # 403 from Cloudflare / bot mitigation, 401, etc — try Playwright.
+            msg = str(exc)
+            if " 403" in msg or " 401" in msg or "Just a moment" in msg or "challenge" in msg.lower():
+                static_blocked = True
+                logger.info(
+                    "Custom-page %s static fetch blocked (%s) — trying Playwright",
+                    company_slug,
+                    msg[:80],
+                )
+            else:
+                raise
     finally:
         if owns:
             await client.aclose()
-    page_md = _html_to_text(html)
+    page_md = _html_to_text(html) if html else ""
 
-    # JS-rendered detection: tiny text content after stripping scripts/styles.
-    # 500 chars is empirically the boundary between "real text" and "loader
-    # shell". Some shells legitimately have <h1> + spinner only.
-    if not page_md or len(page_md) < 500:
-        logger.info(
-            "Custom-page %s returned %d chars of static text — trying Playwright",
-            company_slug,
-            len(page_md or ""),
-        )
+    # JS-rendered detection OR static-blocked → headless render fallback.
+    if static_blocked or not page_md or len(page_md) < 500:
+        if not static_blocked:
+            logger.info(
+                "Custom-page %s returned %d chars of static text — trying Playwright",
+                company_slug,
+                len(page_md or ""),
+            )
         rendered = await _render_with_playwright(handle)
         if rendered:
             page_md = _html_to_text(rendered)

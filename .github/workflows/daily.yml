@@ -30,6 +30,11 @@ jobs:
         # Cached by the setup-uv step → cheap on subsequent runs.
         run: uv run python -m playwright install --with-deps chromium
       - name: Run pipeline
+        env:
+          # custom_page extractor needs DeepSeek to LLM-extract jobs from
+          # career pages. Without this, every custom_page company logs
+          # "DEEPSEEK_API_KEY not set" and yields 0 jobs.
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK }}
         run: uv run pipeline run -v
       - name: Tag jobs (DeepSeek / Mistral)
         env:
