@@ -15,6 +15,7 @@ export type Job = {
   remote_policy: string | null;
   seniority: string | null;
   role_family: string | null;
+  employment_type?: "permanent" | "internship" | "apprenticeship" | "freelance";
   has_description?: boolean;
 };
 

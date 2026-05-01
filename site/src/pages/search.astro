@@ -15,9 +15,8 @@ const base = import.meta.env.BASE_URL.endsWith("/")
           {[
             ["where", "Where"],
             ["role", "Role"],
-            ["seniority", "Seniority"],
+            ["type", "Type"],
             ["remote", "Remote"],
-            ["company", "Company"],
           ].map(([id, label]) => (
             <details class="filter-block" data-facet={id} open={id === "where" || id === "role"}>
               <summary>
@@ -51,9 +50,8 @@ const base = import.meta.env.BASE_URL.endsWith("/")
       const FACET_LABELS = {
         where: "Where",
         role: "Role",
-        seniority: "Seniority",
+        type: "Type",
         remote: "Remote",
-        company: "Company",
       };
 
       const selected = {};
@@ -142,9 +140,14 @@ const base = import.meta.env.BASE_URL.endsWith("/")
               syncToUrl();
               runSearch();
             });
+            // Filter labels are clean — no count next to each option per UX call.
+            // The pretty value: type values come through as "permanent" etc; capitalize.
+            const display = facet === "type"
+              ? val.charAt(0).toUpperCase() + val.slice(1)
+              : val;
             const text = document.createElement("span");
             text.className = "filter-option-text";
-            text.innerHTML = `<span class="opt-name">${val}</span><span class="opt-count">${count.toLocaleString()}</span>`;
+            text.innerHTML = `<span class="opt-name">${display}</span>`;
             label.appendChild(input);
             label.appendChild(text);
             return label;

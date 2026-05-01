@@ -126,16 +126,10 @@ const whereFacet: string = whereByJobId[jobId] || "Other";
       {job.role_family && (
         <span data-pagefind-filter={`role:${job.role_family}`} hidden></span>
       )}
-      {job.seniority && (
-        <span data-pagefind-filter={`seniority:${job.seniority}`} hidden></span>
-      )}
-      {company?.country && (
-        <span data-pagefind-filter={`country:${COUNTRY_NAMES[company.country] || company.country}`} hidden></span>
-      )}
       {job.remote_policy && (
         <span data-pagefind-filter={`remote:${job.remote_policy}`} hidden></span>
       )}
-      <span data-pagefind-filter={`company:${companyName}`} hidden></span>
+      <span data-pagefind-filter={`type:${job.employment_type || "permanent"}`} hidden></span>
       <!-- Pagefind meta — surfaced on result cards in /search/. -->
       <span data-pagefind-meta={`company:${companyName}`} hidden></span>
       {country && <span data-pagefind-meta={`country:${country}`} hidden></span>}

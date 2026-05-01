@@ -38,6 +38,20 @@ function isoDate(v) {
 // Instead each job's description is written to its own .md file in
 // `data-cache/descriptions/` and the per-job Astro page reads only its
 // own file at build time. ~15k tiny disk reads, no big JSON ever exists.
+// Classify employment type from the title. Rule order: internship > apprenticeship
+// > freelance > permanent (default). "Contract" alone is too noisy to count
+// as freelance — many full-time roles use the word generically.
+const INT_RE = /\b(intern|interns|internship|stagiaire|stagiaires|stagista|trainee|trainees|praktikum|praktikant|praktikantin)\b/i;
+const ALT_RE = /\b(alternan(?:t|ts|ce|te|tes)|apprentic(?:e|es|eship)|ausbildung|werkstudent|werkstudentin|lehre|lehrling|apprenti|apprentie)\b/i;
+const FREE_RE = /\b(freelance|freelancer|freelancers|freelancing|contractor|contractors)\b/i;
+function employmentType(title) {
+  if (!title) return "permanent";
+  if (INT_RE.test(title)) return "internship";
+  if (ALT_RE.test(title)) return "apprenticeship";
+  if (FREE_RE.test(title)) return "freelance";
+  return "permanent";
+}
+
 const jobsLite = jobs.map((j) => ({
   id: j.id,
   company_slug: j.company_slug,
@@ -49,6 +63,7 @@ const jobsLite = jobs.map((j) => ({
   remote_policy: j.remote_policy,
   seniority: j.seniority,
   role_family: j.role_family,
+  employment_type: employmentType(j.title),
   has_description: !!(j.description_md && j.description_md.length > 50),
 }));
 
