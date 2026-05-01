@@ -1,0 +1,9 @@
+name: Weaviate
+country: XX
+categories:
+- ai
+- remote-eu
+ats:
+  provider: ashby
+  handle: weaviate
+notes: Major AI lab — hires remote-EU or in EU offices

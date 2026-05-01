@@ -1,0 +1,8 @@
+name: Platzi
+country: ES
+categories:
+- tech
+ats:
+  provider: workable
+  handle: platzi
+notes: YC Winter 2015 — discovered via YC EU directory

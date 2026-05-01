@@ -1,0 +1,8 @@
+name: UserGems
+country: AT
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: usergems
+notes: YC Summer 2014 — discovered via YC EU directory

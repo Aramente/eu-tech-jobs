@@ -1,0 +1,9 @@
+name: Speak
+country: US
+categories:
+- ai
+- remote-eu
+ats:
+  provider: ashby
+  handle: speak
+notes: Major AI lab — hires remote-EU or in EU offices

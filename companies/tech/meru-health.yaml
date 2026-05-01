@@ -1,0 +1,8 @@
+name: Meru Health
+country: FI
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: meruhealth
+notes: YC Summer 2018 — discovered via YC EU directory

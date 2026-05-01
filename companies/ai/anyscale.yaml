@@ -1,0 +1,9 @@
+name: Anyscale
+country: US
+categories:
+- ai
+- remote-eu
+ats:
+  provider: lever
+  handle: anyscale
+notes: Major AI lab — hires remote-EU or in EU offices

@@ -1,0 +1,8 @@
+name: Mytos
+country: GB
+categories:
+- tech
+ats:
+  provider: lever
+  handle: mytos
+notes: YC Summer 2018 — discovered via YC EU directory

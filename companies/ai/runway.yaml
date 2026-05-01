@@ -1,0 +1,9 @@
+name: Runway
+country: US
+categories:
+- ai
+- remote-eu
+ats:
+  provider: ashby
+  handle: runway
+notes: Major AI lab — hires remote-EU or in EU offices

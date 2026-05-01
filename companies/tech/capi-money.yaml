@@ -1,0 +1,8 @@
+name: Capi Money
+country: GB
+categories:
+- tech
+ats:
+  provider: ashby
+  handle: capimoney
+notes: YC Summer 2023 — discovered via YC EU directory

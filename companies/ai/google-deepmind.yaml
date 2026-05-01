@@ -1,0 +1,9 @@
+name: Google Deepmind
+country: XX
+categories:
+- ai
+- remote-eu
+ats:
+  provider: greenhouse
+  handle: deepmind
+notes: Major AI lab — hires remote-EU or in EU offices
