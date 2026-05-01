@@ -1,0 +1,9 @@
+name: Workday
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: workday
+  handle: https://workday.wd5.myworkdayjobs.com/wday/cxs/workday/Workday/jobs
+notes: Major Workday-hosted employer with EU offices

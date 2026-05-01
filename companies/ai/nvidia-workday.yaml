@@ -1,0 +1,9 @@
+name: NVIDIA
+country: US
+categories:
+- ai
+- remote-eu
+ats:
+  provider: workday
+  handle: https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/jobs
+notes: Major Workday-hosted employer with EU offices

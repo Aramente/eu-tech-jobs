@@ -8,6 +8,7 @@ from pipeline.extractors import (
     personio,
     recruitee,
     smartrecruiters,
+    workday,
 )
 from pipeline.extractors.base import (
     ExtractorError,
@@ -23,6 +24,7 @@ EXTRACTORS = {
     "recruitee": recruitee,
     "personio": personio,
     "custom_page": custom_page,
+    "workday": workday,
 }
 
 __all__ = [
