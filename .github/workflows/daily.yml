@@ -58,12 +58,25 @@ jobs:
       - name: Commit data
         id: commit
         run: |
+          set -e
+          git fetch origin main
+          TODAY=$(date -u +%Y-%m-%d)
+          # If origin/main already has today's snapshot (an earlier run won
+          # the race), skip — the parquets aren't auto-mergeable and we'd
+          # just produce a duplicate.
+          if git log origin/main -1 --format=%s | grep -qF "chore(data): daily snapshot $TODAY"; then
+            echo "Today's snapshot already on origin/main — skipping commit."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           if [[ -n "$(git status --porcelain data/)" ]]; then
             git config user.name "eu-tech-jobs-bot"
             git config user.email "actions@github.com"
             git add data/
-            git commit -m "chore(data): daily snapshot $(date -u +%Y-%m-%d)"
-            git pull --rebase origin main
+            git commit -m "chore(data): daily snapshot $TODAY"
+            # Use -X theirs so OUR data wins on conflict during rebase
+            # (rebase semantics: "theirs" = the commit being applied = us).
+            git pull --rebase --strategy-option=theirs origin main
             git push
             echo "pushed=true" >> "$GITHUB_OUTPUT"
           else
