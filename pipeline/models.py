@@ -23,6 +23,7 @@ ATSProvider = Literal[
     "teamtailor",
     "custom_page",
     "workday",
+    "phenom",
 ]
 
 RemotePolicy = Literal["onsite", "hybrid", "remote", "remote-eu", "remote-global"]

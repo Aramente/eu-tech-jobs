@@ -240,24 +240,53 @@ def _call_deepseek(page_md: str, source_url: str) -> dict:
 
 async def _render_with_playwright(url: str) -> str:
     """Headless render fallback for JS-only careers pages. Optional —
-    requires the `browser` extra (playwright). No-ops when not installed."""
+    requires the `browser` extra (playwright + playwright-stealth).
+    Stealth patches the headless Chrome fingerprint so Cloudflare's
+    bot wall on Hippocratic / Adept / Midjourney doesn't fire.
+    No-ops when not installed.
+    """
     try:
         from playwright.async_api import async_playwright
     except ImportError:
         logger.info("Playwright not installed — skipping JS render for %s", url)
         return ""
     try:
+        from playwright_stealth import Stealth
+        stealth_ctx_mgr = Stealth().use_async
+        has_stealth = True
+    except ImportError:
+        has_stealth = False
+        logger.debug("playwright-stealth not installed — proceeding without")
+
+    try:
         async with async_playwright() as pw:
-            browser = await pw.chromium.launch(headless=True)
+            browser = await pw.chromium.launch(
+                headless=True,
+                args=[
+                    "--disable-blink-features=AutomationControlled",
+                    "--no-sandbox",
+                ],
+            )
             try:
                 ctx = await browser.new_context(
-                    user_agent=USER_AGENT, viewport={"width": 1280, "height": 1024}
+                    user_agent=(
+                        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0 "
+                        "Safari/537.36"
+                    ),
+                    viewport={"width": 1440, "height": 900},
+                    locale="en-US",
+                    timezone_id="Europe/Paris",
                 )
+                if has_stealth:
+                    await stealth_ctx_mgr(ctx)
                 page = await ctx.new_page()
-                await page.goto(url, wait_until="networkidle", timeout=30000)
-                # Give SPA frameworks a moment to populate listings beyond the
-                # initial XHR. networkidle covers most; this is belt-and-braces.
-                await page.wait_for_timeout(1500)
+                # Some Cloudflare-protected pages need a moment to clear the
+                # silent JS challenge before content paints. domcontentloaded
+                # then a small wait is more reliable than networkidle which
+                # can hang forever on heavy analytics-tracking pages.
+                await page.goto(url, wait_until="domcontentloaded", timeout=45000)
+                await page.wait_for_timeout(3500)
                 content = await page.content()
             finally:
                 await browser.close()

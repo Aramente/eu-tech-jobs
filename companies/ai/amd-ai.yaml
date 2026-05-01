@@ -3,5 +3,7 @@ country: US
 categories:
 - ai
 - remote-eu
-career_url: https://careers.amd.com/careers-home/jobs?categories=AI
-notes: Custom-page extractor — LLM-driven scrape of careers page
+ats:
+  provider: phenom
+  handle: https://careers.amd.com/api/jobs
+notes: Major AI/compute employer. Phenom People (Jibe) careers API.

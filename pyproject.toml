@@ -36,8 +36,12 @@ hf = [
 # Playwright headless rendering — opt-in. Used only by custom_page when the
 # static HTML returns < 500 chars of text (JS-rendered SPAs). The browser
 # binary is downloaded separately via `playwright install chromium`.
+# playwright-stealth: applies real-Chrome fingerprint patches (navigator.
+# webdriver, missing plugins, etc) so Cloudflare's headless detection
+# doesn't trip the bot wall on Hippocratic / Adept / Midjourney etc.
 browser = [
     "playwright>=1.48",
+    "playwright-stealth>=2.0",
 ]
 
 [project.scripts]

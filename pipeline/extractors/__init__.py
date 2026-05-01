@@ -6,6 +6,7 @@ from pipeline.extractors import (
     greenhouse,
     lever,
     personio,
+    phenom,
     recruitee,
     smartrecruiters,
     workday,
@@ -25,6 +26,7 @@ EXTRACTORS = {
     "personio": personio,
     "custom_page": custom_page,
     "workday": workday,
+    "phenom": phenom,
 }
 
 __all__ = [
