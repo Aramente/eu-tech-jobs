@@ -172,13 +172,23 @@ function deriveWhere(job, company) {
     if (/\beurope\b|\bemea\b|\beu\b|remote\s*[-—]\s*eu/i.test(loc)) {
       return "Remote — Europe";
     }
-    // City lookup
+    // City lookup — token-based so "Venice, Italy" doesn't substring-match
+    // "nice" (France). Tokenize on punctuation/whitespace, then match each
+    // city as a standalone token.
+    const tokens = loc.split(/[^a-zàâäéèêëïîôöùûüçœæñ\-]+/u).filter(Boolean);
+    const tokenSet = new Set(tokens);
     for (const [city, country] of Object.entries(CITY_TO_COUNTRY)) {
-      if (loc.includes(city)) return country;
+      if (tokenSet.has(city)) return country;
     }
-    // Country names directly in the location string
+    // Country names — same token-based check. Multi-word names checked as
+    // a substring of the original loc since they include spaces.
     for (const [code, name] of Object.entries(COUNTRY_NAMES)) {
-      if (loc.includes(name.toLowerCase())) return name;
+      const lower = name.toLowerCase();
+      if (lower.includes(" ")) {
+        if (loc.includes(lower)) return name;
+      } else if (tokenSet.has(lower)) {
+        return name;
+      }
     }
     // ISO country code suffix (",ee" / ", de" / ", gb")
     const m = loc.match(/,\s*([a-z]{2})\b/);
