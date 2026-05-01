@@ -222,6 +222,17 @@ const indexedSynonyms = [synonymBlob, senSyn].filter(Boolean).join(" ");
         >
           ✨ Tailor my CV first
         </a>
+        <button
+          type="button"
+          class="cta-save"
+          data-job-id={job.id}
+          data-job-title={job.title}
+          data-job-company={companyName}
+          data-job-url={`${base}jobs/${jobUrlPath(job)}/`}
+          aria-label="Save this job"
+        >
+          ☆ Save
+        </button>
       </div>
 
       <p class="meta source-note">
@@ -267,5 +278,51 @@ const indexedSynonyms = [synonymBlob, senSyn].filter(Boolean).join(" ");
         });
       }
     }
+
+    // Saved jobs — localStorage-only, no account, no sync. Click the
+    // ☆ Save button to bookmark; visit /saved/ to see your list.
+    (function () {
+      const KEY = "eu-tech-jobs:saved";
+      function load() {
+        try { return JSON.parse(localStorage.getItem(KEY) || "[]"); }
+        catch { return []; }
+      }
+      function persist(list) {
+        localStorage.setItem(KEY, JSON.stringify(list));
+      }
+      const btn = document.querySelector(".cta-save");
+      if (!btn) return;
+      const id = btn.dataset.jobId;
+      const list = load();
+      function isSaved() { return list.some((j) => j.id === id); }
+      function refresh() {
+        if (isSaved()) {
+          btn.textContent = "★ Saved";
+          btn.classList.add("is-saved");
+        } else {
+          btn.textContent = "☆ Save";
+          btn.classList.remove("is-saved");
+        }
+      }
+      btn.addEventListener("click", () => {
+        if (isSaved()) {
+          const idx = list.findIndex((j) => j.id === id);
+          list.splice(idx, 1);
+        } else {
+          list.unshift({
+            id,
+            title: btn.dataset.jobTitle,
+            company: btn.dataset.jobCompany,
+            url: btn.dataset.jobUrl,
+            saved_at: new Date().toISOString(),
+          });
+          // Cap at 200 saved jobs.
+          list.splice(200);
+        }
+        persist(list);
+        refresh();
+      });
+      refresh();
+    })();
   </script>
 </Base>

@@ -6,8 +6,13 @@ const base = import.meta.env.BASE_URL.endsWith("/")
 ---
 <Base title="Search — eu-tech-jobs" description="Filter EU AI/tech jobs by location, role, seniority, and remote policy.">
   <main class="search-page">
+    <button id="mobile-filter-toggle" type="button" class="mobile-filter-toggle">
+      <span>Filters</span>
+      <span id="mobile-filter-count" class="mobile-filter-count" hidden>0</span>
+    </button>
     <div class="search-shell">
-      <aside class="filter-rail">
+      <aside class="filter-rail" id="filter-rail">
+        <button id="mobile-filter-close" type="button" class="mobile-filter-close" aria-label="Close filters">×</button>
         <div class="filter-search search-input-wrap">
           <input id="q" type="search" class="search-input" placeholder="search…" autocomplete="off" />
         </div>
@@ -27,7 +32,9 @@ const base = import.meta.env.BASE_URL.endsWith("/")
           ))}
         </div>
         <button id="reset" type="button" class="rail-clear">Clear all</button>
+        <button id="mobile-filter-apply" type="button" class="mobile-filter-apply">Show results</button>
       </aside>
+      <div id="filter-rail-backdrop" class="filter-rail-backdrop" hidden></div>
       <section class="results">
         <div id="active-pills" class="active-pills" hidden></div>
         <p id="result-summary" class="result-summary">Loading…</p>
@@ -337,6 +344,52 @@ const base = import.meta.env.BASE_URL.endsWith("/")
         runSearch();
       });
 
+      // Mobile bottom-sheet wiring. The rail is hidden by default at
+      // <800px and slides in from the bottom when "Filters" is tapped.
+      const mobileToggle = document.getElementById("mobile-filter-toggle");
+      const mobileClose = document.getElementById("mobile-filter-close");
+      const mobileApply = document.getElementById("mobile-filter-apply");
+      const mobileCount = document.getElementById("mobile-filter-count");
+      const rail = document.getElementById("filter-rail");
+      const backdrop = document.getElementById("filter-rail-backdrop");
+      function openSheet() {
+        rail?.classList.add("open");
+        backdrop && (backdrop.hidden = false);
+        document.body.style.overflow = "hidden";
+      }
+      function closeSheet() {
+        rail?.classList.remove("open");
+        backdrop && (backdrop.hidden = true);
+        document.body.style.overflow = "";
+      }
+      mobileToggle?.addEventListener("click", openSheet);
+      mobileClose?.addEventListener("click", closeSheet);
+      mobileApply?.addEventListener("click", closeSheet);
+      backdrop?.addEventListener("click", closeSheet);
+      // Update active-filter count on the toggle button.
+      function refreshMobileCount() {
+        if (!mobileCount) return;
+        const total = Object.values(selected).reduce(
+          (n, set) => n + (set?.size || 0), 0,
+        );
+        if (total > 0) {
+          mobileCount.hidden = false;
+          mobileCount.textContent = String(total);
+        } else {
+          mobileCount.hidden = true;
+        }
+      }
+      // Refresh the count once at startup (in case URL had filters preselected).
+      refreshMobileCount();
+      // …and after every checkbox change (the existing change handler
+      // already calls runSearch which calls renderActivePills, but we
+      // want the toggle-button to reflect state immediately).
+      document.addEventListener("change", (e) => {
+        if (e.target instanceof HTMLInputElement && e.target.type === "checkbox") {
+          refreshMobileCount();
+        }
+      });
+
       initPagefind();
     </script>
   </main>
@@ -352,9 +405,101 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     grid-template-columns: 200px 1fr;
     gap: 32px;
     margin-top: 8px;
+    position: relative;
   }
+
+  /* === Mobile filter bottom-sheet === */
+  .mobile-filter-toggle,
+  .mobile-filter-close,
+  .mobile-filter-apply,
+  .filter-rail-backdrop {
+    display: none;
+  }
+
   @media (max-width: 800px) {
-    .search-shell { grid-template-columns: 1fr; gap: 24px; }
+    .search-shell { grid-template-columns: 1fr; gap: 16px; }
+
+    /* Floating "Filters" trigger — anchored bottom-right, above pills row. */
+    .mobile-filter-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      z-index: 30;
+      background: var(--ink);
+      color: var(--paper);
+      border: 1px solid var(--ink);
+      padding: 12px 18px;
+      font: 600 12px/1 var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    }
+    .mobile-filter-count {
+      background: var(--signal);
+      color: var(--paper);
+      padding: 1px 7px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    /* Off-canvas rail — absolute, slides up from bottom. */
+    .filter-rail {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: auto;
+      max-height: 85vh;
+      background: var(--paper);
+      border-top: 1px solid var(--ink);
+      padding: 16px 16px 24px;
+      z-index: 40;
+      transform: translateY(100%);
+      transition: transform 200ms ease;
+      overflow-y: auto;
+      box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.14);
+    }
+    .filter-rail.open { transform: translateY(0); }
+    .filter-rail-backdrop {
+      display: block;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: 35;
+    }
+
+    .mobile-filter-close {
+      display: block;
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      background: transparent;
+      border: 0;
+      padding: 6px 8px;
+      font: 600 22px/1 var(--mono);
+      color: var(--muted);
+      cursor: pointer;
+    }
+    .mobile-filter-close:hover { color: var(--ink); }
+
+    .mobile-filter-apply {
+      display: block;
+      width: 100%;
+      margin-top: 16px;
+      padding: 14px;
+      background: var(--ink);
+      color: var(--paper);
+      border: 1px solid var(--ink);
+      font: 600 13px/1 var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+    }
   }
 
   .filter-rail { padding-right: 0; }

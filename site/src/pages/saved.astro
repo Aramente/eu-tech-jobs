@@ -1,0 +1,94 @@
+---
+import Base from "../layouts/Base.astro";
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : import.meta.env.BASE_URL + "/";
+---
+<Base title="Saved — eu-tech-jobs" description="Your locally-saved jobs. No account required.">
+  <main class="search-page">
+    <p class="page-marker" id="saved-summary">loading…</p>
+    <ol id="saved-list" class="results-list"></ol>
+    <p id="saved-empty" class="empty" hidden>
+      No saved jobs yet. Browse jobs and click <strong>☆ Save</strong> to bookmark.
+    </p>
+  </main>
+
+  <script is:inline>
+    (function () {
+      const KEY = "eu-tech-jobs:saved";
+      let list = [];
+      try { list = JSON.parse(localStorage.getItem(KEY) || "[]"); } catch {}
+      const summary = document.getElementById("saved-summary");
+      const ol = document.getElementById("saved-list");
+      const empty = document.getElementById("saved-empty");
+      if (!list.length) {
+        summary.hidden = true;
+        empty.hidden = false;
+        return;
+      }
+      summary.textContent = `${list.length} saved · stored locally on this device`;
+      function fmtDate(iso) {
+        try {
+          const d = new Date(iso);
+          const days = Math.round((Date.now() - d.getTime()) / 86400000);
+          return days <= 0 ? "today" : days === 1 ? "1d ago" : days <= 31 ? `${days}d ago` : `${Math.round(days / 30)}mo ago`;
+        } catch { return ""; }
+      }
+      for (const j of list) {
+        const li = document.createElement("li");
+        li.className = "result-item";
+        const a = document.createElement("a");
+        a.href = j.url;
+        a.className = "result-link";
+        a.innerHTML = `
+          <span class="result-title">${j.title || "(untitled)"}</span>
+          <span class="result-org">${j.company || "—"}</span>
+          <span class="result-meta">SAVED ${fmtDate(j.saved_at).toUpperCase()}</span>
+        `;
+        // Allow remove button on right side
+        const wrap = document.createElement("div");
+        wrap.style.display = "flex";
+        wrap.style.alignItems = "center";
+        wrap.style.gap = "12px";
+        wrap.style.borderBottom = "1px solid var(--rule)";
+        const remove = document.createElement("button");
+        remove.type = "button";
+        remove.textContent = "remove";
+        remove.style.cssText = "background:none;border:0;color:var(--muted);font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:0.06em;cursor:pointer;padding:8px 0;flex-shrink:0;";
+        remove.addEventListener("click", () => {
+          list = list.filter((x) => x.id !== j.id);
+          localStorage.setItem(KEY, JSON.stringify(list));
+          li.remove();
+          summary.textContent = `${list.length} saved · stored locally on this device`;
+          if (!list.length) {
+            summary.hidden = true;
+            empty.hidden = false;
+          }
+        });
+        a.style.flex = "1";
+        a.style.borderBottom = "0";
+        wrap.appendChild(a);
+        wrap.appendChild(remove);
+        li.style.borderBottom = "0";
+        li.appendChild(wrap);
+        ol.appendChild(li);
+      }
+    })();
+  </script>
+
+  <style>
+    .page-marker {
+      font: 500 11px/1 var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+    .empty {
+      padding: 48px 24px;
+      text-align: center;
+      color: var(--muted);
+      font: 400 14px/1.6 var(--body);
+    }
+  </style>
+</Base>

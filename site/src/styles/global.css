@@ -487,6 +487,23 @@ article.job h1 {
   transition: background 80ms ease;
 }
 .cta-secondary:hover { background: var(--row-hover); text-decoration: none; }
+.cta-save {
+  appearance: none;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  padding: 14px 18px;
+  font: 600 13px/1 var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  cursor: pointer;
+  flex: 0 0 auto;
+  transition: background 80ms ease, color 80ms ease, border-color 80ms ease;
+}
+.cta-save:hover { background: var(--row-hover); color: var(--ink); border-color: var(--ink); }
+.cta-save.is-saved { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.cta-save.is-saved:hover { background: var(--ink-soft); }
 .source-note {
   font: 400 11px/1.6 var(--mono);
   text-transform: uppercase;
