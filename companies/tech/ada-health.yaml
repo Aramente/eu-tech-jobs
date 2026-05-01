@@ -1,0 +1,8 @@
+name: Ada Health
+country: XX
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: adahealth
+notes: Discovered via awesome-european-tech / awesome-european-ai mining

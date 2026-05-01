@@ -1,0 +1,8 @@
+name: Cradle.bio
+country: XX
+categories:
+- ai
+ats:
+  provider: ashby
+  handle: cradlebio
+notes: Discovered via awesome-european-tech / awesome-european-ai mining

@@ -1,0 +1,8 @@
+name: Aleph Alpha
+country: XX
+categories:
+- ai
+ats:
+  provider: ashby
+  handle: alephalpha
+notes: Discovered via awesome-european-tech / awesome-european-ai mining

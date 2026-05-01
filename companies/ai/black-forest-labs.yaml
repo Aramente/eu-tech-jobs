@@ -1,0 +1,8 @@
+name: Black Forest Labs
+country: XX
+categories:
+- ai
+ats:
+  provider: greenhouse
+  handle: blackforestlabs
+notes: Discovered via awesome-european-tech / awesome-european-ai mining

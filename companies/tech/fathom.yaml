@@ -1,0 +1,8 @@
+name: Fathom
+country: XX
+categories:
+- tech
+ats:
+  provider: ashby
+  handle: fathom
+notes: Discovered via awesome-european-tech / awesome-european-ai mining

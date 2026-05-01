@@ -1,0 +1,8 @@
+name: Robin AI
+country: XX
+categories:
+- ai
+ats:
+  provider: ashby
+  handle: robin-ai
+notes: Discovered via awesome-european-tech / awesome-european-ai mining

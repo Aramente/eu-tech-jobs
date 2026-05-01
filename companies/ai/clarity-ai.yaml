@@ -1,0 +1,8 @@
+name: Clarity AI
+country: XX
+categories:
+- ai
+ats:
+  provider: greenhouse
+  handle: clarityai
+notes: Discovered via awesome-european-tech / awesome-european-ai mining
