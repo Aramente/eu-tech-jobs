@@ -1,0 +1,9 @@
+name: HashiCorp
+country: US
+categories:
+- oss
+- remote-eu
+ats:
+  provider: workable
+  handle: hashicorp
+notes: Infrastructure tools, remote-EU

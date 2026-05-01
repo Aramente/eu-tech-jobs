@@ -1,0 +1,8 @@
+name: Linear
+country: US
+categories:
+- remote-eu
+ats:
+  provider: ashby
+  handle: linear
+notes: Issue tracker, hires remote-EU

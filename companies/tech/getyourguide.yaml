@@ -1,0 +1,8 @@
+name: GetYourGuide
+country: DE
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: getyourguide
+notes: Travel experiences marketplace

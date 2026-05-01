@@ -1,0 +1,8 @@
+name: BlaBlaCar
+country: FR
+categories:
+- tech
+ats:
+  provider: lever
+  handle: blablacar
+notes: FR mobility unicorn, ~800 staff

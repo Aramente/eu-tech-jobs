@@ -1,0 +1,8 @@
+name: TrueLayer
+country: GB
+categories:
+- tech
+ats:
+  provider: greenhouse
+  handle: truelayer
+notes: Open banking platform

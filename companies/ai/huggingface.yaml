@@ -1,0 +1,9 @@
+name: Hugging Face
+country: FR
+categories:
+- ai
+- oss
+ats:
+  provider: workable
+  handle: hugging-face
+notes: Open-source AI/ML platform

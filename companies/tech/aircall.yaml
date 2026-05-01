@@ -1,0 +1,8 @@
+name: Aircall
+country: FR
+categories:
+- tech
+ats:
+  provider: lever
+  handle: aircall
+notes: Cloud telephony unicorn, ~800 staff

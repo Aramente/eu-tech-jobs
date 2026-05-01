@@ -1,0 +1,8 @@
+name: Prophesee
+country: FR
+categories:
+- ai
+ats:
+  provider: smartrecruiters
+  handle: prophesee
+notes: Event-based vision AI

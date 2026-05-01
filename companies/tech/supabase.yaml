@@ -1,0 +1,9 @@
+name: Supabase
+country: US
+categories:
+- oss
+- remote-eu
+ats:
+  provider: ashby
+  handle: supabase
+notes: Open-source Firebase alternative, remote-first

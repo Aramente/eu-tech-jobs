@@ -1,0 +1,8 @@
+name: Vinted
+country: LT
+categories:
+- tech
+ats:
+  provider: workable
+  handle: vinted
+notes: Resale marketplace, ~1000 staff

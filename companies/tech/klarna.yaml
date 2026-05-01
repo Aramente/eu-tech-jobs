@@ -1,0 +1,8 @@
+name: Klarna
+country: SE
+categories:
+- tech
+ats:
+  provider: smartrecruiters
+  handle: klarna
+notes: BNPL giant, EU-wide hiring

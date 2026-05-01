@@ -1,0 +1,8 @@
+name: Checkout.com
+country: GB
+categories:
+- tech
+ats:
+  provider: workable
+  handle: checkout-com
+notes: Payments unicorn

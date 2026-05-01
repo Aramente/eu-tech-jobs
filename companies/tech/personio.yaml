@@ -1,0 +1,8 @@
+name: Personio
+country: DE
+categories:
+- tech
+ats:
+  provider: personio
+  handle: personio-gmbh
+notes: HR SaaS, ~1800 staff
