@@ -238,6 +238,35 @@ def _call_deepseek(page_md: str, source_url: str) -> dict:
         return {"jobs": []}
 
 
+async def _render_with_playwright(url: str) -> str:
+    """Headless render fallback for JS-only careers pages. Optional —
+    requires the `browser` extra (playwright). No-ops when not installed."""
+    try:
+        from playwright.async_api import async_playwright
+    except ImportError:
+        logger.info("Playwright not installed — skipping JS render for %s", url)
+        return ""
+    try:
+        async with async_playwright() as pw:
+            browser = await pw.chromium.launch(headless=True)
+            try:
+                ctx = await browser.new_context(
+                    user_agent=USER_AGENT, viewport={"width": 1280, "height": 1024}
+                )
+                page = await ctx.new_page()
+                await page.goto(url, wait_until="networkidle", timeout=30000)
+                # Give SPA frameworks a moment to populate listings beyond the
+                # initial XHR. networkidle covers most; this is belt-and-braces.
+                await page.wait_for_timeout(1500)
+                content = await page.content()
+            finally:
+                await browser.close()
+        return content
+    except Exception as exc:
+        logger.warning("Playwright render failed for %s: %s", url, exc)
+        return ""
+
+
 async def fetch_jobs(
     handle: str,
     *,
@@ -246,23 +275,42 @@ async def fetch_jobs(
 ) -> list[Job]:
     """Fetch and LLM-extract jobs from an arbitrary careers URL.
 
-    `handle` here is the careers URL (the YAML may set
-    `ats: { provider: custom_page, handle: <url> }` OR drop ATS entirely
-    and set `career_url` — the orchestrator handles both)."""
+    Two-pass: try static httpx first (fast, free). If the page text is
+    too short (JS-only), fall back to Playwright headless render, then
+    LLM-extract from that. Playwright is opt-in via the `browser` extra
+    — falls through gracefully when not installed.
+    """
     owns = client is None
     client = client or httpx.AsyncClient()
     try:
-        html = await _fetch_html(client, handle)
+        try:
+            html = await _fetch_html(client, handle)
+        except ExtractorNotFoundError:
+            return []
     finally:
         if owns:
             await client.aclose()
     page_md = _html_to_text(html)
-    if not page_md or len(page_md) < 200:
+
+    # JS-rendered detection: tiny text content after stripping scripts/styles.
+    # 500 chars is empirically the boundary between "real text" and "loader
+    # shell". Some shells legitimately have <h1> + spinner only.
+    if not page_md or len(page_md) < 500:
         logger.info(
-            "Custom-page %s returned only %d chars of text — likely JS-only",
+            "Custom-page %s returned %d chars of static text — trying Playwright",
             company_slug,
-            len(page_md),
+            len(page_md or ""),
         )
-        return []
+        rendered = await _render_with_playwright(handle)
+        if rendered:
+            page_md = _html_to_text(rendered)
+        if not page_md or len(page_md) < 200:
+            logger.info(
+                "Custom-page %s still %d chars after render — giving up",
+                company_slug,
+                len(page_md or ""),
+            )
+            return []
+
     payload = _call_deepseek(page_md, handle)
     return parse_jobs(payload, company_slug, handle)

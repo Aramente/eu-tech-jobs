@@ -1,0 +1,9 @@
+name: Amgen
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: workday
+  handle: https://amgen.wd1.myworkdayjobs.com/wday/cxs/amgen/careers/jobs
+notes: Major Workday-hosted employer with EU offices

@@ -25,6 +25,10 @@ jobs:
         run: uv python install 3.12
       - name: Install
         run: uv sync --all-extras
+      - name: Install Chromium for Playwright fallback
+        # Used by custom_page extractor when static HTML is JS-only.
+        # Cached by the setup-uv step → cheap on subsequent runs.
+        run: uv run python -m playwright install --with-deps chromium
       - name: Run pipeline
         run: uv run pipeline run -v
       - name: Tag jobs (DeepSeek / Mistral)

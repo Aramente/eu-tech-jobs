@@ -1,0 +1,9 @@
+name: HP
+country: US
+categories:
+- tech
+- remote-eu
+ats:
+  provider: workday
+  handle: https://hp.wd5.myworkdayjobs.com/wday/cxs/hp/ExternalCareerSite/jobs
+notes: Major Workday-hosted employer with EU offices

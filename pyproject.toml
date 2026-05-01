@@ -33,6 +33,12 @@ tagger = [
 hf = [
     "huggingface-hub>=0.25",
 ]
+# Playwright headless rendering — opt-in. Used only by custom_page when the
+# static HTML returns < 500 chars of text (JS-rendered SPAs). The browser
+# binary is downloaded separately via `playwright install chromium`.
+browser = [
+    "playwright>=1.48",
+]
 
 [project.scripts]
 pipeline = "pipeline.cli:cli"
