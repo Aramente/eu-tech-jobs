@@ -206,17 +206,20 @@ const CITY_TO_COUNTRY = {
 };
 
 function deriveWhere(job, company) {
-  // Globally-remote LLM tags win first.
-  if (job.remote_policy === "remote-global") return "Remote — Worldwide";
-  if (job.remote_policy === "remote-eu") return "Remote — Europe";
-
+  // `where` is now country-only. Remote is its own dedicated facet
+  // (job.remote_policy → remote facet in /search/), so we don't bucket
+  // remote-global / remote-eu jobs into "Remote — Worldwide" /
+  // "Remote — Europe" any more — they used to duplicate the standalone
+  // Remote filter and confuse the rail.
+  //
+  // For pure-remote jobs, fall through to company HQ if we have one,
+  // else "Other". The user filters with both facets in combination.
   const loc = (job.location || "").toLowerCase();
   if (loc) {
-    if (/anywhere in the world|worldwide|world\s*wide|global/.test(loc)) {
-      return "Remote — Worldwide";
-    }
-    if (/\beurope\b|\bemea\b|\beu\b|remote\s*[-—]\s*eu/i.test(loc)) {
-      return "Remote — Europe";
+    // Strip "Anywhere / Worldwide" without forcing them into a Where
+    // bucket — let them fall through to "Other" if no other signal.
+    if (/anywhere in the world|worldwide|world\s*wide/.test(loc)) {
+      // continue below; the Remote facet captures these via remote_policy
     }
     // City lookup — token-based so "Venice, Italy" doesn't substring-match
     // "nice" (France). Tokenize on punctuation/whitespace, then match each
@@ -255,7 +258,8 @@ function deriveWhere(job, company) {
   if (company?.country && EU_HQ_COUNTRIES.has(company.country)) {
     return COUNTRY_NAMES[company.country];
   }
-  if (job.remote_policy === "remote") return "Remote — unspecified";
+  // No country signal at all → "Other" (Remote facet still captures the
+  // remote-policy tag separately).
   return "Other";
 }
 

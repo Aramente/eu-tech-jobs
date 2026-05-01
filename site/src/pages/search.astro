@@ -156,10 +156,20 @@ const base = import.meta.env.BASE_URL.endsWith("/")
               runSearch();
             });
             // Filter labels are clean — no count next to each option per UX call.
-            // The pretty value: type values come through as "permanent" etc; capitalize.
-            const display = facet === "type"
-              ? val.charAt(0).toUpperCase() + val.slice(1)
-              : val;
+            // Pretty-print enum values for type / remote facets.
+            const REMOTE_LABELS = {
+              "remote-eu": "Remote — EU",
+              "remote-global": "Remote — Worldwide",
+              "remote": "Remote",
+              "hybrid": "Hybrid",
+              "onsite": "On-site",
+            };
+            let display = val;
+            if (facet === "type") {
+              display = val.charAt(0).toUpperCase() + val.slice(1);
+            } else if (facet === "remote") {
+              display = REMOTE_LABELS[val] || val;
+            }
             const text = document.createElement("span");
             text.className = "filter-option-text";
             text.innerHTML = `<span class="opt-name">${display}</span>`;
