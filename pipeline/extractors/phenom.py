@@ -147,6 +147,35 @@ async def _fetch_page(
         raise ExtractorTransientError(f"Phenom non-JSON: {exc}") from exc
 
 
+# Phenom only honors the FIRST `country=` in a query string (subsequent
+# values are silently ignored). To get jobs across many EU countries we
+# fan out one request per country. Pass `_phenom_countries=Germany,France,…`
+# in the YAML handle to enable; without it we do a single global call
+# (and downstream geo filter drops non-EU rows).
+def _split_countries(handle: str) -> tuple[str, list[str]]:
+    """Return (clean_url_template, [country names])."""
+    from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
+
+    parts = urlsplit(handle)
+    qs = parse_qsl(parts.query, keep_blank_values=True)
+    countries: list[str] = []
+    keep: list[tuple[str, str]] = []
+    for k, v in qs:
+        if k == "_phenom_countries":
+            countries = [c.strip() for c in v.split(",") if c.strip()]
+        else:
+            keep.append((k, v))
+    clean = urlunsplit((
+        parts.scheme, parts.netloc, parts.path, urlencode(keep), parts.fragment
+    ))
+    return clean, countries
+
+
+def _with_country(url: str, country: str) -> str:
+    sep = "&" if "?" in url else "?"
+    return f"{url}{sep}country={country.replace(' ', '%20')}"
+
+
 async def fetch_jobs(
     handle: str,
     *,
@@ -161,31 +190,35 @@ async def fetch_jobs(
     client = client or httpx.AsyncClient()
     out: list[Job] = []
     seen_urls: set[str] = set()
+    base_url, countries = _split_countries(handle)
+    # Iteration: one URL if no fanout requested, else one per country.
+    iter_urls = [_with_country(base_url, c) for c in countries] if countries else [base_url]
     try:
-        for page in range(MAX_PAGES):
-            try:
-                payload = await _fetch_page(client, handle, page * PAGE_SIZE, PAGE_SIZE)
-            except ExtractorNotFoundError:
-                break
-            except Exception as exc:
-                logger.warning(
-                    "Phenom %s page %d failed: %s", company_slug, page, exc
-                )
-                break
-            jobs = parse_jobs(payload, company_slug, api_url=handle)
-            if not jobs:
-                break
-            new_count = 0
-            for j in jobs:
-                if j.url in seen_urls:
-                    continue
-                seen_urls.add(j.url)
-                out.append(j)
-                new_count += 1
-            if len(jobs) < PAGE_SIZE or new_count == 0:
-                break
+        for url in iter_urls:
+            for page in range(MAX_PAGES):
+                try:
+                    payload = await _fetch_page(client, url, page * PAGE_SIZE, PAGE_SIZE)
+                except ExtractorNotFoundError:
+                    break
+                except Exception as exc:
+                    logger.warning(
+                        "Phenom %s page %d failed: %s", company_slug, page, exc
+                    )
+                    break
+                jobs = parse_jobs(payload, company_slug, api_url=url)
+                if not jobs:
+                    break
+                new_count = 0
+                for j in jobs:
+                    if j.url in seen_urls:
+                        continue
+                    seen_urls.add(j.url)
+                    out.append(j)
+                    new_count += 1
+                if len(jobs) < PAGE_SIZE or new_count == 0:
+                    break
     finally:
         if owns:
             await client.aclose()
-    logger.info("Phenom %s → %d jobs", company_slug, len(out))
+    logger.info("Phenom %s → %d jobs (across %d slices)", company_slug, len(out), len(iter_urls))
     return out

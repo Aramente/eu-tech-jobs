@@ -64,7 +64,10 @@ class ATSReference(BaseModel):
     model_config = ConfigDict(frozen=True)
 
     provider: ATSProvider
-    handle: str = Field(min_length=1, max_length=128)
+    # Most ATS providers use a short handle (greenhouse/lever/etc), but Workday
+    # and Phenom take the full /wday/cxs/.../jobs OR /api/jobs URL — sometimes
+    # with a multi-country fanout query string — so the cap is generous.
+    handle: str = Field(min_length=1, max_length=512)
 
 
 class Company(BaseModel):

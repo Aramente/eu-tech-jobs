@@ -5,5 +5,5 @@ categories:
 - remote-eu
 ats:
   provider: phenom
-  handle: https://careers.amd.com/api/jobs
-notes: Major AI/compute employer. Phenom People (Jibe) careers API.
+  handle: https://careers.amd.com/api/jobs?_phenom_countries=Germany,France,United%20Kingdom,Spain,Italy,Netherlands,Ireland,Sweden,Poland,Belgium,Switzerland,Czech%20Republic,Romania,Hungary,Austria,Denmark,Finland,Portugal,Norway,Greece
+notes: Major AI/compute employer. Phenom People (Jibe) careers API; fanned out across EU countries (Phenom only honors first country= per request).
