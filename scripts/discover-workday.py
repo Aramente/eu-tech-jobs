@@ -108,7 +108,8 @@ HTML_API_PAT = re.compile(
 
 
 def _follow_redirects(url: str, max_hops: int = 7) -> tuple[str, str]:
-    """Return (final_url, body)."""
+    """Static-fetch redirect follow. Returns (final_url, body). Used for
+    server-side redirects only — JS-driven redirects need _render."""
     for _ in range(max_hops):
         try:
             req = urllib.request.Request(
@@ -127,6 +128,50 @@ def _follow_redirects(url: str, max_hops: int = 7) -> tuple[str, str]:
         except Exception:
             return url, ""
     return url, ""
+
+
+def _render_with_playwright_sync(url: str, timeout: int = 25) -> tuple[str, str]:
+    """Headless render. Follows JS-driven redirects (most modern careers SPAs
+    that route to Workday do it client-side after auth/handshake JS runs).
+    Returns (final_url, body). Empty strings on failure or when Playwright
+    isn't installed.
+    """
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        return "", ""
+    try:
+        with sync_playwright() as pw:
+            browser = pw.chromium.launch(
+                headless=True,
+                args=["--disable-blink-features=AutomationControlled", "--no-sandbox"],
+            )
+            try:
+                ctx = browser.new_context(
+                    user_agent=(
+                        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 "
+                        "Safari/537.36"
+                    ),
+                    viewport={"width": 1280, "height": 900},
+                    locale="en-US",
+                )
+                page = ctx.new_page()
+                page.goto(url, wait_until="domcontentloaded", timeout=timeout * 1000)
+                # Some careers shells delay the WD redirect 1-3s after first paint.
+                page.wait_for_timeout(3000)
+                final = page.url
+                # Page content captures iframes too via outer HTML. We also
+                # check window.__INITIAL_STATE__ etc. but content() is enough
+                # for the regex match.
+                body = page.content()
+                browser.close()
+                return final, body
+            except Exception:
+                browser.close()
+                return "", ""
+    except Exception:
+        return "", ""
 
 
 def _detect_workday(final_url: str, body: str) -> tuple[str, str, str] | None:
@@ -194,8 +239,16 @@ def _existing_slugs() -> set[str]:
 
 def _discover(candidate: tuple) -> tuple | None:
     slug, name, country, cats, careers_url = candidate
+    # Pass 1: static fetch + redirect chain. Cheap.
     final, body = _follow_redirects(careers_url)
     detect = _detect_workday(final, body)
+    # Pass 2: if static didn't yield Workday markers, render with Playwright.
+    # Modern careers shells often JS-redirect to *.myworkdayjobs.com after
+    # initial paint, which is invisible to httpx. ~5s/candidate.
+    if not detect:
+        rendered_final, rendered_body = _render_with_playwright_sync(careers_url)
+        if rendered_final or rendered_body:
+            detect = _detect_workday(rendered_final, rendered_body)
     if not detect:
         return None
     tenant, cluster, site = detect
@@ -215,13 +268,18 @@ def main() -> int:
     print(f"Existing seeded slugs: {len(existing)}")
     print(f"Probing {len(CANDIDATES)} candidates via redirect chain…")
 
+    # Sequential — Playwright sync_api can't share an event loop across
+    # threads, so the threadpool would crash on the rendered fallback.
+    # Static-only discovery is fast (~1s/candidate); Playwright fallback
+    # adds ~5s only when needed.
     hits = []
-    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
-        for r in ex.map(_discover, CANDIDATES):
-            if r:
-                hits.append(r)
-                slug, name, country, _, api_url, total = r
-                print(f"  ✓ {slug:18s} {total:>5} jobs  {api_url}")
+    for i, c in enumerate(CANDIDATES, 1):
+        print(f"  [{i:>2}/{len(CANDIDATES)}] {c[0]:18s} {c[4]}")
+        r = _discover(c)
+        if r:
+            hits.append(r)
+            slug, name, country, _, api_url, total = r
+            print(f"    ✓ {total:>5} jobs  {api_url}")
 
     print(f"\nFound {len(hits)} new Workday tenants")
     if not args.commit:

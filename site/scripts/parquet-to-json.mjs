@@ -79,6 +79,28 @@ function inferRole(title) {
   return null;
 }
 
+// Title/location → remote_policy inference. The tagger is supposed to
+// produce these but only ~8.5% of jobs end up with a non-null value
+// because most ATS sources don't write the field at extraction time.
+// This regex pass at build-time rescues the long tail without an LLM call.
+const REMOTE_EU_RE = /\b(remote.{0,4}(eu|europe|emea)|eu.{0,4}remote|europe.{0,4}remote|emea.{0,4}remote)\b/i;
+const REMOTE_GLOBAL_RE = /\b(remote.{0,4}(global|worldwide|world\s*wide|anywhere)|fully\s*remote|100%\s*remote|distributed)\b/i;
+const REMOTE_RE = /\b(remote|teleworking|tele.?work|home.?office|wfh)\b/i;
+const HYBRID_RE = /\b(hybrid|hybride|2\s*days|3\s*days)\b/i;
+const ONSITE_RE = /\b(on.?site|in.?office|in.?person|presencial)\b/i;
+
+function inferRemote(title, location) {
+  const text = `${title || ""} ${location || ""}`;
+  if (!text.trim()) return null;
+  // Most-specific first.
+  if (REMOTE_EU_RE.test(text)) return "remote-eu";
+  if (REMOTE_GLOBAL_RE.test(text)) return "remote-global";
+  if (HYBRID_RE.test(text)) return "hybrid";
+  if (ONSITE_RE.test(text)) return "onsite";
+  if (REMOTE_RE.test(text)) return "remote";
+  return null;
+}
+
 const jobsLite = jobs.map((j) => ({
   id: j.id,
   company_slug: j.company_slug,
@@ -87,7 +109,7 @@ const jobsLite = jobs.map((j) => ({
   location: j.location,
   source: j.source,
   posted_at: isoDate(j.posted_at),
-  remote_policy: j.remote_policy,
+  remote_policy: j.remote_policy || inferRemote(j.title, j.location),
   seniority: j.seniority,
   role_family: j.role_family || inferRole(j.title),
   employment_type: employmentType(j.title),
