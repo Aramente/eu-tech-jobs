@@ -233,6 +233,14 @@ const base = import.meta.env.BASE_URL.endsWith("/")
         const filters = {};
         for (const [facet, set] of Object.entries(selected)) {
           if (set.size === 0) continue;
+          // If ALL available options of a facet are selected, the filter is a
+          // no-op — drop it. Otherwise jobs whose value is null for that facet
+          // (a majority of the corpus for `remote`/`type`) get silently
+          // excluded by an OR of every concrete value.
+          const total = allFilters && allFilters[facet]
+            ? Object.keys(allFilters[facet]).length
+            : Infinity;
+          if (set.size >= total) continue;
           const arr = Array.from(set);
           filters[facet] = arr.length === 1 ? arr[0] : { any: arr };
         }
