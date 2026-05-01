@@ -34,14 +34,13 @@ hf = [
     "huggingface-hub>=0.25",
 ]
 # Playwright headless rendering — opt-in. Used only by custom_page when the
-# static HTML returns < 500 chars of text (JS-rendered SPAs). The browser
-# binary is downloaded separately via `playwright install chromium`.
-# playwright-stealth: applies real-Chrome fingerprint patches (navigator.
-# webdriver, missing plugins, etc) so Cloudflare's headless detection
-# doesn't trip the bot wall on Hippocratic / Adept / Midjourney etc.
+# static HTML returns < 500 chars of text (JS-rendered SPAs) OR returns a
+# Cloudflare-style 403 challenge. The browser binary is downloaded separately
+# via `playwright install chromium`. Stealth patches (webdriver hide,
+# plugins, WebGL, chrome.runtime, sec-ch-ua headers) are inlined as an
+# add_init_script in custom_page._render_with_playwright — no extra dep.
 browser = [
     "playwright>=1.48",
-    "playwright-stealth>=2.0",
 ]
 
 [project.scripts]

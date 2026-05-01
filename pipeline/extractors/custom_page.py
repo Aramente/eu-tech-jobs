@@ -238,25 +238,52 @@ def _call_deepseek(page_md: str, source_url: str) -> dict:
         return {"jobs": []}
 
 
+# Inline stealth init script. Patches the headless-Chrome fingerprint
+# so Cloudflare / DataDome / PerimeterX silent challenges don't fire.
+# Source: distilled from puppeteer-extra-plugin-stealth + chromium tests.
+_STEALTH_INIT = r"""
+// Hide that we're WebDriver-controlled.
+Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+// Realistic plugin/mimeType arrays — empty = headless tell.
+Object.defineProperty(navigator, 'plugins', {
+  get: () => [
+    { name: 'Chrome PDF Plugin', filename: 'internal-pdf-viewer' },
+    { name: 'Chrome PDF Viewer', filename: 'mhjfbmdgcfjbbpaeojofohoefgiehjai' },
+    { name: 'Native Client', filename: 'internal-nacl-plugin' },
+  ],
+});
+Object.defineProperty(navigator, 'languages', { get: () => ['en-US', 'en', 'fr'] });
+// chrome.runtime presence is an anti-bot signal — fake the presence.
+window.chrome = window.chrome || { runtime: {} };
+// Permissions API — match Chrome's 'prompt' default for notifications.
+const originalQuery = window.navigator.permissions && window.navigator.permissions.query;
+if (originalQuery) {
+  window.navigator.permissions.query = (parameters) =>
+    parameters.name === 'notifications'
+      ? Promise.resolve({ state: Notification.permission })
+      : originalQuery(parameters);
+}
+// WebGL vendor + renderer — headless reports SwiftShader, real Chrome reports the GPU.
+const getParameter = WebGLRenderingContext.prototype.getParameter;
+WebGLRenderingContext.prototype.getParameter = function (parameter) {
+  if (parameter === 37445) return 'Intel Inc.';      // UNMASKED_VENDOR_WEBGL
+  if (parameter === 37446) return 'Intel Iris OpenGL Engine'; // UNMASKED_RENDERER_WEBGL
+  return getParameter.call(this, parameter);
+};
+"""
+
+
 async def _render_with_playwright(url: str) -> str:
-    """Headless render fallback for JS-only careers pages. Optional —
-    requires the `browser` extra (playwright + playwright-stealth).
-    Stealth patches the headless Chrome fingerprint so Cloudflare's
-    bot wall on Hippocratic / Adept / Midjourney doesn't fire.
-    No-ops when not installed.
+    """Headless render fallback for JS-only and Cloudflare-protected
+    careers pages. Optional — requires the `browser` extra (playwright).
+    Inlines stealth fingerprint patches via add_init_script — no
+    additional Python dep needed.
     """
     try:
         from playwright.async_api import async_playwright
     except ImportError:
         logger.info("Playwright not installed — skipping JS render for %s", url)
         return ""
-    try:
-        from playwright_stealth import Stealth
-        stealth_ctx_mgr = Stealth().use_async
-        has_stealth = True
-    except ImportError:
-        has_stealth = False
-        logger.debug("playwright-stealth not installed — proceeding without")
 
     try:
         async with async_playwright() as pw:
@@ -265,28 +292,33 @@ async def _render_with_playwright(url: str) -> str:
                 args=[
                     "--disable-blink-features=AutomationControlled",
                     "--no-sandbox",
+                    "--disable-dev-shm-usage",
                 ],
             )
             try:
                 ctx = await browser.new_context(
                     user_agent=(
                         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-                        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0 "
+                        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 "
                         "Safari/537.36"
                     ),
                     viewport={"width": 1440, "height": 900},
                     locale="en-US",
                     timezone_id="Europe/Paris",
+                    extra_http_headers={
+                        "Accept-Language": "en-US,en;q=0.9,fr;q=0.7",
+                        "sec-ch-ua": '"Chromium";v="127", "Not?A_Brand";v="99"',
+                        "sec-ch-ua-mobile": "?0",
+                        "sec-ch-ua-platform": '"macOS"',
+                    },
                 )
-                if has_stealth:
-                    await stealth_ctx_mgr(ctx)
+                # Apply the stealth patches BEFORE any page script runs.
+                await ctx.add_init_script(_STEALTH_INIT)
                 page = await ctx.new_page()
-                # Some Cloudflare-protected pages need a moment to clear the
-                # silent JS challenge before content paints. domcontentloaded
-                # then a small wait is more reliable than networkidle which
-                # can hang forever on heavy analytics-tracking pages.
                 await page.goto(url, wait_until="domcontentloaded", timeout=45000)
-                await page.wait_for_timeout(3500)
+                # Some Cloudflare challenges resolve in 1-3s of JS execution.
+                # Give them time to settle before reading content.
+                await page.wait_for_timeout(4500)
                 content = await page.content()
             finally:
                 await browser.close()
