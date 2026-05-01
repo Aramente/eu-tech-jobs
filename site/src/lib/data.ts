@@ -17,7 +17,26 @@ export type Job = {
   role_family: string | null;
   employment_type?: "permanent" | "internship" | "apprenticeship" | "freelance";
   has_description?: boolean;
+  salary_min?: number | null;
+  salary_max?: number | null;
+  salary_currency?: string | null;
+  salary_period?: string | null;
 };
+
+/** Format a job's salary band as a compact string ("€80k–110k", "£50k/mo")
+ *  or empty if no salary signals are present. */
+export function formatSalary(j: Job): string {
+  const cur = j.salary_currency;
+  const min = j.salary_min;
+  const max = j.salary_max;
+  if (!cur || (min == null && max == null)) return "";
+  const sym: Record<string, string> = { EUR: "€", GBP: "£", USD: "$", PLN: "zł", CHF: "CHF", SEK: "kr", DKK: "kr", NOK: "kr" };
+  const k = (n: number) => (n >= 1000 ? `${Math.round(n / 1000)}k` : `${n}`);
+  const range = min !== null && max !== null && min !== max ? `${k(min)}–${k(max)}` : k((min ?? max) as number);
+  const periodSuffix = j.salary_period === "month" ? "/mo" : j.salary_period === "day" ? "/d" : j.salary_period === "hour" ? "/h" : "";
+  const symbol = sym[cur] || `${cur} `;
+  return symbol + range + periodSuffix;
+}
 
 export type Company = {
   slug: string;

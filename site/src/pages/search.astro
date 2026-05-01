@@ -274,9 +274,21 @@ const base = import.meta.env.BASE_URL.endsWith("/")
             : m.remote === "remote" ? "REMOTE"
             : m.remote === "hybrid" ? "HYBRID"
             : "";
+          // Salary, if any.
+          let salary = "";
+          if (m.salary_currency && (m.salary_min || m.salary_max)) {
+            const sym = { EUR: "€", GBP: "£", USD: "$", PLN: "zł", CHF: "CHF" };
+            const k = (n) => (n >= 1000 ? `${Math.round(n / 1000)}k` : `${n}`);
+            const min = parseFloat(m.salary_min);
+            const max = parseFloat(m.salary_max);
+            const range = (min && max && min !== max) ? `${k(min)}–${k(max)}` : k(min || max);
+            const periodSuffix = m.salary_period === "month" ? "/mo" : m.salary_period === "day" ? "/d" : m.salary_period === "hour" ? "/h" : "";
+            salary = (sym[m.salary_currency] || m.salary_currency + " ") + range + periodSuffix;
+          }
           const metaBits = [
             isNew ? `<span class="new">NEW</span>` : postedLabel,
             remoteLabel,
+            salary ? `<span class="salary">${salary}</span>` : "",
           ].filter(Boolean).join(" · ");
           const orgBits = [m.company, where].filter(Boolean).join(" · ");
           const a = document.createElement("a");

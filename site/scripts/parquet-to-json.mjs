@@ -91,6 +91,10 @@ const jobsLite = jobs.map((j) => ({
   seniority: j.seniority,
   role_family: j.role_family || inferRole(j.title),
   employment_type: employmentType(j.title),
+  salary_min: j.salary_min ?? null,
+  salary_max: j.salary_max ?? null,
+  salary_currency: j.salary_currency ?? null,
+  salary_period: j.salary_period ?? null,
   has_description: !!(j.description_md && j.description_md.length > 50),
 }));
 

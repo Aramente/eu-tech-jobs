@@ -1,6 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
-import { jobsSorted, companies, PAGE_SIZE, formatDate, countryName, jobUrlPath } from "../../lib/data";
+import { jobsSorted, companies, PAGE_SIZE, formatDate, countryName, jobUrlPath, formatSalary } from "../../lib/data";
 
 export async function getStaticPaths() {
   const all = jobsSorted();
@@ -44,9 +44,11 @@ function metaFor(j) {
     : j.remote_policy === "remote" ? "REMOTE"
     : j.remote_policy === "hybrid" ? "HYBRID"
     : "";
+  const salary = formatSalary(j);
   const metaBits = [
     isNew ? `<span class="new">NEW</span>` : (postedLabel || ""),
     remoteLabel,
+    salary ? `<span class="salary">${salary}</span>` : "",
   ].filter(Boolean);
   return { company, loc, metaBits: metaBits.join(" · ") };
 }

@@ -74,7 +74,15 @@ _V1_FIELD_SPEC = (
     '  - "stack": list of technologies/tools that appear verbatim in the '
     'text (e.g. ["Python", "PyTorch", "Kubernetes"]). Empty list if none.\n'
     '  - "languages": list of human-language ISO 639-1 codes that appear '
-    'in the text (e.g. ["en", "fr", "de"]). Empty list if none.\n\n'
+    'in the text (e.g. ["en", "fr", "de"]). Empty list if none.\n'
+    '  - "salary_min": numeric lower bound of the disclosed pay range (no '
+    'currency symbols, no thousands separators), or null if not disclosed.\n'
+    '  - "salary_max": numeric upper bound, or null if not disclosed (or '
+    'equal to salary_min when only one value given).\n'
+    '  - "salary_currency": ISO 4217 code ("EUR", "GBP", "USD", "PLN", '
+    '"CHF", "SEK", "DKK", "NOK") inferred from the symbol or text, or null.\n'
+    '  - "salary_period": one of "year", "month", "day", "hour", or null. '
+    'Default to "year" when "/yr" or "p.a." is shown but unit is implicit.\n\n'
     "Notes:\n"
     "- ml-ai = machine learning, AI/LLM, applied data science roles.\n"
     "- research = pure research scientist roles (PhD-track, publishing).\n"
@@ -82,6 +90,8 @@ _V1_FIELD_SPEC = (
     "- engineering = software/backend/frontend/full-stack/devops roles.\n"
     "- remote-eu = remote restricted to Europe; remote-global = remote, no "
     "country restriction; remote = unspecified scope.\n"
+    "- Salary: only extract when actually shown in the text. NEVER guess "
+    'from market norms. "DOE / competitive / negotiable" → null.\n'
 )
 
 
@@ -107,22 +117,26 @@ _V2_EXAMPLES = (
     "Examples:\n\n"
     "Title: Senior Machine Learning Engineer\n"
     "Description: Build LLM-powered features. Python, PyTorch, AWS. Remote "
-    "within EU.\n"
+    "within EU. €80,000 — €110,000 / year.\n"
     "Output: {\"role_family\": \"ml-ai\", \"seniority\": \"senior\", "
     "\"remote_policy\": \"remote-eu\", \"visa_sponsorship\": null, \"stack\": "
-    "[\"Python\", \"PyTorch\", \"AWS\"], \"languages\": []}\n\n"
+    "[\"Python\", \"PyTorch\", \"AWS\"], \"languages\": [], \"salary_min\": "
+    "80000, \"salary_max\": 110000, \"salary_currency\": \"EUR\", "
+    "\"salary_period\": \"year\"}\n\n"
     "Title: Account Executive (DACH)\n"
     "Description: (no description provided — infer from title alone where "
     "possible)\n"
     "Output: {\"role_family\": \"sales\", \"seniority\": null, "
     "\"remote_policy\": null, \"visa_sponsorship\": null, \"stack\": [], "
-    "\"languages\": [\"de\"]}\n\n"
+    "\"languages\": [\"de\"], \"salary_min\": null, \"salary_max\": null, "
+    "\"salary_currency\": null, \"salary_period\": null}\n\n"
     "Title: Junior UX Designer — Berlin office\n"
     "Description: Help design our consumer app. On-site only. Visa "
-    "sponsorship available.\n"
+    "sponsorship available. Compensation is competitive.\n"
     "Output: {\"role_family\": \"design\", \"seniority\": \"junior\", "
     "\"remote_policy\": \"onsite\", \"visa_sponsorship\": true, \"stack\": "
-    "[], \"languages\": []}\n"
+    "[], \"languages\": [], \"salary_min\": null, \"salary_max\": null, "
+    "\"salary_currency\": null, \"salary_period\": null}\n"
 )
 
 

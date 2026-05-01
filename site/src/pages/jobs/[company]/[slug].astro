@@ -168,6 +168,14 @@ const indexedSynonyms = [synonymBlob, senSyn].filter(Boolean).join(" ");
         {country && <span data-pagefind-meta={`country:${country}`} hidden></span>}
         {job.location && <span data-pagefind-meta={`location:${job.location}`} hidden></span>}
         {job.posted_at && <span data-pagefind-meta={`posted:${job.posted_at.slice(0, 10)}`} hidden></span>}
+        {(job.salary_min != null || job.salary_max != null) && job.salary_currency && (
+          <>
+            {job.salary_min != null && <span data-pagefind-meta={`salary_min:${job.salary_min}`} hidden></span>}
+            {job.salary_max != null && <span data-pagefind-meta={`salary_max:${job.salary_max}`} hidden></span>}
+            <span data-pagefind-meta={`salary_currency:${job.salary_currency}`} hidden></span>
+            {job.salary_period && <span data-pagefind-meta={`salary_period:${job.salary_period}`} hidden></span>}
+          </>
+        )}
         <span data-pagefind-meta={`where:${whereFacet}`} hidden></span>
         {job.remote_policy && <span data-pagefind-meta={`remote:${job.remote_policy}`} hidden></span>}
         {job.role_family && <span data-pagefind-meta={`role:${job.role_family}`} hidden></span>}

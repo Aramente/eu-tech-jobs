@@ -221,7 +221,7 @@ header h1 {
   text-overflow: ellipsis;
 }
 .result-meta .new { color: var(--signal); font-weight: 600; }
-.result-meta .salary { color: var(--ink); }
+.result-meta .salary { color: var(--ink); font-weight: 600; }
 
 @media (max-width: 720px) {
   .result-link {

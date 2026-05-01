@@ -20,7 +20,7 @@ import re
 from typing import Any
 
 from pipeline.enrich.prompts import DEFAULT_VARIANT, VARIANTS, build_messages
-from pipeline.models import Job, RoleFamily, Seniority
+from pipeline.models import Job, RoleFamily, SalaryBand, Seniority
 
 logger = logging.getLogger(__name__)
 
@@ -177,7 +177,69 @@ def normalize_response(raw: dict[str, Any], source_text: str) -> dict[str, Any]:
     out["languages"] = _ground(
         [lang for lang in langs_raw if isinstance(lang, str)], source_text
     )
+
+    # Salary canonicalisation. Drop the band entirely if any required
+    # field is missing or implausible — better null than wrong.
+    out["salary"] = _canon_salary(raw, source_text)
     return out
+
+
+_VALID_CCY = {"EUR", "GBP", "USD", "PLN", "CHF", "SEK", "DKK", "NOK", "CZK", "HUF", "RON", "BGN"}
+_VALID_PERIOD = {"year", "month", "day", "hour"}
+
+
+def _canon_salary(raw: dict[str, Any], source_text: str) -> dict[str, Any] | None:
+    """Pull salary_min/max/currency/period from the LLM payload, sanity-check
+    against source-text grounding to reduce hallucination, return a SalaryBand
+    dict or None."""
+    smin = raw.get("salary_min")
+    smax = raw.get("salary_max")
+    ccy = raw.get("salary_currency")
+    per = raw.get("salary_period")
+    # Coerce numerics
+    try:
+        smin = float(smin) if smin is not None else None
+    except (TypeError, ValueError):
+        smin = None
+    try:
+        smax = float(smax) if smax is not None else None
+    except (TypeError, ValueError):
+        smax = None
+    if smin is None and smax is None:
+        return None
+    if smin is None and smax is not None:
+        smin = smax
+    if smax is None and smin is not None:
+        smax = smin
+    # Range sanity
+    if smin <= 0 or smax <= 0 or smax < smin:
+        return None
+    # Currency
+    if not isinstance(ccy, str) or ccy.strip().upper() not in _VALID_CCY:
+        return None
+    ccy = ccy.strip().upper()
+    # Period
+    if not isinstance(per, str) or per.strip().lower() not in _VALID_PERIOD:
+        return None
+    per = per.strip().lower()
+    # Layer-3 grounding: at least one of {currency symbol, currency code,
+    # the rough min, the rough max} must appear in source. Reduces
+    # hallucinated salaries on jobs that didn't disclose anything.
+    src = source_text.lower() if source_text else ""
+    sym = {"EUR": "€", "GBP": "£", "USD": "$"}
+    grounded = (
+        ccy.lower() in src
+        or sym.get(ccy, "").lower() in src
+        or any(str(int(v))[:3] in src for v in (smin, smax))
+        or "salary" in src
+        or "compensation" in src
+    )
+    if not grounded:
+        return None
+    try:
+        return SalaryBand(min=smin, max=smax, currency=ccy, period=per)
+    except Exception:
+        return None
 
 
 # ----- runtime LLM call (lazy import keeps tests fast) -----
