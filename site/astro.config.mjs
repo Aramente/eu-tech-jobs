@@ -1,12 +1,17 @@
 import { defineConfig } from "astro/config";
 
-// Custom domain: eu-tech.jobs (CNAME file at site/public/CNAME).
-// Once DNS is wired (A records → GitHub Pages IPs + AAAA optionally) and
-// GitHub Pages confirms the TLS cert, the site serves at https://eu-tech.jobs/
-// instead of the previous /eu-tech-jobs/ subpath.
+// CURRENT: site is served at https://aramente.github.io/eu-tech-jobs/
+// (GitHub Pages subpath). The CNAME at site/public/CNAME is dormant
+// until DNS is wired for eu-tech.jobs.
+//
+// SWITCH TO CUSTOM DOMAIN: once eu-tech.jobs DNS resolves to GitHub
+// Pages and the cert is provisioned, change to:
+//   site: "https://eu-tech.jobs",
+//   base: "/",
+// The CNAME file already tells GitHub which domain to bind.
 export default defineConfig({
-  site: "https://eu-tech.jobs",
-  base: "/",
+  site: "https://aramente.github.io",
+  base: "/eu-tech-jobs",
   trailingSlash: "ignore",
   build: {
     assets: "_assets",
