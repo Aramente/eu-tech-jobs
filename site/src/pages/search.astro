@@ -117,7 +117,15 @@ const base = import.meta.env.BASE_URL.endsWith("/")
             block.style.display = "none";
             continue;
           }
-          const sortedValues = Object.entries(values).sort((a, b) => b[1] - a[1]);
+          const sortedValues = facet === "where"
+            ? Object.entries(values).sort((a, b) => {
+                const rank = (k) => k === "Remote" ? 0 : k === "France" ? 1 : 2;
+                const ra = rank(a[0]);
+                const rb = rank(b[0]);
+                if (ra !== rb) return ra - rb;
+                return a[0].localeCompare(b[0]);
+              })
+            : Object.entries(values).sort((a, b) => b[1] - a[1]);
           const cap = facet === "company" ? 30 : sortedValues.length;
           const visible = sortedValues.slice(0, cap);
           const hidden = sortedValues.slice(cap);

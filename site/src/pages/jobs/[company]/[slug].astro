@@ -121,26 +121,31 @@ const whereFacet: string = whereByJobId[jobId] || "Other";
     <p class="job-back">
       <a href={base} id="back-link" data-base={base}>← all jobs</a>
     </p>
-    <article class="job" data-pagefind-body>
-      <span data-pagefind-filter={`where:${whereFacet}`} hidden></span>
-      {job.role_family && (
-        <span data-pagefind-filter={`role:${job.role_family}`} hidden></span>
-      )}
-      {job.remote_policy && (
-        <span data-pagefind-filter={`remote:${job.remote_policy}`} hidden></span>
-      )}
-      <span data-pagefind-filter={`type:${job.employment_type || "permanent"}`} hidden></span>
-      <!-- Pagefind meta — surfaced on result cards in /search/. -->
-      <span data-pagefind-meta={`company:${companyName}`} hidden></span>
-      {country && <span data-pagefind-meta={`country:${country}`} hidden></span>}
-      {job.location && <span data-pagefind-meta={`location:${job.location}`} hidden></span>}
-      {job.posted_at && <span data-pagefind-meta={`posted:${job.posted_at.slice(0, 10)}`} hidden></span>}
-      <span data-pagefind-meta={`where:${whereFacet}`} hidden></span>
-      {job.remote_policy && <span data-pagefind-meta={`remote:${job.remote_policy}`} hidden></span>}
-      {job.role_family && <span data-pagefind-meta={`role:${job.role_family}`} hidden></span>}
-      {job.seniority && <span data-pagefind-meta={`seniority:${job.seniority}`} hidden></span>}
-      <span data-pagefind-meta={`source:${job.source}`} hidden></span>
-      <h1>{job.title}</h1>
+    <article class="job">
+      {/* Pagefind body restricted to the title block: searches like
+          "talent acquisition" must match the job title, not text buried
+          in the description (which would surface unrelated sales jobs
+          that happen to mention "partner with talent acquisition"). */}
+      <div data-pagefind-body>
+        <span data-pagefind-filter={`where:${whereFacet}`} hidden></span>
+        {job.role_family && (
+          <span data-pagefind-filter={`role:${job.role_family}`} hidden></span>
+        )}
+        {job.remote_policy && (
+          <span data-pagefind-filter={`remote:${job.remote_policy}`} hidden></span>
+        )}
+        <span data-pagefind-filter={`type:${job.employment_type || "permanent"}`} hidden></span>
+        <span data-pagefind-meta={`company:${companyName}`} hidden></span>
+        {country && <span data-pagefind-meta={`country:${country}`} hidden></span>}
+        {job.location && <span data-pagefind-meta={`location:${job.location}`} hidden></span>}
+        {job.posted_at && <span data-pagefind-meta={`posted:${job.posted_at.slice(0, 10)}`} hidden></span>}
+        <span data-pagefind-meta={`where:${whereFacet}`} hidden></span>
+        {job.remote_policy && <span data-pagefind-meta={`remote:${job.remote_policy}`} hidden></span>}
+        {job.role_family && <span data-pagefind-meta={`role:${job.role_family}`} hidden></span>}
+        {job.seniority && <span data-pagefind-meta={`seniority:${job.seniority}`} hidden></span>}
+        <span data-pagefind-meta={`source:${job.source}`} hidden></span>
+        <h1>{job.title}</h1>
+      </div>
       <p class="meta job-meta">
         <a href={`${base}companies/${job.company_slug}/`}>{companyName}</a>
         {country && <> · {country}</>}
@@ -158,9 +163,9 @@ const whereFacet: string = whereByJobId[jobId] || "Other";
       </p>
 
       {descriptionHtml ? (
-        <div class="job-description" set:html={descriptionHtml} />
+        <div class="job-description" data-pagefind-ignore set:html={descriptionHtml} />
       ) : (
-        <div class="job-description-fallback">
+        <div class="job-description-fallback" data-pagefind-ignore>
           <p>
             Full description not mirrored on this page. Click <em>Apply</em> below for the full posting on {companyName}'s site.
           </p>
