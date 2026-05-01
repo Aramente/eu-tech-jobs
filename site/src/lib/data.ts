@@ -32,8 +32,26 @@ export type Company = {
   notes?: string;
 };
 
-export const jobs = jobsRaw as Job[];
-export const companies = companiesRaw as Record<string, Company>;
+const allJobs = jobsRaw as Job[];
+const allCompanies = companiesRaw as Record<string, Company>;
+
+// Hide jobs whose hiring company we can't surface — no user benefit in
+// showing "via-remoteok-paperpile" with no company name. Drops aggregator-
+// discovered stubs + any job whose company_slug has no entry.
+function isShowableJob(j: Job): boolean {
+  if (!j.company_slug) return false;
+  if (j.company_slug.startsWith("via-")) return false;
+  const c = allCompanies[j.company_slug];
+  if (!c || !c.name || c.name === j.company_slug) return false;
+  return true;
+}
+
+export const jobs = allJobs.filter(isShowableJob);
+// Companies index is filtered to exclude aggregator stubs too — they were
+// never real companies, just synthesized from the source feed.
+export const companies = Object.fromEntries(
+  Object.entries(allCompanies).filter(([slug, c]) => !slug.startsWith("via-") && c.name && c.name !== slug),
+) as Record<string, Company>;
 export const meta = metaRaw as {
   run_at?: string;
   job_count?: number;

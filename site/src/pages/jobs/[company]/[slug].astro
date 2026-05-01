@@ -152,7 +152,6 @@ const whereFacet: string = whereByJobId[jobId] || "Other";
         {country && <> · {country}</>}
         {job.location && <> · {job.location}</>}
         {job.posted_at && <> · posted {formatDate(job.posted_at)}</>}
-        {" · "}<span class="badge">{job.source}</span>
         {job.role_family && (
           <> · <span class="badge">{job.role_family}</span></>
         )}
@@ -169,9 +168,7 @@ const whereFacet: string = whereByJobId[jobId] || "Other";
       ) : (
         <div class="job-description-fallback">
           <p>
-            Full description not mirrored here for this job (source ATS:
-            {" "}<code>{job.source}</code>). Click <em>Apply on {job.source}</em> below
-            for the full posting.
+            Full description not mirrored on this page. Click <em>Apply</em> below for the full posting on {companyName}'s site.
           </p>
         </div>
       )}
@@ -184,7 +181,7 @@ const whereFacet: string = whereByJobId[jobId] || "Other";
           target="_blank"
           rel="noopener noreferrer"
         >
-          Apply on {job.source} →
+          Apply →
         </a>
         <a
           class="cta-secondary"
@@ -197,10 +194,9 @@ const whereFacet: string = whereByJobId[jobId] || "Other";
       </div>
 
       <p class="meta source-note">
-        Source: <code>{job.source}</code> · last seen {formatDate(job.posted_at) || "—"}
+        Last seen {formatDate(job.posted_at) || "—"}
         {" · "}
         <a href="mailto:kevin.duchier@gmail.com">request removal</a>.
-        We surface listings; the source ATS is always authoritative.
       </p>
     </article>
   </main>
