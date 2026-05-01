@@ -228,20 +228,20 @@ const CITY_TO_COUNTRY = {
 };
 
 function deriveWhere(job, company) {
-  // `where` is now country-only. Remote is its own dedicated facet
-  // (job.remote_policy → remote facet in /search/), so we don't bucket
-  // remote-global / remote-eu jobs into "Remote — Worldwide" /
-  // "Remote — Europe" any more — they used to duplicate the standalone
-  // Remote filter and confuse the rail.
-  //
-  // For pure-remote jobs, fall through to company HQ if we have one,
-  // else "Other". The user filters with both facets in combination.
+  // `where` bundles countries + remote tiers in ONE facet so the user can
+  // OR-pick "France OR Remote-EU" in a single multi-select. Reverted from
+  // the country-only split because most jobs don't have a remote_policy
+  // tag set, which made a separate Remote facet incomplete (78% nulls).
+  if (job.remote_policy === "remote-global") return "Remote — Worldwide";
+  if (job.remote_policy === "remote-eu") return "Remote — Europe";
+
   const loc = (job.location || "").toLowerCase();
   if (loc) {
-    // Strip "Anywhere / Worldwide" without forcing them into a Where
-    // bucket — let them fall through to "Other" if no other signal.
-    if (/anywhere in the world|worldwide|world\s*wide/.test(loc)) {
-      // continue below; the Remote facet captures these via remote_policy
+    if (/anywhere in the world|worldwide|world\s*wide|global/.test(loc)) {
+      return "Remote — Worldwide";
+    }
+    if (/\beurope\b|\bemea\b|\beu\b|remote\s*[-—]\s*eu/i.test(loc)) {
+      return "Remote — Europe";
     }
     // City lookup — token-based so "Venice, Italy" doesn't substring-match
     // "nice" (France). Tokenize on punctuation/whitespace, then match each
@@ -280,8 +280,7 @@ function deriveWhere(job, company) {
   if (company?.country && EU_HQ_COUNTRIES.has(company.country)) {
     return COUNTRY_NAMES[company.country];
   }
-  // No country signal at all → "Other" (Remote facet still captures the
-  // remote-policy tag separately).
+  if (job.remote_policy === "remote") return "Remote — unspecified";
   return "Other";
 }
 

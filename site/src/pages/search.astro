@@ -21,7 +21,6 @@ const base = import.meta.env.BASE_URL.endsWith("/")
             ["where", "Where"],
             ["role", "Role"],
             ["type", "Type"],
-            ["remote", "Remote"],
           ].map(([id, label]) => (
             <details class="filter-block" data-facet={id} open={id === "where" || id === "role"}>
               <summary>
@@ -58,7 +57,6 @@ const base = import.meta.env.BASE_URL.endsWith("/")
         where: "Where",
         role: "Role",
         type: "Type",
-        remote: "Remote",
       };
 
       const selected = {};
