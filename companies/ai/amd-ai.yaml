@@ -1,0 +1,7 @@
+name: AMD
+country: US
+categories:
+- ai
+- remote-eu
+career_url: https://careers.amd.com/careers-home/jobs?categories=AI
+notes: Custom-page extractor — LLM-driven scrape of careers page

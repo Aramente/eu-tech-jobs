@@ -1,0 +1,7 @@
+name: Intel AI
+country: US
+categories:
+- ai
+- remote-eu
+career_url: https://jobs.intel.com/en/search-jobs/europe/AI
+notes: Custom-page extractor — LLM-driven scrape of careers page

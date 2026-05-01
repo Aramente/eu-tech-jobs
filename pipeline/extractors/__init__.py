@@ -2,6 +2,7 @@
 
 from pipeline.extractors import (
     ashby,
+    custom_page,
     greenhouse,
     lever,
     personio,
@@ -21,6 +22,7 @@ EXTRACTORS = {
     "smartrecruiters": smartrecruiters,
     "recruitee": recruitee,
     "personio": personio,
+    "custom_page": custom_page,
 }
 
 __all__ = [

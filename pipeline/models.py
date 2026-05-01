@@ -21,6 +21,7 @@ ATSProvider = Literal[
     "personio",
     "smartrecruiters",
     "teamtailor",
+    "custom_page",
 ]
 
 RemotePolicy = Literal["onsite", "hybrid", "remote", "remote-eu", "remote-global"]

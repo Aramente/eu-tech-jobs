@@ -38,27 +38,36 @@ async def _run_one(
     client: httpx.AsyncClient,
     sem: asyncio.Semaphore,
 ) -> tuple[list[Job], ExtractorResult]:
-    if company.ats is None:
+    # Route resolution:
+    # 1. ats.provider set → use that extractor with ats.handle.
+    # 2. no ats but career_url set → use custom_page LLM extractor.
+    # 3. neither → skip with a clear error.
+    if company.ats is not None:
+        provider = company.ats.provider
+        handle = company.ats.handle
+    elif company.career_url:
+        provider = "custom_page"
+        handle = company.career_url
+    else:
         return [], ExtractorResult(
             extractor="none",
             company_slug=company.slug,
             success=False,
-            error="No ATS reference (career-page scraping not in v0)",
+            error="No ATS handle or career_url",
         )
-    provider = company.ats.provider
     module = EXTRACTORS.get(provider)
     if module is None:
         return [], ExtractorResult(
             extractor=provider,
             company_slug=company.slug,
             success=False,
-            error=f"Unsupported ATS provider: {provider} (v0 supports greenhouse only)",
+            error=f"Unsupported provider: {provider}",
         )
     started = time.perf_counter()
     async with sem:
         try:
             jobs = await module.fetch_jobs(
-                company.ats.handle, company_slug=company.slug, client=client
+                handle, company_slug=company.slug, client=client
             )
         except ExtractorError as exc:
             duration = int((time.perf_counter() - started) * 1000)

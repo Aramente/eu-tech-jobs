@@ -1,0 +1,7 @@
+name: Meta AI
+country: US
+categories:
+- ai
+- remote-eu
+career_url: https://www.metacareers.com/jobs/?teams[0]=AI%20Research&offices[0]=Paris%2C%20France&offices[1]=London%2C%20UK
+notes: Custom-page extractor — LLM-driven scrape of careers page

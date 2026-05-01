@@ -1,0 +1,7 @@
+name: Microsoft Research
+country: US
+categories:
+- ai
+- remote-eu
+career_url: https://careers.microsoft.com/v2/global/en/search.html?lc=United%20Kingdom&lc=Germany&lc=France&lc=Switzerland&q=research
+notes: Custom-page extractor — LLM-driven scrape of careers page

@@ -1,0 +1,7 @@
+name: Civitai
+country: US
+categories:
+- ai
+- remote-eu
+career_url: https://jobs.civitai.com/
+notes: Custom-page extractor — LLM-driven scrape of careers page

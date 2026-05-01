@@ -1,0 +1,7 @@
+name: Adept
+country: US
+categories:
+- ai
+- remote-eu
+career_url: https://www.adept.ai/careers
+notes: Custom-page extractor — LLM-driven scrape of careers page

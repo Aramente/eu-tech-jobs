@@ -1,0 +1,7 @@
+name: Apple
+country: US
+categories:
+- ai
+- remote-eu
+career_url: https://jobs.apple.com/en-us/search?location=france-FRA+united-kingdom-GBR+ireland-IRL+germany-DEU&team=machine-learning-and-ai-MLAI
+notes: Custom-page extractor — LLM-driven scrape of careers page
