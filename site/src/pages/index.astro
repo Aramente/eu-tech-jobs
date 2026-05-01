@@ -51,8 +51,8 @@ function metaFor(j) {
 ---
 <Base title="eu-tech-jobs — EU AI/Tech Jobs Wire">
   <main>
-    <div class="search-input-wrap" style="max-width:560px;margin-bottom:24px">
-      <form action={`${base}search/`} method="get" role="search" id="home-search">
+    <form action={`${base}search/`} method="get" role="search" id="home-search" class="home-search">
+      <div class="search-input-wrap home-search-input">
         <input
           type="search"
           name="q"
@@ -61,8 +61,36 @@ function metaFor(j) {
           autocomplete="off"
           aria-label="Search jobs"
         />
-      </form>
-    </div>
+      </div>
+      {/* Hidden <select> is the source of truth for state and form-submission;
+          chip-filter.js progressively enhances it into a chip-popover trigger. */}
+      <select id="type" multiple class="chip-source" data-chip-label="Type" aria-label="Employment type">
+        <option value="permanent">Permanent</option>
+        <option value="freelance">Freelance</option>
+        <option value="internship">Internship</option>
+        <option value="apprenticeship">Apprenticeship</option>
+      </select>
+    </form>
+    <script src={`${base}chip-filter.js`} defer></script>
+    <script is:inline define:vars={{ base }}>
+      // Re-key the form to use filter[type][] for selected employment types
+      // when the user submits.
+      (function () {
+        const form = document.getElementById("home-search");
+        if (!form) return;
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const params = new URLSearchParams();
+          const q = (form.querySelector('input[name="q"]')?.value || "").trim();
+          if (q) params.set("q", q);
+          const typeSel = document.getElementById("type");
+          if (typeSel) {
+            for (const o of typeSel.selectedOptions) params.append("filter[type][]", o.value);
+          }
+          location.href = `${base}search/${params.toString() ? "?" + params.toString() : ""}`;
+        });
+      })();
+    </script>
 
     {pageJobs.length === 0 ? (
       <p class="empty">No jobs in this snapshot.</p>

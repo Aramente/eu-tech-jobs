@@ -112,6 +112,35 @@ const COUNTRY_NAMES: Record<string, string> = {
 // same enriched logic (city/country lookup in job.location, then company
 // HQ, then remote_policy) so home-page facet counts match per-job filter.
 const whereFacet: string = whereByJobId[jobId] || "Other";
+
+// Synonym blob added INSIDE data-pagefind-body so role-family-driven
+// queries match jobs even when the title doesn't carry the exact words.
+// Without this, "talent acquisition" only matches titles that contain
+// the literal phrase — but most HR roles are called "Recruiter" or
+// "People Partner", and those should also surface for that query.
+const ROLE_SYNONYMS: Record<string, string> = {
+  hr: "HR Human Resources Recruiter Recruitment Recruiting Talent Acquisition People Operations People Partner Talent Partner Hiring",
+  engineering: "Engineer Software Backend Frontend Full Stack Developer Programmer Coder",
+  "ml-ai": "Machine Learning Artificial Intelligence ML AI Data Science Researcher MLOps LLM",
+  data: "Data Analyst Analytics BI Business Intelligence Data Engineer Data Scientist",
+  product: "Product Manager PM Owner Product Marketing Strategy",
+  design: "Designer UX UI Visual Brand Product Designer Graphic",
+  marketing: "Marketing Growth Brand Content SEO SEM Demand Generation Performance",
+  sales: "Sales Account Executive AE Account Manager BDR SDR Business Development Customer Success Partnerships",
+  ops: "Operations Ops Project Program Manager PMO Coordinator Administrator",
+  finance: "Finance Accounting Controller FP&A Treasurer Tax Audit",
+  legal: "Legal Counsel Compliance Privacy Regulatory Lawyer Paralegal",
+  support: "Support Customer Service Technical Support Helpdesk Onboarding",
+  research: "Research Scientist Researcher PhD Scientific R&D",
+};
+const synonymBlob = ROLE_SYNONYMS[job.role_family || ""] || "";
+const senSyn =
+  job.seniority === "lead" ? "Lead Principal Staff Director Head"
+  : job.seniority === "senior" ? "Senior Sr"
+  : job.seniority === "junior" ? "Junior Jr Entry Graduate Grad"
+  : job.seniority === "mid" ? "Mid-level Mid"
+  : "";
+const indexedSynonyms = [synonymBlob, senSyn].filter(Boolean).join(" ");
 ---
 <Base
   title={`${job.title} — ${companyName}`}
@@ -145,6 +174,9 @@ const whereFacet: string = whereByJobId[jobId] || "Other";
         {job.seniority && <span data-pagefind-meta={`seniority:${job.seniority}`} hidden></span>}
         <span data-pagefind-meta={`source:${job.source}`} hidden></span>
         <h1>{job.title}</h1>
+        {indexedSynonyms && (
+          <p class="visually-hidden" aria-hidden="true">{indexedSynonyms}</p>
+        )}
       </div>
       <p class="meta job-meta">
         <a href={`${base}companies/${job.company_slug}/`}>{companyName}</a>
