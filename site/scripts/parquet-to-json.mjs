@@ -52,6 +52,33 @@ function employmentType(title) {
   return "permanent";
 }
 
+// Derive role_family from title when the upstream LLM tagger didn't tag the
+// job. Currently only ~8% of the dataset has role_family — this regex
+// fallback recovers coarse classification for the rest. Order matters:
+// more specific rules go first (ml-ai before engineering, hr before ops).
+const ROLE_RULES = [
+  ["hr",          /\b(recruit(er|ers|ing|ment)?|talent\s*acquisition|talent\s*partner|talent\s*lead|people\s*partner|people\s*ops|people\s*operations|hr\s*business|hrbp|head\s*of\s*hr|hr\s*manager|hr\s*coordinator|head\s*of\s*people|chief\s*people|head\s*of\s*talent|chro)\b/i],
+  ["ml-ai",       /\b(machine\s*learning|ml\s*engineer|ml\s*ops|mlops|ai\s*engineer|ai\s*scientist|llm|nlp|computer\s*vision|deep\s*learning|applied\s*ai|generative\s*ai|gen\s*ai|prompt\s*engineer)\b/i],
+  ["data",        /\b(data\s*analyst|data\s*engineer|data\s*scientist|analytics\s*engineer|analytics\s*manager|business\s*intelligence|\bbi\s*(developer|engineer|analyst))\b/i],
+  ["product",     /\b(product\s*manager|product\s*owner|product\s*lead|product\s*marketing|head\s*of\s*product|chief\s*product|cpo|associate\s*product|technical\s*product)\b/i],
+  ["design",      /\b(designer|design\s*lead|ux\b|ui\b|user\s*experience|user\s*interface|visual\s*design|brand\s*design|product\s*design|graphic\s*design|ux\/ui)\b/i],
+  ["marketing",   /\b(marketing|growth\s*(manager|lead|hacker)|seo\s*(manager|specialist)?|sem|content\s*(manager|writer|strategist)|community\s*manager|brand\s*(manager|lead)|demand\s*generation|digital\s*marketing|social\s*media\s*(manager|lead)|marketing\s*manager|cmo)\b/i],
+  ["sales",       /\b(sales|account\s*executive|\bae\b|sdr|bdr|account\s*manager|business\s*development|customer\s*success|partnerships?\s*manager|key\s*account|inside\s*sales|outside\s*sales|territory\s*manager|sales\s*development)\b/i],
+  ["finance",     /\b(finance|accounting|accountant|controller|fp&a|treasurer|tax\s*(manager|specialist)?|audit\s*(manager|specialist)?|cfo|head\s*of\s*finance|payroll\s*specialist)\b/i],
+  ["legal",       /\b(legal\s*counsel|general\s*counsel|legal\s*manager|compliance\s*(officer|manager)|privacy\s*(officer|counsel)|regulatory|paralegal|gdpr)\b/i],
+  ["support",     /\b(customer\s*service|customer\s*support|technical\s*support|helpdesk|help\s*desk|onboarding\s*specialist|support\s*engineer|support\s*specialist|customer\s*operations)\b/i],
+  ["research",    /\b(research\s*scientist|research\s*engineer|research\s*lead|principal\s*researcher|phd\s*scientist|scientific\s*officer)\b/i],
+  ["engineering", /\b(engineer|engineering|developer|swe\b|software|backend|frontend|front-end|back-end|fullstack|full-stack|full\s*stack|devops|sre\b|site\s*reliability|platform\s*engineer|qa\s*engineer|security\s*engineer|architect|tech\s*lead|cto)\b/i],
+  ["ops",         /\b(operations|\bops\b|coordinator|administrator|project\s*manager|program\s*manager|pmo|chief\s*of\s*staff|business\s*operations|revenue\s*operations|revops)\b/i],
+];
+function inferRole(title) {
+  if (!title) return null;
+  for (const [name, re] of ROLE_RULES) {
+    if (re.test(title)) return name;
+  }
+  return null;
+}
+
 const jobsLite = jobs.map((j) => ({
   id: j.id,
   company_slug: j.company_slug,
@@ -62,7 +89,7 @@ const jobsLite = jobs.map((j) => ({
   posted_at: isoDate(j.posted_at),
   remote_policy: j.remote_policy,
   seniority: j.seniority,
-  role_family: j.role_family,
+  role_family: j.role_family || inferRole(j.title),
   employment_type: employmentType(j.title),
   has_description: !!(j.description_md && j.description_md.length > 50),
 }));

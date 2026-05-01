@@ -175,7 +175,7 @@ const indexedSynonyms = [synonymBlob, senSyn].filter(Boolean).join(" ");
         <span data-pagefind-meta={`source:${job.source}`} hidden></span>
         <h1>{job.title}</h1>
         {indexedSynonyms && (
-          <p class="visually-hidden" aria-hidden="true">{indexedSynonyms}</p>
+          <p class="visually-hidden">{indexedSynonyms}</p>
         )}
       </div>
       <p class="meta job-meta">
