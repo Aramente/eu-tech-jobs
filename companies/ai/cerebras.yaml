@@ -3,5 +3,7 @@ country: US
 categories:
 - ai
 - remote-eu
-career_url: https://cerebras.ai/careers/
-notes: Custom-page extractor — LLM-driven scrape of careers page
+ats:
+  provider: greenhouse
+  handle: cerebrassystems
+notes: Major AI lab — hires remote-EU; 93 jobs on Greenhouse at discovery.
