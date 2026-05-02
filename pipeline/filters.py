@@ -124,8 +124,49 @@ def is_non_eu_location(location: str | None) -> bool:
 is_us_only_location = is_non_eu_location
 
 
+import re as _re
+
+# Hard non-tech / non-business-services WTF list. These titles are clearly
+# off-scope for an EU AI/tech jobboard regardless of which extractor or
+# aggregator surfaced them. Hits 1-3% of the corpus on a good day, mostly
+# from broad ATS feeds (Greenhouse handles like 'momentic' that turned out
+# to be Pilates franchises) or aggregators (chefs at Ritz Paris via WTTJ).
+# Conservative — only drops obvious non-knowledge-work roles.
+_NON_TECH_TITLE = _re.compile(
+    r"\b("
+    r"massage(\s*therapist)?|masseur|masseuse|"
+    r"spa\s*(therapist|attendant|technician|host)|"
+    r"esthetician|nail\s*technician|hair\s*stylist|barber|"
+    r"barista|waiter|waitress|sommelier|bartender|"
+    r"chef\s*de\s*(cuisine|partie|patisserie|rang)|"
+    r"sous\s*chef|line\s*cook|"
+    r"nanny|babysitter|childcare\s*(worker|provider)|"
+    r"housekeeper|hotel\s*receptionist|valet|concierge|doorman|bellhop|"
+    r"yoga\s*instructor|pilates\s*(instructor|teacher)|fitness\s*instructor|"
+    r"personal\s*trainer|"
+    r"chiropractor|physiotherapist|kinesiologist|"
+    r"real\s*estate\s*agent|insurance\s*agent|"
+    r"delivery\s*driver|truck\s*driver|forklift\s*(driver|operator)?|"
+    r"warehouse\s*(worker|operator|associate)|packer|"
+    r"cleaner|janitor|security\s*guard|guard\s*officer"
+    r")\b",
+    _re.IGNORECASE,
+)
+
+
+def is_non_tech_title(title: str | None) -> bool:
+    if not title:
+        return False
+    return bool(_NON_TECH_TITLE.search(title))
+
+
 def keep_job(job: Job) -> bool:
     """Return True iff the job should remain in the EU-focused snapshot."""
+    # Drop obvious non-tech roles regardless of location/source. Cheap,
+    # effective at killing the long tail of WTF jobs (massage therapists,
+    # baristas, hotel chefs) that slip in via broad seeds + aggregators.
+    if is_non_tech_title(job.title):
+        return False
     # If the LLM tagger says the job is remote-global / remote-eu, keep
     # regardless of where the company is HQ'd or what the location string
     # happens to say.
