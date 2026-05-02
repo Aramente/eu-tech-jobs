@@ -41,7 +41,25 @@ const ROLE_PATTERNS = [
   /\bproduct\s+(?:manager|owner|lead)\b/i,
 ];
 
+// Hard exclusions — Camille only wants confirmed/permanent senior+
+// roles, not training-track ones, and Chanel is excluded by request.
+const EXCLUDE_TITLE = new RegExp(
+  [
+    "\\bstage\\b", "\\bstagiaire(?:s|e|es)?\\b", "\\bstg\\b",
+    "\\binternship\\b", "\\bintern(?:s)?\\b", "\\btrainee\\b",
+    "\\bpraktikum\\b", "\\bwerkstudent(?:in)?\\b",
+    "\\balternance\\b", "\\balternant(?:e|s|es)?\\b",
+    "\\bapprenti(?:e|s|es)?\\b", "\\bapprentice(?:ship)?\\b",
+    "\\bausbildung\\b", "\\blehrling\\b",
+    "\\bjunior\\b", "\\bjr\\.?\\b",
+    "\\balt\\b\\.?", "\\balt\\.?\\s+", "\\balt-",
+  ].join("|"),
+  "i",
+);
+
 function matchesRole(title: string): boolean {
+  if (!title) return false;
+  if (EXCLUDE_TITLE.test(title)) return false;
   return ROLE_PATTERNS.some((re) => re.test(title));
 }
 
@@ -54,9 +72,27 @@ function isFranceOrRemoteEU(j, c) {
   return false;
 }
 
+// Brands Camille doesn't want surfaced (e.g. companies she'd never apply
+// to or that would otherwise dominate the listing). Slug match is exact;
+// aggregator prefixes (wttj-, wttjc-, fjr-) are normalised away.
+const EXCLUDE_COMPANY_SLUGS = new Set([
+  "chanel",
+  "wttj-chanel", "wttjc-chanel",
+  "fjr-chanel", "fjr-chanel-mode", "fjr-chanel-parfum-beaute",
+]);
+
+function isExcludedCompany(slug: string): boolean {
+  if (EXCLUDE_COMPANY_SLUGS.has(slug)) return true;
+  // Aggregator slugs land as wttjc-<orgslug> / fjr-<orgslug>; strip the
+  // prefix and compare so any future Chanel-named row is also caught.
+  const stripped = slug.replace(/^(wttj|wttjc|fjr)-/, "");
+  return stripped === "chanel" || stripped.startsWith("chanel-");
+}
+
 const matches = jobs.filter((j) => {
   const c = companies[j.company_slug];
   if (!c) return false;
+  if (isExcludedCompany(j.company_slug)) return false;
   // Must touch at least one target industry tag.
   const tags = (c as any).industry_tags || [];
   if (!tags.some((t: string) => TARGET_INDUSTRIES.has(t))) return false;
