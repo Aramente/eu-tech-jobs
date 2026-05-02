@@ -145,6 +145,25 @@ def _is_tech_relevant(hit: dict) -> bool:
     return False
 
 
+# WTTJ parent-sector taxonomy: only these count as Camille-relevant.
+# "acheteur" / "chef de produit" / "merchandiser" titles are everywhere
+# in industry (banking, energy, defense, automotive); without this gate
+# the lane becomes 80%+ noise.
+_CAMILLE_SECTORS = {
+    "Fashion / Luxury / Beauty / Lifestyle",
+}
+
+
+def _is_camille_relevant(hit: dict) -> bool:
+    sectors = hit.get("sectors_name", {}).get("en", []) or []
+    for s in sectors:
+        if isinstance(s, dict):
+            for parent in s.keys():
+                if parent in _CAMILLE_SECTORS:
+                    return True
+    return False
+
+
 @retry(
     retry=retry_if_exception_type((httpx.TransportError, ExtractorTransientError)),
     stop=stop_after_attempt(3),
@@ -282,11 +301,15 @@ async def fetch_all(
     def _absorb(hits: list[dict], country: str, *, camille: bool = False) -> int:
         added = 0
         for hit in hits:
-            # Drop obvious non-tech (chefs, hotel staff, wellness, etc) on
-            # the public-tech pass. Camille pass keeps everything that
-            # matched the buying/product query — that gate is the query
-            # itself, plus the title regex on the site.
-            if not camille and not _is_tech_relevant(hit):
+            # Public-tech pass: drop obvious non-tech (chefs, hotel staff,
+            # wellness, etc). Camille pass: only accept hits whose
+            # parent sector is "Fashion / Luxury / Beauty / Lifestyle" —
+            # otherwise the buying-title queries pull in defense /
+            # energy / banking / automotive procurement roles.
+            if camille:
+                if not _is_camille_relevant(hit):
+                    continue
+            elif not _is_tech_relevant(hit):
                 continue
             pair = _hit_to_company(hit, camille=camille)
             if not pair:
