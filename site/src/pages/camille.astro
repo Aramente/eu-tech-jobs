@@ -42,7 +42,7 @@ const ROLE_PATTERNS = [
 ];
 
 // Hard exclusions — Camille only wants confirmed/permanent senior+
-// roles, not training-track ones, and Chanel is excluded by request.
+// roles, not training-track ones, no fixed-term, no Chanel.
 const EXCLUDE_TITLE = new RegExp(
   [
     "\\bstage\\b", "\\bstagiaire(?:s|e|es)?\\b", "\\bstg\\b",
@@ -53,6 +53,10 @@ const EXCLUDE_TITLE = new RegExp(
     "\\bausbildung\\b", "\\blehrling\\b",
     "\\bjunior\\b", "\\bjr\\.?\\b",
     "\\balt\\b\\.?", "\\balt\\.?\\s+", "\\balt-",
+    // Assistant roles — too junior for Camille's lane.
+    "\\bassistant(?:e|s|es)?\\b", "\\bassistante?s?\\b",
+    // Fixed-term contracts — Camille wants CDI only.
+    "\\bcdd\\b",
   ].join("|"),
   "i",
 );
