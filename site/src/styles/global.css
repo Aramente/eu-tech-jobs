@@ -156,6 +156,23 @@ header h1 {
   padding: 8px 12px 8px 0;
 }
 .home-search-input .search-input { border-bottom: 0; padding: 8px 0 8px 18px; }
+.home-search-go {
+  appearance: none;
+  background: var(--ink);
+  color: var(--paper);
+  border: 0;
+  padding: 14px 20px;
+  font: 600 11px/1 var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background 80ms ease;
+}
+.home-search-go:hover { background: var(--ink-soft); }
+.home-search-go:focus-visible { outline: 2px solid var(--ink); outline-offset: -4px; }
+@media (max-width: 720px) {
+  .home-search-go { width: 100%; padding: 14px 16px; }
+}
 
 /* =========================================================
    Chip-popover filter (used on home — DESIGN.md §4 chips)

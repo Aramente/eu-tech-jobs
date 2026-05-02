@@ -106,6 +106,45 @@ def _company_country(offices: list[dict] | None) -> str:
     return cc or "XX"
 
 
+# Tech-relevance gate. WTTJ has every kind of job — chefs, hotel staff,
+# baristas, etc. We only want tech / data / AI / business / sales /
+# product / design roles. Title or sectors must match.
+_TECH_TITLE = re.compile(
+    r"\b(engineer|engineering|developer|software|backend|frontend|fullstack|"
+    r"full[ -]?stack|devops|sre|cloud|platform|infrastructure|architect|"
+    r"data|machine\s*learning|ml\s|\bai\b|llm|nlp|product|design|ux|ui|"
+    r"sales|account|marketing|growth|content|seo|sem|finance|controller|"
+    r"hr|recruit|talent|people|operations|\bops\b|legal|counsel|"
+    r"consultant|business|customer|support|qa|security|research|"
+    r"scientist|analyst|technicien|technique|tech|saas|mobile|cybersec)"
+    r"\b",
+    re.I,
+)
+_TECH_SECTOR_KEYWORDS = (
+    "tech", "saas", "data", "ai", "fintech", "edtech", "healthtech",
+    "biotech", "mobility", "marketplace", "consulting", "cyber",
+    "communication", "media", "industrie", "industry", "logistique",
+    "logistics", "advertising", "transport",
+)
+
+
+def _is_tech_relevant(hit: dict) -> bool:
+    """True when WTTJ hit is plausibly an EU tech-ecosystem role.
+    Conservative — drops obvious noise (chefs, baristas, housekeepers,
+    medical/wellness staff) without losing tech-adjacent business roles."""
+    title = (hit.get("name") or "")
+    if _TECH_TITLE.search(title):
+        return True
+    # Sector check — WTTJ tags every job with parent + child sectors.
+    sectors = hit.get("sectors_name", {}).get("en", []) or []
+    for s in sectors:
+        for k, v in (s.items() if isinstance(s, dict) else []):
+            text = f"{k} {v}".lower()
+            if any(kw in text for kw in _TECH_SECTOR_KEYWORDS):
+                return True
+    return False
+
+
 @retry(
     retry=retry_if_exception_type((httpx.TransportError, ExtractorTransientError)),
     stop=stop_after_attempt(3),
@@ -214,6 +253,9 @@ async def fetch_all(
     def _absorb(hits: list[dict], country: str) -> int:
         added = 0
         for hit in hits:
+            # Drop obvious non-tech (chefs, hotel staff, wellness, etc).
+            if not _is_tech_relevant(hit):
+                continue
             pair = _hit_to_company(hit)
             if not pair:
                 continue
