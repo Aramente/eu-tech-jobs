@@ -1,0 +1,9 @@
+name: Rochas
+country: FR
+categories:
+- tech
+industry_tags:
+- perfume
+- fashion
+career_url: https://www.rochas.com
+notes: Custom-page LLM extractor — no ATS detected. Curated for /camille/.

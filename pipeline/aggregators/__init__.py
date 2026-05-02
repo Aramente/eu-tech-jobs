@@ -1,6 +1,7 @@
 """Job aggregators (multi-company sources). Each module returns (companies, jobs)."""
 
 from pipeline.aggregators import (
+    bof_careers,
     eures,
     fashionjobs,
     justjoinit,
@@ -9,6 +10,14 @@ from pipeline.aggregators import (
     wttj,
 )
 
-AGGREGATORS = [remoteok, weworkremotely, justjoinit, wttj, eures, fashionjobs]
+AGGREGATORS = [
+    remoteok,
+    weworkremotely,
+    justjoinit,
+    wttj,
+    eures,
+    fashionjobs,
+    bof_careers,
+]
 
 __all__ = ["AGGREGATORS"]

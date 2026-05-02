@@ -405,6 +405,115 @@ BRANDS: list[tuple[str, str, list[str]]] = [
     ("Atelier Paulin", "FR", ["fashion"]),
     ("Gigi Clozeau", "FR", ["fashion"]),
     ("Adelline", "FR", ["fashion"]),
+
+    # ========================================================================
+    # EXPANSION 2026-05-02 #2: Comité Colbert luxury independents +
+    # cosmetics SMEs Camille might love. Skipped LVMH/Kering brands
+    # since group Workdays will surface them differently.
+    # ========================================================================
+
+    # === Comité Colbert independents (family-owned / non-conglomerate) ===
+    ("Bernardaud", "FR", ["home", "interior-design", "decoration"]),
+    ("Christofle", "FR", ["home", "decoration"]),
+    ("Liaigre", "FR", ["interior-design", "home"]),
+    ("Lelievre Paris", "FR", ["textile", "interior-design"]),
+    ("Faiencerie de Gien", "FR", ["home", "decoration"]),
+    ("Daum", "FR", ["home", "decoration"]),
+    ("Yves Delorme", "FR", ["home", "textile"]),
+    ("Mellerio", "FR", ["fashion", "retail-luxury"]),
+    ("Baumer Place Vendome", "FR", ["fashion", "retail-luxury"]),
+    ("Eres", "FR", ["fashion"]),
+    ("Patou", "FR", ["fashion", "retail-luxury"]),
+    ("Pierre Hardy", "FR", ["fashion", "retail-luxury"]),
+    ("Leonard Paris", "FR", ["fashion"]),
+    ("Christian Louboutin", "FR", ["fashion", "retail-luxury"]),
+    ("Carita", "FR", ["beauty"]),
+    ("Dr Irena Eris", "PL", ["beauty"]),
+    ("ST Dupont", "FR", ["fashion", "retail-luxury"]),
+    ("Rochas", "FR", ["perfume", "fashion"]),
+    ("Saint Louis", "FR", ["home", "decoration"]),
+    ("Baccarat", "FR", ["home", "decoration"]),
+
+    # === FR knitwear / textile family businesses ===
+    ("Eric Bompard", "FR", ["fashion"]),  # cashmere
+    ("Anne Vest", "DK", ["fashion"]),
+    ("Le Drapeau Francais", "FR", ["fashion", "textile"]),
+    ("Maison Cyrillus", "FR", ["fashion"]),
+    ("Tricotage Mecanique de Sumene", "FR", ["fashion", "textile"]),
+
+    # === FR small concept stores' in-house brands ===
+    ("L Exception", "FR", ["fashion"]),
+    ("Smallable", "FR", ["fashion"]),
+    ("Centre Commercial", "FR", ["fashion"]),
+
+    # === FR niche jewelry (family-owned) ===
+    ("Lalique", "FR", ["fashion", "home", "retail-luxury"]),
+    ("Stone", "FR", ["fashion"]),
+    ("Aurelie Bidermann Paris", "FR", ["fashion"]),
+    ("Pomellato", "IT", ["fashion", "retail-luxury"]),
+
+    # === FR niche eyewear ===
+    ("Ahlem", "FR", ["fashion"]),
+    ("Anne et Valentin", "FR", ["fashion"]),
+    ("Komono", "BE", ["fashion"]),
+
+    # === FR childrenswear (mid/small) ===
+    ("Jacadi", "FR", ["fashion"]),
+    ("Tape a l Oeil", "FR", ["fashion"]),
+    ("La Petite Etoile", "FR", ["fashion"]),
+    ("Du Pareil au Meme", "FR", ["fashion"]),
+
+    # === FR niche beauty (additional) ===
+    ("Officine Universelle Buly Paris", "FR", ["beauty", "perfume"]),
+    ("Susanne Kaufmann", "AT", ["beauty"]),
+    ("Dr Sebagh", "GB", ["beauty"]),
+    ("Costume National", "IT", ["fashion", "perfume"]),
+    ("Acqua di Parma", "IT", ["perfume", "beauty"]),
+
+    # === EU contemporary niche designers (small) ===
+    ("Veja Project", "FR", ["fashion"]),
+    ("Polite Leather", "FR", ["fashion"]),
+    ("Auerbach", "FR", ["fashion"]),
+    ("Sequoia", "FR", ["fashion"]),
+    ("Lancaster Paris", "FR", ["fashion"]),
+    ("Texier", "FR", ["fashion"]),
+    ("Camille Fournet", "FR", ["fashion", "retail-luxury"]),
+    ("A L K", "FR", ["fashion"]),
+    ("Maison Vincent", "FR", ["fashion"]),
+
+    # === FR home / interior (additional family-owned) ===
+    ("Roche Bobois", "FR", ["home", "interior-design"]),
+    ("Cassina", "IT", ["home", "interior-design"]),
+    ("Ligne Roset", "FR", ["home", "interior-design"]),
+    ("Saint Hilaire", "FR", ["interior-design"]),
+    ("La Maison Pierre Frey", "FR", ["interior-design", "decoration"]),
+    ("Lalique Maison", "FR", ["home", "decoration"]),
+    ("Maison Sajou", "FR", ["home", "textile"]),
+    ("Caravane Paris", "FR", ["home", "interior-design"]),
+    ("Bonton Paris", "FR", ["fashion", "home"]),
+    ("Petit Pan", "FR", ["home", "decoration"]),
+
+    # === Cosmetic Valley consumer brands (from FR cosmetics cluster directory) ===
+    ("Liquides Imaginaires", "FR", ["perfume"]),
+    ("Berdoues Parfums", "FR", ["perfume", "beauty"]),
+    ("Berdoues", "FR", ["perfume", "beauty"]),
+    ("Graine de Pastel", "FR", ["beauty"]),
+    ("Secrets de Loly", "FR", ["beauty"]),
+    ("Maison Berger Paris", "FR", ["home", "decoration"]),
+    ("Lt Piver", "FR", ["perfume"]),
+    ("Maison de Parfum Berry", "FR", ["perfume"]),
+    ("Eau de Melisse des Carmes", "FR", ["beauty"]),
+    ("Laboratoire Nuxe", "FR", ["beauty"]),
+    ("Aromadunes", "FR", ["beauty"]),
+    ("Oceopin", "FR", ["beauty"]),
+    ("Olisma", "FR", ["beauty"]),
+    ("Feel Good Beauty", "FR", ["beauty"]),
+    ("Equilibre Attitude", "FR", ["beauty"]),
+    ("23 Beauty Paris", "FR", ["beauty"]),
+    ("Bomoi", "FR", ["beauty"]),
+    ("La Maison de l Argousier", "FR", ["beauty"]),
+    ("Chrisaya", "FR", ["beauty"]),
+    ("Villa Saada Cosmetique", "FR", ["beauty"]),
 ]
 
 
