@@ -23,7 +23,27 @@ const TARGET_INDUSTRIES = new Set([
   "retail-luxury",
 ]);
 
-const ROLE_RE = /\b(responsable|directeur|directrice|head|chief)\s+(des\s+)?(achat|achats|offre|offres|sourcing|buying|procurement|assortment|merchandising)\b|\b(purchase|purchasing|procurement|buying|sourcing|category)\s+(manager|director|lead|head)\b|\b(merchandising|assortment)\s+(manager|director|lead)\b/i;
+// Buying / sourcing / product-offering roles in fashion/beauty/home,
+// French + English. Permissive — this is Camille's curated lane.
+const ROLE_PATTERNS = [
+  // FR — explicit buying / sourcing / product
+  /\bacheteur(?:s|ses)?\b/i,
+  /\bacheteuse(?:s)?\b/i,
+  /\bresponsable\s+(?:des\s+)?(?:achat|achats|sourcing|approvisionnement|gamme|offre|offres|produit|produits|collection|collections|categorie|catégorie|category|merchandising)\b/i,
+  /\b(?:directeur|directrice)\s+(?:des\s+)?(?:achat|achats|sourcing|produit|produits|merchandising|offre|offres|categorie|catégorie|collection|category)\b/i,
+  /\bchef(?:fe)?\s+(?:de|des)\s+(?:produit|produits|marche|marché|gamme|categorie|catégorie|category|collection)\b/i,
+  // EN — explicit buying / sourcing / product
+  /\b(?:senior|junior|head\s+of|chief|lead)?\s*(?:buyer|buying|purchaser|purchasing)\b/i,
+  /\b(?:product|category|brand|merchandising|assortment|sourcing|procurement)\s+(?:manager|director|lead|head|specialist|coordinator)\b/i,
+  /\b(?:head|director|chief)\s+of\s+(?:product|category|brand|merchandising|assortment|sourcing|procurement|buying|purchasing)\b/i,
+  /\bmerchandiser\b/i,
+  // Hybrid title patterns common in fashion (e.g. "Chef de produit junior fashion")
+  /\bproduct\s+(?:manager|owner|lead)\b/i,
+];
+
+function matchesRole(title: string): boolean {
+  return ROLE_PATTERNS.some((re) => re.test(title));
+}
 
 function isFranceOrRemoteEU(j, c) {
   const loc = (j.location || "").toLowerCase();
@@ -43,7 +63,7 @@ const matches = jobs.filter((j) => {
   // Must be France-located or remote-EU friendly.
   if (!isFranceOrRemoteEU(j, c)) return false;
   // Title must match the buyer/product role pattern.
-  return ROLE_RE.test(j.title);
+  return matchesRole(j.title || "");
 });
 
 matches.sort((a, b) => (b.posted_at || "").localeCompare(a.posted_at || ""));
