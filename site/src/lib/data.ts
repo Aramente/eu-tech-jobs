@@ -43,6 +43,7 @@ export type Company = {
   name: string;
   country: string;
   categories: string[];
+  industry_tags?: string[];
   ats_provider?: string;
   ats_handle?: string;
   career_url?: string;
@@ -55,6 +56,27 @@ export type Company = {
 const allJobs = jobsRaw as Job[];
 const allCompanies = companiesRaw as Record<string, Company>;
 
+// Companies tagged for the private /camille/ landing (fashion/beauty/
+// perfume/home/etc) are excluded from EVERY public surface — main home,
+// /search/, /companies/, /trends/, /page/[N]/. Only /camille/ uses the
+// unfiltered exports below.
+const CAMILLE_INDUSTRIES = new Set([
+  "fashion",
+  "beauty",
+  "perfume",
+  "home",
+  "interior-design",
+  "decoration",
+  "textile",
+  "retail-luxury",
+]);
+
+function isCamilleOnly(c: Company | undefined): boolean {
+  if (!c) return false;
+  const tags = c.industry_tags || [];
+  return tags.some((t) => CAMILLE_INDUSTRIES.has(t));
+}
+
 // Hide jobs whose hiring company we can't surface — no user benefit in
 // showing "via-remoteok-paperpile" with no company name. Drops aggregator-
 // discovered stubs + any job whose company_slug has no entry.
@@ -63,14 +85,34 @@ function isShowableJob(j: Job): boolean {
   if (j.company_slug.startsWith("via-")) return false;
   const c = allCompanies[j.company_slug];
   if (!c || !c.name || c.name === j.company_slug) return false;
+  if (isCamilleOnly(c)) return false;
   return true;
 }
 
+// PUBLIC exports — used by all user-facing pages.
 export const jobs = allJobs.filter(isShowableJob);
-// Companies index is filtered to exclude aggregator stubs too — they were
-// never real companies, just synthesized from the source feed.
 export const companies = Object.fromEntries(
-  Object.entries(allCompanies).filter(([slug, c]) => !slug.startsWith("via-") && c.name && c.name !== slug),
+  Object.entries(allCompanies).filter(
+    ([slug, c]) =>
+      !slug.startsWith("via-") &&
+      c.name &&
+      c.name !== slug &&
+      !isCamilleOnly(c),
+  ),
+) as Record<string, Company>;
+
+// PRIVATE exports — used only by /camille/. Includes the consumer-fashion
+// brands that are hidden from the public surface.
+export const jobsForCamille = allJobs.filter((j) => {
+  const c = allCompanies[j.company_slug];
+  if (!c || !c.name) return false;
+  if (j.company_slug.startsWith("via-")) return false;
+  return isCamilleOnly(c);
+});
+export const companiesForCamille = Object.fromEntries(
+  Object.entries(allCompanies).filter(
+    ([slug, c]) => !slug.startsWith("via-") && c.name && isCamilleOnly(c),
+  ),
 ) as Record<string, Company>;
 export const meta = metaRaw as {
   run_at?: string;

@@ -8,16 +8,32 @@ import Base from "../../../layouts/Base.astro";
 import {
   boredCvLink,
   companies,
+  companiesForCamille,
   countryName,
   formatDate,
   jobs,
+  jobsForCamille,
   jobUrlPath,
   whereByJobId,
 } from "../../../lib/data";
 
+// Build per-job pages for BOTH the public dataset and the private
+// camille set, so /camille/ links resolve. Camille pages get noindex +
+// pagefind-ignore so they stay hidden from search & crawlers.
+const allJobs = [...jobs, ...jobsForCamille];
+const allCompanies = { ...companies, ...companiesForCamille };
+const camilleJobIds = new Set(jobsForCamille.map((j) => j.id));
+
 export async function getStaticPaths() {
-  return jobs.map((j) => {
-    const path = jobUrlPath(j); // "<company>/<title-slug>-<id8>"
+  // NOTE: Astro's getStaticPaths is a static-context function — refer
+  // back to the imported arrays directly rather than referencing the
+  // module-scope variables defined just above (which aren't visible
+  // here at evaluation time).
+  const { jobs: pubJobs } = await import("../../../lib/data");
+  const { jobsForCamille: privJobs } = await import("../../../lib/data");
+  const all = [...pubJobs, ...privJobs];
+  return all.map((j) => {
+    const path = jobUrlPath(j);
     const [company, ...rest] = path.split("/");
     const slug = rest.join("/");
     return { params: { company, slug }, props: { jobId: j.id } };
@@ -25,10 +41,11 @@ export async function getStaticPaths() {
 }
 
 const { jobId } = Astro.props as { jobId: string };
-const job = jobs.find((j) => j.id === jobId);
+const job = allJobs.find((j) => j.id === jobId);
 if (!job) throw new Error(`Job ${jobId} not found`);
-const company = companies[job.company_slug];
+const company = allCompanies[job.company_slug];
 const companyName = company?.name || job.company_slug;
+const isCamilleJob = camilleJobIds.has(jobId);
 const country = company ? countryName(company.country) : "";
 const base = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -145,17 +162,22 @@ const indexedSynonyms = [synonymBlob, senSyn].filter(Boolean).join(" ");
 <Base
   title={`${job.title} — ${companyName}`}
   description={`${job.title} at ${companyName} (${job.location || "remote"})`}
+  noindex={isCamilleJob}
 >
   <main>
     <p class="job-back">
-      <a href={base} id="back-link" data-base={base}>← all jobs</a>
+      <a href={isCamilleJob ? `${base}camille/` : base} id="back-link" data-base={base}>
+        {isCamilleJob ? "← Camille" : "← all jobs"}
+      </a>
     </p>
-    <article class="job">
+    <article class="job" data-pagefind-ignore={isCamilleJob ? "true" : undefined}>
       {/* Pagefind body restricted to the title block: searches like
           "talent acquisition" must match the job title, not text buried
           in the description (which would surface unrelated sales jobs
-          that happen to mention "partner with talent acquisition"). */}
-      <div data-pagefind-body>
+          that happen to mention "partner with talent acquisition").
+          For camille jobs we skip the body entirely (data-pagefind-
+          ignore on the article wrapper) so they don't pollute /search/. */}
+      <div data-pagefind-body={isCamilleJob ? undefined : "true"}>
         <span data-pagefind-filter={`where:${whereFacet}`} hidden></span>
         {job.role_family && (
           <span data-pagefind-filter={`role:${job.role_family}`} hidden></span>
@@ -187,7 +209,11 @@ const indexedSynonyms = [synonymBlob, senSyn].filter(Boolean).join(" ");
         )}
       </div>
       <p class="meta job-meta">
-        <a href={`${base}companies/${job.company_slug}/`}>{companyName}</a>
+        {isCamilleJob ? (
+          <span>{companyName}</span>
+        ) : (
+          <a href={`${base}companies/${job.company_slug}/`}>{companyName}</a>
+        )}
         {country && <> · {country}</>}
         {job.location && <> · {job.location}</>}
         {job.posted_at && <> · posted {formatDate(job.posted_at)}</>}
