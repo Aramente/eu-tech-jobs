@@ -1,0 +1,8 @@
+name: About You
+country: DE
+categories:
+- tech
+industry_tags:
+- fashion
+career_url: https://www.aboutyou.com
+notes: Custom-page LLM extractor — no ATS detected. Curated for /camille/.

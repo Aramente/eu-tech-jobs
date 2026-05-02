@@ -239,7 +239,49 @@ def tag_cmd(
     targets = targets_pool if limit is None else targets_pool[:limit]
     click.echo(f"Tagging {len(targets)} jobs at concurrency {concurrency}…")
 
-    companies = load_companies(seed_dir)
+    # Load curated YAML companies AND read the aggregator-discovered
+    # companies from the existing companies.parquet so the rewrite
+    # doesn't drop them. (fjr-*, wttj-*, wttjc-*, via-* etc — aggregator
+    # companies are created at run time and only persisted in the parquet.)
+    from pipeline.models import Company
+
+    yaml_companies = load_companies(seed_dir)
+    yaml_slugs = {c.slug for c in yaml_companies}
+    companies_pq = output_dir / "latest" / "companies.parquet"
+    aggregator_companies: list[Company] = []
+    if companies_pq.exists():
+        for row in _pq.read_table(companies_pq).to_pylist():
+            slug = row.get("slug")
+            if not slug or slug in yaml_slugs:
+                continue
+            ats = None
+            if row.get("ats_provider") and row.get("ats_handle"):
+                from pipeline.models import ATSReference
+                ats = ATSReference(
+                    provider=row["ats_provider"], handle=row["ats_handle"]
+                )
+            try:
+                aggregator_companies.append(Company(
+                    slug=slug,
+                    name=row.get("name") or slug,
+                    country=row.get("country") or "XX",
+                    categories=list(row.get("categories") or []),
+                    industry_tags=list(row.get("industry_tags") or []),
+                    ats=ats,
+                    career_url=row.get("career_url"),
+                    github_org=row.get("github_org"),
+                    funding_stage=row.get("funding_stage"),
+                    size_bucket=row.get("size_bucket"),
+                    notes=row.get("notes"),
+                    oss_signal=row.get("oss_signal"),
+                    top_repo_stars=row.get("top_repo_stars"),
+                    primary_language=row.get("primary_language"),
+                ))
+            except Exception:
+                # Skip rows that don't satisfy Company validators (e.g.
+                # neither ats nor career_url) rather than failing tag.
+                continue
+    companies = yaml_companies + aggregator_companies
 
     def _checkpoint(tagged_by_id: dict, processed: int) -> None:
         """Write the current parquet so a future kill -9 doesn't lose work."""
@@ -301,7 +343,8 @@ def tag_cmd(
 
     final_jobs = [tagged_by_id.get(j.id, j) for j in jobs]
 
-    companies = load_companies(seed_dir)
+    # Use the same merged set (YAML + aggregator) we built earlier so the
+    # final write preserves fjr-*, wttj-*, wttjc-*, via-* companies.
     snapshot = Snapshot(
         snapshot_date=_date.today(),
         companies=companies,
