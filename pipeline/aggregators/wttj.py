@@ -203,21 +203,30 @@ def _hit_to_job(hit: dict, company_slug: str, source_country: str) -> Job | None
     )
 
 
-def _hit_to_company(hit: dict) -> tuple[str, Company] | None:
+def _hit_to_company(hit: dict, *, camille: bool = False) -> tuple[str, Company] | None:
     org = hit.get("organization") or {}
     org_slug = org.get("slug")
     org_name = org.get("name")
     if not org_slug or not org_name:
         return None
-    slug = f"wttj-{_slugify(org_slug)}"
+    # Distinct slug prefix so the Camille lane can never collide with a
+    # public-tech wttj-* row (and so isCamilleOnly() can short-circuit
+    # without re-checking industry_tags).
+    prefix = "wttjc-" if camille else "wttj-"
+    slug = f"{prefix}{_slugify(org_slug)}"[:64]
     return slug, Company(
         slug=slug,
         name=org_name,
         country=_company_country(hit.get("offices")),
-        categories=["tech"],
+        categories=[] if camille else ["tech"],
+        industry_tags=["fashion"] if camille else [],
         ats=None,
         career_url=f"https://www.welcometothejungle.com/en/companies/{org_slug}",
-        notes=f"Aggregated from Welcome to the Jungle ({org.get('nb_employees', '?')} employees)",
+        notes=(
+            "Aggregated from Welcome to the Jungle "
+            f"({org.get('nb_employees', '?')} employees)"
+            + (" — Camille lane." if camille else "")
+        ),
     )
 
 
@@ -230,6 +239,26 @@ TARGETED_QUERIES = [
     "people partner",
     "engineering manager",
 ]
+
+# Camille lane: fashion / beauty / home / textile / decoration buying +
+# product-offering roles. These bypass the tech-relevance gate and tag
+# every discovered company with industry_tags=['fashion'] so they're
+# routed to /camille/ instead of the public surface.
+CAMILLE_QUERIES = [
+    "acheteur",
+    "acheteuse",
+    "responsable achats",
+    "responsable produit",
+    "responsable offre",
+    "chef de produit",
+    "merchandiser",
+    "category manager",
+    "buyer",
+    "brand manager",
+    "product manager fashion",
+    "sourcing",
+]
+CAMILLE_COUNTRIES = ["FR", "BE", "CH", "IT", "GB", "DE", "ES", "NL"]
 
 
 async def fetch_all(
@@ -250,13 +279,16 @@ async def fetch_all(
     jobs: list[Job] = []
     seen_ids: set[str] = set()
 
-    def _absorb(hits: list[dict], country: str) -> int:
+    def _absorb(hits: list[dict], country: str, *, camille: bool = False) -> int:
         added = 0
         for hit in hits:
-            # Drop obvious non-tech (chefs, hotel staff, wellness, etc).
-            if not _is_tech_relevant(hit):
+            # Drop obvious non-tech (chefs, hotel staff, wellness, etc) on
+            # the public-tech pass. Camille pass keeps everything that
+            # matched the buying/product query — that gate is the query
+            # itself, plus the title regex on the site.
+            if not camille and not _is_tech_relevant(hit):
                 continue
-            pair = _hit_to_company(hit)
+            pair = _hit_to_company(hit, camille=camille)
             if not pair:
                 continue
             slug, company = pair
@@ -308,6 +340,30 @@ async def fetch_all(
                         break
                 if added:
                     logger.info("WTTJ %s %r → +%d (pass 2)", country, q, added)
+
+        # Pass 3 (Camille lane): fashion / beauty / home buying queries.
+        # Tags every discovered company with industry_tags=['fashion'] so
+        # they're routed to /camille/ and stay off the public surface.
+        for country in CAMILLE_COUNTRIES:
+            for q in CAMILLE_QUERIES:
+                added = 0
+                for page in range(3):  # 300 max per (country, query)
+                    try:
+                        payload = await _fetch_page(client, country, page, query=q)
+                    except Exception as exc:
+                        logger.warning(
+                            "WTTJ camille %s %r page %d failed: %s",
+                            country, q, page, exc,
+                        )
+                        break
+                    hits = payload.get("hits") or []
+                    if not hits:
+                        break
+                    added += _absorb(hits, country, camille=True)
+                    if len(hits) < HITS_PER_PAGE:
+                        break
+                if added:
+                    logger.info("WTTJ camille %s %r → +%d", country, q, added)
     finally:
         if owns:
             await client.aclose()
