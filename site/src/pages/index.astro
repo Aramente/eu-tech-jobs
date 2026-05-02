@@ -9,12 +9,38 @@ import {
   countryName,
   jobUrlPath,
   formatSalary,
+  facetCounts,
 } from "../lib/data";
 
 const allJobs = jobsSorted();
 const totalPages = Math.max(1, Math.ceil(allJobs.length / PAGE_SIZE));
 const pageJobs = jobsForFrontPage();
 const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + "/";
+
+// Chip option lists. Where = countries + Remote tiers (sorted by count, drop
+// "Other" which is the noise bucket). Role = full 13-family list, count-sorted.
+const whereOptions = Object.entries(facetCounts.where || {})
+  .filter(([k, n]) => n > 0 && k !== "Other")
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 25);
+const ROLE_LABELS: Record<string, string> = {
+  engineering: "Engineering",
+  "ml-ai": "ML / AI",
+  data: "Data",
+  product: "Product",
+  design: "Design",
+  sales: "Sales",
+  marketing: "Marketing",
+  ops: "Ops",
+  hr: "HR / Recruiting",
+  support: "Support",
+  finance: "Finance",
+  legal: "Legal",
+  research: "Research",
+};
+const roleOptions = Object.entries(facetCounts.role || {})
+  .filter(([k, n]) => n > 0 && k in ROLE_LABELS)
+  .sort((a, b) => b[1] - a[1]);
 
 // Compute per-row meta data — including a NEW flag for ≤24h jobs.
 const now = Date.now();
@@ -66,7 +92,18 @@ function metaFor(j) {
         />
       </div>
       {/* Hidden <select> is the source of truth for state and form-submission;
-          chip-filter.js progressively enhances it into a chip-popover trigger. */}
+          chip-filter.js progressively enhances it into a chip-popover trigger.
+          Submit takes the user to /search/ with the selections pre-applied. */}
+      <select id="where" multiple class="chip-source" data-chip-label="Where" data-chip-group-prefix="Remote — " aria-label="Country and remote">
+        {whereOptions.map(([name, n]) => (
+          <option value={name} data-count={n}>{name}</option>
+        ))}
+      </select>
+      <select id="role" multiple class="chip-source" data-chip-label="Role" aria-label="Role">
+        {roleOptions.map(([k, n]) => (
+          <option value={k} data-count={n}>{ROLE_LABELS[k]}</option>
+        ))}
+      </select>
       <select id="type" multiple class="chip-source" data-chip-label="Type" aria-label="Employment type">
         <option value="permanent">Permanent</option>
         <option value="freelance">Freelance</option>
@@ -76,8 +113,8 @@ function metaFor(j) {
     </form>
     <script src={`${base}chip-filter.js`} defer></script>
     <script is:inline define:vars={{ base }}>
-      // Re-key the form to use filter[type][] for selected employment types
-      // when the user submits.
+      // Submit handler funnels search input + chip selections into /search/
+      // pre-loaded with filter[where][] / filter[role][] / filter[type][].
       (function () {
         const form = document.getElementById("home-search");
         if (!form) return;
@@ -86,9 +123,12 @@ function metaFor(j) {
           const params = new URLSearchParams();
           const q = (form.querySelector('input[name="q"]')?.value || "").trim();
           if (q) params.set("q", q);
-          const typeSel = document.getElementById("type");
-          if (typeSel) {
-            for (const o of typeSel.selectedOptions) params.append("filter[type][]", o.value);
+          for (const facet of ["where", "role", "type"]) {
+            const sel = document.getElementById(facet);
+            if (!sel) continue;
+            for (const o of sel.selectedOptions) {
+              params.append(`filter[${facet}][]`, o.value);
+            }
           }
           location.href = `${base}search/${params.toString() ? "?" + params.toString() : ""}`;
         });
