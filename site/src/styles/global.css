@@ -136,16 +136,155 @@ header h1 {
 .search-input:focus { border-bottom-color: var(--ink); }
 .search-input::placeholder { color: var(--muted); }
 
-/* Home form — search input + Type chip on one row, full width */
+/* =========================================================
+   Home form — search input + chip-popover filters
+   ========================================================= */
 .home-search {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 24px;
-  max-width: 720px;
+  align-items: stretch;
+  gap: 0;
+  margin-bottom: 32px;
+  max-width: 920px;
   flex-wrap: wrap;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
 }
-.home-search-input { flex: 1 1 320px; min-width: 240px; }
+.home-search-input {
+  flex: 1 1 320px;
+  min-width: 240px;
+  border-right: 1px solid var(--rule);
+  padding: 8px 12px 8px 0;
+}
+.home-search-input .search-input { border-bottom: 0; padding: 8px 0 8px 18px; }
+
+/* =========================================================
+   Chip-popover filter (used on home — DESIGN.md §4 chips)
+   Square, mono uppercase, hairline. Active = ink/paper inverse.
+   ========================================================= */
+.chip-source-hidden,
+.chip-source { position: absolute; left: -9999px; width: 1px; height: 1px; }
+.chip-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: stretch;
+  border-right: 1px solid var(--rule);
+}
+.chip-wrap:last-of-type { border-right: 0; }
+.chip {
+  appearance: none;
+  background: var(--paper);
+  color: var(--ink);
+  border: 0;
+  padding: 14px 16px;
+  font: 600 11px/1 var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: background 80ms ease, color 80ms ease;
+}
+.chip:hover { background: var(--row-hover); }
+.chip:focus-visible { outline: 2px solid var(--ink); outline-offset: -4px; }
+.chip.chip-active { background: var(--ink); color: var(--paper); }
+.chip.chip-active:hover { background: var(--ink-soft); }
+.chip strong { font-weight: 700; letter-spacing: 0; text-transform: none; }
+.chip-pill {
+  background: var(--signal);
+  color: var(--paper);
+  padding: 1px 6px;
+  font: 700 10px/1.4 var(--mono);
+  letter-spacing: 0.04em;
+}
+.chip-caret { font-size: 9px; opacity: 0.7; }
+
+.chip-popover {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: -1px;
+  z-index: 50;
+  width: 320px;
+  max-width: calc(100vw - 32px);
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.chip-search { padding: 10px 12px 6px; border-bottom: 1px solid var(--rule); }
+.chip-search input {
+  width: 100%;
+  padding: 7px 0;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  font: 400 13px var(--body);
+  outline: none;
+}
+.chip-search input:focus { border-bottom-color: var(--ink); }
+.chip-list {
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 4px 0;
+}
+.chip-group-head {
+  font: 500 10px/1 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 12px 14px 6px;
+}
+.chip-group-head + .chip-row { border-top: 1px solid var(--rule); }
+.chip-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font: 400 13px/1.3 var(--body);
+}
+.chip-row:hover { background: var(--row-hover); }
+.chip-row input[type="checkbox"] { margin: 0; accent-color: var(--ink); flex-shrink: 0; }
+.chip-row-text { display: flex; justify-content: space-between; flex: 1; gap: 8px; min-width: 0; }
+.chip-row-label { color: var(--ink); }
+.chip-row-count {
+  color: var(--muted);
+  font: 500 11px/1.4 var(--mono);
+  font-variant-numeric: tabular-nums;
+}
+.chip-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-top: 1px solid var(--rule);
+  background: var(--paper);
+}
+.chip-clear, .chip-done {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  font: 500 11px/1 var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  padding: 6px 10px;
+}
+.chip-clear { color: var(--muted); }
+.chip-clear:hover { color: var(--ink); }
+.chip-done { background: var(--ink); color: var(--paper); padding: 8px 16px; }
+.chip-done:hover { background: var(--ink-soft); }
+
+@media (max-width: 720px) {
+  .home-search { flex-direction: column; align-items: stretch; }
+  .home-search-input { border-right: 0; border-bottom: 1px solid var(--rule); padding-right: 0; }
+  .chip-wrap { border-right: 0; border-bottom: 1px solid var(--rule); }
+  .chip-wrap:last-of-type { border-bottom: 0; }
+  .chip { width: 100%; justify-content: flex-start; padding: 14px 16px; }
+  .chip-popover { width: 100%; left: 0; }
+}
 
 /* Visually hidden but indexable by Pagefind for role-family synonym tokens. */
 .visually-hidden {
