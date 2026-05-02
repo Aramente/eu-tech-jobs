@@ -1,0 +1,11 @@
+name: Westwing
+country: DE
+categories:
+- tech
+industry_tags:
+- home
+- interior-design
+ats:
+  provider: personio
+  handle: westwing
+notes: Curated for the /camille/ buyer/product-offering page

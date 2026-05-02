@@ -1,0 +1,141 @@
+---
+import Base from "../layouts/Base.astro";
+import { jobs, companies, jobUrlPath, formatDate } from "../lib/data";
+
+// Hidden curated landing page. Not in nav, not in sitemap, not Pagefind-
+// indexed. Surfaces purchasing / sourcing / product-offering roles in
+// fashion / beauty / perfume / home / textile / decoration / retail-
+// luxury verticals, France or remote-EU.
+
+const TARGET_INDUSTRIES = new Set([
+  "fashion",
+  "beauty",
+  "perfume",
+  "home",
+  "interior-design",
+  "decoration",
+  "textile",
+  "retail-luxury",
+]);
+
+const ROLE_RE = /\b(responsable|directeur|directrice|head|chief)\s+(des\s+)?(achat|achats|offre|offres|sourcing|buying|procurement|assortment|merchandising)\b|\b(purchase|purchasing|procurement|buying|sourcing|category)\s+(manager|director|lead|head)\b|\b(merchandising|assortment)\s+(manager|director|lead)\b/i;
+
+function isFranceOrRemoteEU(j, c) {
+  const loc = (j.location || "").toLowerCase();
+  if (j.remote_policy === "remote-eu") return true;
+  if (j.remote_policy === "remote-global") return true;
+  if (loc.includes("france") || loc.includes("paris") || loc.includes(", fr")) return true;
+  if (c?.country === "FR") return true;
+  return false;
+}
+
+const matches = jobs.filter((j) => {
+  const c = companies[j.company_slug];
+  if (!c) return false;
+  // Must touch at least one target industry tag.
+  const tags = (c as any).industry_tags || [];
+  if (!tags.some((t: string) => TARGET_INDUSTRIES.has(t))) return false;
+  // Must be France-located or remote-EU friendly.
+  if (!isFranceOrRemoteEU(j, c)) return false;
+  // Title must match the buyer/product role pattern.
+  return ROLE_RE.test(j.title);
+});
+
+matches.sort((a, b) => (b.posted_at || "").localeCompare(a.posted_at || ""));
+
+const now = Date.now();
+const yearNow = new Date(now).getUTCFullYear();
+function postedLabel(iso: string | null): string {
+  if (!iso) return "";
+  const t = new Date(iso).getTime();
+  if (!isFinite(t) || t > now) return "";
+  if (new Date(iso).getUTCFullYear() > yearNow) return "";
+  const days = Math.floor((now - t) / 86400000);
+  if (days <= 0) return "TODAY";
+  if (days === 1) return "1D";
+  if (days <= 7) return `${days}D`;
+  if (days <= 31) return `${Math.round(days / 7)}W`;
+  return `${Math.round(days / 30)}MO`;
+}
+
+// Coverage stats.
+const targetCompanies = Object.values(companies).filter((c) =>
+  ((c as any).industry_tags || []).some((t: string) => TARGET_INDUSTRIES.has(t)),
+);
+const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + "/";
+---
+<Base
+  title="Camille — curated buyer roles"
+  description="Private curated landing page."
+  noindex={true}
+>
+  <main class="camille-page" data-pagefind-ignore>
+    <header class="camille-header">
+      <p class="page-marker">
+        Camille · {targetCompanies.length} brands · fashion / beauty / perfume / home
+        · purchase + product-offering roles · France + Remote-EU
+      </p>
+      <h1 class="camille-h1">{matches.length.toLocaleString("en-US")} matching roles</h1>
+    </header>
+
+    {matches.length === 0 ? (
+      <p class="empty">No matching roles in this snapshot. Refresh tomorrow — the corpus updates daily.</p>
+    ) : (
+      <ol class="results-list">
+        {matches.map((j) => {
+          const c = companies[j.company_slug];
+          const company = c?.name || j.company_slug;
+          const loc = j.location || "";
+          const posted = postedLabel(j.posted_at);
+          return (
+            <li class="result-item">
+              <a href={`${base}jobs/${jobUrlPath(j)}/`} class="result-link">
+                <span class="result-title">{j.title}</span>
+                <span class="result-org">{company}{loc ? ` · ${loc}` : ""}</span>
+                <span class="result-meta">{posted}</span>
+              </a>
+            </li>
+          );
+        })}
+      </ol>
+    )}
+
+    <footer class="camille-foot">
+      <p>
+        Updates daily. Hidden URL — not in site navigation or search. Industries
+        covered (so far): {[...TARGET_INDUSTRIES].sort().join(", ")}.
+      </p>
+    </footer>
+  </main>
+
+  <style>
+    .camille-page { max-width: 920px; padding-top: 32px; }
+    .camille-header { margin: 0 0 32px; padding-bottom: 16px; border-bottom: 1px solid var(--ink); }
+    .page-marker {
+      font: 500 11px/1.6 var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+    .camille-h1 {
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 40px;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      font-weight: 400;
+      margin: 0;
+    }
+    .empty { padding: 48px 0; text-align: center; color: var(--muted); }
+    .camille-foot {
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid var(--rule);
+      font: 500 11px/1.6 var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+  </style>
+</Base>

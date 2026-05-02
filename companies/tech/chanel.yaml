@@ -1,0 +1,13 @@
+name: Chanel
+country: FR
+categories:
+- tech
+industry_tags:
+- fashion
+- beauty
+- perfume
+- retail-luxury
+ats:
+  provider: workday
+  handle: https://cc.wd3.myworkdayjobs.com/wday/cxs/cc/ChanelCareers/jobs
+notes: French luxury house. Workday CXS, ~1100 jobs. Curated for /camille/.

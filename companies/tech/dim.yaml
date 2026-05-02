@@ -1,0 +1,11 @@
+name: DIM
+country: FR
+categories:
+- tech
+industry_tags:
+- fashion
+- textile
+ats:
+  provider: greenhouse
+  handle: dim
+notes: Curated for the /camille/ buyer/product-offering page

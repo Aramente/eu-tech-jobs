@@ -1,0 +1,10 @@
+name: Glossier
+country: US
+categories:
+- tech
+industry_tags:
+- beauty
+ats:
+  provider: greenhouse
+  handle: glossier
+notes: Curated for the /camille/ buyer/product-offering page

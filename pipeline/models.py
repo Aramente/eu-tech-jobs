@@ -81,6 +81,21 @@ class Company(BaseModel):
     categories: list[Literal["ai", "tech", "oss", "remote-eu", "research"]] = Field(
         default_factory=list
     )
+    # Optional industry axis — orthogonal to `categories`. Used for curated
+    # landing pages that surface roles in specific verticals (e.g. fashion/
+    # beauty/home for a buyer-focused page).
+    industry_tags: list[
+        Literal[
+            "fashion",
+            "beauty",
+            "perfume",
+            "home",
+            "interior-design",
+            "decoration",
+            "textile",
+            "retail-luxury",
+        ]
+    ] = Field(default_factory=list)
     ats: ATSReference | None = None
     career_url: str | None = None
     github_org: str | None = None

@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import { jobs, companies, meta, formatDate } from "../lib/data";
 
-const { title = "eu-tech-jobs", description = "Live wire for the EU tech labor market — daily-refreshed open-data jobboard, 12k+ EU AI/tech roles." } = Astro.props;
+const { title = "eu-tech-jobs", description = "Live wire for the EU tech labor market — daily-refreshed open-data jobboard, 12k+ EU AI/tech roles.", noindex = false } = Astro.props;
 const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + "/";
 
 // Status-strip stats — built once at SSG time, identical on every page.
@@ -51,6 +51,7 @@ const path = Astro.url?.pathname || "/";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex,nofollow,noarchive" />}
     <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
