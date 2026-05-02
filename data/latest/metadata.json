@@ -1,7 +1,7 @@
 {
-  "run_at": "2026-05-02T12:44:19Z",
+  "run_at": "2026-05-02T15:33:54Z",
   "pipeline_version": "0.1.0",
-  "company_count": 2350,
-  "job_count": 23839,
+  "company_count": 1985,
+  "job_count": 22671,
   "extractor_results": []
 }
