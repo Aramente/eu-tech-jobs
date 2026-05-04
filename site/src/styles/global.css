@@ -73,6 +73,13 @@ a:hover { text-decoration-color: var(--ink); text-decoration-thickness: 2px; }
   padding-bottom: 2px;
 }
 .masthead-nav a:hover, .masthead-nav a.active { color: var(--ink); border-bottom-color: var(--ink); }
+.masthead-nav-disabled {
+  color: var(--muted);
+  opacity: 0.5;
+  cursor: not-allowed;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
 
 .status-strip {
   max-width: 1280px;

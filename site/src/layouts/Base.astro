@@ -35,12 +35,14 @@ if (meta.run_at) {
   }
 }
 
+// `disabled: true` renders the label as plain text (no link) — for items
+// that aren't ready for users yet but should still preview in the masthead.
 const navItems = [
   { href: `${base}search/`, label: "Search" },
-  { href: `${base}companies/`, label: "Companies" },
-  { href: `${base}saved/`, label: "Saved" },
-  { href: `${base}trends/`, label: "Methodology" },
-  { href: `${base}feed.xml`, label: "RSS" },
+  { href: `${base}companies/`, label: "Companies", disabled: true },
+  { href: `${base}saved/`, label: "Saved", disabled: true },
+  { href: `${base}trends/`, label: "Methodology", disabled: true },
+  { href: `${base}feed.xml`, label: "RSS", disabled: true },
 ];
 const path = Astro.url?.pathname || "/";
 ---
@@ -72,7 +74,11 @@ const path = Astro.url?.pathname || "/";
         <a href={base} class="wordmark">eu<span class="wordmark-mark">.</span>tech.jobs</a>
         <nav class="masthead-nav" aria-label="Primary">
           {navItems.map((it) => (
-            <a href={it.href} class={path.startsWith(it.href.replace(base, "/")) && it.label !== "Search" ? "active" : ""}>{it.label}</a>
+            it.disabled ? (
+              <span class="masthead-nav-disabled" aria-disabled="true" title="Coming soon">{it.label}</span>
+            ) : (
+              <a href={it.href} class={path.startsWith(it.href.replace(base, "/")) && it.label !== "Search" ? "active" : ""}>{it.label}</a>
+            )
           ))}
         </nav>
       </div>
