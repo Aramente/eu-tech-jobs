@@ -37,8 +37,10 @@ _NON_EU_PAT = re.compile(
     r"Vancouver|Calgary|Ottawa|Pittsburgh|Philadelphia|Washington, D\.C\.|"
     r"Washington DC|Detroit|Minneapolis|St\.?\s*Louis|Tampa|Orlando|"
     r"Nashville|Charlotte|Raleigh|Salt Lake|Las Vegas|Honolulu|Anchorage|"
-    r"Quebec|Québec|São Paulo|Buenos Aires|Bogotá|Bogota|Santiago|Lima|"
-    r"Mexico City|Guadalajara|"
+    r"Quebec|Québec|São Paulo|Sao Paulo|Buenos Aires|Bogotá|Bogota|Santiago|Lima|"
+    r"Mexico City|Guadalajara|Brazil|Brasil|Rio de Janeiro|Rio De Janeiro|"
+    r"Belo Horizonte|Curitiba|Florianopolis|Florianópolis|Porto Alegre|Recife|"
+    r"Salvador|Fortaleza|Natal|Manaus|"
     # Asia (subcontinent)
     r"India|Bengaluru|Bangalore|Mumbai|Bombay|New Delhi|Delhi|Pune|"
     r"Hyderabad|Chennai|Madras|Gurugram|Gurgaon|Noida|Kolkata|Calcutta|"
